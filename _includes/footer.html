@@ -1,0 +1,16 @@
+<footer class="blog-footer">
+  <p>
+    <nav class="nav justify-content-center">
+      <a class="nav-link" href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">
+        <i class="fa fa-rss fa-2x"></i>
+      </a>
+      {% for social_media in site.data.social_media %}
+      <a class="nav-link" href="{{ social_media.url }}" target="_blank">
+        <i class="fa {{ social_media.font_awesome }} fa-2x "></i>
+        <i class="ai {{ social_media.academicons }} ai-2x "></i>
+      </a>
+      {% endfor %}
+    </nav>
+  </p>
+  <p class="text-muted"><small>This site and its contents are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>. Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+</footer>

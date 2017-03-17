@@ -1,0 +1,71 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  {% if page.title %}
+  <title>{{ page.title }}</title>
+  <meta content="{{ page.title }}" property="og:title">
+  <meta content="{{ page.title }}" name="twitter:title">
+  {% else %}
+  <title>{{ site.title }}</title>
+  <meta content="{{ site.title }}" property="og:title">
+  <meta content="{{ site.title }}" name="twitter:title">
+  {% endif %}
+  <meta content="{{ site.title }}" property="og:site_name">
+  {% if page.description %}
+  <meta content="{{ page.description }}" name="description">
+  <meta content="{{ page.description }}" property="og:description">
+  <meta content="{{ page.description }}" name="twitter:description">
+  {% else %}
+  <meta content="{{ site.description }}" name="description">
+  <meta content="{{ site.description }}" property="og:description">
+  <meta content="{{ site.description }}" name="twitter:description">
+  {% endif %}
+  <meta content="{{ site.author.name }}" name="author">
+  <meta content="@{{ site.author.twitter }}" name="twitter:site">
+  <meta content="@{{ site.author.twitter }}" name="twitter:creator">  
+  {% if page.title %}
+  <meta content="article" property="og:type">
+  {% else %}
+  <meta content="website" property="og:type">
+  {% endif %}
+  <meta content="summary" name="twitter:card">
+  {% if page.url %}
+  <meta content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" property="og:url">
+  <meta content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" name="twitter:url">
+  {% endif %}
+  {% if page.date %}
+  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+  {% endif %}
+  <meta content="{{ "/about/" | prepend: site.baseurl | prepend: site.url }}" property="article:author">
+  {% if page.thumbnail %}
+  <meta property="og:image" content="{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}">
+  <meta name="twitter:image:src" content="{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}">
+  {% else %}
+  <meta property="og:image" content="{{ "/img/favicons/apple-touch-icon.png" | prepend: site.baseurl | prepend: site.url }}">
+  <meta name="twitter:image:src" content="{{ "/img/favicons/apple-touch-icon.png" | prepend: site.baseurl | prepend: site.url }}">
+  {% endif %}
+  {% if page.tags %}
+  {% for tag in page.tags %}
+  <meta property="article:tag" content="{{ tag }}">
+  {% endfor %}
+  {% endif %}
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/img/favicons/apple-touch-icon.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" href="{{ "/img/favicons/favicon-32x32.png" | prepend: site.baseurl }}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ "/img/favicons/favicon-16x16.png" | prepend: site.baseurl }}" sizes="16x16">
+  <link rel="manifest" href="{{ "/img/favicons/manifest.json" | prepend: site.baseurl }}">
+  <link rel="mask-icon" href="{{ "/img/favicons/safari-pinned-tab.svg" | prepend: site.baseurl }}" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+  <meta name="application-name" content="{{ site.title }}">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel=”alternate” hreflang=”en” href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="sitemap" href="{{ "/sitemap.xml" | prepend: site.baseurl }}" title="Sitemap" type="application/xml">
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+</head>

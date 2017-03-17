@@ -1,0 +1,86 @@
+(function() {
+  function displaySearchResults(results, store) {
+    var searchResults = document.getElementById('search-results');
+
+    if (results.length) { // Are there any results?
+      var appendString = '';
+
+      for (var i = 0; i < results.length; i++) {  // Iterate over the results
+        var item = store[results[i].ref];
+
+        if (i == 0) {
+          appendString += '<div class="card-columns">';
+        }
+        
+        appendString += '<div class="card">';
+        appendString += '<img class="card-img-top img-fluid" src="' + item.image + '" alt="' + item.title + '" title="' + item.title + '"">';
+        appendString += '<div class="card-block">';
+        appendString += '<h4 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h4>';
+        appendString += '<p class="card-text">' + item.description + '</p>';
+        appendString += '<p class="text-center"><a href="' + item.url + '" class="btn btn-primary">Leer más</a></p>';
+        appendString += '<nav class="nav">';
+        appendString += '<div class="nav-link"><i class="fa fa-calendar" aria-hidden="true"></i><small class="text-muted"> ' + item.date + '</small></div>';
+        appendString += '<div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> ' + item.tags + '</small></div>'
+        appendString += '</nav>';
+        appendString += '</div>';
+        appendString += '</div>';
+
+        if (i == results.length-1) {
+          appendString += '</div>';
+        }
+      }
+
+      searchResults.innerHTML = appendString;
+    } else {
+      searchResults.innerHTML = '<li>No results found</li>';
+    }
+  }
+
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split('=');
+
+      if (pair[0] === variable) {
+        return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
+      }
+    }
+  }
+
+  var searchTerm = getQueryVariable('query');
+
+  if (searchTerm) {
+    document.getElementById('search-box').setAttribute("value", searchTerm);
+
+    // Initalize lunr with the fields it will be searching on. I've given title
+    // a boost of 10 to indicate matches on this field are more important.
+    var idx = lunr(function () {
+      this.field('id');
+      this.field('title', { boost: 10 });
+      this.field('description');
+      this.field('date');
+      this.field('author');
+      this.field('tags');
+      this.field('image');
+      this.field('content');
+    });
+
+    for (var key in window.store) { // Add the data to lunr
+      idx.add({
+        'id': key,
+        'title': window.store[key].title,
+        'description': window.store[key].description,
+        'date': window.store[key].date,
+        'author': window.store[key].author,
+        'tags': window.store[key].tags,
+        'image': window.store[key].image,
+        'content': window.store[key].content
+      });
+
+      var results = idx.search(searchTerm); // Get lunr to perform a search
+      displaySearchResults(results, window.store); // We'll write this in the next section
+    }
+  }
+})();

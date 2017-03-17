@@ -1,0 +1,46 @@
+{% assign wordcount = include.content | number_of_words %}
+<script type="application/ld+json">
+{  
+   "@context":"http://schema.org",
+   "@type":"BlogPosting",
+   "mainEntityOfPage":{  
+      "@type":"WebPage",
+      "@id":"{{ include.link | prepend: site.baseurl | prepend: site.url }}"
+   },
+   "headline":"{{ include.headline }}",
+   "description":"{{ include.description }}",
+   "datePublished":"{{ include.datePublished | | date: '%Y-%m-%d' }}",
+   "dateModified":"{{ include.dateModified | | date: '%Y-%m-%d' }}",
+   "wordCount":"{{ wordcount }}",
+   "genre":"{{ include.categories | join: ', ' }}",
+   "image":{  
+      "@type":"ImageObject",
+      "url":"{{ include.image.path | prepend: site.baseurl | prepend: site.url }}",
+      "width":"{{ include.image.width }}",
+      "height":"{{ include.image.height }}"
+   },
+   "author":{  
+      "@type":"Person",
+      "name":"{{ author.name }}",
+      "sameAs":[  
+        "https://twitter.com/{{ author.twitter }}",
+        "https://github.com/{{ author.github }}"
+      ]
+   },
+   "publisher":{  
+      "@type":"Organization",
+      "name":"{{ site.title }}",
+      "sameAs":[  
+        "https://twitter.com/{{ site.author.twitter }}",
+        "https://github.com/{{ site.author.github }}"
+      ],
+      "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo.path | prepend: site.baseurl | prepend: site.url }}",
+      "width":"{{ site.logo.width }}",
+      "height":"{{ site.logo.height }}"
+    }
+   },
+   "articleBody":"{{ include.content | strip_html | xml_escape | normalize_whitepace | strip_newlines | strip }}"
+}
+</script>

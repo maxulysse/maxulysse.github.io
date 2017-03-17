@@ -1,0 +1,46 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "maxulysse.github.io"
+author:
+  name: Maxime Garcia
+  twitter: gau
+  github: maxulysse
+description: "Interested in Bioinformatics, Reproducible Research, Automation, Data Integration and Visualization..."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://maxulysse.github.io" # the base hostname & protocol for your site
+
+logo:
+  path: "/img/favicons/android-chrome-192x192.png"
+  width: 192
+  height: 192
+
+# analytics:
+  # google: UA-65400010-1
+
+# comments:
+  # disqus: tips-tutorials
+
+# Build settings
+paginate: 10 # the number of post per page
+highlighter: rouge
+markdown: kramdown
+permalink: pretty
+
+sass:
+  sass_dir: _sass
+  style: compressed # Possible values -> nested / expanded / compact / compressed
+
+# Plugins
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Handling Reading
+exclude:
+  - "LICENSE"

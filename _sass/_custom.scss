@@ -1,0 +1,15 @@
+.navbar {
+  margin-bottom: 1.25rem;
+}
+
+.img-post {
+  @extend .rounded;
+  @extend .img-fluid;
+  @extend .mx-auto;
+  @extend .d-block;
+}
+
+.table-bordered-striped {
+  @extend .table-bordered;
+  @extend .table-striped;
+}
