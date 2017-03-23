@@ -20,12 +20,6 @@ logo:
   width: 192
   height: 192
 
-# analytics:
-  # google: UA-65400010-1
-
-# comments:
-  # disqus: tips-tutorials
-
 # Build settings
 paginate: 10 # the number of post per page
 highlighter: rouge
