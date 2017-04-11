@@ -9,7 +9,7 @@ tags:
   - jekyll
 author: maxulysse
 image:
-  path: /img/2017-03-14-first-post-with-jekyll/Screenshot.png
+  path: /img/category/jekyll.png
 ---
 
 This is my very first post with Jekyll.
