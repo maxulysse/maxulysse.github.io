@@ -14,4 +14,4 @@ image:
 
 This is my very first post with Jekyll.
 
-{% include lightbox.html src="/img/2017-03-14-first-post-with-jekyll/Screenshot.png" width="500" %}
+{% include lightbox.html src="/img/category/jekyll.png" width="200" %}
