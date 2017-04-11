@@ -4,7 +4,7 @@ title: Publications
 ---
 
 <div class="card">
-  <div class="card-header"><h1>CV</h1></div>
+  <div class="card-header"><h1>Publications</h1></div>
   <div class="card-block">
   <p><strong>Thesis</strong></p>
   <ol>
