@@ -114,6 +114,15 @@
   transform: scale(1.5);
 }
 
+.fa-certificate {
+  color: gray;
+  transition: transform 0.2s ease;
+}
+.fa-certificate:hover {
+  color: #199efb;
+  transform: scale(1.5);
+}
+
 .fa-rss {
   color: gray;
   transition: transform 0.2s ease;

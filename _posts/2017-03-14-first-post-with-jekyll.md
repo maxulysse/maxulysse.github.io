@@ -6,10 +6,12 @@ date: 2017-03-14 13:00:00+0100
 date_modified: 2017-03-14 13:00:00+0100
 categories: [Jekyll]
 tags:
-  - jekyll
+  - Jekyll
 author: maxulysse
 image:
   path: /img/category/jekyll.png
+  width: 100
+  height: 100
 ---
 
 This is my very first post with Jekyll.
