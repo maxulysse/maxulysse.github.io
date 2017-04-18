@@ -9,8 +9,7 @@ description: All post entries ordered by categories.
   <div class="card-block">
     {% assign tags = site.categories | sort %}
     {% assign sorted_posts = site.posts | sort: 'title' %}
-
-    <div> 
+    <div>
       {% for tag in tags %}
       <a href="#{{ tag | first | slugify }}">{{ tag | first | replace: '-', ' ' }} <span class="badge badge-default">{{ tag | last | size }}</span></a>{% if forloop.last == false %} • {% endif %}{% endfor %}
     </div>
@@ -26,7 +25,7 @@ description: All post entries ordered by categories.
         <i class="fa fa-tag" aria-hidden="true"></i>
       </span>
       <span>
-        {{ tag | first | replace:'-', ' ' }} 
+        {{ tag | first | replace:'-', ' ' }}
       </span>
       <span class="badge badge-default">{{ tag | last | size }}</span>
     </h3>
