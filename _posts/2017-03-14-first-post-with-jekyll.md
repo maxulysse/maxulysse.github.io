@@ -10,10 +10,8 @@ tags:
 author: maxulysse
 image:
   path: /img/category/jekyll.png
-  width: 100
-  height: 100
 ---
 
 This is my very first post with Jekyll.
 
-{% include lightbox.html src="/img/category/jekyll.png" width="200" %}
+{% include lightbox.html src="/img/category/jekyll.png" %}
