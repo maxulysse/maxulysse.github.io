@@ -4,6 +4,9 @@
 - name: Twitter
   url: https://twitter.com/gau/
   font_awesome: fa-twitter
+# - name: Mastodon
+#   url: https://mastodon.cloud/@gau
+#   font_awesome: fa-mastodon
 - name: LinkedIn
   url: https://www.linkedin.com/in/maxugarcia/
   font_awesome: fa-linkedin
@@ -11,7 +14,7 @@
   url: https://www.slideshare.net/MaxUlysse
   font_awesome: fa-slideshare
 - name: GoogleSchoolar
-  url: https://scholar.google.fr/citations?hl=en&user=bzhsE6oAAAAJ/
+  url: https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
   academicons: ai-google-scholar
 - name: ORCID
   url: https://orcid.org/0000-0003-2827-9261
@@ -24,7 +27,7 @@
   academicons: ai-researchgate
 - name: reddit
   url: https://www.reddit.com/user/maxUlysse
-  font_awesome: fa-reddit
+  font_awesome: fa-reddit-alien
 - name: Viadeo
   url: http://www.viadeo.com/p/0021pms7gdguerlj
   font_awesome: fa-viadeo
@@ -33,7 +36,7 @@
   font_awesome: fa-facebook
 - name: Google+
   url: https://plus.google.com/+MaximeGarcia
-  font_awesome: fa-google-plus-official
+  font_awesome: fa-google-plus
 - name: Instagram
   url: https://www.instagram.com/maxulysse/
   font_awesome: fa-instagram

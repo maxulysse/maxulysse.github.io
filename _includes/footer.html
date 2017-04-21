@@ -6,11 +6,15 @@
       </a>
       {% for social_media in site.data.social_media %}
       <a class="nav-link" href="{{ social_media.url }}" target="_blank">
-        <i class="fa {{ social_media.font_awesome }} fa-2x "></i>
-        <i class="ai {{ social_media.academicons }} ai-2x "></i>
+        <i class="fa {{ social_media.font_awesome }} fa-2x"></i>
+        <i class="ai {{ social_media.academicons }} ai-2x"></i>
       </a>
       {% endfor %}
     </nav>
   </p>
-  <p class="text-muted"><small>This site and its contents are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>. Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+  <p class="text-muted">
+    <small>
+      Under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><i class="fa fa-creative-commons fa-1x"></i></a> and powered by <a href="https://jekyllrb.com/">Jekyll</a>
+    </small>
+  </p>
 </footer>
