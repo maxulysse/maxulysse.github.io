@@ -3,59 +3,58 @@ layout: default
 ---
 
 {% include structuredData_index.html %}
-
 <div class="card-columns">
-  {% for post in paginator.posts %}
+{% for post in paginator.posts %}
   <div class="card">
-    {% if post.image.path %}
+  {% if post.image.path %}
     <img class="card-img-top img-fluid" src="{{ post.image.path | prepend: site.baseurl }}" alt="{{ post.title }}" title="{{ post.title }}">
-    {% endif %}
+  {% endif %}
     <div class="card-block">
-      {% if post.title %}
+  {% if post.title %}
       <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="card-title">{{ post.title }}</h4></a></p>
-      {% endif %}
-      {% if post.description %}
+  {% endif %}
+  {% if post.description %}
       <p class="card-text">{{ post.description }}</p>
-      {% endif %}
-      {% if post.url %}
+  {% endif %}
+  {% if post.url %}
       <p class="text-center"><a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-primary">Read more</a></p>
-      {% endif %}
+  {% endif %}
       <nav class="nav">
-      {% if post.date %}
+  {% if post.date %}
         <div class="nav-link"><i class="fa fa-calendar" aria-hidden="true"></i><small class="text-muted"> {{ post.date | date: "%d/%m/%Y" }}</small></div>
-      {% endif %}
-      {% if post.tags %}
+  {% endif %}
+  {% if post.tags %}
         <div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> {{ post.categories | join: ', ' }}</small></div>
-      {% endif %}
+  {% endif %}
       </nav>
     </div>
   </div>
-  {% endfor %}
+{% endfor %}
 </div>
 <div class="card-block">
   <nav aria-label="..." class="nav justify-content-center">
     <ul class="pagination">
-      {% if paginator.previous_page %}
+{% if paginator.previous_page %}
       <li class="page-item active">
         <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" rel="prev">&laquo;</a>
       </li>
-      {% else %}
+{% else %}
       <li class="page-item disable">
         <span class="page-link">&laquo;</span>
       </li>
-      {% endif %}
+{% endif %}
       <li class="page-item disable">
         <span class="page-link">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
       </li>
-      {% if paginator.next_page %}
+{% if paginator.next_page %}
       <li class="page-item active">
         <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl }}" rel="prev">&raquo;</a>
       </li>
-      {% else %}
+{% else %}
       <li class="page-item disable">
         <span class="page-link">&raquo;</span>
       </li>
-      {% endif %}
+{% endif %}
     </ul>
   </nav>
 </div>
