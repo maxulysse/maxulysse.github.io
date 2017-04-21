@@ -31,8 +31,6 @@ layout: default
     {{  content }}
   </div>
   <div class="card-block">
-  </div>
-  <div class="card-block">
     <nav class="nav justify-content-center" aria-label="Page navigation">
       <ul class="pagination">
         {% if page.previous.url %}
@@ -55,32 +53,30 @@ layout: default
     </nav>
     </div>
     <div class="card-block">
-    <h3>Leave a Reply</h3>
-    <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
-      <p><small><span>Your email address will not be published.</span> Required fields are marked <span class="required">*</span></small></p>
-      <input name="options[redirect]" type="hidden" value="https://maxulysse.github.io">
-      <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-      <p><label for="comment">Comment</label>
+      <h3>Leave a Reply</h3>
+      <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
+        <p><small><span>Your email address will not be published.</span> Required fields are marked <span class="required">*</span></small></p>
+        <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
+        <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+        <p><label for="comment">Comment</label>
+          <br />
+          <textarea name="fields[message]" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>
+        </p>
+        <p><label for="author">Name: <span class="required">*</span></label>
+          <br />
+          <input id="author" name="fields[name]" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' />
+        </p>
+        <p><label for="email">Email: <span class="required">*</span></label>
+          <br />
+          <input id="email" name="fields[email]" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' />
+        </p>
+        <p><label for="url">Website:</label>
+          <br />
+          <input id="url" name="fields[url]" type="text" value="" size="30" maxlength="200" />
+        </p>
         <br />
-        <textarea name="fields[message]" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>
-      </p>
-      <p><label for="author">Name: <span class="required">*</span></label>
-        <br />
-        <input id="author" name="fields[name]" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' />
-      </p>
-      <p><label for="email">Email: <span class="required">*</span></label>
-        <br />
-        <input id="email" name="fields[email]" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' />
-      </p>
-      <p><label for="url">Website:</label>
-        <br />
-        <input id="url" name="fields[url]" type="text" value="" size="30" maxlength="200" />
-      </p>
-      <br />
-      <button class="btn btn-primary" type="submit">Comment <i class="fa fa-comment" aria-hidden="true"></i></button>
-
-
-
-    </form>
+        <button class="btn btn-primary" type="submit">Comment <i class="fa fa-comment" aria-hidden="true"></i></button>
+      </form>
+    </div>
   </div>
 </div>

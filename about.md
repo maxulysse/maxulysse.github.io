@@ -10,6 +10,7 @@ description: Maxime Garcia, PhD in Bioinformatics
     <div class="card-text">
       I'm Maxime Garcia, a bioinformatician in Stockholm, Sweden, and this is my personnal site.
       I’m interested in Reproducible Research, Automation, Data Integration, Visualization and much more...
+      If you have any suggestions, remarks, please feel free to comment.
     </div>
   </div>
 </div>
