@@ -9,18 +9,7 @@ layout: default
 {% assign modified = page.date %}
 {% endif %}
 
-{%
-  include structuredData_blogpost.html
-  headline=page.title
-  categories=page.categories
-  author=author
-  description=page.description
-  datePublished=page.date
-  dateModified=modified
-  image=page.image
-  content=page.content
-  link=page.url
-%}
+{% include structuredData_blogpost.html headline=page.title categories=page.categories author=author description=page.description datePublished=page.date dateModified=modified image=page.image content=page.content link=page.url %}
 
 <div class="card">
   <h1 class="card-header">{{ page.title }}</h1>
