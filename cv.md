@@ -10,22 +10,22 @@ title: CV
   <h2>Education and Qualifications</h2>
   <table><tbody>
     <tr>
-      <td width="20%"><strong>2016-present:</strong></td>
+      <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2016-present:</strong></td>
       <td width="80%">Bioinformatician for <a href="http://ki.se/forskning/barntumorbanken-framjar-forskning-om-barntumorer" target="blank">BarnTumörBanken</a>, sitting at both <a href="http://ki.se/start/" target="blank">Karolinska Institutet</a> / <a href="http://ki.se/en/onkpat/startpage/" target="blank">Instutitionen För Onkologi-Patologi</a> and at <a href="https://www.scilifelab.se/" target="blank">Science for Life Laboratory</a> / <a href="https://www.scilifelab.se/facilities/genomics-applications" target="blank">NGI Stockholm (Genomics Applications)</a>.
       </td>
     </tr>
     <tr>
-      <td width="20%"><strong>2013-2014:</strong></td>
+      <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2013-2014:</strong></td>
       <td width="80%">Research Associate in Bioinformatics at <a href="http://www.nus.edu.sg/" target="_blank">National University of Singapore</a>, <a href="http://www.csi.nus.edu.sg/" target="_blank">Cancer Science Institute of Singapore</a>.
       </td>
     </tr>
     <tr>
-      <td width="20%"><strong>2009-2013:</strong></td>
+      <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2009-2013:</strong></td>
       <td width="80%">PhD in Bioinformatics and Genomics at <a href="http://www.univ-amu.fr/" target="_blank">Aix-Marseille Université</a>, <a href="http://crcm.marseille.inserm.fr/" target="_blank">CRCM</a> - <a href="http://bioinformatique.marseille.inserm.fr/" target="_blank">CiBi Platform</a>, Marseille, <em>Biomarkers discovery in cancer by <a href="http://iti.sourceforge.net/" target="_blank">Interactome-Transcriptome Integration</a></em> (Intern management; Collaboration with MDs, PhDs, Research Engineers and socio-economic partner (IPSOGEN, now <a href="http://www.qiagenmarseille.com/" target="_blank">QIAGEN Marseille</a>); Presentations in international conferences (posters and talks); Parallel scripting; Project management; Oral and visual communication)
       </td>
     </tr>
     <tr>
-      <td width="20%"><strong>2007-2009:</strong></td>
+      <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2007-2009:</strong></td>
       <td width="80%">Master’s Degree in <a href="http://biologie.univ-mrs.fr/masterBBSG/" target="_blank">Bioinformatics and Genomics</a>, <a href="http://biologie.univ-mrs.fr/" target="_blank">Faculté des Sciences de Luminy</a>, Marseille (Object-oriented programming, Dynamic modelization of biological networks, Mathematics applied to Biology)
       2007: Erasmus Semester in School of Biological Sciences, University of East Anglia, Norwich ( Research project in Bioinformatics).
       2003-2007: Bachelor’s Degree in Biology and Biochemistry, <a href="http://biologie.univ-mrs.fr/" target="_blank">Faculté des Sciences de Luminy</a>, Marseille.
@@ -120,23 +120,23 @@ title: CV
   <table>
   <tbody>
   <tr>
-  <td width="20%"><strong>2012</strong></td>
+  <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2012</strong></td>
   <td width="80%">Doctoriales en Provence (Member of organization committee and logistic support)</td>
   </tr>
   <tr>
-  <td><strong>2011</strong></td>
+  <td><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2011</strong></td>
   <td>Marché de la Chimie @ Fête de la Science (Conception and animation of a stand for Cancéropôle-PACA)</td>
   </tr>
   <tr>
-  <td><strong>2011</strong></td>
+  <td><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2011</strong></td>
   <td>7th BIOTechno forum in Marseille (Head of organization committee and logistic support)</td>
   </tr>
   <tr>
-  <td><strong>2009-2012</strong></td>
+  <td><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2009-2012</strong></td>
   <td>Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University (Member of organization committee, abstract selection, jury member, logistic support)</td>
   </tr>
   <tr>
-  <td><strong>2007-2011</strong></td>
+  <td><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2007-2011</strong></td>
   <td>Logistic support in organization of Plan de Cuques French Comics Festival</td>
   </tr>
   </tbody>
