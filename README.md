@@ -5,12 +5,12 @@ Using:
 - [academicons](https://jpswalsh.github.io/academicons/)
 - [bootstrap](https://getbootstrap.com/)
 - [font-awesome](http://fontawesome.io/)
-- [prism](https://prismjs.com/)
-- [lightbox](https://lokeshdhakar.com/projects/lightbox2/)
 - [jquery](https://jquery.com/)
+- [lightbox](http://lokeshdhakar.com/projects/lightbox2/)
 - [lunr](https://lunrjs.com/)
-- [tether](http://tether.io/)
+- [prism](http://prismjs.com/)
 - [staticman](https://staticman.net/)
+- [tether](http://tether.io/)
 
 Inspired by:
 - [dalanzg](https://github.com/dalanzg/)
