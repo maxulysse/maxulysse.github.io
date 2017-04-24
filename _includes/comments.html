@@ -1,0 +1,27 @@
+<div class="card-block">
+  <h3>Leave a Reply</h3>
+  <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
+    <p><small><span>Your email address will not be published.</span></p>
+    <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
+    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+    <p><label for="comment">Comment</label>
+      <br />
+      <textarea name="fields[message]" cols="29" rows="8" maxlength="65525"></textarea>
+    </p>
+    <p><label for="author">Name: <span class="required">*</span></label>
+      <br />
+      <input id="author" name="fields[name]" type="text" value="" size="30" maxlength="245"/>
+    </p>
+    <p><label for="email">Email: <span class="required">*</span></label>
+      <br />
+      <input id="email" name="fields[email]" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes"/>
+    </p>
+    <p><label for="url">Website:</label>
+      <br />
+      <input id="url" name="fields[url]" type="text" value="" size="30" maxlength="200" />
+    </p>
+    <br />
+    <button class="btn btn-primary" type="submit">Comment <span class="fa fa-comment" aria-hidden="true"></span></button>
+  </form>
+  <p><small><span><i class="fa fa-comments fa-1x"></i> powered by <a href="https://staticman.net/" target="_blank">staticman</a></span></small></p>
+</div>
