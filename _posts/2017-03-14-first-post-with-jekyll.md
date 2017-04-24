@@ -13,5 +13,3 @@ image:
 ---
 
 This is my very first post with Jekyll.
-
-{% include lightbox.html src="/img/category/jekyll.png" %}
