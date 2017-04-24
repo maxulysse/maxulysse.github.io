@@ -28,4 +28,4 @@ gems:
 
 exclude:
   - "LICENSE"
-  - "README"
+  - "README.md"
