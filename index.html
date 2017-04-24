@@ -21,7 +21,7 @@ layout: default
   {% endif %}
       <nav class="nav">
   {% if post.date %}
-        <div class="nav-link"><i class="fa fa-calendar" aria-hidden="true"></i><small class="text-muted"> {{ post.date | date: "%d/%m/%Y" }}</small></div>
+        <div class="nav-link"><i class="fa fa-calendar-o" aria-hidden="true"></i><small class="text-muted"> {{ post.date | date: "%d/%m/%Y" }}</small></div>
   {% endif %}
   {% if post.tags %}
         <div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> {{ post.categories | join: ', ' }}</small></div>
