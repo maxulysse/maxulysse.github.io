@@ -1,4 +1,3 @@
-# Site settings
 title: "maxulysse.github.io"
 description: "Interested in Bioinformatics, Reproducible Research, Automation, Data Integration and Visualization..."
 baseurl: ""
@@ -13,21 +12,20 @@ logo:
   width: 192
   height: 192
 
-# Build settings
-paginate: 10 # the number of post per page
 highlighter: rouge
 markdown: kramdown
+paginate: 12
 permalink: pretty
+theme: jekyll-theme-minimal
 
 sass:
   sass_dir: _sass
-  style: compressed # Possible values -> nested / expanded / compact / compressed
+  style: compact
 
-# Plugins
 gems:
   - jekyll-paginate
   - jekyll-sitemap
 
-# Handling Reading
 exclude:
   - "LICENSE"
+  - "README"
