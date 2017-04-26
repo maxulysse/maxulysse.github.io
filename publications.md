@@ -28,7 +28,7 @@ title: Publications
   <p><strong><i class="fa fa-comments-o fa-1x" aria-hidden="true"></i> Conference talks <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
   <ol>
   <li>Maxime Garcia, Olivier Stahl, Pascal Finetti, Daniel Birnbaum, François Bertucci, Ghislain Bidaut, <em>Biomarkers Discovery in Breast Cancer by Interactome-Transcriptome Integration</em>, Vienna, Austria, April 2011 [<a href="http://www.cibiv.at/workshops/masamb11/" target="_blank">MASAMB XXI</a>]</li>
-  <li>Maxime Garcia, Olivier Stahl, Pascal Finetti, Daniel Birnbaum, François Bertucci, Ghislain Bidaut, <em>Biomarkers Discovery in Breast Cancer by Interactome-Transcriptome Integration</em>, Cambridge, UK, September 2010 [<a href="http://www.enm.bris.ac.uk/cig/cb/" target="_blank">Cancer Bioinformatics Whorkshop</a> - <a href="http://videolectures.net/cancerbioinformatics2010_garcia_bdbc/" target="_blank">videolectures.net</a>]</li>
+  <li>Maxime Garcia, Olivier Stahl, Pascal Finetti, Daniel Birnbaum, François Bertucci, Ghislain Bidaut, <em>Biomarkers Discovery in Breast Cancer by Interactome-Transcriptome Integration</em>, Cambridge, UK, September 2010 [Cancer Bioinformatics Whorkshop - <a href="http://videolectures.net/cancerbioinformatics2010_garcia_bdbc/" target="_blank">videolectures.net</a>]</li>
   </ol>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
   <p><strong><i class="fa fa-file-image-o fa-1x" aria-hidden="true"></i> Conference posters <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
