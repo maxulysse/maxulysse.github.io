@@ -8,7 +8,7 @@ title: Publications
   <div class="card-block">
   <p><strong><i class="fa fa-book fa-1x" aria-hidden="true"></i> Thesis</strong></p>
   <ol>
-  <li>Maxime Garcia, <em>Biomarkers discovery in breast cancer by Interactome-Transcriptome Integration</em>, 2013/12, [<a href="http://ithake.eu/thesis" target="_blank">Thesis and defense</a>]</li>
+  <li>Maxime Garcia, <em>Biomarkers discovery in breast cancer by Interactome-Transcriptome Integration</em>, 2013/12, [<a href="{{ "/files/Thesis-M-Garcia.pdf" | prepend: site.baseurl }}" target="_blank">Thesis</a>, <a href="https://github.com/MaxUlysse/myOwnThesis" target="_blank">Sources</a> and <a href="http://www.slideshare.net/MaxUlysse/mydefense/" target="_blank">Defense</a>]</li>
   </ol>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
   <p><strong><i class="fa fa-file-text-o fa-1x" aria-hidden="true"></i> Articles <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
@@ -25,13 +25,13 @@ title: Publications
   <li>Maxime Garcia, Raphaële Millat-Carus, François Bertucci, Pascal Finetti, Arnaud Guille, José Adelaïde, Ismahane Bekhouche, Renaud Sabatier, Max Chaffanet, Daniel Birnbaum, Ghislain Bidaut, <em>CNV-Interactome-Transcriptome Integration to detect driver genes in cancerology</em> in Microarray Image and Data Analysis: Theory and Practice [<a href="http://www.crcpress.com/product/isbn/9781466586826">CRC Press / Taylor & Francis</a>]</li>
   </ol>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
-  <p><strong><i class="fa fa-users fa-1x" aria-hidden="true"></i> Conference talks <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
+  <p><strong><i class="fa fa-comments-o fa-1x" aria-hidden="true"></i> Conference talks <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
   <ol>
   <li>Maxime Garcia, Olivier Stahl, Pascal Finetti, Daniel Birnbaum, François Bertucci, Ghislain Bidaut, <em>Biomarkers Discovery in Breast Cancer by Interactome-Transcriptome Integration</em>, Vienna, Austria, April 2011 [<a href="http://www.cibiv.at/workshops/masamb11/" target="_blank">MASAMB XXI</a>]</li>
   <li>Maxime Garcia, Olivier Stahl, Pascal Finetti, Daniel Birnbaum, François Bertucci, Ghislain Bidaut, <em>Biomarkers Discovery in Breast Cancer by Interactome-Transcriptome Integration</em>, Cambridge, UK, September 2010 [<a href="http://www.enm.bris.ac.uk/cig/cb/" target="_blank">Cancer Bioinformatics Whorkshop</a> - <a href="http://videolectures.net/cancerbioinformatics2010_garcia_bdbc/" target="_blank">videolectures.net</a>]</li>
   </ol>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
-  <p><strong><i class="fa fa-users fa-1x" aria-hidden="true"></i> Conference posters <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
+  <p><strong><i class="fa fa-file-image-o fa-1x" aria-hidden="true"></i> Conference posters <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></strong></p>
   <ol>
   <li>Maxime Garcia, Pelin Sahlén, Teresita Diaz de Ståhl, Jesper Eisfeldt, Szilveszter Juhos, Sebastian DiLorenzo, Malin Larsson, Pall Olason, Björn Nystedt, Monica Nistér, Max Käller, <em>Cancer Analysis Workflow Of Tumor/Normal Pairs At The National Genomics Infrastructure</em>, Djurö, Sweden, September 2016 [<a href="http://ki.se/en/research/retreat" target="_blank">The XVth KICancer Retreat 2016</a>]</li>
   <li>Maxime U Garcia, Marc-Antoine Parent, Touati Benoukraf, <em>Visualizing the DNA/DNA interactome using ChromoLens</em>, Singapore, Singapore, October 2013 [<a href="https://www.csi.nus.edu.sg/ws/event/frontiers-in-cancer-science-2013" target="_blank">Frontiers in Cancer Science 2013</a>]</li>
