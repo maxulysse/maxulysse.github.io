@@ -17,7 +17,7 @@ layout: default
     <h6 class="card-subtitle text-muted">Posted by {% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%Y-%m-%d" }}</h6>
   </div>
   <div class="card-block">
-    {{  content }}
+{{  content }}
   </div>
   <div class="card-block">
     <nav class="nav justify-content-center" aria-label="Page navigation">
@@ -40,7 +40,6 @@ layout: default
 {% endif %}
       </ul>
     </nav>
-    </div>
-{% include comments.html %}
   </div>
+{% include comments.html %}
 </div>
