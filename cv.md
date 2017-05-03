@@ -6,6 +6,7 @@ title: CV
 <div class="card">
   <div class="card-header"><h1>CV</h1></div>
   <div class="card-block">
+  <a name="top"></a>
   <p>Download: <a href="../files/CV-M-Garcia-2016.pdf" target="_blank">in pdf format</a></p>
   <h2>Education and Qualifications</h2>
   <table><tbody>
@@ -16,12 +17,12 @@ title: CV
     </tr>
     <tr>
       <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2013-2014:</strong></td>
-      <td width="80%">Research Associate in Bioinformatics at <a href="http://www.nus.edu.sg/" target="_blank">National University of Singapore</a>, <a href="http://www.csi.nus.edu.sg/" target="_blank">Cancer Science Institute of Singapore</a>.
+      <td width="80%">Research Associate in Bioinformatics at <a href="http://www.nus.edu.sg/" target="_blank">National University of Singapore</a>, <a href="https://www.csi.nus.edu.sg/" target="_blank">Cancer Science Institute of Singapore</a>.
       </td>
     </tr>
     <tr>
       <td width="20%"><strong><i class="fa fa-calendar-o" aria-hidden="true"></i> 2009-2013:</strong></td>
-      <td width="80%">PhD in Bioinformatics and Genomics at <a href="http://www.univ-amu.fr/" target="_blank">Aix-Marseille Université</a>, <a href="http://crcm.marseille.inserm.fr/" target="_blank">CRCM</a> - <a href="http://bioinformatique.marseille.inserm.fr/" target="_blank">CiBi Platform</a>, Marseille, <em>Biomarkers discovery in cancer by <a href="http://iti.sourceforge.net/" target="_blank">Interactome-Transcriptome Integration</a></em> (Intern management; Collaboration with MDs, PhDs, Research Engineers and socio-economic partner (IPSOGEN, now <a href="http://www.qiagenmarseille.com/" target="_blank">QIAGEN Marseille</a>); Presentations in international conferences (posters and talks); Parallel scripting; Project management; Oral and visual communication)
+      <td width="80%">PhD in Bioinformatics and Genomics at <a href="http://www.univ-amu.fr/" target="_blank">Aix-Marseille Université</a>, <a href="http://crcm.marseille.inserm.fr/" target="_blank">CRCM</a> - <a href="http://crcm.marseille.inserm.fr/en/technologicalplatforms/the-crcmintegrativebioinformaticsplatform-cibi/" target="_blank">CiBi Platform</a>, Marseille, <em>Biomarkers discovery in cancer by <a href="http://iti.sourceforge.net/" target="_blank">Interactome-Transcriptome Integration</a></em> (Intern management; Collaboration with MDs, PhDs, Research Engineers and socio-economic partner (IPSOGEN, now <a href="https://www.qiagen.com/fr/" target="_blank">QIAGEN Marseille</a>); Presentations in international conferences (posters and talks); Parallel scripting; Project management; Oral and visual communication)
       </td>
     </tr>
     <tr>
@@ -35,7 +36,7 @@ title: CV
 
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
 
-  <h2>Computers skills <a href="#">↑</a></h2>
+  <h2>Computers skills <a href="#top">↑</a></h2>
   <table>
   <tbody>
   <tr>
@@ -60,7 +61,7 @@ title: CV
   </table>
   <p> </p>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
-  <h2>Languages <a href="#">↑</a></h2>
+  <h2>Languages <a href="#top">↑</a></h2>
   <table>
   <tbody>
   <tr>
@@ -76,37 +77,37 @@ title: CV
   <p> </p>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
   <h2>Other Responsibilities</h2>
-  <h3>Scientific Society <a href="#">↑</a></h3>
+  <h3>Scientific Society <a href="#top">↑</a></h3>
   <table>
   <tbody>
   <tr>
-  <td>Member of the International Society of Computational Biology (<a href="http://www.iscb.org/" target="_blank">ISCB</a>)</td>
+  <td>Member of the International Society of Computational Biology (<a href="https://www.iscb.org/" target="_blank">ISCB</a>)</td>
   </tr>
   <tr>
-  <td>Member of the French Society of Bioinformatics (Société Française de BioInformatique : <a href="http://www.sfbi.fr/" target="_blank">SFBI</a>)</td>
+  <td>Member of the French Society of Bioinformatics (Société Française de BioInformatique : <a href="https://www.sfbi.fr/" target="_blank">SFBI</a>)</td>
   </tr>
   </tbody>
   </table>
   <p> </p>
   <div style="width: 100%; height: 1px; background-color: #000000; align: center;"></div>
-  <h3>Young Researchers Associations <a href="#">↑</a></h3>
+  <h3>Young Researchers Associations <a href="#top">↑</a></h3>
   <table>
   <tbody>
   <tr>
   <td width="20%"><strong>2012-2014</strong></td>
-  <td width="80%">Vice-president of <a href="http://jebif.fr/" target="_blank">JeBiF</a> - <a href="http://www.iscbsc.org/rsg/rsg-france">RSG-France</a> (Association of French Young Bioinformaticians)</td>
+  <td width="80%">Vice-president of <a href="https://jebif.fr/" target="_blank">JeBiF</a> - <a href="http://www.iscbsc.org/rsg/rsg-france">RSG-France</a> (Association of French Young Bioinformaticians)</td>
   </tr>
   <tr>
   <td><strong>2012-present</strong></td>
-  <td>Contributor to <a href="http://bioinfo-fr.net/" target="_blank">Bioinfo-fr.net</a> (Francophone blog on Bioinformatics)</td>
+  <td>Contributor to <a href="https://bioinfo-fr.net/" target="_blank">Bioinfo-fr.net</a> (Francophone blog on Bioinformatics)</td>
   </tr>
   <tr>
   <td><strong>2010-2011</strong></td>
-  <td>President of <a href="http://www.hippothese.asso.fr/" target="_blank">Hippo'Thèse</a> (Association of young researchers in Biology at Aix-Marseille University)</td>
+  <td>President of <a href="https://www.hippothese.asso.fr/" target="_blank">Hippo'Thèse</a> (Association of young researchers in Biology at Aix-Marseille University)</td>
   </tr>
   <tr>
   <td><strong>2010-2011</strong></td>
-  <td>Vice-president and webmaster of <a href="http://biotechno.eu/" target="_blank">BIOTechno Network</a> (French Network of Associations organizing forums about careers in Biotechnology)</td>
+  <td>Vice-president and webmaster of <a href="http://www.reseau-biotechno.com/" target="_blank">BIOTechno Network</a> (French Network of Associations organizing forums about careers in Biotechnology)</td>
   </tr>
   <tr>
   <td><strong>2009-2010</strong></td>
@@ -116,7 +117,7 @@ title: CV
   </table>
   <p> </p>
   <div style="width: 100%; height: 1px; background-color: #000000; align: center;"></div>
-  <h3>Events and Organisation <a href="#">↑</a></h3>
+  <h3>Events and Organisation <a href="#top">↑</a></h3>
   <table>
   <tbody>
   <tr>
@@ -143,7 +144,7 @@ title: CV
   </table>
   <p> </p>
   <div style="width: 100%; height: 1px; background-color: #000000; align: center;"></div>
-  <h3>Various <a href="#">↑</a></h3>
+  <h3>Various <a href="#top">↑</a></h3>
   <table>
   <tbody>
   <tr>
@@ -153,7 +154,7 @@ title: CV
   </table>
   <p> </p>
   <div style="width: 100%; height: 2px; background-color: #000000; align: center;"></div>
-  <h2>Interests <a href="#">↑</a></h2>
+  <h2>Interests <a href="#top">↑</a></h2>
   <p>Taï-Chi-Chuan, Cinema, Gardening, Roller</p>
   </div>
 </div>
