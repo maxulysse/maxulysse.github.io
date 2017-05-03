@@ -24,5 +24,5 @@ sitemap: false
   };
 </script>
 
-<script src="{{ "/js/lunr/lunr.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/search/search.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/lunr/lunr.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/search/search.js" | prepend: site.baseurl }}"></script>
