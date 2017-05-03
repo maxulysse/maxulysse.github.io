@@ -27,5 +27,7 @@ gems:
   - jekyll-sitemap
 
 exclude:
+  - [vendor]
   - "LICENSE"
   - "README.md"
+  - "scripts/test.sh"
