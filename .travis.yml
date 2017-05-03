@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.3.3
+
+script: ./script/test.sh
+
+branches:
+  only:
+  - master
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+sudo: false
