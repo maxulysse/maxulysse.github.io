@@ -11,7 +11,6 @@ Using:
 - [jquery](https://jquery.com/)
 - [lightbox](http://lokeshdhakar.com/projects/lightbox2/)
 - [lunr](https://lunrjs.com/)
-- [prism](http://prismjs.com/)
 - [staticman](https://staticman.net/)
 - [tether](http://tether.io/)
 
