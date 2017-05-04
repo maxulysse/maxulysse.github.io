@@ -7,9 +7,9 @@
  * @version  1.1
  */
 
- /* ==========================================================================
-    Initialisation
-    ========================================================================== */
+/* ==========================================================================
+Initialisation
+========================================================================== */
 
 var q, jsonFeedUrl = "/feeds/feed.json",
   $searchForm = $("[data-search-form]"),
@@ -32,9 +32,9 @@ $(document).ready( function() {
   initSearch();
 });
 
- /* ==========================================================================
-    Search functions
-    ========================================================================== */
+/* ==========================================================================
+Search functions
+========================================================================== */
 
 /**
  * Initiate search functionality.
@@ -120,9 +120,7 @@ function getResults(q) {
  */
 function execSearch(q) {
   if (q != '' || allowEmpty) {
-    if (showLoader) {
-      toggleLoadingClass();
-    }
+    if (showLoader) {toggleLoadingClass();}
     processResultData(getResults(q));
   }
 }
@@ -182,16 +180,14 @@ function showSearchResults(results) {
  * @return {String} Populated HTML
  */
 function populateResultContent(html, item) {
-  html = injectContent(html, item.title, '##Title##');
-  html = injectContent(html, item.link, '##Url##');
-  if(item.excerpt)
-    html = injectContent(html, item.excerpt, '##Excerpt##');
-  else
-    html = injectContent(html, "", '##Excerpt##');
-  if( item.date)
-    html = injectContent(html, item.date, '##Date##');
-  else
-    html = injectContent(html, "", '##Date##');
+  html = injectContent(html, item.title, '##title##');
+  html = injectContent(html, item.description, '##description##');
+  html = injectContent(html, item.date, '##date##');
+  html = injectContent(html, item.author, '##author##');
+  html = injectContent(html, item.tags, '##tags##');
+  html = injectContent(html, item.image, '##image##');
+  html = injectContent(html, item.url, '##url##');
+  html = injectContent(html, item.content, '##content##');
   return html;
 }
 
@@ -206,10 +202,9 @@ function populateResultsString(count) {
   $foundContainer.show();
 }
 
- /* ==========================================================================
-    Helper functions
-    ========================================================================== */
-
+/* ==========================================================================
+Helper functions
+========================================================================== */
 
 /**
  * Gets query string parameter - taken from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
