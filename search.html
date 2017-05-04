@@ -1,0 +1,28 @@
+---
+layout: page
+title: Search
+sitemap: false
+---
+
+<div class="alert alert-success" role="alert" data-search-found>
+  <strong><span data-search-found-count></span></strong> result(s) found for <strong>&ldquo;<span data-search-found-term></span>&rdquo;</strong>.
+</div>
+
+<div class="card-columns">
+  <div data-search-results></div>
+</div>
+
+<script type="text/x-template" id="search-result">
+  <div class="card">
+    <img class="card-img-top img-fluid" src="##image##" alt="##title##" title="##title##">
+    <div class="card-block">
+      <h4 class="card-title"><a href="##url##">##title##</a></h4>
+      <p class="card-text">##description##</p>
+      <p class="text-center"><a href="##url##" class="btn btn-primary">Read more</a></p>
+      <nav class="nav">
+        <div class="nav-link"><i class="fa fa-calendar" aria-hidden="true"></i><small class="text-muted"> ##date##</small></div>
+        <div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> ##tags##</small></div>
+      </nav>
+    </div>
+  </div>
+</script>
