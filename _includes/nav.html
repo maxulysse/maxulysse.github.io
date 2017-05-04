@@ -22,8 +22,8 @@
         <a class="nav-link" href="{{ "/about/" | prepend: site.baseurl }}">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="{{ "/search" | prepend:site.baseurl }}" method="get" role="search">
-      <input type="text" class="form-control" placeholder="Search for..." id="search-box" name="query">
+    <form class="navbar-form form-inline" action="{{ "/search" | prepend:site.baseurl }}" method="get" data-search-form>
+      <input type="text" class="form-control" placeholder="Search for..." id="search-box" name="q" data-search-input>
       <span class="input-group-btn">
         <button class="btn btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Go!</button>
       </span>
