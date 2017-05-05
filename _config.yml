@@ -23,9 +23,9 @@ sass:
   style: compact
 
 gems:
+  - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-feed
 
 exclude:
   - [vendor]
