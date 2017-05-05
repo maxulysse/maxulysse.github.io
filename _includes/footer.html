@@ -1,23 +1,19 @@
 <footer class="blog-footer">
-  <p>
-    <nav class="nav nav-footer justify-content-center">
-      <a class="nav-link" href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">
-        <i class="fa fa-rss fa-2x"></i>
-      </a>
-      {% for social_media in site.data.social_media %}
-      <a class="nav-link" href="{{ social_media.url }}" target="_blank">
-        {% if social_media.font_awesome %}
-          <i class="fa {{ social_media.font_awesome }} fa-2x"></i>
-        {% else %}
-          <i class="ai {{ social_media.academicons }} ai-2x"></i>
-        {% endif %}
-      </a>
-      {% endfor %}
-    </nav>
-  </p>
-  <p class="text-muted">
-    <small>
-      Under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><i class="fa fa-creative-commons fa-1x"></i></a> and powered by <a href="https://jekyllrb.com/">Jekyll</a>
-    </small>
-  </p>
+  <nav class="nav nav-footer justify-content-center">
+    <a class="nav-link" href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">
+      <i class="fa fa-rss fa-2x"></i>
+    </a>
+{% for social_media in site.data.social_media %}
+    <a class="nav-link" href="{{ social_media.url }}" target="_blank">
+{% if social_media.font_awesome %}
+      <i class="fa {{ social_media.font_awesome }} fa-2x"></i>
+{% else %}
+      <i class="ai {{ social_media.academicons }} ai-2x"></i>
+{% endif %}
+    </a>
+{% endfor %}
+  </nav>
+  <small>
+    Under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><i class="fa fa-creative-commons fa-1x"></i></a> and powered by <a href="https://jekyllrb.com/">Jekyll</a>
+  </small>
 </footer>
