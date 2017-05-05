@@ -22,9 +22,17 @@
         <a class="nav-link" href="{{ "/about/" | prepend: site.baseurl }}">About</a>
       </li>
     </ul>
-    <form class="navbar-form form-inline" action="{{ "/search" | prepend:site.baseurl }}" method="get" data-search-form>
-      <input class="form-control" type="text" name="q" placeholder="Search for..." id="search-box" data-search-input>
-      <button class="btn btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Go!</button>
-    </form>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+        <div class="input-group">
+          <form class="navbar-form form-inline" action="{{ "/search" | prepend:site.baseurl }}" method="get" data-search-form>
+            <input class="form-control" type="text" name="q" placeholder="Search for..." id="search-box" data-search-input>
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Go!</button>
+            </span>
+          </form>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>
