@@ -19,11 +19,11 @@ description: All post entries ordered by categories
   <div class="card-block">
 {% for tag in tags %}
     <p><a name="{{ tag | first | slugify }}"></a>&nbsp;</p>
-    <h3 class="archivetitle">
+    <h2 class="archivetitle">
       <span><i class="fa fa-tag" aria-hidden="true"></i></span>
       <span>{{ tag | first | replace:'-', ' ' }}</span>
       <span class="badge badge-default">{{ tag | last | size }}</span>
-    </h3>
+    </h2>
     <ul>
   {% for post in sorted_posts %}
     {% if post.categories contains tag[0] %}
