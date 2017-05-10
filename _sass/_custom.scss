@@ -17,6 +17,22 @@ body {
   @extend .d-block;
 }
 
+.item {
+  flex:1 0 auto;
+  padding: 10px auto;
+  width: 50%;
+  flex-grow:0;
+  flex-basis:50%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+@media all and (max-width: 550px) {
+  .flex-container {flex-flow:column wrap;}
+}
+
 .logo {
   height: 2.5em;
   width: 2.5em;
