@@ -1,7 +1,3 @@
-.navbar {
-  margin-bottom: 1.25rem;
-}
-
 .img-post {
   @extend .rounded;
   @extend .img-fluid;
@@ -9,152 +5,39 @@
   @extend .d-block;
 }
 
-.table-bordered-striped {
-  @extend .table-bordered;
-  @extend .table-striped;
-}
-
 .logo {
   height: 2.5em;
   width: 2.5em;
 }
 
+.navbar {
+  margin-bottom: 1.25rem;
+}
+
 .nav-footer {
   display: flex;
-	flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
-.ai-google-scholar {
+.footericon {
   color: gray;
   transition: transform 0.2s ease;
 }
-.ai-google-scholar:hover {
-  color: #4885ed;
+.footericon:hover {
   transform: scale(1.5);
 }
 
-.ai-mendeley {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.ai-mendeley:hover {
-  color: #b0112d;
-  transform: scale(1.5);
-}
-
-.ai-orcid {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.ai-orcid:hover {
-  color: #A6CE39;
-  transform: scale(1.5);
-}
-
-.ai-researchgate {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.ai-researchgate:hover {
-  color: #00d0b0;
-  transform: scale(1.5);
-}
-
-.fa-facebook {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-facebook:hover {
-  color: #3b5998;
-  transform: scale(1.5);
-}
-
-.fa-github {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-github:hover {
-  color: black;
-  transform: scale(1.5);
-}
-
-.fa-google-plus {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-google-plus:hover {
-  color: #db3236;
-  transform: scale(1.5);
-}
-
-.fa-instagram {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-instagram:hover {
-  color: black;
-  transform: scale(1.5);
-}
-
-.fa-linkedin {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-linkedin:hover {
-  color: #007bb6;
-  transform: scale(1.5);
-}
-
-.fa-reddit-alien {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-reddit-alien:hover {
-  color: #ff4500;
-  transform: scale(1.5);
-}
-
-.fa-certificate {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-certificate:hover {
-  color: #199efb;
-  transform: scale(1.5);
-}
-
-.fa-rss {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-rss:hover {
-  color: #ff6600;
-  transform: scale(1.5);
-}
-
-.fa-slideshare {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-slideshare:hover {
-  color: #007bb6;
-  transform: scale(1.5);
-}
-
-.fa-twitter {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-twitter:hover {
-  color: #4099ff;
-  transform: scale(1.5);
-}
-
-.fa-viadeo {
-  color: gray;
-  transition: transform 0.2s ease;
-}
-.fa-viadeo:hover {
-  color: #f07355;
-  transform: scale(1.5);
-}
+.ai-google-scholar:hover {color: #4885ed;}
+.ai-mendeley:hover {color: #b0112d;}
+.ai-orcid:hover {color: #A6CE39;}
+.ai-researchgate:hover {color: #00d0b0;}
+.fa-facebook:hover {color: #3b5998;}
+.fa-github:hover {color: black;}
+.fa-google-plus:hover {color: #db3236;}
+.fa-instagram:hover {color: black;}
+.fa-linkedin:hover {color: #007bb6;}
+.fa-reddit-alien:hover {color: #ff4500;}
+.fa-rss:hover {color: #ff6600;}
+.fa-slideshare:hover {color: #007bb6;}
+.fa-twitter:hover {color: #4099ff;}
+.fa-viadeo:hover {color: #f07355;}
