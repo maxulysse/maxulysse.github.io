@@ -17,7 +17,7 @@ body {
   @extend .d-block;
 }
 
-.item {
+.table-item {
   flex:1 0 auto;
   padding: 10px auto;
   width: 50%;
@@ -60,9 +60,9 @@ body {
 .ai-orcid:hover {color: #A6CE39;}
 .ai-researchgate:hover {color: #00d0b0;}
 .fa-facebook:hover {color: #3b5998;}
-.fa-github:hover {color: black;}
+.fa-github:hover {color: #000000;}
 .fa-google-plus:hover {color: #db3236;}
-.fa-instagram:hover {color: black;}
+.fa-instagram:hover {color: #000000;}
 .fa-linkedin:hover {color: #007bb6;}
 .fa-reddit-alien:hover {color: #ff4500;}
 .fa-rss:hover {color: #ff6600;}
