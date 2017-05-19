@@ -64,8 +64,7 @@ body {
   transition: transform 0.2s ease;
 }
 .mastodon-svg:hover {
-  height: 3em;
-  width: 3em;
+  transform: scale(1.5);
 }
 
 .nav-footer .ai-google-scholar:hover {color: #4885ed;}
