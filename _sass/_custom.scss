@@ -54,6 +54,19 @@ body {
 .footericon:hover {
   transform: scale(1.5);
 }
+.icon-2x {
+  height: 2em;
+  width: 2em;
+}
+
+.mastodon-svg {
+  color: gray;
+  transition: transform 0.2s ease;
+}
+.mastodon-svg:hover {
+  height: 3em;
+  width: 3em;
+}
 
 .nav-footer .ai-google-scholar:hover {color: #4885ed;}
 .nav-footer .ai-mendeley:hover {color: #b0112d;}
@@ -69,3 +82,4 @@ body {
 .nav-footer .fa-slideshare:hover {color: #007bb6;}
 .nav-footer .fa-twitter:hover {color: #4099ff;}
 .nav-footer .fa-viadeo:hover {color: #f07355;}
+.nav-footer .mastodon:hover {fill: #189efc;}

@@ -4,9 +4,9 @@
 - name: Twitter
   url: https://twitter.com/gau/
   font_awesome: fa-twitter
-# - name: Mastodon
-#   url: https://mastodon.cloud/@gau
-#   font_awesome: fa-mastodon
+- name: Mastodon
+  url: https://mastodon.cloud/@gau
+  custom: mastodon
 - name: LinkedIn
   url: https://www.linkedin.com/in/maxugarcia/
   font_awesome: fa-linkedin
