@@ -1,12 +1,12 @@
 - name: GitHub
   url: https://github.com/MaxUlysse/
   font_awesome: fa-github
-- name: Twitter
-  url: https://twitter.com/gau/
-  font_awesome: fa-twitter
 - name: Mastodon
   url: https://mastodon.cloud/@gau
   custom: mastodon
+- name: Twitter
+  url: https://twitter.com/gau/
+  font_awesome: fa-twitter
 - name: LinkedIn
   url: https://www.linkedin.com/in/maxugarcia/
   font_awesome: fa-linkedin
@@ -19,18 +19,18 @@
 - name: ORCID
   url: https://orcid.org/0000-0003-2827-9261
   academicons: ai-orcid
-- name: Mendeley
-  url: https://www.mendeley.com/profiles/maxime-garcia/
-  academicons: ai-mendeley
 - name: ResearchGate
   url: https://www.researchgate.net/profile/Maxime_Garcia
   academicons: ai-researchgate
-- name: reddit
-  url: https://www.reddit.com/user/maxUlysse
-  font_awesome: fa-reddit-alien
+- name: Mendeley
+  url: https://www.mendeley.com/profiles/maxime-garcia/
+  academicons: ai-mendeley
 - name: Viadeo
   url: https://www.viadeo.com/p/0021pms7gdguerlj
   font_awesome: fa-viadeo
+- name: reddit
+  url: https://www.reddit.com/user/maxUlysse
+  font_awesome: fa-reddit-alien
 - name: Facebook
   url: https://www.facebook.com/max.u.garcia/
   font_awesome: fa-facebook
