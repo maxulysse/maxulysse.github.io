@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Welcome to my new website !
+title: Welcome to my new website!
 description: I was beginning tired of Wordpress, so I decided to...
 date: 2017-05-23 17:00
 date_modified: 2017-05-23 17:00
