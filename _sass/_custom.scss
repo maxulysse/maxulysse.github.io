@@ -82,3 +82,13 @@ body {
 .nav-footer .fa-twitter:hover {color: #4099ff;}
 .nav-footer .fa-viadeo:hover {color: #f07355;}
 .nav-footer .mastodon:hover {fill: #189efc;}
+
+#author-avatar {
+  float: left;
+  margin-right: 1em;
+}
+
+#author-info {
+  list-style: none;
+  padding-left: 1.25em;
+}

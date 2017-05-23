@@ -10,6 +10,7 @@ group :jekyll_plugins do
    gem "jekyll-minifier"
    gem "jekyll-paginate"
    gem "jekyll-sitemap"
+   gem "jekyll-gravatar"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
