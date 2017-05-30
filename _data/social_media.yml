@@ -13,6 +13,9 @@
 - name: SlideShare
   url: https://www.slideshare.net/MaxUlysse
   font_awesome: fa-slideshare
+- name: Viadeo
+  url: https://www.viadeo.com/p/0021pms7gdguerlj
+  font_awesome: fa-viadeo
 - name: GoogleSchoolar
   url: https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
   academicons: ai-google-scholar
@@ -25,9 +28,6 @@
 - name: Mendeley
   url: https://www.mendeley.com/profiles/maxime-garcia/
   academicons: ai-mendeley
-- name: Viadeo
-  url: https://www.viadeo.com/p/0021pms7gdguerlj
-  font_awesome: fa-viadeo
 - name: reddit
   url: https://www.reddit.com/user/maxUlysse
   font_awesome: fa-reddit-alien
