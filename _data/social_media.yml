@@ -1,6 +1,9 @@
 - name: GitHub
   url: https://github.com/MaxUlysse/
   font_awesome: fa-github
+- name: Stack Exchange
+  url: https://stackexchange.com/users/2204471/maxulysse/
+  font_awesome: fa-stack-exchange
 - name: Mastodon
   url: https://mastodon.cloud/@gau
   custom: mastodon
@@ -16,7 +19,7 @@
 - name: Viadeo
   url: https://www.viadeo.com/p/0021pms7gdguerlj
   font_awesome: fa-viadeo
-- name: GoogleSchoolar
+- name: Google Schoolar
   url: https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
   academicons: ai-google-scholar
 - name: ORCID
@@ -34,7 +37,7 @@
 - name: Facebook
   url: https://www.facebook.com/max.u.garcia/
   font_awesome: fa-facebook
-- name: Google+
+- name: Google +
   url: https://plus.google.com/+MaximeGarcia
   font_awesome: fa-google-plus
 - name: Instagram
