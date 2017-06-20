@@ -24,7 +24,7 @@ sass:
 
 gems:
   - jekyll-feed
-  - jekyll-gravatar
+  - jekyll-avatar
   - jekyll-minifier
   - jekyll-paginate
   - jekyll-sitemap
