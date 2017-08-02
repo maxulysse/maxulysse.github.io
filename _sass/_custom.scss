@@ -49,10 +49,10 @@ body {
 
 .footericon {
   color: gray;
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
 }
 .footericon:hover {
-  transform: scale(1.8);
+  transform: scale(2.5);
 }
 .icon-2x {
   height: 2em;
@@ -61,10 +61,10 @@ body {
 
 .mastodon-svg {
   color: gray;
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
 }
 .mastodon-svg:hover {
-  transform: scale(1.8);
+  transform: scale(2.5);
 }
 
 .nav-footer .ai-google-scholar:hover {color: #4885ED;}
