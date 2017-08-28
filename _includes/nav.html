@@ -1,38 +1,19 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-light bg-light">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="{{ "/" | prepend:site.baseurl }}"><img class="brand-image logo" src="{{ "/img/logo/logo.png" | prepend: site.baseurl }}" alt="Logo"/> <strong>{{ site.title }}</strong></a>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ "/cv/" | prepend: site.baseurl }}">CV</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ "/publications/" | prepend: site.baseurl }}">Publications</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ "/categories/" | prepend: site.baseurl }}">Categories</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ "/archive/" | prepend: site.baseurl }}">Archive</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ "/about/" | prepend: site.baseurl }}">About</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item">
-        <div class="input-group">
-          <form class="navbar-form form-inline" action="{{ "/search" | prepend:site.baseurl }}" method="get" data-search-form>
-            <input class="form-control" type="text" name="q" placeholder="Search for..." id="search-box" data-search-input>
-            <span class="input-group-btn">
-              <button class="btn btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Go!</button>
-            </span>
-          </form>
-        </div>
-      </li>
-    </ul>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="{{ "/cv/" | prepend: site.baseurl }}">CV</a>
+      <a class="nav-item nav-link" href="{{ "/publications/" | prepend: site.baseurl }}">Publications</a>
+      <a class="nav-item nav-link" href="{{ "/categories/" | prepend: site.baseurl }}">Categories</a>
+      <a class="nav-item nav-link" href="{{ "/archive/" | prepend: site.baseurl }}">Archive</a>
+      <a class="nav-item nav-link" href="{{ "/about/" | prepend: site.baseurl }}">About</a>
+    </div>
+    <form class="form-inline" action="{{ "/search" | prepend:site.baseurl }}" method="get" data-search-form>
+      <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search for..." id="search-box" data-search-input aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Go!</button>
+    </form>
   </div>
 </nav>
