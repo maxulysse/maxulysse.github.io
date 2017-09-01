@@ -41,7 +41,7 @@
 {% if page.thumbnail %}
   <meta property="og:image" content="{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}">
   <meta name="twitter:image:src" content="{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}">
-  {% else %}
+{% else %}
   <meta property="og:image" content="{{ "/img/favicons/apple-touch-icon.png" | prepend: site.baseurl | prepend: site.url }}">
   <meta name="twitter:image:src" content="{{ "/img/favicons/apple-touch-icon.png" | prepend: site.baseurl | prepend: site.url }}">
 {% endif %}
