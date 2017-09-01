@@ -9,7 +9,7 @@ layout: default
   {% if post.image.path %}
     <img class="card-img-top img-fluid" src="{{ post.image.path | prepend: site.baseurl }}" alt="{{ post.title }}" title="{{ post.title }}">
   {% endif %}
-    <div class="card-block">
+    <div class="card-body">
   {% if post.title %}
       <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="card-title">{{ post.title }}</h4></a>
   {% endif %}
@@ -31,7 +31,7 @@ layout: default
   </div>
 {% endfor %}
 </div>
-<div class="card-block">
+<div class="card-body">
   <nav aria-label="..." class="nav justify-content-center">
     <ul class="pagination">
 {% if paginator.previous_page %}

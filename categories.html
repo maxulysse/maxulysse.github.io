@@ -5,8 +5,8 @@ description: All post entries ordered by categories
 ---
 
 <div class="card">
-  <div class="card-header"><h1>Categories</h1></div>
-  <div class="card-block">
+  <h3 class="card-header">Categories</h3>
+  <div class="card-body">
 {% assign tags = site.categories | sort %}
 {% assign sorted_posts = site.posts | sort: 'title' %}
     <div>
@@ -16,7 +16,7 @@ description: All post entries ordered by categories
     </div>
   </div>
   <hr>
-  <div class="card-block">
+  <div class="card-body">
 {% for tag in tags %}
     <p><a name="{{ tag | first | slugify }}"></a>&nbsp;</p>
     <h2 class="archivetitle">
