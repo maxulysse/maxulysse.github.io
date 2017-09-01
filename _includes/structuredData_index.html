@@ -1,11 +1,11 @@
 <script type="application/ld+json">
-{ "@context": "http://schema.org", 
+{ "@context": "http://schema.org",
  "@type": "Blog",
- "keywords": "{{ site.description }}", 
+ "keywords": "{{ site.description }}",
  "url": "{{ site.baseurl | prepend: site.url }}",
  "potentialAction": {
     "@type": "SearchAction",
-    "target": "{{ "/search/" | prepend:site.baseurl | prepend:site.url }}?query={search_term_string}",
+    "target": "{{ "/search/" | prepend:site.baseurl | prepend:site.url }}?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
  "mainEntityOfPage": {
@@ -20,7 +20,7 @@
         "https://github.com/{{ site.author.github }}"
     ]
   },
-  "image":{  
+  "image":{
       "@type":"ImageObject",
       "url":"{{ site.logo.path | prepend: site.baseurl | prepend: site.url }}",
       "width":"{{ site.logo.width }}",
