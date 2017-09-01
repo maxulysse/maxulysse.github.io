@@ -5,21 +5,22 @@ description: Search page
 sitemap: false
 ---
 
-<div class="alert alert-success" role="alert" data-search-found>
-  <strong><span data-search-found-count></span></strong> result(s) found for <strong>&ldquo;<span data-search-found-term></span>&rdquo;</strong>.
-</div>
-<div class="card-columns"><div data-search-results></div></div>
-<script type="text/x-template" id="search-result">
-  <div class="card">
-    <img class="card-img-top img-fluid" src="##image##" alt="##title##" title="##title##">
-    <div class="card-block">
-      <h3 class="card-title"><a href="##url##">##title##</a></h3>
-      <p class="card-text">##description##</p>
-      <p class="text-center"><a href="##url##" class="btn btn-primary">Read more</a></p>
-      <nav class="nav">
-        <div class="nav-link"><i class="fa fa-calendar-o" aria-hidden="true"></i><small class="text-muted"> ##date##</small></div>
-        <div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> ##tags##</small></div>
-      </nav>
+<div class="card">
+  <h3 class="card-header">Looking for something?</h3>
+  <h6 class="card-subtitle mb-2 text-muted alert alert-success"><strong><span data-search-found-count></span></strong> result(s) found for <strong>&ldquo;<span data-search-found-term></span>&rdquo;</strong></h6>
+  <div class="card-columns"><div data-search-results></div></div>
+  <script type="text/x-template" id="search-result">
+    <div class="card">
+      <img class="card-img-top img-fluid" src="##image##" alt="##title##" title="##title##">
+      <div class="card-body">
+        <h3 class="card-title"><a href="##url##">##title##</a></h3>
+        <p class="card-text">##description##</p>
+        <p class="text-center"><a href="##url##" class="btn btn-primary">Read more</a></p>
+        <nav class="nav">
+          <div class="nav-link"><i class="fa fa-calendar-o" aria-hidden="true"></i><small class="text-muted"> ##date##</small></div>
+          <div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> ##tags##</small></div>
+        </nav>
+      </div>
     </div>
   </div>
 </script>

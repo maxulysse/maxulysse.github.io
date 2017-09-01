@@ -25,6 +25,11 @@ body {
   flex-basis:50%;
 }
 
+.table-bordered-striped {
+  @extend .table-bordered;
+  @extend .table-striped;
+}
+
 .flex-container {
   display: flex;
 }
@@ -49,10 +54,10 @@ body {
 
 .footericon {
   color: gray;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 .footericon:hover {
-  transform: scale(2.5);
+  transform: scale(1.5);
 }
 .icon-2x {
   height: 2em;
@@ -61,10 +66,10 @@ body {
 
 .mastodon-svg {
   color: gray;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 .mastodon-svg:hover {
-  transform: scale(2.5);
+  transform: scale(1.5);
 }
 
 .nav-footer .ai-google-scholar:hover {color: #4885ED;}

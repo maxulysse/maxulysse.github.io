@@ -9,17 +9,26 @@ layout: default
 {% assign modified = page.date %}
 {% endif %}
 
-{% include structuredData_blogpost.html headline=page.title categories=page.categories author=author description=page.description datePublished=page.date dateModified=modified image=page.image content=page.content link=page.url %}
+{%
+  include structuredData_blogpost.html
+  headline=page.title
+  categories=page.categories
+  author=author
+  description=page.description
+  datePublished=page.date
+  dateModified=modified
+  image=page.image
+  content=page.content
+  link=page.url
+%}
 
-<div class="card">
-  <h1 class="card-header">{{ page.title }}</h1>
-  <div class="card-block">
-    <h6 class="card-subtitle text-muted">Posted by {% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%Y-%m-%d" }}</h6>
-  </div>
-  <div class="card-block">
+<div class="card rounded">
+    <div class="card-header">
+      <h1 class="card-title">{{ page.title }}</h1>
+      <h6 class="card-subtitle mb-2 text-muted">Posted by {% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</h6>
+    </div>
+    <div class="card-body">
 {{  content }}
-  </div>
-  <div class="card-block">
     <nav class="nav justify-content-center" aria-label="Page navigation">
       <ul class="pagination">
 {% if page.previous.url %}

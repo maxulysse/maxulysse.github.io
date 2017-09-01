@@ -11,8 +11,8 @@ Using:
 - [jquery](https://jquery.com/)
 - [lightbox](http://lokeshdhakar.com/projects/lightbox2/)
 - [lunr](https://lunrjs.com/)
+- [popper](https://popper.js.org/)
 - [staticman](https://staticman.net/)
-- [tether](http://tether.io/)
 
 Inspired by:
 - [tips-tutorials](https://github.com/dalanzg/tips-tutorials)

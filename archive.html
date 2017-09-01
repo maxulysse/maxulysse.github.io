@@ -5,8 +5,8 @@ description: All post entries ordered by date
 ---
 
 <div class="card">
-  <div class="card-header"><h1>Archive</h1></div>
-  <div class="card-block">
+  <h3 class="card-header">Archive</h3>
+  <div class="card-body">
 {% for post in site.posts %}
   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
   {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
@@ -15,7 +15,7 @@ description: All post entries ordered by date
   {% if forloop.first %}
   <div class="card">
     <div class="card-header"><h3>Year {{ this_year }}</h3></div>
-    <div class="card-block">
+    <div class="card-body">
       <h4>{{ this_month }}</h4>
       <ul>
   {% endif %}
@@ -33,7 +33,7 @@ description: All post entries ordered by date
   </div>
   <div class="card">
     <div class="card-header"><h3>Year {{ next_year }}</h3></div>
-    <div class="card-block">
+    <div class="card-body">
       <h4>{{ next_month }}</h4>
       <ul>
     {% else %}
