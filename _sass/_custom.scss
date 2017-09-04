@@ -10,6 +10,10 @@ body {
   padding-top: 1.25rem;
 }
 
+.card-columns {
+  column-count: 1;
+}
+
 .img-post {
   @extend .rounded;
   @extend .img-fluid;
