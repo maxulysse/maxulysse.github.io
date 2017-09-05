@@ -19,9 +19,9 @@ order: 4
       <h3>{{ this_month }}</h3>
       <ul>
   {% endif %}
-      <li>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>  •  <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-      </li>
+        <li>
+          <span>{{ post.date | date: "%Y-%m-%d" }}:</span> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </li>
   {% if forloop.last %}
       </ul>
     </div>
@@ -45,6 +45,4 @@ order: 4
     {% endif %}
   {% endif %}
 {% endfor %}
-    </div>
-  </div>
 </div>
