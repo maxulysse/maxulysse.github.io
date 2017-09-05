@@ -2,20 +2,18 @@
 layout: page
 title: About
 description: About me
+category: navigation
+order: 6
 ---
-
-<div class="card">
-  <h3 class="card-header">About</h3>
-  <div class="card-body">
-    <div class="card-text">
-      <div class="sticky post" >
-        <div class="entry">
-          <div id="author-avatar">
-            {% avatar MaxUlysse size=150 %}
-          </div>
-          <div id="author-info">
-            <p>I'm Maxime Garcia, a bioinformatician in Stockholm, and this is my personnal site. I’m interested in Reproducible Research, Automation, Data Integration, Visualization and much more...</p>
-          </div>
+<div class="card-columns">
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <div class="sticky post">
+        <div id="author-avatar">
+          {% avatar MaxUlysse size=150 %}
+        </div>
+        <div class="card-text">
+          <p>I'm Maxime Garcia, a bioinformatician in Stockholm, and this is my personnal site. I’m interested in Reproducible Research, Automation, Data Integration, Visualization and much more...</p>
         </div>
       </div>
     </div>
