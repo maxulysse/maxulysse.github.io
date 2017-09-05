@@ -8,10 +8,6 @@
 {% include footer.html %}
   </div>
 {% include javascript.html %}
-{% if page.layout == 'post' %}
-    <!-- lightbox -->
-    <script src="{{ "/js/lightbox/lightbox.min.js" | prepend: site.baseurl }}"></script>
-{% endif %}
 {% if page.url == '/search/' %}
     <!-- lunr -->
     <script src="{{ "/js/lunr/lunr.min.js" | prepend: site.baseurl }}"></script>

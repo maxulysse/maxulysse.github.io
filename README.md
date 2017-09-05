@@ -9,7 +9,6 @@ Using:
 - [font-awesome](http://fontawesome.io/)
 - [jekyll-search](https://github.com/RishikeshDarandale/jekyll-search)
 - [jquery](https://jquery.com/)
-- [lightbox](http://lokeshdhakar.com/projects/lightbox2/)
 - [lunr](https://lunrjs.com/)
 - [popper](https://popper.js.org/)
 - [staticman](https://staticman.net/)
