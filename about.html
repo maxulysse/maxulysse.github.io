@@ -5,17 +5,41 @@ description: About me
 category: navigation
 order: 6
 ---
+
 <div class="card-columns">
-  <div class="card" style="width: 30rem;">
-    <div class="card-body">
-      <div class="sticky post">
+  <div class="card-deck">
+
+    <div class="card">
+      <div class="card-header"><h2>Maxime Garcia</h2></div>
+      <div class="card-body">
         <div id="author-avatar">
           {% avatar MaxUlysse size=150 %}
         </div>
-        <div class="card-text">
-          <p>I'm Maxime Garcia, a bioinformatician in Stockholm, and this is my personnal site. I’m interested in Reproducible Research, Automation, Data Integration, Visualization and much more...</p>
+        <div class="card-text"><p>
+          I'm a bioinformatician in Stockholm, and this is my personnal site.
+          <br>
+          I’m interested in Reproducible Research, Automation, Data Integration, Visualization and much more...
+        </p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><h2>The owl</h2></div>
+      <div class="card-body">
+        <div id="author-avatar">
+          <img class="avatar" src="{{ "/img/logo/logo.png" | prepend: site.baseurl }}" alt="Owl" width="150" height="150" data-proofer-ignore="true"/>
+        </div>
+        <div class="card-text"><p>
+          The owl is the symbol of Athena or Minerva.
+          <br>
+          Athena who protected Ulysses during his journey.
+          <br>
+          This owl is made from an idea I had, magnified and drawn by Célia.
+          <br>
+          Then later vectorized via Inkscape by my own hands.
         </div>
       </div>
     </div>
+
   </div>
 </div>

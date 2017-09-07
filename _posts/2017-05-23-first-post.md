@@ -3,7 +3,6 @@ layout: post
 title: Welcome to my new website!
 description: I was getting tired of Wordpress, so I decided to...
 date: 2017-05-23 17:00
-date_modified: 2017-05-25 16:00
 categories: [Jekyll]
 tags:
   - Jekyll
