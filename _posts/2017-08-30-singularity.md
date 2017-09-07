@@ -4,7 +4,7 @@ title: CAW with Singularity!
 description: Yes we can run CAW with Singularity
 date: 2017-08-30 17:00
 date_modified: 2017-08-30 16:00
-categories: [Beamer,Containers,Nextflow,Singularity]
+categories: [Beamer, Containers, Nextflow, Singularity]
 tags:
   - Beamer
   - Containers
