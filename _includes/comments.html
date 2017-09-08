@@ -1,3 +1,4 @@
+
 <div class="card">
   <div class="card-header">
     <h1 class="card-title">Leave a Reply</h1>
@@ -7,25 +8,34 @@
     <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
       <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
       <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-      <p><label for="comment">Comment</label>
-        <br />
-        <textarea name="fields[message]" style="width: 30rem;" rows="8" maxlength="65525"></textarea>
-      </p>
-      <p><label for="author">Name: <span class="required">*</span></label>
-        <br />
-        <input id="author" name="fields[name]" type="text" value="" style="width: 30rem;" maxlength="245"/>
-      </p>
-      <p><label for="email">Email: <span class="required">*</span></label>
-        <br />
-        <input id="email" name="fields[email]" type="text" value="" style="width: 30rem;" maxlength="100" aria-describedby="email-notes"/>
-      </p>
-      <p><label for="url">Website:</label>
-        <br />
-        <input id="url" name="fields[url]" type="text" value="" style="width: 30rem;" maxlength="200"/>
-      </p>
-      <br />
-      <button class="btn btn-primary" type="submit">Comment <span class="fa fa-comment" aria-hidden="true"></span></button>
+      <div class="form-group row">
+        <label for="comment" class="col-sm-2 col-form-label">Comment:</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" name="fields[message]" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="author" class="col-sm-2 col-form-label">Name: <span class="required">*</span></label>
+        <div class="col-sm-10">
+          <input name="fields[name]" type="text" class="form-control" id="author" placeholder="Enter name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email address: <span class="required">*</span></label>
+        <div class="col-sm-10">
+          <input id="email" name="fields[email]" type="email" class="form-control" aria-describedby="email-notes" placeholder="Enter email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="url" class="col-sm-2 col-form-label">Website:</label>
+        <div class="col-sm-10">
+          <input name="fields[url]" type="text" class="form-control" id="url" placeholder="Enter url">
+        </div>
+      </div>
+      <button class="btn btn-outline-primary" type="submit">Comment <span class="fa fa-comment" aria-hidden="true"></span></button>
     </form>
-    <p><small><span><i class="fa fa-comments fa-1x" aria-hidden="true"></i> powered by <a href="https://staticman.net/" target="_blank">staticman</a></span></small></p>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted"><i class="fa fa-comments fa-1x" aria-hidden="true"></i> powered by <a href="https://staticman.net/" target="_blank">staticman</a></small>
   </div>
 </div>
