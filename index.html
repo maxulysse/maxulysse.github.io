@@ -7,7 +7,7 @@ layout: default
 {% for post in paginator.posts %}
   <div class="card">
   {% if post.image.path %}
-    <img class="card-img-top img-fluid" src="{{ post.image.path | prepend: site.baseurl }}" alt="{{ post.title }}" title="{{ post.title }}">
+    <div class="card-header bg-light"><img class="card-img-top img-fluid" src="{{ post.image.path | prepend: site.baseurl }}" alt="{{ post.title }}" title="{{ post.title }}"></div>
   {% endif %}
     <div class="card-body">
   {% if post.title %}
@@ -19,14 +19,17 @@ layout: default
   {% if post.url %}
       <p class="text-center"><a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-outline-primary">Read more</a></p>
   {% endif %}
-      <nav class="nav">
-  {% if post.date %}
-        <div class="nav-link"><i class="fa fa-calendar-o" aria-hidden="true"></i><small class="text-muted"> {{ post.date | date: "%d/%m/%Y" }}</small></div>
+    </div>
+    <div class="card-footer">
+  {% if post.date and post.tags %}
+      <small class="text-muted"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}</small>
+      <br>
+      <small class="text-muted"><i class="fa fa-tags" aria-hidden="true"></i> {{ post.categories | join: ', ' }}</small>
+  {% else if post.date and !post.tags %}
+      <small class="text-muted"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}</small>
+  {% else if !post.date and post.tags %}
+      <small class="text-muted"><i class="fa fa-tags" aria-hidden="true"></i> {{ post.categories | join: ', ' }}</small>
   {% endif %}
-  {% if post.tags %}
-        <div class="nav-link"><i class="fa fa-tags" aria-hidden="true"></i><small class="text-muted"> {{ post.categories | join: ', ' }}</small></div>
-  {% endif %}
-      </nav>
     </div>
   </div>
 {% endfor %}
