@@ -3,12 +3,11 @@ layout: post
 title: Welcome to my new website!
 description: I was getting tired of Wordpress, so I decided to...
 date: 2017-05-23 17:00
-categories: [Jekyll]
 tags:
   - Jekyll
 author: maxulysse
 image:
-  path: /img/category/jekyll.png
+  path: /assets/img/category/jekyll.png
 ---
 
 ## Hello world!
