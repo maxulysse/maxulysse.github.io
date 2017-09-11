@@ -3,15 +3,14 @@ layout: post
 title: Good read of the day!
 description: Very interesting post about censoring in science
 date: 2017-09-07 14:00
-categories: [Reading, Article, Science, Zimmer]
 tags:
-  - Reading
   - Article
+  - Reading
   - Science
   - Zimmer
 author: maxulysse
 image:
-  path: /img/category/books.png
+  path: /assets/img/category/books.png
 ---
 
 Interesting read of the day by the excellent Carl Zimmer on medium: <a href="https://medium.com/@carlzimmer/lets-not-lose-our-minds-c5dcac29e97f" target="_blank">Let’s Not Lose Our Minds</a>.

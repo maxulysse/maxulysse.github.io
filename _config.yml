@@ -8,7 +8,7 @@ author:
   github: maxulysse
 
 logo:
-  path: "/img/favicons/android-chrome-192x192.png"
+  path: "/assets/img/favicons/android-chrome-192x192.png"
   width: 192
   height: 192
 
@@ -28,8 +28,11 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
 
+include:
+  - "_pages"
+
 exclude:
   - [vendor]
   - "LICENSE"
   - "README.md"
-  - "scripts/test.sh"
+  - "assets/scripts/test.sh"
