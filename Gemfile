@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem "html-proofer"
   gem "jekyll-feed"
   gem "jekyll-gist"
+  gem "jekyll-minifier"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
 end
