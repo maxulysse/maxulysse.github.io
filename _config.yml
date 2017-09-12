@@ -14,7 +14,7 @@ logo:
 
 highlighter: rouge
 markdown: kramdown
-paginate: 12
+paginate: 6
 permalink: pretty
 theme: jekyll-theme-minimal
 
