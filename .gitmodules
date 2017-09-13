@@ -1,0 +1,3 @@
+[submodule "assets/presentations"]
+	path = assets/presentations
+	url = git@github.com:MaxUlysse/Presentations.git
