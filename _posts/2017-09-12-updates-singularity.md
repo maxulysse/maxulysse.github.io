@@ -15,4 +15,4 @@ image:
   path: /assets/img/category/CAW.png
 ---
 
-I made some updates on my presentation [<i class="fa fa-file-pdf-o" aria-hidden="true"></i>](https://github.com/MaxUlysse/Presentations/blob/master/MGarcia-20170920-DNAClub.pdf) about using CAW with Singularity on a secure cluster.
+I made some updates on my presentation [<i class="fa fa-file-pdf-o" aria-hidden="true"></i>]({{ site.url }}/assets/presentations/MGarcia-20170920-DNAClub.pdf) about using CAW with Singularity on a secure cluster.
