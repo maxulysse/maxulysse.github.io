@@ -12,8 +12,7 @@ author: maxulysse
 image:
   path: /assets/img/category/books.png
 ---
-
-Interesting read of the day by the excellent Carl Zimmer on medium: <a href="https://medium.com/@carlzimmer/lets-not-lose-our-minds-c5dcac29e97f" target="_blank">Let’s Not Lose Our Minds</a>.
+Interesting read of the day by the excellent Carl Zimmer on medium: [Let’s Not Lose Our Minds](https://medium.com/@carlzimmer/lets-not-lose-our-minds-c5dcac29e97f)
 
 He makes a beautiful parallel between Lysenko and his view controlling the research in genetics during the USSR old days and current situation in the USA with climate change.
 
