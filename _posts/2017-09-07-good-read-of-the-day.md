@@ -10,7 +10,7 @@ tags:
   - Zimmer
 author: maxulysse
 image:
-  path: /assets/img/category/books.png
+  path: /assets/img/category/books.jpg
 ---
 Interesting read of the day by the excellent Carl Zimmer on medium: [Let’s Not Lose Our Minds](https://medium.com/@carlzimmer/lets-not-lose-our-minds-c5dcac29e97f)
 
