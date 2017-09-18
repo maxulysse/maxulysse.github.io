@@ -2,7 +2,7 @@
 layout: post
 title: Amazing Story!
 description: Quite amazing story on how Dr Mary-Claire King handles problems and secure a grant
-date: 2017-09-07 14:00
+date: 2017-09-18 11:00
 tags:
   - Article
   - Reading
