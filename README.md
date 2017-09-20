@@ -1,7 +1,7 @@
 # maxulysse.github.io
 My own jekyll personnal website
 
-[![Travis status][travis-badge]][travis-link]
+[![Licence][licence-badge]][licence-link] [![Travis status][travis-badge]][travis-link]
 
 Using:
 - [academicons](https://jpswalsh.github.io/academicons/)
@@ -16,5 +16,7 @@ Using:
 Inspired by:
 - [tips-tutorials](https://github.com/dalanzg/tips-tutorials)
 
+[licence-badge]: https://img.shields.io/github/license/MaxUlysse/maxulysse.github.io.svg
+[license-link]: https://github.com/MaxUlysse/maxulysse.github.io/blob/master/LICENSE
 [travis-badge]: https://api.travis-ci.org/MaxUlysse/maxulysse.github.io.svg
 [travis-link]: https://travis-ci.org/MaxUlysse/maxulysse.github.io
