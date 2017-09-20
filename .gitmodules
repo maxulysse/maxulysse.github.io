@@ -1,3 +1,6 @@
 [submodule "assets/presentations"]
 	path = assets/presentations
 	url = https://github.com/MaxUlysse/Presentations.git
+[submodule "assets/mycv"]
+	path = assets/mycv
+	url = https://github.com/MaxUlysse/myCV.git
