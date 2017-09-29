@@ -6,3 +6,10 @@
 
 <!-- bootstrap -->
 <script type="text/javascript" src="/assets/js/bootstrap/bootstrap.min.js"></script>
+
+{% if page.title == 'Search' %}
+<!-- lunr -->
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<!-- jekyll-search -->
+<script src="/assets/js/search/search.js"></script>
+{% endif %}

@@ -21,7 +21,7 @@ order: 3
   <div class="card-columns">
   {% for tag in tags %}
   <div class="card">
-      <div class="card-header archivetitle">
+      <div class="card-header">
         <a name="{{ tag | first | slugify }}"></a>
         <span><i class="fa fa-tag" aria-hidden="true"></i></span>
         <span>{{ tag | first | replace:'-', ' ' }}</span>

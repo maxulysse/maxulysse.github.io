@@ -7,42 +7,34 @@ permalink: archive.html
 order: 4
 ---
 
-<div class="card-columns only-one-column">
+<div class="card-columns">
 {% for post in site.posts %}
   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
   {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-  {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
   {% if forloop.first %}
   <div class="card">
-    <div class="card-header"><h2>{{ this_year }}</h2></div>
-    <div class="card-body">
-      <h3><span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ this_month }}</h3>
-      <ul>
-  {% endif %}
-        <li>
-          <span>{{ post.date | date: "%Y-%m-%d" }}:</span> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </li>
-  {% if forloop.last %}
-      </ul>
+    <div class="card-header">
+      <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+      {{ this_year }}
     </div>
+    <ul class="list-group list-group-flush">
+  {% endif %}
+      <li class="list-group-item">
+        • {{ post.date | date: "%Y-%m-%d" }}: <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+  {% if forloop.last %}
+    </ul>
   </div>
   {% else %}
     {% if this_year != next_year %}
-      </ul>
-    </div>
+    </ul>
   </div>
   <div class="card">
-    <div class="card-header"><h2>{{ next_year }}</h2></div>
-    <div class="card-body">
-      <h3><span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ next_month }}</h3>
-      <ul>
-    {% else %}
-      {% if this_month != next_month %}
-      </ul>
-      <h3><span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ next_month }}</h3>
-      <ul>
-      {% endif %}
+    <div class="card-header">
+      <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+      {{ next_year }}
+    </div>
+    <ul class="list-group list-group-flush">
     {% endif %}
   {% endif %}
 {% endfor %}
