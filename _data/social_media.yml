@@ -6,7 +6,10 @@
   font_awesome: fa-stack-exchange
 - name: Mastodon
   url: https://mastodon.cloud/@gau
-  custom: mastodon
+  mastodon: custom
+- name: Keybase
+  url: https://keybase.io/maxulysse
+  keybase: custom
 - name: Twitter
   url: https://twitter.com/gau/
   font_awesome: fa-twitter

@@ -68,6 +68,14 @@ body {
   width: 2em;
 }
 
+.keybase-svg {
+  color: gray;
+  transition: transform 0.3s ease;
+}
+.keybase-svg:hover {
+  transform: scale(1.5);
+}
+
 .mastodon-svg {
   color: gray;
   transition: transform 0.3s ease;
@@ -83,15 +91,16 @@ body {
 .nav-footer .fa-facebook:hover {color: #3B5998;}
 .nav-footer .fa-github:hover {color: #000000;}
 .nav-footer .fa-google-plus:hover {color: #DB3236;}
-.nav-footer .fa-stack-exchange:hover {color: #4CA2DA;}
 .nav-footer .fa-instagram:hover {color: #000000;}
 .nav-footer .fa-linkedin:hover {color: #007BB6;}
 .nav-footer .fa-reddit-alien:hover {color: #FF4500;}
 .nav-footer .fa-rss:hover {color: #FF6600;}
 .nav-footer .fa-slideshare:hover {color: #007BB6;}
+.nav-footer .fa-stack-exchange:hover {color: #4CA2DA;}
 .nav-footer .fa-twitter:hover {color: #4099FF;}
 .nav-footer .fa-viadeo:hover {color: #F07355;}
-.nav-footer .mastodon:hover {fill: #3088d4;}
+.nav-footer .keybase-svg:hover .keybase {fill: #3DCC8E;}
+.nav-footer .mastodon-svg:hover .mastodon {fill: #3088D4;}
 
 .author-avatar {
   float: left;
