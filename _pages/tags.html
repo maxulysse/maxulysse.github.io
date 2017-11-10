@@ -30,7 +30,8 @@ title: Tags
       <ul class="list-group list-group-flush">
     {% for post in sorted_posts %}
       {% if post.tags contains tag[0] %}
-      <li class="list-group-item">• {% if post.date %}{{ post.date | date: "%Y-%m-%d" }}: {% endif %}<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+      <li class="list-group-item">• {% if post.date %}{{ post.date | date: "%Y-%m-%d" }}: {% endif %}<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>{% if site.data.comments[post.slug] %} <i class="fa fa-comments" aria-hidden="true"> </i> <a href="{{ post.url }}#comments" data-proofer-ignore="true"><span class="badge badge-secondary">{{ site.data.comments[post.slug] | size }}</span></a>{% endif %}
+      </li>
       {% endif %}
     {% endfor %}
       </ul>
