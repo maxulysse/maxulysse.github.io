@@ -34,8 +34,8 @@
   </div>
   <div class="card-body">
     <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
-      <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
-      <input name="options[redirectError]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
+      <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.url }}">
+      <input name="options[redirectError]" type="hidden" value="{{ page.url | prepend: site.url }}">
       <input name="options[slug]" type="hidden" value="{{ page.slug }}">
       <div class="form-group row">
         <label for="comment" class="col-sm-2 col-form-label">Comment:</label>
