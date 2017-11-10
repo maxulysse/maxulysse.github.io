@@ -26,7 +26,7 @@ layout: default
   <div class="card rounded">
       <div class="card-header">
         <h2 class="card-title">{{ page.title }}</h2>
-        <h6 class="card-subtitle mb-2 text-muted">Posted by {% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Posted by <span><i class="fa fa-user-o" aria-hidden="true"></i></span> <em>{% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %}</em> on <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ page.date | date: "%Y-%m-%d" }}</h6>
       </div>
       <div class="card-body">
   {{  content }}
