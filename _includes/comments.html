@@ -9,7 +9,7 @@
   {% for comment in comments %}
     <li class="list-group-item">
         <div>
-          {% if comment[1].url %}
+          {% if comment[1].url != blank%}
           <em><a href="{{ comment[1].url }}" target="_blank">{{ comment[1].name }}</a></em>
           {% else %}
           <em>{{ comment[1].name }}</em>
