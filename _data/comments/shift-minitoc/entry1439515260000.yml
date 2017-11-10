@@ -1,5 +1,5 @@
 _id: 952ff250-c620-11e7-986b-05a46a6fa5e8
-message: "Hi thank a lot.\r\n\r\nYour post is awesome.\r\n\r\nI would like to add something.\r\n\r\nFor my own document i where using bibliography by chapter, wich shifted my minitoc by one, every chapter.\r\n\r\nso, for whom get the same issue, just add \\mtcaddchapter after every of your Blibliography call.\r\n\r\nIt worked for me"
+message: "Hi thank a lot.\r\nYour post is awesome.\r\nI would like to add something.\r\nFor my own document i where using bibliography by chapter, wich shifted my minitoc by one, every chapter.\r\nso, for whom get the same issue, just add `\\mtcaddchapter` after every of your Biblibliography call.\r\nIt worked for me"
 name: litlesearcher
 email: d9cd5d9bc0155872c423800c4c03322c
 url: ''
