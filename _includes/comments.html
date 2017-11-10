@@ -1,11 +1,41 @@
+{% if site.data.comments[page.slug] %}
 <div class="card">
   <div class="card-header">
-    <h1 class="card-title">Leave a Reply</h1>
+    Comments <span class="badge badge-secondary">{{ site.data.comments[page.slug] | size }}</span>
+  </div>
+  {% assign comments = site.data.comments[page.slug] | sort %}
+
+    <ul class="list-group list-group-flush">
+  {% for comment in comments %}
+    <li class="list-group-item">
+        <div>
+          {% if comment[1].url %}
+          <em><a href="{{ comment[1].url }}" target="_blank">{{ comment[1].name }}</a></em>
+          {% else %}
+          <em>{{ comment[1].name }}</em>
+          {% endif %}
+          • <small>{{ comment[1].date | date: "%Y-%m-%d" }}</small>
+        </div>
+        <div>
+          <blockquote class="blockquote">
+            <p class="mb-0">{{ comment[1].message | markdownify }}</p>
+          </blockquote>
+        </div>
+      </li>
+  {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Leave a Reply</h4>
     <h6 class="card-subtitle mb-2 text-muted">Your email address will not be published</h6>
   </div>
   <div class="card-body">
     <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
       <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
+      <input name="options[redirectError]" type="hidden" value="{{ page.url | prepend: site.baseurl }}">
       <input name="options[slug]" type="hidden" value="{{ page.slug }}">
       <div class="form-group row">
         <label for="comment" class="col-sm-2 col-form-label">Comment:</label>
