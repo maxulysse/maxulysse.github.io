@@ -1,10 +1,10 @@
 {% if site.data.comments[page.slug] %}
 <div class="card">
   <div class="card-header"><a name="comments"></a>
-    Comments <span class="badge badge-secondary">{{ site.data.comments[page.slug] | size }}</span>
+    <a data-toggle="collapse" href="#comments-collapse" aria-expanded="false" aria-controls="comments-collapse">Comments <span class="badge badge-secondary">{{ site.data.comments[page.slug] | size }}</span></a>
   </div>
   {% assign comments = site.data.comments[page.slug] | sort %}
-
+  <div class="collapse" id="comments-collapse">
     <ul class="list-group list-group-flush">
   {% for comment in comments %}
     <li class="list-group-item">
@@ -17,22 +17,21 @@
           • <small>{{ comment[1].date | date: "%Y-%m-%d" }}</small>
         </div>
         <div>
-          <blockquote class="blockquote mb-0">
-            {{ comment[1].message | markdownify }}
-          </blockquote>
+        {{ comment[1].message | markdownify }}
         </div>
       </li>
   {% endfor %}
     </ul>
+  </div>
 </div>
 {% endif %}
 
 <div class="card">
   <div class="card-header">
-    <h4 class="card-title">Leave a Reply</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Your email address will not be published</h6>
+    <a data-toggle="collapse" href="#reply" aria-expanded="false" data-target=".multi-collapse" aria-controls="reply reply-footer">Leave a Reply</a>
+    <p class="card-subtitle mb-2 text-muted">Your email address will not be published</p>
   </div>
-  <div class="card-body">
+  <div class="card-body collapse multi-collapse" id="reply">
     <form method="POST" action="https://api.staticman.net/v2/entry/MaxUlysse/maxulysse.github.io/master/comments">
       <input name="options[redirect]" type="hidden" value="{{ page.url | prepend: site.url }}">
       <input name="options[redirectError]" type="hidden" value="{{ page.url | prepend: site.url }}">
@@ -64,7 +63,7 @@
       <button class="btn btn-outline-primary" type="submit">Comment <span class="fa fa-comment" aria-hidden="true"></span></button>
     </form>
   </div>
-  <div class="card-footer">
+  <div class="card-footer collapse multi-collapse" id="reply-footer">
     <small class="text-muted"><i class="fa fa-comments fa-1x" aria-hidden="true"></i> powered by <a href="https://staticman.net/" target="_blank">staticman</a></small>
   </div>
 </div>
