@@ -17,8 +17,8 @@
           • <small>{{ comment[1].date | date: "%Y-%m-%d" }}</small>
         </div>
         <div>
-          <blockquote class="blockquote">
-            <p class="mb-0">{{ comment[1].message | markdownify }}</p>
+          <blockquote class="blockquote mb-0">
+            {{ comment[1].message | markdownify }}
           </blockquote>
         </div>
       </li>
