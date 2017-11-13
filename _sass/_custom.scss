@@ -21,21 +21,9 @@ body {
   @extend .d-block;
 }
 
-.table-item {
-  flex:1 0 auto;
-  padding: 10px auto;
-  width: 50%;
-  flex-grow:0;
-  flex-basis:50%;
-}
-
-.table-bordered-striped {
-  @extend .table-bordered;
-  @extend .table-striped;
-}
-
-.flex-container {
-  display: flex;
+.container {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 @media all and (max-width: 550px) {
