@@ -15,8 +15,8 @@ Using:
 - [staticman](https://staticman.net/)
 
 Inspired by:
-- [tips-tutorials](https://github.com/dalanzg/tips-tutorials)
 - [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes)
+- [tips-tutorials](https://github.com/dalanzg/tips-tutorials)
 
 [license-badge]: https://img.shields.io/github/license/MaxUlysse/maxulysse.github.io.svg
 [license-link]: https://github.com/MaxUlysse/maxulysse.github.io/blob/master/LICENSE
