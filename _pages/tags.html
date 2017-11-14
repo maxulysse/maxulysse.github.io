@@ -26,6 +26,7 @@ title: Tags
         <span><i class="fa fa-tag" aria-hidden="true"></i></span>
         <span>{{ tag | first | replace:'-', ' ' }}</span>
         <span class="badge badge-secondary">{{ tag | last | size }}</span>
+        <div class="float-right"><a href="#top">&uarr;</a></div>
       </div>
       <ul class="list-group list-group-flush">
     {% for post in sorted_posts %}

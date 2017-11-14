@@ -26,7 +26,7 @@ layout: default
   <div class="card rounded">
       <div class="card-header">
         <h2 class="card-title">{{ page.title }}</h2>
-        <h6 class="card-subtitle mb-2 text-muted">Posted by <span><i class="fa fa-user-o" aria-hidden="true"></i></span> <em>{% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %}</em> on <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ page.date | date: "%Y-%m-%d" }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><span><i class="fa fa-user-o" aria-hidden="true"></i></span> <em>{% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %}</em> <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ page.date | date: "%Y-%m-%d" }}</h6>
       </div>
       <div class="card-body">
   {{  content }}
@@ -35,16 +35,16 @@ layout: default
   {% if page.previous.url %}
           <li class="page-item">
             <a class="page-link" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous" rel="prev">
-              <span aria-hidden="true">&laquo; Previous Post</span>
-              <span class="sr-only">&laquo; Previous Post</span>
+              <span aria-hidden="true">&laquo; Previous</span>
+              <span class="sr-only">&laquo; Previous</span>
             </a>
           </li>
   {% endif %}
   {% if page.next.url %}
           <li class="page-item">
             <a class="page-link" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next" rel="next">
-              <span aria-hidden="true">Next Post &raquo;</span>
-              <span class="sr-only">Next Post &raquo;</span>
+              <span aria-hidden="true">Next &raquo;</span>
+              <span class="sr-only">Next &raquo;</span>
             </a>
           </li>
   {% endif %}

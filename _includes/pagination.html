@@ -4,11 +4,11 @@
     <ul class="pagination justify-content-center">
   {% if paginator.previous_page %}
       <li class="page-item">
-        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Previous</a>
       </li>
   {% else %}
       <li class="page-item disabled">
-        <span class="page-link">&laquo;</span>
+        <span class="page-link">&laquo; Previous</span>
       </li>
   {% endif %}
 
@@ -28,11 +28,11 @@
 
   {% if paginator.next_page %}
       <li class="page-item">
-        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
       </li>
   {% else %}
       <li class="page-item disabled">
-        <span class="page-link">&raquo;</span>
+        <span class="page-link">Next &raquo;</span>
       </li>
   {% endif %}
     </ul>
