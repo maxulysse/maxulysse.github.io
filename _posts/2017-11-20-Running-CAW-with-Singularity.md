@@ -15,7 +15,7 @@ image:
 
 # Running CAW with Singularity
 
-To begin, I'll explain what our workflow is about, how is the cluster we're using set up, why we wanted to switch to Singularity and finally how we managed to do that.
+To begin, I'll explain what our workflow is about, how the cluster we're using is set up, why we wanted to switch to Singularity and finally how we managed it.
 
 ## Our workflow
 
@@ -25,7 +25,7 @@ First of all, a few word about the [Cancer Analysis Workflow](http://opensource.
 It is developed in collaboration with two infrastructures within [Science for Life Laboratory](https://www.scilifelab.se/): [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), in The Stockholm [Genomics Applications Development Facility](https://www.scilifelab.se/facilities/ngi-stockholm/) to be precise and [National Bioinformatics Infrastructure Sweden](https://www.nbis.se/) (NBIS).
 
 CAW is a Nextflow workflow designed to analyze tumor/normal pairs.
-Adapted from [GATK Best Practices](https://software.broadinstitute.org/gatk/best-practices/) for the preprocessing of the fastq files, then various variants calling tools are used to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
+Adapted from [GATK Best Practices](https://software.broadinstitute.org/gatk/best-practices/) for the preprocessing of fastq files, then various variant calling tools are used to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
 Annotation tools ([snpEff](http://snpeff.sourceforge.net/), [VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)) are also used, and finally [MultiQC](http://multiqc.info/) for handling reports.
 
 We are currently working on a manuscript, so no publication yet, but if you want further information, you're welcome to look at (or even contribute to) our [github repository](https://github.com/SciLifeLab/CAW/), or come talk with us on our [gitter channel](https://gitter.im/SciLifeLab/CAW/).
@@ -33,14 +33,14 @@ Now that the details have been quickly explained, let's talk about our set up.
 
 ## UPPMAX clusters
 
-We're based in Sweden, and [Uppsala Multidisciplinary Center for Advanced Computational Science](https://uppmax.uu.se/) (UPPMAX) provides Computational infrastructures for all Swedish researchers (yo do have to apply though).
+We're based in Sweden, and [Uppsala Multidisciplinary Center for Advanced Computational Science](https://uppmax.uu.se/) (UPPMAX) provides Computational infrastructures for all Swedish researchers (you do have to apply though).
 Since we're analyzing sensitive data, we are using secure clusters (with a two factor authentication), set up by UPPMAX: [SNIC-SENS](https://www.uppmax.uu.se/projects-and-collaborations/snic-sens/).
 
 In my case, since we're still in the development part, I am mainly using the research cluster [Bianca](https://www.uppmax.uu.se/resources/systems/the-bianca-cluster/).
 So I can only transfer files and data in one specific repository using SFTP.
 
 UPPMAX is providing computing resources for Swedish researchers for all scientific domains, so getting software updates can occasionally take some times.
-But they are using [environment modules](http://modules.sourceforge.net/) which allow several versions of different tools which is good for reproducibility, and from my own perspective quite easy to use, but there is still some room left for improvement regarding portability.
+But they are using [environment modules](http://modules.sourceforge.net/) which allow several versions of different tools, which is good for reproducibility, and from my own perspective quite easy to use, but there is still some room left for improvement regarding portability.
 
 ## Why using containers?
 
@@ -51,7 +51,7 @@ Of course we cannot use [Docker](https://www.docker.com/) on our secure cluster,
 
 We were already using Docker containers for our CI testing with Travis, and since we use many tools, I took the approach of making (almost) a container for each process.
 Because it can take some time, it's repetitive and I~~'m lazy~~ like to automatize everything, I made a simple NF [script](https://github.com/SciLifeLab/CAW/blob/master/buildContainers.nf) to build and push all docker containers.
-Basically it's just build and pull for all containers, with some configuration possibilities.
+Basically it's just `build` and `pull` for all containers, with some configuration possibilities.
 
 ```groovy
 docker build -t ${repository}/${container}:${tag} ${baseDir}/containers/${container}/.
@@ -100,11 +100,11 @@ process {
 }
 ```
 
-And it almost run perfectly on the first try, except for on fail process due to a typo on a container name...
+And it almost ran perfectly on the first try, except a process failing due to a typo on a container name...
 
 ## Conlusion
 
-That was done a couple of months ago.
-We are now using Singularity containers in almost all our Nextflow pipelines developed at NGI.
-And even if we do enjoy that improved control, we must not forgot that
+This was done a couple of months ago.
+We are now using Singularity containers in almost all of our Nextflow pipelines developed at NGI.
+Even if we do enjoy the improved control, we must not forgot that:
 > With great power comes great responsibility!
