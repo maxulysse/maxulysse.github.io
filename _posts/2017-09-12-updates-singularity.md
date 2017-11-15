@@ -12,7 +12,7 @@ tags:
 - Singularity
 author: maxulysse
 image:
-  path: /assets/img/category/CAW.png
+  path: /assets/img/category/Singularity.png
 ---
 
 I made some updates on my [presentation <i class="fa fa-file-pdf-o" aria-hidden="true"></i>]({{ site.url }}/assets/presentations/2017-09-20-DNA-club.pdf) about using CAW with Singularity on a secure cluster.
