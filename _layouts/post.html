@@ -35,16 +35,16 @@ layout: default
   {% if page.previous.url %}
           <li class="page-item">
             <a class="page-link" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous" rel="prev">
-              <span aria-hidden="true">&laquo; Previous</span>
-              <span class="sr-only">&laquo; Previous</span>
+              <span aria-hidden="true">&laquo; {{ page.previous.title }}</span>
+              <span class="sr-only">&laquo; {{ page.previous.title }}</span>
             </a>
           </li>
   {% endif %}
   {% if page.next.url %}
           <li class="page-item">
             <a class="page-link" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next" rel="next">
-              <span aria-hidden="true">Next &raquo;</span>
-              <span class="sr-only">Next &raquo;</span>
+              <span aria-hidden="true"> {{ page.next.title }} &raquo;</span>
+              <span class="sr-only"> {{ page.next.title }} &raquo;</span>
             </a>
           </li>
   {% endif %}

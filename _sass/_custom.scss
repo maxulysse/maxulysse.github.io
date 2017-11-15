@@ -14,6 +14,23 @@ body {
   column-count: 1;
 }
 
+blockquote {
+  background: #f9f9f9;
+  border-left: 0.8em solid #ccc;
+  padding: 0.5em 0.8em;
+}
+
+blockquote:before {
+  color: #ccc;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
 .img-post {
   @extend .rounded;
   @extend .img-fluid;

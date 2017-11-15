@@ -18,7 +18,9 @@
           on <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ comment[1].date | date: "%Y-%m-%d" }}
         </div>
         <div>
-        {{ comment[1].message | markdownify }}
+          <blockquote>
+            {{ comment[1].message | markdownify }}
+          </blockquote>
         </div>
       </li>
   {% endfor %}
