@@ -22,7 +22,7 @@ image:
 [Cancer Analysis Workflow](http://opensource.scilifelab.se/projects/caw/) (CAW for short) is an analysis pipeline developed for the analysis of tumour : normal pairs.
 It is developed in collaboration with two infrastructures within [Science for Life Laboratory](https://www.scilifelab.se/): [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), in The Stockholm [Genomics Applications Development Facility](https://www.scilifelab.se/facilities/ngi-stockholm/) to be precise and [National Bioinformatics Infrastructure Sweden](https://www.nbis.se/) (NBIS).
 
-CAW uses [GATK Best Practices](https://software.broadinstitute.org/gatk/best-practices/) for the preprocessing of FastQ files, then uses various variant calling tools to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
+CAW is based on [GATK Best Practices](https://software.broadinstitute.org/gatk/best-practices/) for the preprocessing of FastQ files, then uses various variant calling tools to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
 Annotation tools ([snpEff](http://snpeff.sourceforge.net/), [VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)) are also used, and finally [MultiQC](http://multiqc.info/) for handling reports.
 
 We are currently working on a manuscript, but you're welcome to look at (or even contribute to) our [github repository](https://github.com/SciLifeLab/CAW/) or talk with us on our [gitter channel](https://gitter.im/SciLifeLab/CAW/).
@@ -57,7 +57,7 @@ docker build -t ${repository}/${container}:${tag} ${baseDir}/containers/${contai
 docker push ${repository}/${container}:${tag}
 ```
 
-Since Singularity can directly pull images from DockerHub, I made the build script to all containers from DockerHub to have local Singularity image files.
+Since Singularity can directly pull images from DockerHub, I made the build script to pull all containers from DockerHub to have local Singularity image files.
 
 ```groovy
 singularity pull --name ${container}-${tag}.img docker://${repository}/${container}:${tag}
