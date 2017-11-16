@@ -21,7 +21,12 @@ title: Archive
     <ul class="list-group list-group-flush">
   {% endif %}
       <li class="list-group-item">
-        • <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ post.date | date: "%Y-%m-%d" }}: <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>{% if site.data.comments[post.slug] %} <i class="fa fa-comments" aria-hidden="true"> </i> <a href="{{ post.url }}#comments" data-proofer-ignore="true"><span class="badge badge-secondary">{{ site.data.comments[post.slug] | size }}</span></a>{% endif %}
+        • <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ post.date | date: "%Y-%m-%d" }}: <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        {% if site.data.comments[post.slug] %}
+          <div class="float-right">
+            <i class="fa fa-comments" aria-hidden="true"> </i> <a href="{{ post.url }}#comments" data-proofer-ignore="true"><span class="badge badge-secondary">{{ site.data.comments[post.slug] | size }}</span></a>
+          </div>
+        {% endif %}
       </li>
   {% if forloop.last %}
     </ul>

@@ -22,7 +22,13 @@ layout: default
     </div>
     <div class="card-footer">
   {% if post.date and post.tags %}
-      <small class="text-muted"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}</small>
+      <small class="text-muted"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d" }}
+      {% if site.data.comments[post.slug] %}
+        <div class="float-right">
+          <i class="fa fa-comments" aria-hidden="true"> </i> <a href="{{ post.url }}#comments" data-proofer-ignore="true"><span class="badge badge-secondary">{{ site.data.comments[post.slug] | size }}</span></a>
+        </div>
+      {% endif %}
+      </small>
       <br>
       {% assign tags = post.tags | sort %}
       <small class="text-muted"><i class="fa fa-tags" aria-hidden="true"></i>
@@ -41,10 +47,6 @@ layout: default
       {% if forloop.last == false %} • {% endif %}
     {% endfor %}
     </small>
-  {% endif %}
-  {% if site.data.comments[post.slug] %}
-    <br>
-    <small class="text-muted"><i class="fa fa-comments" aria-hidden="true"> </i> <a href="{{ post.url }}#comments" data-proofer-ignore="true"><span class="badge badge-secondary">{{ site.data.comments[post.slug] | size }}</span></a></small>
   {% endif %}
     </div>
   </div>
