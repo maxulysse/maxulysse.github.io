@@ -3,7 +3,7 @@ layout: post
 title: Running CAW with Singularity
 description: How we use Singularity containers with our CAW pipeline on UPPMAX secure clusters
 date: 2017-11-15 10:00
-date_modified: 2017-11-16 11:00
+date_modified: 2017-11-17 11:00
 tags:
   - CAW
   - Containers
@@ -13,6 +13,8 @@ author: maxulysse
 image:
   path: /assets/img/category/CAW.png
 ---
+
+This post was written for the [Nextflow blog](https://www.nextflow.io/blog/2017/caw-and-singularity.html). Over there is the final version, here is the version I shared with my colleagues to get comments and suggestions.
 
 ## The CAW Pipeline
 
