@@ -22,6 +22,9 @@
 - name: Viadeo
   url: https://www.viadeo.com/p/0021pms7gdguerlj
   font_awesome: fa-viadeo
+- name: DocPro
+  url: http://www.mydocpro.org/en/p/maxime-garcia-5a1
+  mydocpro: custom
 - name: Google Schoolar
   url: https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
   academicons: ai-google-scholar
