@@ -3,14 +3,8 @@ layout: default
 ---
 
 {% include structuredData_index.html %}
-<div class="card-deck">
+<div class="card-columns">
 {% for post in paginator.posts %}
-  {% if forloop.index == 4 %}
-</div>
-<br />
-<div class="card-deck">
-  {% endif %}
-
   <div class="card">
   {% if post.image.path %}
     <div class="card-header bg-light"><img class="card-img-top img-fluid" src="{{ post.image.path }}" alt="{{ post.title }}" title="{{ post.title }}"></div>
