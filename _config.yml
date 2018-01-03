@@ -18,7 +18,7 @@ sass:
   sass_dir: _sass
   style: compact
 
-gems:
+plugins_dir:
   - jekyll-feed
   - jekyll-minifier
   - jekyll-paginate
