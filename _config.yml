@@ -2,6 +2,7 @@ title: "maxulysse.github.io"
 description: "Interested in Bioinformatics, Reproducible Research, Automation, Data Integration and Visualization..."
 baseurl: ""
 url: "https://maxulysse.github.io"
+words_per_minute : 160
 
 logo:
   path: "/assets/img/favicons/android-chrome-192x192.png"
