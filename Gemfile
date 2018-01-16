@@ -6,11 +6,11 @@ gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "html-proofer"
-  gem "jekyll-feed"
-  gem "jekyll-gist"
-  gem "jekyll-minifier"
-  gem "jekyll-paginate"
-  gem "jekyll-sitemap"
+  gem "jekyll-feed", ">= 0.9.2"
+  gem "jekyll-gist", ">= 1.4.0"
+  gem "jekyll-minifier", ">= 0.1.2"
+  gem "jekyll-paginate", ">= 1.1.0"
+  gem "jekyll-sitemap", ">= 1.0.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
