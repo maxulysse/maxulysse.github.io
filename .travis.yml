@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.5.0
 
-script: ./assets/scripts/test.sh
+script: ./scripts/test.sh
 
 branches:
   only:
