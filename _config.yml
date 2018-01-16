@@ -46,4 +46,4 @@ exclude:
   - "assets/presentations/LICENSE"
   - "assets/presentations/pictures/"
   - "assets/presentations/scripts/"
-  - "assets/scripts/test.sh"
+  - "scripts"
