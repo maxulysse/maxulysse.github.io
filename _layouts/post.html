@@ -28,7 +28,7 @@ layout: default
         <h2 class="card-title">{{ page.title }}</h2>
         <h6 class="card-subtitle mb-2 text-muted">
           <span><i class="fa fa-user" aria-hidden="true"></i></span> <em>{% if page.author %}{{ author.name }}{% else %}{{ site.title }}{% endif %}</em> <span><i class="fa fa-calendar" aria-hidden="true"></i></span> {{ page.date | date: "%Y-%m-%d" }}{% if page.date_modified %}<div class="float-right"><span>Last modified <i class="fa fa-calendar" aria-hidden="true"></i></span> {{ page.date_modified | date: "%Y-%m-%d" }}</div>{% endif %}
-          </br>
+          <br>
           <i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}
         </h6>
       </div>
