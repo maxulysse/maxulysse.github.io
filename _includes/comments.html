@@ -4,7 +4,7 @@
     <a data-toggle="collapse" href="#comments-collapse" aria-expanded="false" aria-controls="comments-collapse">Comments <span class="badge badge-secondary">{{ site.data.comments[page.slug] | size }}</span></a>
   </div>
   {% assign comments = site.data.comments[page.slug] | sort %}
-  <div class="collapse" id="comments-collapse">
+  <div class="collapse show" id="comments-collapse">
     <ul class="list-group list-group-flush">
   {% for comment in comments %}
       <li class="list-group-item">
