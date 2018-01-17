@@ -9,13 +9,13 @@
   {% for comment in comments %}
       <li class="list-group-item">
         <div>
-          <span><i class="fa fa-user-o" aria-hidden="true"></i></span> <em>
+          <span><i class="fa fa-user" aria-hidden="true"></i></span> <em>
           {% if comment[1].url == '' %}
           {{ comment[1].name }}
           {% else %}<a href="{{ comment[1].url }}" target="_blank">{{ comment[1].name }}</a>
           {% endif %}
           </em>
-          <span><i class="fa fa-calendar-o" aria-hidden="true"></i></span> {{ comment[1].date | date: "%Y-%m-%d" }}
+          <span><i class="fa fa-calendar" aria-hidden="true"></i></span> {{ comment[1].date | date: "%Y-%m-%d" }}
         </div>
         <div>
           <blockquote>

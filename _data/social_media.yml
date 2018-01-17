@@ -1,6 +1,6 @@
 - name: GitHub
   url: https://github.com/MaxUlysse/
-  font_awesome: fa-github
+  font_awesome: fa-github-alt
 - name: Stack Exchange
   url: https://stackexchange.com/users/2204471/maxulysse/
   font_awesome: fa-stack-exchange
@@ -15,10 +15,7 @@
   font_awesome: fa-twitter
 - name: LinkedIn
   url: https://www.linkedin.com/in/maxugarcia/
-  font_awesome: fa-linkedin
-- name: SlideShare
-  url: https://www.slideshare.net/MaxUlysse
-  font_awesome: fa-slideshare
+  font_awesome: fa-linkedin-in
 - name: Viadeo
   url: https://www.viadeo.com/p/0021pms7gdguerlj
   font_awesome: fa-viadeo
@@ -34,18 +31,9 @@
 - name: ResearchGate
   url: https://www.researchgate.net/profile/Maxime_Garcia
   academicons: ai-researchgate
-- name: Mendeley
-  url: https://www.mendeley.com/profiles/maxime-garcia/
-  academicons: ai-mendeley
 - name: reddit
   url: https://www.reddit.com/user/maxUlysse
   font_awesome: fa-reddit-alien
-- name: Facebook
-  url: https://www.facebook.com/max.u.garcia/
-  font_awesome: fa-facebook
-- name: Google +
-  url: https://plus.google.com/+MaximeGarcia
-  font_awesome: fa-google-plus
 - name: Instagram
   url: https://www.instagram.com/maxulysse/
   font_awesome: fa-instagram
