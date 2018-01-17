@@ -7,7 +7,6 @@ Using:
 - [academicons](https://jpswalsh.github.io/academicons/)
 - [bootstrap](https://getbootstrap.com/)
 - [font-awesome](http://fontawesome.io/)
-- [ionicons](http://ionicons.com/)
 - [jekyll-search](https://github.com/RishikeshDarandale/jekyll-search)
 - [jquery](https://jquery.com/)
 - [lunr](https://lunrjs.com/)
