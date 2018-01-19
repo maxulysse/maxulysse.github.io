@@ -1,6 +1,6 @@
 - name: GitHub
   url: https://github.com/MaxUlysse/
-  font_awesome: fa-github-alt
+  font_awesome: fa-github
 - name: Stack Exchange
   url: https://stackexchange.com/users/2204471/maxulysse/
   font_awesome: fa-stack-exchange
