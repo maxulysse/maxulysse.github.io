@@ -8,7 +8,7 @@ tags:
   - Tips
 author: maxulysse
 image:
-  path: /assets/img/category/LaTeX.png
+  path: /assets/img/category/latex.png
 ---
 
 Section is redefined with a classical:

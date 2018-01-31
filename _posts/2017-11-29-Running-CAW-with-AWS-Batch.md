@@ -12,7 +12,7 @@ tags:
   - Nextflow
 author: maxulysse
 image:
-  path: /assets/img/category/AWS.png
+  path: /assets/img/category/aws.png
 ---
 
 Following [this post](https://www.nextflow.io/blog/2017/scaling-with-aws-batch.html) from Nextflow blog, I'm writing a small guide on how I'm doing that for [CAW](http://opensource.scilifelab.se/projects/caw/).

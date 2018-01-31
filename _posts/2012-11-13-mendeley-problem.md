@@ -9,7 +9,7 @@ tags:
   - Tips
 author: maxulysse
 image:
-  path: /assets/img/category/LaTeX.png
+  path: /assets/img/category/latex.png
 ---
 
 I handle my bibliography with Mendeley. Mendeley keeps references and informations in a BibTex file. Some of the Northern authors have an ø in their name. Mendeley encodes it with `\o` and a white space. When I compile my document, in my bibliography, I find this white space after the ø in the name of the Northern authors.

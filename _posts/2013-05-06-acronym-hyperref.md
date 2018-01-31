@@ -8,7 +8,7 @@ tags:
   - Tips
 author: maxulysse
 image:
-  path: /assets/img/category/LaTeX.png
+  path: /assets/img/category/latex.png
 ---
 
 Normally, when you want to use an acronym in a title, you’re supposed to force the use of the short or the long version of the acronym, otherwise, when the Table of Contents is built, it will be the first appearance of your acronym, and you’ll have problem with your ToC.

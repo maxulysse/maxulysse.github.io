@@ -8,7 +8,7 @@ tags:
   - Tips
 author: maxulysse
 image:
-  path: /assets/img/category/LaTeX.png
+  path: /assets/img/category/latex.png
 ---
 
 Another post about Latex, but you’re in the middle of your thesis redaction, and you finally found a solution to something that’s been bothering you for quite a time, it’s a good idea to keep it somewhere.

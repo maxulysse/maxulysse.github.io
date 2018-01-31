@@ -11,7 +11,7 @@ tags:
   - Singularity
 author: maxulysse
 image:
-  path: /assets/img/category/CAW.png
+  path: /assets/img/category/caw.png
 ---
 
 This post was written for the [Nextflow blog](https://www.nextflow.io/blog/2017/caw-and-singularity.html). Over there is the final version, here is the version I shared with my colleagues to get comments and suggestions.

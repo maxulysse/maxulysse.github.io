@@ -8,7 +8,7 @@ tags:
   - Tips
 author: maxulysse
 image:
-  path: /assets/img/category/LaTeX.png
+  path: /assets/img/category/latex.png
 ---
 
 Very important not to mess things up, when you’re describing your figures in Latex.

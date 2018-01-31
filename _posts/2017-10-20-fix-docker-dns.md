@@ -10,7 +10,7 @@ tags:
   - Tips
 author: maxulysse
 image:
-  path: /assets/img/category/Docker.png
+  path: /assets/img/category/docker.png
 ---
 
 I had some troubles building Docker container on the local network at my institution.
