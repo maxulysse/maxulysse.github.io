@@ -4,9 +4,9 @@ layout: default
 
 {% assign author = site.data.authors[page.author] %}
 {% if page.last_modified_at %}
-{% assign modified = page.last_modified_at %}
+  {% assign modified = page.last_modified_at %}
 {% else %}
-{% assign modified = page.date %}
+  {% assign modified = page.date %}
 {% endif %}
 
 {%
@@ -55,6 +55,10 @@ layout: default
         </ul>
       </nav>
     </div>
+    <div class="card-footer text-muted">
+      This site is using <a href="https://github.com/MaxUlysse/maxulysse.github.io" target="_blank">GitHub <i class="fab fa-github fa-1x"></i></a> for versionning. You can fix this page by going <a href="https://github.com/MaxUlysse/maxulysse.github.io/edit/master/{{ page.path }}" target="_blank">here</a>.
+    </div>
   </div>
+
   {% include comments.html %}
 </div>
