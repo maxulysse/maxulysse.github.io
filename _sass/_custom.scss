@@ -77,22 +77,6 @@ blockquote p {
   width: 2em;
 }
 
-.keybase-svg {
-  color: gray;
-  transition: transform 0.3s ease;
-}
-.keybase-svg:hover {
-  transform: scale(1.5);
-}
-
-.mastodon-svg {
-  color: gray;
-  transition: transform 0.3s ease;
-}
-.mastodon-svg:hover {
-  transform: scale(1.5);
-}
-
 .mydocpro-svg {
   color: gray;
   transition: transform 0.3s ease;
@@ -103,17 +87,17 @@ blockquote p {
 
 .nav-footer .ai-google-scholar:hover {color: #4885ED;}
 .nav-footer .ai-orcid:hover {color: #A6CE39;}
-.nav-footer .ai-researchgate:hover {color: #00D0B0;}
 .nav-footer .fa-github:hover {color: #000000;}
 .nav-footer .fa-instagram:hover {color: #000000;}
+.nav-footer .fa-keybase:hover {color: #3DCC8E;}
 .nav-footer .fa-linkedin-in:hover {color: #007BB6;}
+.nav-footer .fa-mastodon:hover {color: #3088D4;}
 .nav-footer .fa-reddit-alien:hover {color: #FF4500;}
+.nav-footer .fa-researchgate:hover {color: #00D0B0;}
 .nav-footer .fa-rss-square:hover {color: #FF6600;}
 .nav-footer .fa-stack-exchange:hover {color: #4CA2DA;}
 .nav-footer .fa-twitter:hover {color: #4099FF;}
 .nav-footer .fa-viadeo:hover {color: #F07355;}
-.nav-footer .keybase-svg:hover .keybase {fill: #3DCC8E;}
-.nav-footer .mastodon-svg:hover .mastodon {fill: #3088D4;}
 .nav-footer .mydocpro-svg:hover .mydocpro {fill: #000000;}
 
 .author-avatar {

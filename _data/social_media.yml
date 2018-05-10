@@ -6,10 +6,10 @@
   font_awesome: fa-stack-exchange
 - name: Mastodon
   url: https://mastodon.cloud/@gau
-  mastodon: custom
+  font_awesome: fa-mastodon
 - name: Keybase
   url: https://keybase.io/maxulysse
-  keybase: custom
+  font_awesome: fa-keybase
 - name: Twitter
   url: https://twitter.com/gau/
   font_awesome: fa-twitter
@@ -30,7 +30,7 @@
   academicons: ai-orcid
 - name: ResearchGate
   url: https://www.researchgate.net/profile/Maxime_Garcia
-  academicons: ai-researchgate
+  font_awesome: fa-researchgate
 - name: reddit
   url: https://www.reddit.com/user/maxUlysse
   font_awesome: fa-reddit-alien
