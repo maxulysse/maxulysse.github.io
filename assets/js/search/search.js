@@ -11,7 +11,7 @@
 Initialisation
 ========================================================================== */
 
-var q, jsonFeedUrl = "/assets/feed/feed.json",
+var q, jsonFeedUrl = "{{ site.baseurl }}/feed.json",
   $searchForm = $("[data-search-form]"),
   $searchInput = $("[data-search-input]"),
   $resultTemplate = $("#search-result"),
