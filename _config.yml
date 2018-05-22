@@ -20,10 +20,10 @@ sass:
   style: compact
 
 plugins_dir:
+  - jekyll-feed
+  - jekyll-minifier
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-minifier
-  - jekyll-feed
 
 include:
   - "_pages"
