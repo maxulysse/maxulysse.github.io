@@ -69,9 +69,11 @@ blockquote p {
   color: gray;
   transition: transform 0.3s ease;
 }
+
 .footericon:hover {
   transform: scale(1.5);
 }
+
 .icon-2x {
   height: 2em;
   width: 2em;
@@ -81,13 +83,16 @@ blockquote p {
   color: gray;
   transition: transform 0.3s ease;
 }
+
 .mydocpro-svg:hover {
   transform: scale(1.5);
 }
 
 .nav-footer .ai-google-scholar:hover {color: #4885ED;}
 .nav-footer .ai-orcid:hover {color: #A6CE39;}
+.nav-footer .fa-bitbucket:hover {color: #205081;}
 .nav-footer .fa-github:hover {color: #000000;}
+.nav-footer .fa-gitlab:hover {color: #FCA326;}
 .nav-footer .fa-instagram:hover {color: #000000;}
 .nav-footer .fa-keybase:hover {color: #3DCC8E;}
 .nav-footer .fa-linkedin-in:hover {color: #007BB6;}

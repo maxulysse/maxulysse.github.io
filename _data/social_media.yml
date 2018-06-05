@@ -1,33 +1,36 @@
 - name: GitHub
   url: https://github.com/MaxUlysse/
   font_awesome: fa-github
-- name: Stack Exchange
-  url: https://stackexchange.com/users/2204471/maxulysse/
-  font_awesome: fa-stack-exchange
-- name: Mastodon
-  url: https://mastodon.cloud/@gau
-  font_awesome: fa-mastodon
-- name: Keybase
-  url: https://keybase.io/maxulysse
-  font_awesome: fa-keybase
 - name: Twitter
   url: https://twitter.com/gau/
   font_awesome: fa-twitter
-- name: LinkedIn
-  url: https://www.linkedin.com/in/maxugarcia/
-  font_awesome: fa-linkedin-in
-- name: Viadeo
-  url: https://www.viadeo.com/p/0021pms7gdguerlj
-  font_awesome: fa-viadeo
-- name: DocPro
-  url: http://www.mydocpro.org/en/p/maxime-garcia-5a1
-  mydocpro: custom
-- name: Google Schoolar
-  url: https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
-  academicons: ai-google-scholar
+- name: GitLab
+  url: https://gitlab.com/MaxUlysse
+  font_awesome: fa-gitlab
+- name: Bitbucket
+  url: https://bitbucket.org/maxUlysse/
+  font_awesome: fa-bitbucket
 - name: ORCID
   url: https://orcid.org/0000-0003-2827-9261
   academicons: ai-orcid
+- name: Google Schoolar
+  url: https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
+  academicons: ai-google-scholar
+- name: LinkedIn
+  url: https://www.linkedin.com/in/maxugarcia/
+  font_awesome: fa-linkedin-in
+- name: Keybase
+  url: https://keybase.io/maxulysse
+  font_awesome: fa-keybase
+- name: Stack Exchange
+  url: https://stackexchange.com/users/2204471/maxulysse/
+  font_awesome: fa-stack-exchange
+- name: Viadeo
+  url: https://www.viadeo.com/p/0021pms7gdguerlj
+  font_awesome: fa-viadeo
+- name: Mastodon
+  url: https://mastodon.cloud/@gau
+  font_awesome: fa-mastodon
 - name: ResearchGate
   url: https://www.researchgate.net/profile/Maxime_Garcia
   font_awesome: fa-researchgate
@@ -37,3 +40,6 @@
 - name: Instagram
   url: https://www.instagram.com/maxulysse/
   font_awesome: fa-instagram
+- name: DocPro
+  url: http://www.mydocpro.org/en/p/maxime-garcia-5a1
+  mydocpro: custom
