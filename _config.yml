@@ -23,6 +23,7 @@ plugins:
   - jekyll-feed
   - jekyll-minifier
   - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-sitemap
 
 include:
