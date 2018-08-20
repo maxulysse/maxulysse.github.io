@@ -4,12 +4,9 @@
 - name: Twitter
   url: https://twitter.com/gau/
   font_awesome: fa-twitter
-- name: GitLab
-  url: https://gitlab.com/MaxUlysse
-  font_awesome: fa-gitlab
-- name: Bitbucket
-  url: https://bitbucket.org/maxUlysse/
-  font_awesome: fa-bitbucket
+- name: Mastodon
+  url: https://scholar.social/@gau
+  font_awesome: fa-mastodon
 - name: ORCID
   url: https://orcid.org/0000-0003-2827-9261
   academicons: ai-orcid
@@ -28,9 +25,6 @@
 - name: Viadeo
   url: https://www.viadeo.com/p/0021pms7gdguerlj
   font_awesome: fa-viadeo
-- name: Mastodon
-  url: https://mastodon.cloud/@gau
-  font_awesome: fa-mastodon
 - name: ResearchGate
   url: https://www.researchgate.net/profile/Maxime_Garcia
   font_awesome: fa-researchgate
