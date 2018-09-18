@@ -16,8 +16,7 @@ title: List
         {% assign tmpletter = word.swedish | slice: 0 | upcase %}
         {% if tmpletter != lastletter %}
           <a href="#{{ word.swedish | slice: 0 | upcase }}">{{ word.swedish | slice: 0 | upcase }}</a>
-          {% if tmpletter != "ä" %}
-             •
+          {% if tmpletter != "Ä" %} •
           {% endif %}
         {% endif %}
         {% assign lastletter = tmpletter %}
@@ -38,7 +37,7 @@ title: List
       <div class="card-header">
         <a name="{{ tmpletter }}"></a>
         <span><i class="fa fa-tag" aria-hidden="true"></i></span>
-        {{ tmpletter }}
+        {{ word.swedish | slice: 0 | upcase }}
         <div class="float-right"><a href="#top">&uarr;</a></div>
       </div>
       <ul class="list-group list-group-flush">
