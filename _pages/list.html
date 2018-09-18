@@ -1,0 +1,54 @@
+---
+description: Liste Franco-suédoise
+layout: page
+permalink: list.html
+sitemap: false
+title: List
+---
+
+<div class="card-columns only-one-column">
+  {% assign words = site.data.list | sort: 'swedish' %}
+
+  {% assign lastletter = "" %}
+  <div class="card">
+    <h6 class="card-text text-muted alert alert-dark">
+      {% for word in words %}
+        {% assign tmpletter = word.swedish | slice: 0 | upcase %}
+        {% if tmpletter != lastletter %}
+          <a href="#{{ word.swedish | slice: 0 | upcase }}">{{ word.swedish | slice: 0 | upcase }}</a>
+          {% if tmpletter != "ä" %}
+             •
+          {% endif %}
+        {% endif %}
+        {% assign lastletter = tmpletter %}
+      {% endfor %}
+    </h6>
+  </div>
+
+  {% assign lastletter = "" %}
+  <div class="card-columns three-columns">
+  {% for word in words %}
+      {% assign tmpletter = word.swedish | slice: 0 | upcase %}
+      {% if tmpletter != lastletter %}
+        {% if lastletter != "" %}
+      </ul>
+    </div>
+        {% endif %}
+    <div class="card">
+      <div class="card-header">
+        <a name="{{ tmpletter }}"></a>
+        <span><i class="fa fa-tag" aria-hidden="true"></i></span>
+        {{ tmpletter }}
+        <div class="float-right"><a href="#top">&uarr;</a></div>
+      </div>
+      <ul class="list-group list-group-flush">
+    {% endif %}
+        <li class="list-group-item">•
+        {{ word.swedish }}
+          <div class="float-right">{{ word.french }}</div>
+        </li>
+      {% assign lastletter = tmpletter %}
+  {% endfor %}
+      </ul>
+    </div>
+  </div>
