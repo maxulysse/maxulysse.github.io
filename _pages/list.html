@@ -35,13 +35,7 @@ title: List
         {% endif %}
     <div class="card">
       <div class="card-header">
-        {% if tmpletter == 'À' %}
-        <a name="%C3%80">À</a>
-        {% elsif tmpletter == 'Ä' %}
-        <a name="%C3%84">Ä</a>
-        {% else %}
         <a name="{{ word.swedish | slice: 0 | upcase }}"></a>
-        {% endif %}
         <span><i class="fa fa-tag" aria-hidden="true"></i></span>
         {{ word.swedish | slice: 0 | upcase }}
         <div class="float-right"><a href="#top">&uarr;</a></div>
