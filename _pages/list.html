@@ -36,9 +36,9 @@ title: List
     <div class="card">
       <div class="card-header">
         {% if tmpletter == 'À' %}
-        <a href="#%C3%80">À</a>
+        <a name="%C3%80">À</a>
         {% elsif tmpletter == 'Ä' %}
-        <a href="#%C3%84">Ä</a>
+        <a name="%C3%84">Ä</a>
         {% else %}
         <a name="{{ word.swedish | slice: 0 | upcase }}"></a>
         {% endif %}
