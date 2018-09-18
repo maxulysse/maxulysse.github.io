@@ -35,7 +35,7 @@ title: List
         {% endif %}
     <div class="card">
       <div class="card-header">
-        <a name="{{ tmpletter }}"></a>
+        <a name="{{ word.swedish | slice: 0 | upcase }}"></a>
         <span><i class="fa fa-tag" aria-hidden="true"></i></span>
         {{ word.swedish | slice: 0 | upcase }}
         <div class="float-right"><a href="#top">&uarr;</a></div>
