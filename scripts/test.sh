@@ -5,4 +5,5 @@ bundle exec jekyll build
 bundle exec htmlproofer ./_site \
 	--check-favicon \
 	--check-html \
-	--disable-external
+	--disable-external \
+	--url-ignore /\#À/,/\#Ä/
