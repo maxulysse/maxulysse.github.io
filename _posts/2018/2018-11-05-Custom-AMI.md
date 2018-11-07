@@ -3,6 +3,7 @@ layout: post
 title: How to make a bigger custom AMI?
 description: How to make a custom AMI with a size big enough
 date: 2018-11-05 10:00
+date_modified: 2018-11-07 10:00
 tags:
   - AMI
   - AWS
@@ -21,7 +22,7 @@ Following this post set of posts on running Nextflow with AWS Batch:
 - Alexander Peltzer's blog: [Running nf-co.re pipelines with AWSBatch](https://apeltzer.github.io/post/01-aws-nfcore/)
 - Anthony Underwood's blog: [Running Nextflow on AWS batch](https://antunderwood.gitlab.io/bioinformant-blog/posts/running_nextflow_on_aws_batch/)
 
-I'm writing a small guide on how to make a custom AMI with a big enough size to run some actual data with.
+I'm writing a small guide on how to make a custom [AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) with a big enough size to run some actual data with.
 
 All the instructions are in fact listed in the [custom AMI Nextflow docs](https://www.nextflow.io/docs/latest/awscloud.html#custom-ami) and this solution is [there](https://forums.aws.amazon.com/message.jspa?messageID=811761#811761), but as I struggled once already, I prefer to document it for everyone and especially future me.
 

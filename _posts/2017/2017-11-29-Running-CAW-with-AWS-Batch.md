@@ -3,7 +3,7 @@ layout: post
 title: Running CAW with AWS Batch
 description: How we use AWS Batch to scale up CAW
 date: 2017-11-16 10:00
-<!-- date_modified: 2017-11-17 11:00 -->
+date_modified: 2017-11-17 11:00
 tags:
   - AWS
   - CAW
