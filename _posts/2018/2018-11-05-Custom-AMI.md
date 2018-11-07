@@ -29,7 +29,7 @@ All the instructions are in fact listed in the [custom AMI Nextflow docs](https:
 - On the AWS EC2 Dashboard, launch a new instance
 - `1. Choose AMI`: Search for and choose `Amazon ECS-Optimized Amazon Linux AMI` in the `AWS MArketplace`
 - `2. Choose Instance Type`: Choose a `t2.micro`
-- `3. Configure IInstance`: Leave default configuration
+- `3. Configure Instance`: Leave default configuration
 - `4. Add Storage`: Input `500 GiB` or any other size, but `22 GiB` is definitively not big enough for actual real life data.
 - `5. Add Tags`: Do as you want
 - `6. Configure Security Group`: Just make sure you can connect to the `EC2` Instance.
