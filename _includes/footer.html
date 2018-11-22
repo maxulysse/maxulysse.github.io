@@ -4,7 +4,11 @@
       <i class="fa footericon fa-rss-square fa-2x"></i>
     </a>
 {% for social_media in site.data.social_media %}
-    <a class="nav-link" href="{{ social_media.url }}" target="_blank">
+  {% if social_media.name == "Mastodon" %}
+  <a class="nav-link" rel="me" href="{{ social_media.url }}" target="_blank">
+  {% else %}
+  <a class="nav-link" href="{{ social_media.url }}" target="_blank">
+  {% endif %}
 {% if social_media.font_awesome %}
       <i class="fab footericon {{ social_media.font_awesome }} fa-2x"></i>
 {% elsif social_media.academicons %}
