@@ -14,8 +14,8 @@
    height="500"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="avatar-owl.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="owl.svg"
    inkscape:export-filename="avatar-owl.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -3536,17 +3536,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.2929688"
-     inkscape:cx="210.92324"
-     inkscape:cy="236.44399"
+     inkscape:cx="296.93704"
+     inkscape:cy="270.93866"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
-     inkscape:window-x="1280"
-     inkscape:window-y="720"
+     inkscape:window-height="1025"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -3560,7 +3560,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3572,7 +3572,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot3750"
-       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Source Code Pro;-inkscape-font-specification:Source Code Pro"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
        transform="translate(272.20465,376.18783)"><flowRegion
          id="flowRegion3752"><rect
            id="rect3754"
@@ -3580,18 +3580,22 @@
            height="559.09723"
            x="1916.1938"
            y="35.983543"
-           style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Source Code Pro;-inkscape-font-specification:Source Code Pro" /></flowRegion><flowPara
-         id="flowPara3766" /></flowRoot>    <flowRoot
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro'" /></flowRegion><flowPara
+         id="flowPara3766"
+         style="font-size:56px;line-height:1.25"> </flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3931"
-       style="font-size:4px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
-         id="flowRegion3933"><rect
+       style="font-style:normal;font-weight:normal;line-height:0.01%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion3933"
+         style="font-family:sans-serif"><rect
            id="rect3935"
            width="164.24519"
            height="214.01646"
            x="2261.2747"
-           y="-108.35314" /></flowRegion><flowPara
-         id="flowPara3937" /></flowRoot>    <path
+           y="-108.35314"
+           style="font-family:sans-serif" /></flowRegion><flowPara
+         id="flowPara3937"
+         style="font-size:4px;line-height:1.25;font-family:sans-serif"> </flowPara></flowRoot>    <path
        style="fill:url(#linearGradient9296);fill-opacity:1;stroke:#000000;stroke-width:15;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 552.63993,135.37709 c 251.87406,145.41956 167.25563,381.498 167.25563,381.498 C 647.88328,248.1216 552.63993,359.84022 552.63993,135.37709 Z"
        id="path3000-8-3-2-8-5-1-4-36-2"
