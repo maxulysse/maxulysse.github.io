@@ -9,8 +9,11 @@ logo:
   width: 192
   height: 192
 
-highlighter: rouge
-markdown: kramdown
+markdown: CommonMark
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table"]
+
 paginate: 6
 permalink: pretty
 theme: jekyll-theme-minimal
@@ -20,7 +23,9 @@ sass:
   style: compact
 
 plugins:
+  - jekyll-commonmark
   - jekyll-feed
+  - jekyll-include-cache
   - jekyll-minifier
   - jekyll-paginate
   - jekyll-redirect-from
