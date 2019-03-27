@@ -11,7 +11,7 @@ title: Tags
   {% assign tags = site.tags | sort %}
   {% assign sorted_posts = site.posts | sort: 'title' %}
   <div class="card">
-    <h6 class="card-text text-muted alert alert-dark">
+    <h6 class="card-text text-muted alert alert-secondary">
   {% for tag in tags %}
     <a href="#{{ tag | first | slugify }}" style="font-size: {{ tag | last | size | times: 4 | plus: 80 }}%">{{ tag | first | replace: '-', ' ' }} <span class="badge badge-secondary">{{ tag | last | size }}</span></a>
   {% if forloop.last == false %} • {% endif %}

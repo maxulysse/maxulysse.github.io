@@ -11,7 +11,7 @@ title: List
 
   {% assign lastletter = "" %}
   <div class="card">
-    <h6 class="card-text text-muted alert alert-dark">
+    <h6 class="card-text text-muted alert alert-secondary">
       {% for word in words %}
         {% assign tmpletter = word.swedish | slice: 0 | upcase %}
         {% if tmpletter != lastletter %}
