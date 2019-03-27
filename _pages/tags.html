@@ -13,7 +13,8 @@ title: Tags
   <div class="card">
     <h6 class="card-text text-muted alert alert-dark">
   {% for tag in tags %}
-      <a href="#{{ tag | first | slugify }}">{{ tag | first | replace: '-', ' ' }} <span class="badge badge-secondary">{{ tag | last | size }}</span></a>{% if forloop.last == false %} • {% endif %}
+    <a href="#{{ tag | first | slugify }}" style="font-size: {{ tag | last | size | times: 4 | plus: 80 }}%">{{ tag | first | replace: '-', ' ' }} <span class="badge badge-secondary">{{ tag | last | size }}</span></a>
+  {% if forloop.last == false %} • {% endif %}
   {% endfor %}
     </h6>
   </div>
