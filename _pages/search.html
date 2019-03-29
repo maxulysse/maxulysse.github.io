@@ -7,8 +7,10 @@ title: Search
 ---
 
 <div class="card-columns only-one-column">
-  <div class="card">
-    <h3 class="card-text text-muted alert alert-secondary">Looking for something?</h3>
+  <div class="card bg-light">
+    <div class="card-body">
+      <h3 class="card-text text-muted">Looking for something?</h3>
+    </div>
   </div>
 
   <div class="card">
@@ -18,14 +20,9 @@ title: Search
   <div class="card-columns"><div data-search-results></div>
     <script type="text/x-template" id="search-result">
       <div class="card">
-        <div class="card-header bg-light"><img class="card-img-top img-fluid" src="##image##" alt="##title##" title="##title##"></div>
         <div class="card-body">
           <h4 class="card-title"><a href="##url##">##title##</a></h4>
           <p class="card-text">##description##</p>
-          <p class="text-center"><a href="##url##" class="btn btn-outline-primary">Read more</a></p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> ##date##</small>
         </div>
       </div>
     </script>
