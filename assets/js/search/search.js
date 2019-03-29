@@ -11,7 +11,7 @@
 Initialisation
 ========================================================================== */
 
-var q, jsonFeedUrl = "{{ site.baseurl }}/feed.json",
+var q, jsonFeedUrl = "/feeds/feed.json",
   $searchForm = $("[data-search-form]"),
   $searchInput = $("[data-search-input]"),
   $resultTemplate = $("#search-result"),
@@ -120,7 +120,9 @@ function getResults(q) {
  */
 function execSearch(q) {
   if (q != '' || allowEmpty) {
-    if (showLoader) {toggleLoadingClass();}
+    if (showLoader) {
+      toggleLoadingClass();
+    }
     processResultData(getResults(q));
   }
 }
@@ -181,13 +183,15 @@ function showSearchResults(results) {
  */
 function populateResultContent(html, item) {
   html = injectContent(html, item.title, '##title##');
-  html = injectContent(html, item.description, '##description##');
-  html = injectContent(html, item.date, '##date##');
-  html = injectContent(html, item.author, '##author##');
-  html = injectContent(html, item.tags, '##tags##');
-  html = injectContent(html, item.image, '##image##');
-  html = injectContent(html, item.url, '##url##');
-  html = injectContent(html, item.content, '##content##');
+  html = injectContent(html, item.link, '##url##');
+  if(item.excerpt)
+    html = injectContent(html, item.excerpt, '##description##');
+  else
+    html = injectContent(html, "", '##description##');
+  if( item.date)
+    html = injectContent(html, item.date, '##date##');
+  else
+    html = injectContent(html, "", '##date##');
   return html;
 }
 
