@@ -11,17 +11,19 @@ title: List
 
   {% assign lastletter = "" %}
   <div class="card">
-    <h6 class="card-text text-muted alert alert-secondary">
-      {% for word in words %}
-        {% assign tmpletter = word.swedish | slice: 0 | upcase %}
-        {% if tmpletter != lastletter %}
-          <a href="#{{ word.swedish | slice: 0 | upcase }}">{{ word.swedish | slice: 0 | upcase }}</a>
-          {% if tmpletter != "Ä" %} •
+    <div class="card-body">
+      <h6 class="card-text text-muted">
+        {% for word in words %}
+          {% assign tmpletter = word.swedish | slice: 0 | upcase %}
+          {% if tmpletter != lastletter %}
+            <a href="#{{ word.swedish | slice: 0 | upcase }}">{{ word.swedish | slice: 0 | upcase }}</a>
+            {% if tmpletter != "Ä" %} •
+            {% endif %}
           {% endif %}
-        {% endif %}
-        {% assign lastletter = tmpletter %}
-      {% endfor %}
-    </h6>
+          {% assign lastletter = tmpletter %}
+        {% endfor %}
+      </h6>
+    </div>
   </div>
 
   {% assign lastletter = "" %}

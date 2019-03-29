@@ -1,4 +1,5 @@
 <head>
+  {% assign author = site.data.authors[page.author] | default: site.data.authors["maxulysse"] %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,9 +22,9 @@
   <meta content="{{ site.description }}" property="og:description">
   <meta content="{{ site.description }}" name="twitter:description">
 {% endif %}
-  <meta content="{{ site.author.name }}" name="author">
-  <meta content="@{{ site.author.twitter }}" name="twitter:site">
-  <meta content="@{{ site.author.twitter }}" name="twitter:creator">
+  <meta content="{{ author.name }}" name="author">
+  <meta content="@{{ author.twitter }}" name="twitter:site">
+  <meta content="@{{ author.twitter }}" name="twitter:creator">
 {% if page.title %}
   <meta content="article" property="og:type">
 {% else %}
