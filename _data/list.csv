@@ -2,11 +2,13 @@ swedish,french
 à la carte,à la carte
 abonnemang,abonnement
 accessoar,accessoire
+ackompanjemang,accompagnement
 ackuschör,accoucheur
 adjö,adieu
 adress,adresse
 adressera,adresser
 affär,affaire
+agremang,agrément
 akrobat,acrobate
 alarm,alarme
 allée,allée
@@ -21,6 +23,8 @@ analysera,analyser
 anekdot,anecdote
 annons,annonce
 antibiotikum,antibiotique
+aptit,appétit
+arrangemang,arrangement
 arrogans,arrogance
 ateljé,atelier
 atoll,atoll
@@ -29,6 +33,7 @@ attityd,attitude
 aubergine,aubergine
 auktorisera,autoriser
 automobil,automobile
+avancemang,avancement
 avantgarde,avant-garde
 avec,avec
 äventyr,aventure
@@ -54,6 +59,7 @@ biljard,billard
 biljett,billet
 blatte,blatte
 blond,blond
+bombardemang,bombardement
 boulevard,boulevard
 bourgeoisie,bourgeoisie
 brie,brie
@@ -81,10 +87,12 @@ dementera,démentir
 depå,dépôt
 depesch,dépêcher
 diamant,diamant
+divertissemang,divertissement
 ekivok,équivoque
 ekvilibrist,équilibriste
 elev,élève
 emballage,emballage
+engagemang,engagement
 enkät,enquête
 ensemble,ensemble
 entente,entente
@@ -97,15 +105,20 @@ estetisk,esthétique
 etablissemang,établissement
 etage,étage
 evenemang,évènement
+fasad,façace
 fåtölj,fauteuil
 faute,faute
 favör,faveur
 feodalism,féodalisme
+figur,figure
 filateli,philatélie
 filé,filet
 filial,filiale
 filosofera,philosopher
 finans,finance
+finemang,finement
+flanör,flâneur
+fontän,fontaine
 fotogenisk,photogénique
 frisör,friseur
 gallium,gallium
@@ -116,8 +129,10 @@ garderob,garde-robe
 generös,généreuse
 genre,genre
 gepard,guépard
+gest,geste
 glaciär,glacier
 glass,glace
+gravid,gravide
 grenadjär,grenadier
 grupp,groupe
 haricots verts,haricots verts
@@ -135,6 +150,7 @@ jalu,jaloux
 jalusi,jalousie
 journal,journal
 kabaré,cabaret
+kabin,cabine
 kafé,café
 kalsong,caleçon
 kamouflage,camouflage
@@ -149,6 +165,7 @@ karamell,caramel
 kasern,caserne
 kaskad,cascade
 kastrull,casserole
+kavalkad,cavalcade
 kilogram,kilogramme
 kiosk,kiosque
 klack,claquer
@@ -163,6 +180,7 @@ komplett,complet
 komplimang,compliment
 komplimentera,complimenter
 komplott,complot
+kompott,compote
 konnässör,connaisseur
 kontor,comptoir
 konvoj,convoi
@@ -177,6 +195,7 @@ kurs,cours
 kusin,cousin
 kuvös,couveuse
 lansera,lancer
+lavemang,lavement
 laxativ,laxatif
 levain,levain
 lokal,local
@@ -203,6 +222,7 @@ missil,missile
 möbel,meuble
 möblemang,ameublement
 moderera,modérer
+momang,moment
 montör,monteur
 motett,motet
 motiv,motif
@@ -212,6 +232,7 @@ naiv,naïf
 nevö,neveu
 niece,nièce
 nivå,niveau
+nonchalans,nonchalance
 officiell,officiel
 omnibus,omnibus
 orange,orange
@@ -250,6 +271,7 @@ projektil,projectile
 promenad,promenade
 punkt,point
 puré,purée
+raffinemang,raffinement
 ragu,ragoût
 rapport,rapport
 ras,race
@@ -259,9 +281,11 @@ reglera,régler
 reklam,réclame
 relief,relief
 remouladsås,rémoulade
+resonemang,raisonnement
 restaurang,restaurant
 restriktion,restriction
 resumé,résumé
+retusch,retouche
 reveny,revenu
 ridå,rideau
 rubrik,rubrique
@@ -279,7 +303,8 @@ servett,serviette
 servitör,serviteur
 signalement,signalement
 situation,situation
-statskupp,coup d’État
+souvenir,souvenir
+statskupp,coup d’état
 sufflé,soufflé
 syffisant,suffisant
 talang,talent
@@ -301,5 +326,6 @@ väst,veste
 veritabel,véritable
 verlan,verlan
 vinjett,vignette
+visavi,vis-à-vis
 volontär,volontaire
 vulgär,vulgaire
