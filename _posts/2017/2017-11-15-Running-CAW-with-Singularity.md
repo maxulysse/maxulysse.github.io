@@ -18,7 +18,7 @@ This post was written for the [Nextflow blog](https://www.nextflow.io/blog/2017/
 
 ## The CAW Pipeline
 
-![alt text](https://raw.githubusercontent.com/SciLifeLab/CAW/master/doc/images/CAW_logo.png "Cancer Analysis Workflow logo")
+![Cancer Analysis Workflow logo]({{ site.url }}/assets/img/category/caw.png "Cancer Analysis Workflow")
 
 [Cancer Analysis Workflow](http://opensource.scilifelab.se/projects/caw/) (CAW for short) is an analysis pipeline developed for the analysis of tumour : normal pairs.
 It is developed in collaboration with two infrastructures within [Science for Life Laboratory](https://www.scilifelab.se/): [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), in The Stockholm [Genomics Applications Development Facility](https://www.scilifelab.se/facilities/ngi-stockholm/) to be precise and [National Bioinformatics Infrastructure Sweden](https://www.nbis.se/) (NBIS).
