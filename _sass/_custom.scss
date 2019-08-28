@@ -109,3 +109,16 @@ blockquote p {
   float: left;
   margin-right: 1em;
 }
+
+.link-icon {
+  color: #000000;
+}
+
+.header-link:hover .link-icon:before {
+  transition: opacity 0.5s linear;
+  content: "\f0c1";
+}
+
+.link-icon:hover {
+  color: #428BCA;
+}
