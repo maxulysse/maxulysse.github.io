@@ -24,12 +24,11 @@ title: Tags
   <div class="card-columns two-columns">
   {% for tag in tags %}
   <div class="card">
-      <div class="card-header">
+      <div class="card-header header-link">
         <a name="{{ tag | first | slugify }}"></a>
-        <span><i class="fa fa-tag" aria-hidden="true"></i></span>
+        <span><a href="#{{ tag | first | slugify }}"><i class="fa fa-tag link-icon" aria-hidden="true"></i></a></span>
         <span>{{ tag | first | replace:'-', ' ' }}</span>
         <span class="badge badge-dark">{{ tag | last | size }}</span>
-        <div class="float-right"><a href="#top">&uarr;</a></div>
       </div>
       <ul class="list-group list-group-flush">
     {% for post in sorted_posts %}
