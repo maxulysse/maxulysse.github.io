@@ -5,13 +5,13 @@ rvm:
 install:
   # Install markdownlint-cli
   - sudo apt-get install npm && npm install -g markdownlint-cli
-  # Build website
-  - bundle exec jekyll build
 
 script:
-  # html proof
+  # Build website
+  - bundle exec jekyll build
+  # Proof the html
   - bundle exec htmlproofer ./_site --check-favicon --check-html --disable-external --url-ignore /\#À/,/\#Ä/
-  # Markdown lint
+  # Lint the markdown
   - markdownlint . -c markdownlint.yml
 
 branches:
