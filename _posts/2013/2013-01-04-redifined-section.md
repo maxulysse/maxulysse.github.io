@@ -12,6 +12,7 @@ image:
 ---
 
 Section is redefined with a classical:
+
 ```LaTeX
 \renewcommand\section{\@startsection{section}{1}{\z@}
 {-3.5ex \@plus -1ex}
@@ -19,12 +20,14 @@ Section is redefined with a classical:
 {\bfseries}
 }
 ```
-Suppose you’re using an unnumbered section (\section*).
+
+Suppose you’re using an unnumbered section `\section*`.
 Everything is working fine, until you need to use `mathtools` for displaying an equation.
 And now, your unnumbered section is numbered, and its title is `*...`
 
-The problem is just, you just put a new line between the `}}` where it sould not have been.
+The problem is just, you just put a new line between the `}}` where it should not have been.
 Just rewrite your definition, and it’ll be working again:
+
 ```LaTeX
 \renewcommand\section{\@startsection{section}{1}{\z@}
 {-3.5ex \@plus -1ex}

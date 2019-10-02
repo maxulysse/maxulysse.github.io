@@ -10,7 +10,7 @@ image:
   path: /assets/img/category/jekyll.png
 ---
 
-## Hello world!
+## Hello world
 I was getting tired of Wordpress, so I decided to try out Jekyll hosted on GitHub, and I'm quite happy with the result.
 
 If you want to know more about the template I'm using, you can look at [the repository <i class="fab fa-github" aria-hidden="true"></i>](https://github.com/maxulysse/maxulysse.github.io).

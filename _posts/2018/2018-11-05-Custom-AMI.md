@@ -17,6 +17,7 @@ image:
 ---
 
 Following this post set of posts on running Nextflow with AWS Batch:
+
 - Nextflow blog: [Scaling with AWS Bach](https://www.nextflow.io/blog/2017/scaling-with-aws-batch.html)
 - This blog: [Running CAW with AWS Batch](https://maxulysse.github.io/2017/11/16/Running-CAW-with-AWS-Batch/)
 - Alexander Peltzer's blog: [Running nf-co.re pipelines with AWSBatch](https://apeltzer.github.io/post/01-aws-nfcore/)
@@ -39,6 +40,7 @@ All the instructions are in fact listed in the [custom AMI Nextflow docs](https:
 - The `ssh` command provided by AWS is wrong, you need to replace `root` by `ec2-user`
 - `sudo yum update` to update the system
 - Install `awscli` using `conda`, so install `conda` first, and actually install `wget` before
+
 ```bash
 sudo yum install wget
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86\_64.sh
@@ -47,12 +49,14 @@ bash Miniconda3-latest-Linux-x86\_64.sh -p /home/ec2-user/miniconda
 source .bashrc
 conda install -c conda-forge awscli
 ```
+
 - Edit this file: `/etc/sysconfig/docker-storage`
 - Add this option `--storage-opt dm.basesize=500GB` (or specify any other size you prefer)
 - `sudo service docker restart` to restart the docker daemon
 - Check that you actually have the size you wanted with `docker info | grep -i base` and `docker info | grep -i data`
 
 For all their support, thanks to:
+
 - [alneberg](https://github.com/alneberg)
 - [apeltzer](https://github.com/apeltzer)
 - [KochTobi](https://github.com/KochTobi)

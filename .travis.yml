@@ -2,7 +2,17 @@ language: ruby
 rvm:
 - 2.5.0
 
-script: ./scripts/test.sh
+install:
+  # Install markdownlint-cli
+  - sudo apt-get install npm && npm install -g markdownlint-cli
+  # Build website
+  - bundle exec jekyll build
+
+script:
+  # html proof
+  - bundle exec htmlproofer ./_site --check-favicon --check-html --disable-external --url-ignore /\#À/,/\#Ä/
+  # Markdown lint
+  - markdownlint . -c markdownlint.yml
 
 branches:
   only:

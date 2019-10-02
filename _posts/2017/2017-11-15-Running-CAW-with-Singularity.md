@@ -41,12 +41,12 @@ So I can only transfer files and data in one specific repository using SFTP.
 UPPMAX provides computing resources for Swedish researchers for all scientific domains, so getting software updates can occasionally take some time.
 Typically, [environment modules](http://modules.sourceforge.net/) are used which allow several versions of different tools - this is good for reproducibility and is quite easy to use. However, the approach is not portable across different clusters outside of UPPMAX.
 
-## Why use containers?
+## Why use containers
 
 The idea of using containers, for improved portability and reproducibility, and more up to date tools, came naturally to us, as it is easily managed within Nextflow.
 We cannot use [Docker](https://www.docker.com/) on our secure cluster, so we wanted to run CAW with [Singularity](http://singularity.lbl.gov/) images instead.
 
-## How was the switch made?
+## How was the switch made
 
 We were already using Docker containers for our continuous integration testing with Travis, and since we use many tools, I took the approach of making (almost) a container for each process.
 Because this process is quite slow, repetitive and I~~'m lazy~~ like to automate everything, I made a simple NF [script](https://github.com/SciLifeLab/CAW/blob/master/buildContainers.nf) to build and push all docker containers.
@@ -67,6 +67,7 @@ singularity pull --name ${container}-${tag}.img docker://${repository}/${contain
 After this, it's just a matter of moving all containers to the secure cluster we're using, and using the right configuration file in the profile.
 I'll spare you the details of the SFTP transfer.
 This is what the configuration file for such Singularity images looks like: [`singularity-path.config`](https://github.com/SciLifeLab/CAW/blob/master/configuration/singularity-path.config)
+
 ```groovy
 /*
 vim: syntax=groovy
