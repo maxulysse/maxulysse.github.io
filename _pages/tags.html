@@ -26,9 +26,10 @@ title: Tags
   <div class="card">
       <div class="card-header header-link">
         <a name="{{ tag | first | slugify }}"></a>
-        <span><a href="#{{ tag | first | slugify }}"><i class="fa fa-tag link-icon" aria-hidden="true"></i></a></span>
-        <span>{{ tag | first | replace:'-', ' ' }}</span>
+        <i class="fa fa-tag" aria-hidden="true"></i>
+        {{ tag | first | replace:'-', ' ' }}
         <span class="badge badge-dark">{{ tag | last | size }}</span>
+        <a href="#{{ tag | first | slugify }}"><i class="fa link-icon" aria-hidden="true"></i></a>
       </div>
       <ul class="list-group list-group-flush">
     {% for post in sorted_posts %}

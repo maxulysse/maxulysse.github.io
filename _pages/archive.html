@@ -35,8 +35,9 @@ title: Archive
   <div class="card">
     <a name="{{ this_year }}"></a>
     <div class="card-header header-link">
-      <span><a href="#{{ this_year }}"><i class="fa fa-folder-open link-icon" aria-hidden="true"></i></a></span>
+      <i class="fa fa-folder-open" aria-hidden="true"></i>
       {{ this_year }}
+      <a href="#{{ this_year }}"><i class="fa link-icon" aria-hidden="true"></i></a>
     </div>
     <ul class="list-group list-group-flush">
   {% endif %}
@@ -56,10 +57,11 @@ title: Archive
     </ul>
   </div>
   <div class="card">
+    <a name="{{ next_year }}"></a>
     <div class="card-header header-link">
-      <a name="{{ next_year }}"></a>
-        <span><a href="#{{ next_year }}"><i class="fa fa-folder-open link-icon" aria-hidden="true"></i></a></span>
+      <i class="fa fa-folder-open" aria-hidden="true"></i>
       {{ next_year }}
+      <a href="#{{ next_year }}"><i class="fa link-icon" aria-hidden="true"></i></a>
     </div>
     <ul class="list-group list-group-flush">
     {% endif %}
