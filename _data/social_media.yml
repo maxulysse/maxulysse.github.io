@@ -22,9 +22,6 @@
 - name         : Stack Exchange
   url          : https://stackexchange.com/users/2204471/maxulysse/
   font_awesome : fa-stack-exchange
-- name         : Viadeo
-  url          : https://www.viadeo.com/p/0021pms7gdguerlj
-  font_awesome : fa-viadeo
 - name         : ResearchGate
   url          : https://www.researchgate.net/profile/Maxime_Garcia
   font_awesome : fa-researchgate
