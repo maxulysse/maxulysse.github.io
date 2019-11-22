@@ -55,7 +55,7 @@ profiles {
 
 
 > `${params.custom_config_base}` is taken from the `nfcore_custom.config` file, which loads the configuration files for all pipelines.
-> 
+>
 >  ```groovy
 > params.custom_config_version = 'master'
 > params.custom_config_base = "https://raw.githubusercontent.com/nf-core/configs/${params.custom_config_version}"
