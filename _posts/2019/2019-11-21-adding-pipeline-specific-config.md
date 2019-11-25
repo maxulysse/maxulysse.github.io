@@ -13,24 +13,28 @@ image:
   path: /assets/img/category/nf-core.png
 ---
 
+> EDIT: Thanks a lot to [@jfy133](https://github.com/jfy133) for helping clarifying this post.
+
 I was recently working on [`nf-core/sarek`](https://github.com/nf-core/sarek) to add [Sentieon](https://www.sentieon.com/) possibilities.
 I added `Senteion` specific processes and channels, but only if a `--sentieon` param is specified on the command line.
 
-While developing on our server `munin`, on a branch of my fork, I managed to work out how to access our installation of `Sentieon` via [environment modules](http://modules.sourceforge.net/).
-Now that my [PR#66](https://github.com/nf-core/sarek/pull/66) is open, I figured that it would be an improvement if the `sarek`/`munin` specific configuration was included within the same `munin` profile as in [nf-core/configs](https://github.com/nf-core/configs).
+While developing on our server `munin`, I used our local [environment modules](http://modules.sourceforge.net/) to access our installation of `Sentieon`.
+Now that my [PR#66](https://github.com/nf-core/sarek/pull/66) is open, I figured that it would be an improvement if the `sarek`/`munin` specific configuration was included in the `munin` profile already shared with [nf-core/configs](https://github.com/nf-core/configs).
 
-However, within `nf-core/configs`, we have configuration at an institutional level across all pipelines.
-What I wanted was to have that at a pipeline level.
+However, within [`nf-core/configs`](https://github.com/nf-core/configs), configuration is at an institutional level across all pipelines.
+What I wanted was to have institutional configuration at a pipeline level.
 
-For this, we have to modify/create the following files over three steps
+For this, we have to modify/create the following files:
 
-1. the `nextflow.config` file in the sarek repository
-2. a `pipeline/sarek.config` in the nf-core configs
-3. a `conf/pipelines/sarek/munin.config`, also in the nf-core configs
+* The [`nextflow.config`](https://github.com/nf-core/sarek/blob/master/nextflow.config) file in [`nf-core/sarek`](https://github.com/nf-core/sarek)
+* A [`pipeline/sarek.config`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config) in the [`nf-core/configs`](nf-core/configs)
+* A [`conf/pipeline/sarek/munin.config`](https://github.com/nf-core/configs/blob/master/conf/pipeline/sarek/munin.config), also in the [`nf-core/configs`](nf-core/configs)
 
-## First step: enabling loading of the pipeline config file within the pipeline
+## Enable loading of the pipeline config file within the pipeline
 
-Very similar to the way we're loading custom profiles from different Institutions, we now add an additional loading step to the `nf-core/sarek/nextflow.config` file, but this time specifiying institutional configs at a pipeline level.
+> In [`nextflow.config @ nf-core/sarek`](https://github.com/nf-core/sarek/blob/master/nextflow.config)
+
+In a similar way custom profiles from different Institutions are loaded, now an extra loading step loads a new pipeline level.
 
 ```groovy
 // Load nf-core/sarek custom profiles from different Institutions
@@ -41,18 +45,23 @@ try {
 }
 ```
 
-However, of course, this pipeline specific config file that the above code points to, needs to be created in the nf-core/configs repository.
+That will load (when the `try` statement is executed) the newly sarek specific configuration file on the (`nf-core/configs`)[https://github.com/nf-core/configs] repository which now needs to be created.
 
-## Second step: creating the main pipeline config file
+## Create the main pipeline config file
 
-We create the new config file pointed to in the previous step, this time in `nf-core/configs/pipeline/sarek.config`. This file will then tell sarek itself where to look for all the sarek pipeline-specific institutional profiles within `nf-core/configs` repository (when the `try` statement above is executed).
+> Create [`pipeline/sarek.config @ nf-core/configs`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config)
+
+We create the new config file pointed to in the previous step: [`pipeline/sarek.config`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config), this time in (`nf-core/configs`)[https://github.com/nf-core/configs].
+
+This file will then tell sarek where to look for the sarek pipeline-specific institutional profiles within the (`nf-core/configs`)[https://github.com/nf-core/configs] repository.
+
+Be sure to use the same profile to load both the institutional configuration file and the institutional pipeline-specific configuration file.
 
 ```groovy
 profiles {
   munin { includeConfig "${params.custom_config_base}/conf/pipeline/sarek/munin.config" }
 }
 ```
-
 
 > `${params.custom_config_base}` is taken from the `nfcore_custom.config` file, which loads the configuration files for all pipelines.
 >
@@ -66,11 +75,13 @@ profiles {
 > }
 > ```
 
-## Third step: creating the pipeline system specific config file
+## Create the pipeline system specific config file
 
-Finally we create the actual pipeline config file, just as we do for a regular `Nextflow` configuration file. This we create in `conf/pipeline/sarek/munin.config` (as pointed to in step 2).
+> Create [`conf/pipeline/sarek/munin.config @ nf-core/configs`](https://github.com/nf-core/configs/blob/master/conf/pipeline/sarek/munin.config)
 
-When using this pipeline specific config file, params in this file will overwrite the one already existing, _ie_ the ones that could already be specified within the general institutional `munin.config` file (in `nf-core/configs/conf/munin.config`).
+Finally we create the actual pipeline config file, just as we do for a regular `Nextflow` configuration file.
+
+Since the same profile is used to load this institutional pipeline-specific configuration file and the institutional configuration file, pipeline-specific `params` will overwrite the one already existing, _ie_ the ones that could already be specified within the institutional [`nf-core/configs/conf/munin.config`](https://github.com/nf-core/configs/blob/master/conf/munin.config) file.
 
 In our case, it's just two params that we are overwriting: `config_profile_contact` and `config_profile_description` that way, when `nf-core/sarek` is launched on `munin`, the user will notice there's an extra level of configuration.
 
@@ -100,8 +111,10 @@ params {
 // Specific nf-core/sarek process configuration
 process {
   withLabel:sentieon {
-    beforeScript = {params.sentieon ? 'module load sentieon/201808.05' : ''}
-    container = {params.sentieon ? '' : 'nfcore/sarek:dev'}
+    if (params.sentieon) {
+      module = 'sentieon/201808.05'
+      container = ''
+    }
   }
 }
 ```
@@ -109,6 +122,8 @@ process {
 ## Tests
 
 Both following commands worked as expected on munin.
+Since [PR#66](https://github.com/nf-core/sarek/pull/66) is not merged yet, I used `MaxUlysse/sarek -r sention` to specify my own branch of sarek.
+Since [PR#85](https://github.com/nf-core/configs/pull/85) is not merged yet, I used `--custom_config_base` to specify my own fork of nf-core/configs.
 
 ```bash
 nextflow run MaxUlysse/sarek -r sentieon -profile test,munin --sentieon /
