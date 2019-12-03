@@ -45,7 +45,7 @@ try {
 }
 ```
 
-That will load (when the `try` statement is executed) the newly sarek specific configuration file on the (`nf-core/configs`)(https://github.com/nf-core/configs) repository which now needs to be created.
+That will load (when the `try` statement is executed) the newly sarek specific configuration file on the [`nf-core/configs`](https://github.com/nf-core/configs) repository which now needs to be created.
 
 ## Create the main pipeline config file
 
