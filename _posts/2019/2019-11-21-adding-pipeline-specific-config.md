@@ -27,8 +27,8 @@ What I wanted was to have institutional configuration at a pipeline level.
 For this, we have to modify/create the following files:
 
 * The [`nextflow.config`](https://github.com/nf-core/sarek/blob/master/nextflow.config) file in [`nf-core/sarek`](https://github.com/nf-core/sarek)
-* A [`pipeline/sarek.config`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config) in the [`nf-core/configs`](nf-core/configs)
-* A [`conf/pipeline/sarek/munin.config`](https://github.com/nf-core/configs/blob/master/conf/pipeline/sarek/munin.config), also in the [`nf-core/configs`](nf-core/configs)
+* A [`pipeline/sarek.config`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config) in the [`nf-core/configs`](https://github.com/nf-core/configs)
+* A [`conf/pipeline/sarek/munin.config`](https://github.com/nf-core/configs/blob/master/conf/pipeline/sarek/munin.config), also in the [`nf-core/configs`](https://github.com/nf-core/configs)
 
 ## Enable loading of the pipeline config file within the pipeline
 
