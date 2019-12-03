@@ -45,15 +45,15 @@ try {
 }
 ```
 
-That will load (when the `try` statement is executed) the newly sarek specific configuration file on the (`nf-core/configs`)[https://github.com/nf-core/configs] repository which now needs to be created.
+That will load (when the `try` statement is executed) the newly sarek specific configuration file on the (`nf-core/configs`)(https://github.com/nf-core/configs) repository which now needs to be created.
 
 ## Create the main pipeline config file
 
 > Create [`pipeline/sarek.config @ nf-core/configs`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config)
 
-We create the new config file pointed to in the previous step: [`pipeline/sarek.config`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config), this time in (`nf-core/configs`)[https://github.com/nf-core/configs].
+We create the new config file pointed to in the previous step: [`pipeline/sarek.config`](https://github.com/nf-core/configs/blob/master/pipeline/sarek.config), this time in [`nf-core/configs`](https://github.com/nf-core/configs).
 
-This file will then tell sarek where to look for the sarek pipeline-specific institutional profiles within the (`nf-core/configs`)[https://github.com/nf-core/configs] repository.
+This file will then tell sarek where to look for the sarek pipeline-specific institutional profiles within the [`nf-core/configs`](https://github.com/nf-core/configs) repository.
 
 Be sure to use the same profile to load both the institutional configuration file and the institutional pipeline-specific configuration file.
 
