@@ -31,6 +31,7 @@ Solstrand, Bergen - 2019/10/24
 Swedish Childhood Tumor Biobank
 
 ---
+
 [![SciLifeLab]({{ site.url }}/assets/img/svg/SciLifeLab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
 
 National centre for molecular biosciences with focus on health and environmental research
@@ -42,7 +43,7 @@ Note:
 
 * SciLifeLab is several infrastructures
 
----
+===
 
 [![NGI]({{ site.url }}/assets/img/svg/NGI_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
@@ -52,7 +53,7 @@ Note:
   * Sample collection, study design, protocol selection
   * Bioinformatics analysis
 
----
+===
 
 [![NBIS]({{ site.url }}/assets/img/svg/NBIS_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
 
@@ -79,7 +80,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 </div>
 
----
+===
 
 <!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" -->
 
@@ -96,7 +97,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 </div>
 
----
+===
 
 [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://nextflow.io/) <!-- .element class="image-W50" -->
 
@@ -109,7 +110,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 </div>
 
----
+===
 
 ## Software dependencies
 
@@ -124,7 +125,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 </div>
 
----
+===
 
 ## Reference genomes
 
@@ -146,7 +147,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 </div>
 
----
+===
 
 ## WES and Targeted Sequencing
 
@@ -168,7 +169,7 @@ Based on GATK Best Practices (GATK 4.1.2.0)
 
 </div>
 
----
+===
 
 ## Germline Variant Calling
 
@@ -179,7 +180,7 @@ Based on GATK Best Practices (GATK 4.1.2.0)
   * Manta
   * TIDDIT
 
----
+===
 
 ## Somatic Variant Calling
 
@@ -193,14 +194,14 @@ Based on GATK Best Practices (GATK 4.1.2.0)
   * ASCAT
   * Control-FREEC
 
----
+===
 
 ## Annotation
 
 * VEP and SnpEff
   * <i class="fas fa-database"></i> ClinVar, COSMIC, dbSNP, GENCODE, gnomAD, polyphen, sift, etc.
 
----
+===
 
 ## Reports
 
@@ -274,6 +275,7 @@ Note:
 Note:
 
 * GMS is an initiative to implement Precision Medicine at a national level
+
 ---
 
 ## Preprint in BioRxiv
