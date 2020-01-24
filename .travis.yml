@@ -14,7 +14,7 @@ script:
   # Proof the html
   - bundle exec htmlproofer ./_site --check-favicon --check-html --disable-external --url-ignore /\#À/,/\#Ä/
   # Lint the markdown
-  - markdownlint . -c markdownlint.yml
+  - markdownlint . -c .github/markdownlint.yml
 
 branches:
   only:
