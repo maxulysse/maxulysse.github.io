@@ -1,0 +1,114 @@
+img{
+  border: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.requirements li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.me {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.me li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.me li a {
+  margin-left: 15px;
+}
+
+.reveal pre code{
+  font-size: .8em;
+  line-height: 1em;
+  max-height: 500px;
+}
+
+.image-W10 img {
+  width: 10%;
+}
+
+.image-W25 img {
+  width: 25%;
+}
+
+.image-W50 img {
+  width: 50%;
+}
+
+.image-W75 img {
+  width: 75%;
+}
+
+.image-H10 img {
+  height: 10%;
+}
+
+.image-H25 img {
+  height: 25%;
+}
+
+.image-H50 img {
+  height: 50%;
+}
+
+.image-H75 img {
+  height: 75%;
+}
+
+.reveal .slides {
+  font-size: 0.82em;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 20px;
+  size: 0.6em;
+  color: #444444;
+}
+
+.reveal table td {
+  font-size: 0.7em;
+}
+
+html.dim-background .slide-background.present {
+  opacity: 0.6 !important;
+  background-color: rgb(255, 255, 255);
+}
+
+html.dim-background-2 .slide-background.present {
+  opacity: 0.9 !important;
+  background-color: rgb(255, 255, 255);
+}
+
+.text-right {
+  text-align: right;
+}
+
+#left {
+  left:-8.33%;
+  text-align: left;
+  float: left;
+  width:50%;
+  z-index:-10;
+}
+
+#right {
+  left:31.25%;
+  top: 75px;
+  float: right;
+  text-align: right;
+  z-index:-10;
+  width:50%;
+}
+
+table, th, td {
+  border-style: hidden;
+}

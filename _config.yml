@@ -32,13 +32,14 @@ include:
   - "_pages"
 
 exclude:
+  - "_posts/*/slides.md"
   - [vendor]
   - "LICENSE"
   - "README.md"
   - "assets/mycv/.*"
   - "assets/mycv/*.md"
   - "assets/mycv/*.tex"
-  - "assets/mycv/*201*.pdf"
+  - "assets/mycv/*20*.pdf"
   - "assets/mycv/biblio.bib"
   - "assets/mycv/LICENSE"
   - "assets/mycv/pictures/"
