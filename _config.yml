@@ -36,6 +36,12 @@ exclude:
   - [vendor]
   - "LICENSE"
   - "README.md"
+  - "assets/css/reveal.js/test"
+  - "assets/css/reveal.js/*.json"
+  - "assets/css/reveal.js/*.md"
+  - "assets/css/reveal.js/*.html"
+  - "assets/css/reveal.js/gruntfile.js"
+  - "assets/css/reveal.js/LICENSE"
   - "assets/mycv/.*"
   - "assets/mycv/*.md"
   - "assets/mycv/*.tex"
