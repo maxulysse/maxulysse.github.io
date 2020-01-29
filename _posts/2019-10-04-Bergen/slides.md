@@ -207,8 +207,6 @@ Based on GATK Best Practices (GATK 4.1.2.0)
 
 [![MultiQC]({{ site.url }}/assets/img/svg/MultiQC_logo.svg "MultiQC")](https://multiqc.info/) <!-- .element class="image-H10" -->
 
-[example report]({{ site.url }}/assets/files/multiqc_report_19-10-23.html)
-
 ---
 
 ## Workflow

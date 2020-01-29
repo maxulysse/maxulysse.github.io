@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>{{ page.title }} - {{ page.name }}| {{ page.date }}</title>
-        <link rel="stylesheet" type="text/css" href="/assets/css/reveal.js/css/reveal.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/reveal.js/css/theme/simple.css" id="theme">
-        <!-- Code syntax highlighting -->
-        <link rel="stylesheet" type="text/css" href="/assets/css/reveal.js/lib/css/zenburn.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/slides.css">
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '/assets/css/reveal.js/css/print/pdf.css' : '/assets/css/reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
-    </head>
+    {% include head-slides.html %}
     <body>
         <div class="reveal">
             <div class="slides">
