@@ -1,8 +1,8 @@
 <!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-state="dim-background" -->
 
-### Sarek, a workflow to detect germline and somatic mutations in WGS/WES
+# Sarek
 
-<br>
+## a workflow to detect germline and somatic mutations in WGS/WES
 
 Maxime Garcia
 
@@ -15,8 +15,6 @@ Maxime Garcia
 [<i class="fa fa-globe-europe" aria-hidden="true"></i> maxulysse.github.io](https://maxulysse.github.io/)
 
 </small>
-
-<br>
 
 4th Scandinavian Seminar on Translational Pathology
 
@@ -62,7 +60,7 @@ Note:
 
 ---
 
-## What is Sarek?
+## What is Sarek
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -227,7 +225,7 @@ Based on GATK Best Practices (GATK 4.1.2.0)
 
 ---
 
-## What's next?
+## What's next
 
 * More tools
   * Mutational signatures
@@ -278,7 +276,7 @@ Note:
 
 ## Preprint in BioRxiv
 
-#### Sarek: A portable workflow for whole-genome sequencing analysis of germline and somatic variants
+Sarek: A portable workflow for whole-genome sequencing analysis of germline and somatic variants
 
 <small>
 
@@ -324,7 +322,7 @@ Teresita Díaz De Ståhl | Max Käller | Björn Nystedt | |
 
 <!-- .slide: data-background="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-state="dim-background" -->
 
-## Any questions?
+## Any questions
 
 * [<i class="fa fa-globe-europe" aria-hidden="true"></i> nf-co.re](https://nf-co.re/)
 * [<i class="fab fa-github" aria-hidden="true"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
