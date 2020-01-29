@@ -14,6 +14,7 @@ Using:
 - [jquery](https://jquery.com/) `3.4.1`
 - [lunr](https://lunrjs.com/) `2.3.8`
 - [popper](https://popper.js.org/) `2.0.0`
+- [revealjs](revealjs) `3.8.0`
 - [staticman](https://staticman.net/) `1.0.0`
 
 Inspired by:
@@ -21,6 +22,7 @@ Inspired by:
 - [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes)
 - [tips-tutorials](https://github.com/dalanzg/tips-tutorials)
 - [dridk.me](https://github.com/dridk/blog)
+- [talks.bebatut.fr](https://github.com/bebatut-slides/bebatut-slides.github.io)
 
 [license-badge]: https://img.shields.io/github/license/MaxUlysse/maxulysse.github.io.svg
 [license-link]: https://github.com/MaxUlysse/maxulysse.github.io/blob/master/LICENSE

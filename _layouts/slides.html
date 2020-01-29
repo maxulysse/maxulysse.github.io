@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head-slides.html %}
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                        data-separator="^---\n"
+                        data-separator-vertical="^===\n"
+                        data-separator-notes="^Note:"
+                    >
+                    <textarea data-template>
+                        {% include_relative slides.md %}
+                    </textarea>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="/assets/css/reveal.js/lib/js/promise.js"></script>
+        <script type="text/javascript" src="/assets/css/reveal.js/js/reveal.js"></script>
+        <script type="text/javascript">
+            Reveal.initialize({
+                theme: Reveal.getQueryHash().theme,
+                transition: Reveal.getQueryHash().transition || 'concave',
+
+                dependencies: [
+                    { src: '/assets/css/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '/assets/css/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '/assets/css/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '/assets/css/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '/assets/css/reveal.js/plugin/math/math.js', async: true },
+                    { src: '/assets/css/reveal.js/plugin/notes/notes.js', async: true },
+                ]
+            });
+        </script>
+    </body>
+</html>
