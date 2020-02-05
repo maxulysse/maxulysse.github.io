@@ -1,0 +1,34 @@
+name: linting
+# This workflow is triggered on pushes and PRs to the repository.
+on: [push, pull_request]  
+
+jobs:
+  markdown:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10'
+      - name: Install markdownlint
+        run: |
+          npm install -g markdownlint-cli
+      - name: Run Markdownlint
+        run: |
+          markdownlint _posts/. README.md -c .github/markdownlint.yml
+  htmlproofer:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - name: Install bundle
+        run: |
+          bundle install --jobs=3 --retry=3
+      - name: Build website
+        run: |
+          bundle exec jekyll build
+      - name: Proof the html
+        run: |
+          bundle exec htmlproofer ./_site --check-favicon --check-html --disable-external --url-ignore /\#À/,/\#Ä/
