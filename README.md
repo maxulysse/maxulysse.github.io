@@ -1,9 +1,9 @@
 # [![maxulysse.github.io](assets/img/logo/logo.png "Sarek")](https://maxulysse.github.io)
 
-My own jekyll personnal website
+My own personal website made with Jekyll
 
 [![License][license-badge]][license-link]
-[![Travis status][travis-badge]][travis-link]
+[![GitHub Actions Linting status][github-actions-badge]][github-actions-link]
 
 Using:
 
@@ -20,11 +20,11 @@ Using:
 Inspired by:
 
 - [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes)
-- [tips-tutorials](https://github.com/dalanzg/tips-tutorials)
+- [Tips and Tutorials](https://github.com/dalanzg/tips-tutorials)
 - [dridk.me](https://github.com/dridk/blog)
 - [talks.bebatut.fr](https://github.com/bebatut-slides/bebatut-slides.github.io)
 
 [license-badge]: https://img.shields.io/github/license/MaxUlysse/maxulysse.github.io.svg
 [license-link]: https://github.com/MaxUlysse/maxulysse.github.io/blob/master/LICENSE
-[travis-badge]: https://api.travis-ci.org/MaxUlysse/maxulysse.github.io.svg
-[travis-link]: https://travis-ci.org/MaxUlysse/maxulysse.github.io
+[github-actions-badge]: https://github.com/MaxUlysse/maxulysse.github.io/workflows/linting/badge.svg
+[github-actions-link]: https://github.com/MaxUlysse/maxulysse.github.io/actions?query=workflow%3Alinting
