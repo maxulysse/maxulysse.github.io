@@ -34,8 +34,8 @@ Following [this post](https://www.nextflow.io/blog/2017/scaling-with-aws-batch.h
 - New TSV files for the test data:
   - in the test data bucket: `s3://caw-test-data/tsv/`
   - in the GitHub `CAW` repository:
-    - [`tiny-manta-s3.tsv`](https://github.com/MaxUlysse/CAW/blob/1.2.5/data/tsv/tiny-manta-s3.tsv)
-    - [`tiny-s3.tsv`](https://github.com/MaxUlysse/CAW/blob/1.2.5/data/tsv/tiny-s3.tsv)
+    - [`tiny-manta-s3.tsv`](https://github.com/SciLifeLab/Sarek/blob/1.2.5/data/tsv/tiny-manta-s3.tsv)
+    - [`tiny-s3.tsv`](https://github.com/SciLifeLab/Sarek/blob/1.2.5/data/tsv/tiny-s3.tsv)
 - Added AWS settings in my `~/.nextflow/config` file
 
 ```groovy
@@ -61,8 +61,8 @@ profiles {
 }
 ```
 
-- New AWS Batch specific config file [`aws-batch.config`](https://github.com/MaxUlysse/CAW/blob/1.2.5/configuration/aws-batch.config)
-  - `bundleDir` has been replaced by `params.genome_base` in [`genomes.config`](https://github.com/scilifelab/CAW/blob/master/configuration/genomes.config) for easier configuration.
+- New AWS Batch specific config file [`aws-batch.config`](https://github.com/SciLifeLab/Sarek/blob/1.2.5/configuration/aws-batch.config)
+  - `bundleDir` has been replaced by `params.genome_base` in [`genomes.config`](https://github.com/SciLifeLab/Sarek/blob/1.2.5/configuration/genomes.config) for easier configuration.
   - using `params.genome_base` for referencing the `S3` bucket:
 
 ```groovy

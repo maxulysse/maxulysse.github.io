@@ -43,4 +43,4 @@ jobs:
           bundle exec jekyll build
       - name: Proof the html
         run: |
-          bundle exec htmlproofer ./_site --check-favicon --check-html --disable-external --url-ignore /\#À/,/\#Ä/
+          bundle exec htmlproofer ./_site --check-favicon --check-html --url-ignore /\#À/,/\#Ä/ --http-status-ignore=302,999
