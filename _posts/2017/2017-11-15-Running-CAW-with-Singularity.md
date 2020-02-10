@@ -49,7 +49,7 @@ We cannot use [Docker](https://www.docker.com/) on our secure cluster, so we wan
 ## How was the switch made
 
 We were already using Docker containers for our continuous integration testing with Travis, and since we use many tools, I took the approach of making (almost) a container for each process.
-Because this process is quite slow, repetitive and I~~'m lazy~~ like to automate everything, I made a simple NF [script](https://github.com/SciLifeLab/CAW/blob/master/buildContainers.nf) to build and push all docker containers.
+Because this process is quite slow, repetitive and I~~'m lazy~~ like to automate everything, I made a simple NF [script](https://github.com/SciLifeLab/Sarek/blob/1.2.0/buildContainers.nf) to build and push all docker containers.
 Basically it's just `build` and `pull` for all containers, with some configuration possibilities.
 
 ```groovy
@@ -66,7 +66,7 @@ singularity pull --name ${container}-${tag}.img docker://${repository}/${contain
 
 After this, it's just a matter of moving all containers to the secure cluster we're using, and using the right configuration file in the profile.
 I'll spare you the details of the SFTP transfer.
-This is what the configuration file for such Singularity images looks like: [`singularity-path.config`](https://github.com/SciLifeLab/CAW/blob/master/configuration/singularity-path.config)
+This is what the configuration file for such Singularity images looks like: [`singularity-path.config`](https://github.com/SciLifeLab/Sarek/blob/1.2.0/configuration/singularity-path.config)
 
 ```groovy
 /*
