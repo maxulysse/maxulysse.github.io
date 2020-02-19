@@ -1,8 +1,8 @@
-<!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-state="dim-background" -->
+<!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-Park-01.jpg" data-state="dim-background" -->
 
-# Sarek
+# Sarek and rnafusion
 
-## a workflow to detect germline and somatic mutations in WGS/WES
+## Detect variants and fusion genes
 
 Maxime Garcia
 
@@ -28,6 +28,8 @@ Science for Life Laboratory, Stockholm - 2020/02/19
 
 <div class="fragment fade-in" data-fragment-index="2">
 
+<!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-beer.jpg" data-state="dim-background" -->
+
 A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sarek-national-park/) in Northern Sweden.
 
 <small>
@@ -48,15 +50,15 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ---
 
-[![Sarek]({{ site.url }}/assets/img/svg/sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
 * Open-Source Nextflow Pipeline
-* Part of nf-core
-* Developed at NGI
-* In collaboration with NBIS
-* Support from Barntumörbanken
+  * Part of nf-core
+  * Developed at NGI
+  * In collaboration with NBIS
+  * Support from Barntumörbanken
 
 </div>
 
@@ -67,9 +69,9 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 <div class="fragment fade-in" data-fragment-index="2">
 
 * Workflow manager
-* Data driven language
-* Portable (executable on multiple platforms)
-* Shareable and reproducible (with containers)
+  * Data driven language
+  * Portable (executable on multiple platforms)
+  * Shareable and reproducible (with containers)
 
 </div>
 
@@ -77,11 +79,15 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-W50" -->
 
+<div class="fragment fade-in" data-fragment-index="2">
+
 * Collection of High Quality Nextflow Pipelines
   * Strict guidelines
   * Extensive documentation
   * CI testing
   * Shared configuration
+
+</div>
 
 ===
 
@@ -135,6 +141,23 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ---
 
+## Publication in F1000Research
+
+Sarek: A portable workflow for whole-genome sequencing analysis of germline and somatic variants
+[version 1; peer review: awaiting peer review]
+
+<small>
+
+Maxime Garcia, Szilveszter Juhos, Malin Larsson, Pall I. Olason, Marcel Martin,
+Jesper Eisfeldt, Sebastian DiLorenzo, Johanna Sandgren, Teresita Díaz De Ståhl,
+Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
+
+</small>
+
+[<i class="ai ai-doi" aria-hidden="true"></i> doi.org/10.12688/f1000research.16665.1](https://doi.org/10.12688/f1000research.16665.1)
+
+---
+
 ## What's next
 
 * More tools
@@ -154,31 +177,26 @@ Note:
 
 ---
 
-## Publication in F1000Research
-
-Sarek: A portable workflow for whole-genome sequencing analysis of germline and somatic variants
-[version 1; peer review: awaiting peer review]
-
-<small>
-
-Maxime Garcia, Szilveszter Juhos, Malin Larsson, Pall I. Olason, Marcel Martin,
-Jesper Eisfeldt, Sebastian DiLorenzo, Johanna Sandgren, Teresita Díaz De Ståhl,
-Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
-
-</small>
-
-[<i class="ai ai-doi" aria-hidden="true"></i> doi.org/10.12688/f1000research.16665.1](https://doi.org/10.12688/f1000research.16665.1)
-
----
-
 [![rnafusion]({{ site.url }}/assets/img/svg/nf-core_rnafusion_logo.svg "rnafusion")](https://nf-co.re/rnafusion) <!-- .element class="image-H10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
 * Open-Source Nextflow Pipeline
-* Part of nf-core
-* Developed at NGI
-* Support from Barntumörbanken
+  * Part of nf-core
+  * Developed at NGI
+  * Support from Barntumörbanken
+
+</div>
+
+<div class="fragment fade-in" data-fragment-index="3">
+
+<small>
+
+Project initiated by [Rickard Hammarén](https://github.com/Hammarn),
+fully matured under [Martin Proks](https://github.com/matq007),
+shamelessly taken over by me.
+
+</small>
 
 </div>
 
@@ -193,6 +211,12 @@ Run and gather outputs from
 * Squid
 * STAR-Fusion
 
+<div class="fragment fade-in" data-fragment-index="2">
+
+Generate a nice final report
+
+</div>
+
 ---
 
 ## Get involved
@@ -203,8 +227,8 @@ Run and gather outputs from
   * [<i class="fab fa-github" aria-hidden="true"></i> github.com/nf-core/rnafusion](https://github.com/nf-core/rnafusion)
 * We have Slack
   * [<i class="fab fa-slack" aria-hidden="true"></i> nfcore.slack.com](https://nfcore.slack.com/)
-  * [<i class="fab fa-slack" aria-hidden="true"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)
-  * [<i class="fab fa-slack" aria-hidden="true"></i> nfcore.slack.com/channels/rnafusion](https://nfcore.slack.com/channels/rnafusion)
+  * [<i class="fab fa-slack" aria-hidden="true"></i> #sarek](https://nfcore.slack.com/channels/sarek)
+  * [<i class="fab fa-slack" aria-hidden="true"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
 
 ---
 
@@ -215,12 +239,13 @@ Run and gather outputs from
 
 <small>
 
-Barntumörbanken | NGI | NBIS | Clinical Genomics | nf-core
-:-:|:-:|:-:|:-:|:-:
-Szilveszter Juhos | Johannes Alneberg | Malin Larsson | Hassan Foroughi Asl | Paolo Di Tommaso
-Monica Nistèr | Phil Ewels | Marcel Martin | Valtteri Wirta | Sven Fillinger
-Johanna Sandgren | Carl Rubin | Markus Mayrhofer | | Alexander Peltzer
-Teresita Díaz De Ståhl | Max Käller | Björn Nystedt | |
+Barntumörbanken        | NGI               | NBIS             | Clinical Genomics   | nf-core
+:---------------------:|:-----------------:|:----------------:|:-------------------:|:-:
+Szilveszter Juhos      | Johannes Alneberg | Malin Larsson    | Hassan Foroughi Asl | Paolo Di Tommaso
+Monica Nistèr          | Phil Ewels        | Marcel Martin    | Valtteri Wirta      | Sven Fillinger
+Johanna Sandgren       | Carl Rubin        | Markus Mayrhofer |                     | Alexander Peltzer
+Teresita Díaz De Ståhl | Pär Lundin        | Björn Nystedt    |                     | Harshil Patel
+Martin Proks           |                   |                  |                     |
 
 </small>
 
@@ -234,5 +259,7 @@ Teresita Díaz De Ståhl | Max Käller | Björn Nystedt | |
 ## Any questions
 
 * [<i class="fa fa-globe-europe" aria-hidden="true"></i> nf-co.re](https://nf-co.re/)
-* [<i class="fab fa-github" aria-hidden="true"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
-* [<i class="fab fa-slack" aria-hidden="true"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)
+* [<i class="fab fa-github" aria-hidden="true"></i> nf-co.re/sarek](https://nf-co.re/sarek)
+* [<i class="fab fa-slack" aria-hidden="true"></i> #sarek](https://nfcore.slack.com/channels/sarek)
+* [<i class="fab fa-github" aria-hidden="true"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
+* [<i class="fab fa-slack" aria-hidden="true"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
