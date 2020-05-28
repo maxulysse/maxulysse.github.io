@@ -1,9 +1,9 @@
-name: linting
+name: ci
 # This workflow is triggered on pushes and PRs to the repository.
 on: [push, pull_request]  
 
 jobs:
-  markdown:
+  htmlproofer:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -13,10 +13,12 @@ jobs:
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-ruby@v1
         with:
-          node-version: '10'
-      - name: Install markdownlint
-        run: npm install -g markdownlint-cli
-      - name: Run Markdownlint
-        run: markdownlint _posts/. README.md -c .github/markdownlint.yml
+          ruby-version: 2.6.x
+      - name: Install bundle
+        run: bundle install --jobs=3 --retry=3
+      - name: Build website
+        run: bundle exec jekyll build
+      - name: Proof the html
+        run: bundle exec htmlproofer ./_site --check-favicon --check-html --url-ignore /\#À/,/\#Ä/ --http-status-ignore=302,999
