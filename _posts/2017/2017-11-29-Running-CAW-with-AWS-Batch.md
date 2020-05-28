@@ -121,6 +121,7 @@ ERROR ~ Failed to sanitize XML document destined for handler class com.amazonaws
 Problem might be due to bad AMI configuration.
 
 Solution:
+
 - Created a custom AMI for CAW cf [Nextflow docs - Custom AMI](https://www.nextflow.io/docs/latest/awscloud.html#custom-ami) and [AWS docs - Creating a Compute Resource AMI](https://docs.aws.amazon.com/batch/latest/userguide/create-batch-ami.html).
 - AMI is `ami-7ce35005`
 

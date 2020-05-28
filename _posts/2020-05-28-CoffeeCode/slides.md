@@ -123,7 +123,7 @@ Be lazy and automate
 
 I do that on every project
 
-https://github.com/MaxUlysse/maxulysse.github.io
+[maxulysse.github.io](https://github.com/MaxUlysse/maxulysse.github.io)
 
 {% raw %}
 

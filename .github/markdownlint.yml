@@ -1,16 +1,20 @@
 # Markdownlint configuration file
-default: true,
-line-length: false
-no-multiple-blanks: 0
-blanks-around-headers: false
-blanks-around-lists: false
+default: true
+first-line-heading: false
 header-increment: false
+line-length: false
 no-duplicate-header:
     siblings_only: true
 no-inline-html: 
     allowed_elements:
+        - a
         - div
         - i
+        - iframe
         - img
+        - li
+        - p
         - script
         - small
+        - ul
+no-multiple-blanks: 0
