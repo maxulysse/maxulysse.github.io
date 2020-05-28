@@ -15,22 +15,16 @@
                 </section>
             </div>
         </div>
-        <script type="text/javascript" src="/assets/css/reveal.js/lib/js/promise.js"></script>
-        <script type="text/javascript" src="/assets/css/reveal.js/js/reveal.js"></script>
-        <script type="text/javascript">
-            Reveal.initialize({
-                theme: Reveal.getQueryHash().theme,
-                transition: Reveal.getQueryHash().transition || 'concave',
-
-                dependencies: [
-                    { src: '/assets/css/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: '/assets/css/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '/assets/css/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '/assets/css/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: '/assets/css/reveal.js/plugin/math/math.js', async: true },
-                    { src: '/assets/css/reveal.js/plugin/notes/notes.js', async: true },
-                ]
-            });
+		<script type="text/javascript" src="/assets/css/reveal.js/dist/reveal.js"></script>
+		<script type="text/javascript" src="/assets/css/reveal.js/plugin/notes/notes.js"></script>
+		<script type="text/javascript" src="/assets/css/reveal.js/plugin/markdown/markdown.js"></script>
+        <script type="text/javascript" src="/assets/css/reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
         </script>
     </body>
 </html>
