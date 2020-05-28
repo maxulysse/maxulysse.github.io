@@ -105,7 +105,7 @@ DO TESTS
 |---|---|
 |<a href="https://www.jenkins.io/">Jenkins</a>|<i class="fas fa-2x fa-server"></i>|
 |<a href="https://circleci.com/">circleci</a>|<i class="fas fa-2x fa-cloud"></i>|
-|<a href="https://travis-ci.com/">travis CI</a>|<i class="fas fa-2x fa-cloud"></i>|
+|<a href="https://travis-ci.com/">Travis CI</a>|<i class="fas fa-2x fa-cloud"></i>|
 |<a href="https://github.com/features/actions">GitHub Actions</a>|<i class="fas fa-2x fa-cloud"></i>|
 
 ---
