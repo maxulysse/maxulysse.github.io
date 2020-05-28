@@ -9,6 +9,8 @@ Maxime Garcia
 
 [<i class="fa fa-globe-europe" aria-hidden="true"></i> maxulysse.github.io](https://maxulysse.github.io/)
 
+[<i class="fa fa-globe-europe" aria-hidden="true"></i> {{ site.url }}/coffeencode2020]({{ site.url }}/coffeencode2020)
+
 Coffee n' Code Club - Science for Life Laboratory, Stockholm - 2020/05/28
 </small>
 
@@ -48,7 +50,7 @@ But also on other systems
 
 ---
 
-## Tools to help me out
+## Tools
 
 <ul>
   <li>Versioning</li>
@@ -83,33 +85,28 @@ Check the functionality of several sections of code as a group
 
 DO TESTS
 
-<iframe class="fragment" data-autoplay width="560" height="315" src="https://www.youtube.com/embed/ZXsQAXx_ao0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="fragment" width="560" height="315" src="https://www.youtube.com/embed/ZXsQAXx_ao0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"></iframe>
 
 ---
 
 ## When to do tests
 
-<img class="image-H10" src="/assets/img/posts/2019/expanding_brain.png" title="Expanding brain meme" alt="Expanding brain meme"/>
+<div class="r-stack">
+  <img class="fragment image-H10" src="/assets/img/posts/2020/expanding_brain_1.png" title="Expanding brain meme" alt="Expanding brain meme part 1"/>
+  <img class="fragment image-H10" src="/assets/img/posts/2020/expanding_brain_2.png" title="Expanding brain meme" alt="Expanding brain meme part 2"/>
+  <img class="fragment image-H10" src="/assets/img/posts/2020/expanding_brain_3.png" title="Expanding brain meme" alt="Expanding brain meme part 3"/>
+</div>
 
 ---
 
 ## Where
 
-- `Server`
-
-- `In the cloud`
-
-===
-
-### Jenkins
-
-Powerful, but needs server
-
-===
-
-### circleci, Travis CI and GitHub Actions
-
-Cloud based
+|||
+|---|---|
+|<a href="https://www.jenkins.io/">Jenkins</a>|<i class="fas fa-2x fa-server"></i>|
+|<a href="https://circleci.com/">circleci</a>|<i class="fas fa-2x fa-cloud"></i>|
+|<a href="https://travis-ci.com/">travis CI</a>|<i class="fas fa-2x fa-cloud"></i>|
+|<a href="https://github.com/features/actions">GitHub Actions</a>|<i class="fas fa-2x fa-cloud"></i>|
 
 ---
 
@@ -117,7 +114,7 @@ Cloud based
 
 Be lazy and automate
 
-<iframe class="fragment" data-autoplay width="560" height="315" src="https://www.youtube.com/embed/oTz93Y-qeq0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="fragment" width="560" height="315" src="https://www.youtube.com/embed/oTz93Y-qeq0?autoplay=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"></iframe>
 
 ---
 
@@ -160,6 +157,8 @@ jobs:
 
 ## For Sarek
 
+[![nf-core CI](https://github.com/nf-core/sarek/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/sarek/actions/runs/115584315)
+
 [ci.yml](https://github.com/nf-core/sarek/blob/dev/.github/workflows/ci.yml)
 
 {% raw %}
@@ -198,13 +197,7 @@ jobs:
 
 ===
 
-## More Sarek
-
-[![nf-core CI](https://github.com/nf-core/sarek/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/sarek/actions/runs/115584315)
-
-6 different tests with multiple conditions
-
-24 CI jobs in total (currently)
+## More tests
 
 {% raw %}
 
@@ -242,6 +235,16 @@ jobs:
 ```
 
 {% endraw %}
+
+===
+
+## Plenty of tests
+
+Currently 6 different tests with multiple conditions
+
+24 jobs in total
+
+<p class="fragment">And more to come</p>
 
 ---
 
