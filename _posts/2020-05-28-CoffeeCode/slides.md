@@ -89,7 +89,11 @@ DO TESTS
 
 ## When to do tests
 
-<img class="image-H10" src="/assets/img/posts/2019/expanding_brain.png" title="Expanding brain meme" alt="Expanding brain meme"/>
+<div class="r-stack">
+  <img class="fragment image-H10" src="/assets/img/posts/2020/expanding_brain_1.png" title="Expanding brain meme" alt="Expanding brain meme"/>
+  <img class="fragment image-H10" src="/assets/img/posts/2020/expanding_brain_2.png" title="Expanding brain meme" alt="Expanding brain meme"/>
+  <img class="fragment image-H10" src="/assets/img/posts/2020/expanding_brain_3.png" title="Expanding brain meme" alt="Expanding brain meme"/>
+</div>
 
 ---
 
