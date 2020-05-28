@@ -17,11 +17,8 @@ jobs:
         with:
           ruby-version: 2.6.x
       - name: Install bundle
-        run: |
-          bundle install --jobs=3 --retry=3
+        run: bundle install --jobs=3 --retry=3
       - name: Build website
-        run: |
-          bundle exec jekyll build
+        run: bundle exec jekyll build
       - name: Proof the html
-        run: |
-          bundle exec htmlproofer ./_site --check-favicon --check-html --url-ignore /\#À/,/\#Ä/ --http-status-ignore=302,999
+        run: bundle exec htmlproofer ./_site --check-favicon --check-html --url-ignore /\#À/,/\#Ä/ --http-status-ignore=302,999

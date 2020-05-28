@@ -17,8 +17,6 @@ jobs:
         with:
           node-version: '10'
       - name: Install markdownlint
-        run: |
-          npm install -g markdownlint-cli
+        run: npm install -g markdownlint-cli
       - name: Run Markdownlint
-        run: |
-          markdownlint _posts/. README.md -c .github/markdownlint.yml
+        run: markdownlint _posts/. README.md -c .github/markdownlint.yml
