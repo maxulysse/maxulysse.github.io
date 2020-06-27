@@ -4,6 +4,8 @@ img {
   background: none !important;
   max-width: 100% !important;
   max-height: 100% !important;
+  width: auto;
+  height: auto;
 }
 
 .requirements li {
@@ -31,54 +33,44 @@ img {
   max-height: 500px;
 }
 
-.image-W05 {
-  height: auto;
+.image-05 img {
   width: 5%;
 }
 
-.image-W10 {
-  height: auto;
+.image-10 img {
   width: 10%;
 }
 
-.image-W25 {
-  height: auto;
+.image-25 img {
   width: 25%;
 }
 
-.image-W50 {
-  height: auto;
+.image-50 img {
   width: 50%;
 }
 
-.image-W75 {
-  height: auto;
+.image-75 img {
   width: 75%;
 }
 
-.image-H05 {
+.image-H05 img {
   height: 5%;
-  width: auto;
 }
 
-.image-H10 {
+.image-H10 img {
   height: 10%;
-  width: auto;
 }
 
-.image-H25 {
+.image-H25 img {
   height: 25%;
-  width: auto;
 }
 
-.image-H50 {
+.image-H50 img {
   height: 50%;
-  width: auto;
 }
 
-.image-H75 {
+.image-H75 img {
   height: 75%;
-  width: auto;
 }
 
 .reveal .slides {
@@ -94,6 +86,20 @@ img {
 
 .reveal table td {
   font-size: 0.7em;
+}
+
+table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+
+td {
+  width: 25% ;
+}
+
+td img{
+  display: block;
+  margin: auto auto auto auto;
 }
 
 html.dim-background .slide-background.present {
