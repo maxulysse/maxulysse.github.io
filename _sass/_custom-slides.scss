@@ -1,4 +1,4 @@
-img{
+img {
   border: 0 !important;
   box-shadow: none !important;
   background: none !important;
@@ -31,36 +31,54 @@ img{
   max-height: 500px;
 }
 
-.image-W10 img {
+.image-W05 {
+  height: auto;
+  width: 5%;
+}
+
+.image-W10 {
+  height: auto;
   width: 10%;
 }
 
-.image-W25 img {
+.image-W25 {
+  height: auto;
   width: 25%;
 }
 
-.image-W50 img {
+.image-W50 {
+  height: auto;
   width: 50%;
 }
 
-.image-W75 img {
+.image-W75 {
+  height: auto;
   width: 75%;
 }
 
-.image-H10 img {
+.image-H05 {
+  height: 5%;
+  width: auto;
+}
+
+.image-H10 {
   height: 10%;
+  width: auto;
 }
 
-.image-H25 img {
+.image-H25 {
   height: 25%;
+  width: auto;
 }
 
-.image-H50 img {
+.image-H50 {
   height: 50%;
+  width: auto;
 }
 
-.image-H75 img {
+.image-H75 {
   height: 75%;
+  width: auto;
 }
 
 .reveal .slides {

@@ -7,9 +7,9 @@ Maxime Garcia
 
 [<i class="fab fa-github" aria-hidden="true"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe" aria-hidden="true"></i> maxulysse.github.io](https://maxulysse.github.io/)
-
 [<i class="fa fa-globe-europe" aria-hidden="true"></i> {{ site.url }}/coffeencode2020]({{ site.url }}/coffeencode2020)
+
+[<i class="fab fa-youtube" aria-hidden="true"></i> Coffee & Code: Continuous Integration](https://www.youtube.com/watch?v=gm_f_FeYHWA)
 
 Coffee n' Code Club - Science for Life Laboratory, Stockholm - 2020/05/28
 </small>
