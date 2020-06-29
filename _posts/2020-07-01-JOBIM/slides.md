@@ -2,8 +2,6 @@
 
 <small>
 
-<br>
- 
 Maxime Garcia
 
 [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
@@ -41,7 +39,7 @@ Which are both infrastructures within Science For Life Laboratory, a Swedish nat
 
 ---
 
-## Reproducibility
+## Reproducibility is central
 
 <div class="fragment fade-in">
 
@@ -191,6 +189,7 @@ nf-core was created and all relevant pipelines moved to this new GitHub Organisa
 [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core/)
 
 </div>
+
 ===
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/pipelines](https://nf-co.re/pipelines)
@@ -348,8 +347,8 @@ Next one is online from July 13th to 17th:
 
 ## Any questions
 
-- [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
-- [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core)
-- [<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core)
-- [<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core)
-- [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
+* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core)
+* [<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core)
+* [<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core)
+* [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)

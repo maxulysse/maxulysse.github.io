@@ -11,6 +11,7 @@ no-inline-html:
         - div
         - i
         - iframe
+        - section
         - img
         - li
         - p
