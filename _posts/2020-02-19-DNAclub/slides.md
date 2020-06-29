@@ -1,4 +1,4 @@
-<!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-Park-01.jpg" data-state="dim-background" -->
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-01.jpg" data-background-opacity=0.5 >
 
 # Sarek and rnafusion
 
@@ -8,11 +8,11 @@ Maxime Garcia
 
 <small>
 
-[<i class="fab fa-twitter" aria-hidden="true"></i> @gau](https://twitter.com/gau)
+[<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
 
-[<i class="fab fa-github" aria-hidden="true"></i> @MaxUlysse](https://github.com/MaxUlysse)
+[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe" aria-hidden="true"></i> maxulysse.github.io](https://maxulysse.github.io/)
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
 
 </small>
 
@@ -26,9 +26,9 @@ Science for Life Laboratory, Stockholm - 2020/02/19
 
 ## What is Sarek
 
-<div class="fragment fade-in" data-fragment-index="2">
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-beer.jpg" data-background-opacity=0.5 >
 
-<!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-beer.jpg" data-state="dim-background" -->
+<div class="fragment fade-in">
 
 A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sarek-national-park/) in Northern Sweden.
 
@@ -44,13 +44,13 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 </div>
 
-===
+---
 
-<!-- .slide: data-background="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" -->
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg">
 
 ---
 
-[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+<a href="https://nf-co.re/sarek"><img class="image-25" src="/assets/img/svg/nf-core_sarek_logo.svg" title="Sarek" alt="Sarek logo"/></a>
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -64,7 +64,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ===
 
-[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://nextflow.io/) <!-- .element class="image-W50" -->
+[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -77,7 +77,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ===
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-W50" -->
+[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-50" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -93,7 +93,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ## Software dependencies
 
-[![Bioconda]({{ site.url }}/assets/img/svg/Bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-H50" --> | [![Docker]({{ site.url }}/assets/img/svg/Docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-H50" --> | [![Singularity]({{ site.url }}/assets/img/svg/Singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-H50" -->
+[![Bioconda]({{ site.url }}/assets/img/svg/bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-50" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
 :-:|:-:|:-:
 
 <div class="fragment fade-in" data-fragment-index="2">
@@ -118,11 +118,11 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ## Multiple flavors
 
-![Sarek]({{ site.url }}/assets/img/svg/sarek_logo.svg "Sarek") <!-- .element class="image-H10" -->
+![Sarek]({{ site.url }}/assets/img/svg/sarek_logo.svg "Sarek") <!-- .element class="image-10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
-![Sarek]({{ site.url }}/assets/img/svg/sarek-germline.svg "Sarek") <!-- .element class="image-H10" --> | ![Sarek]({{ site.url }}/assets/img/svg/sarek-somatic.svg "Sarek") <!-- .element class="image-H10" -->
+![Sarek]({{ site.url }}/assets/img/svg/sarek-germline.svg "Sarek") <!-- .element class="image-10" --> | ![Sarek]({{ site.url }}/assets/img/svg/sarek-somatic.svg "Sarek") <!-- .element class="image-10" -->
 :-:|:-:
 
 </div>
@@ -131,13 +131,13 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ## WES and Targeted Sequencing
 
-![]({{ site.url }}/assets/img/svg/AppleSeq.svg "WGS, WES, and Targeted") <!-- .element class="image-W25" -->
+![]({{ site.url }}/assets/img/svg/AppleSeq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
 
 ---
 
 ## Workflow
 
-[![Sarek Workflow]({{ site.url }}/assets/img/svg/sarek_workflow_2.5.svg "Sarek Workflow 2.5")](https://github.com/nf-core/sarek/releases/tag/2.5) <!-- .element class="image-W25" -->
+[![Sarek Workflow]({{ site.url }}/assets/img/svg/sarek_workflow_2.5.svg "Sarek Workflow 2.5")](https://github.com/nf-core/sarek/releases/tag/2.5) <!-- .element class="image-25" -->
 
 ---
 
@@ -154,7 +154,7 @@ Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
 
 </small>
 
-[<i class="ai ai-doi" aria-hidden="true"></i> doi.org/10.12688/f1000research.16665.1](https://doi.org/10.12688/f1000research.16665.1)
+[<i class="ai ai-doi"></i> doi.org/10.12688/f1000research.16665.1](https://doi.org/10.12688/f1000research.16665.1)
 
 ---
 
@@ -177,7 +177,7 @@ Note:
 
 ---
 
-[![rnafusion]({{ site.url }}/assets/img/svg/nf-core_rnafusion_logo.svg "rnafusion")](https://nf-co.re/rnafusion) <!-- .element class="image-H10" -->
+[![rnafusion]({{ site.url }}/assets/img/svg/nf-core_rnafusion_logo.svg "rnafusion")](https://nf-co.re/rnafusion) <!-- .element class="image-25" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -222,17 +222,17 @@ Generate a nice final report
 ## Get involved
 
 * Our code is hosted on Github
-  * [<i class="fab fa-github" aria-hidden="true"></i> github.com/nf-core](https://github.com/nf-core)
-  * [<i class="fab fa-github" aria-hidden="true"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
-  * [<i class="fab fa-github" aria-hidden="true"></i> github.com/nf-core/rnafusion](https://github.com/nf-core/rnafusion)
+  * [<i class="fab fa-github"></i> github.com/nf-core](https://github.com/nf-core)
+  * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
+  * [<i class="fab fa-github"></i> github.com/nf-core/rnafusion](https://github.com/nf-core/rnafusion)
 * We have Slack
-  * [<i class="fab fa-slack" aria-hidden="true"></i> nfcore.slack.com](https://nfcore.slack.com/)
-  * [<i class="fab fa-slack" aria-hidden="true"></i> #sarek](https://nfcore.slack.com/channels/sarek)
-  * [<i class="fab fa-slack" aria-hidden="true"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
+  * [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
+  * [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
+  * [<i class="fab fa-slack"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
 
 ---
 
-[![Barncancerfonden]({{ site.url }}/assets/img/svg/Barncancerfonden.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H50" --> | [![KI]({{ site.url }}/assets/img/svg/KI.svg)](https://www.ki.se/) <!-- .element class="image-H50" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/BTB_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H50" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/SciLifeLab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H50" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-H25" -->
+[![Barncancerfonden]({{ site.url }}/assets/img/svg/barncancerfonden_logo.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H75" --> | [![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://www.ki.se/) <!-- .element class="image-H75" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H75" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H75" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-75" -->
 :-:|:-:|:-:|:-:|:-:
 
 ## Acknowledgments
@@ -249,17 +249,17 @@ Martin Proks           |                   |                  |                 
 
 </small>
 
-[![NGI]({{ site.url }}/assets/img/svg/NGI_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H50" --> | [![NBIS]({{ site.url }}/assets/img/svg/NBIS_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H50" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H25" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://nextflow.io/) <!-- .element class="image-H10" -->
+[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H75" --> | [![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H75" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H75" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-75" -->
 :-:|:-:|:-:|:-:
 
 ---
 
-<!-- .slide: data-background="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-state="dim-background" -->
+<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe" aria-hidden="true"></i> nf-co.re](https://nf-co.re/)
-* [<i class="fab fa-github" aria-hidden="true"></i> nf-co.re/sarek](https://nf-co.re/sarek)
-* [<i class="fab fa-slack" aria-hidden="true"></i> #sarek](https://nfcore.slack.com/channels/sarek)
-* [<i class="fab fa-github" aria-hidden="true"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
-* [<i class="fab fa-slack" aria-hidden="true"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
+* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fab fa-github"></i> nf-co.re/sarek](https://nf-co.re/sarek)
+* [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
+* [<i class="fab fa-github"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
+* [<i class="fab fa-slack"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
