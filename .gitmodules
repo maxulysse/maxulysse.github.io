@@ -9,4 +9,4 @@
 	url = https://github.com/MaxUlysse/Courses.git
 [submodule "assets/reveal.js"]
 	path = assets/reveal.js
-	url = git@github.com:hakimel/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
