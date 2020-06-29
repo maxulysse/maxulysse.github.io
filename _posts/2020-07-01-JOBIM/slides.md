@@ -59,8 +59,10 @@ Which are both infrastructures within Science For Life Laboratory, a Swedish nat
 
 * Workflow manager
   * Data driven language
-  * Portable (executable on multiple platforms)
-  * Shareable and reproducible (with containers or virtual environments)
+  * Portable
+    * executable on multiple platforms
+  * Shareable and reproducible
+    * with containers or virtual environments
 
 </div>
 
@@ -70,7 +72,9 @@ Which are both infrastructures within Science For Life Laboratory, a Swedish nat
 
 <div class="fragment fade-in">
 
-DAG depends on the data, and is calculated on the go
+The execution graph depends on the input data,
+
+and is calculated on the go
 
 </div>
 
@@ -82,7 +86,9 @@ In `snakemake` it's the other way around
 
 <div class="fragment fade-in">
 
-DAG depends on the target, and is calculated before execution
+The execution graph depends on the final target,
+
+and is calculated before launch
 
 </div>
 
@@ -137,71 +143,68 @@ Nextflow also supports modules, pod
   <img src="/assets/img/svg/institutes_2017.svg" title="Institutes part of nf-core in 2017" alt="3 institutes part of nf-core in 2017" class="fragment fade-out" data-fragment-index="0"/>
   <img src="/assets/img/svg/institutes_2018.svg" title="Institutes part of nf-core in 2018" alt="12 institutes part of nf-core in 2018" class="fragment fade-in-then-out" data-fragment-index="0"/>
   <img src="/assets/img/svg/institutes_2019.svg" title="Institutes part of nf-core in 2019" alt="27 institutes part of nf-core in 2019" class="fragment fade-in-then-out" data-fragment-index="1"/>
-  <img src="/assets/img/svg/institutes_2020.svg" title="Institutes part of nf-core in 2020" alt="38 institutes part of nf-core in 2020" class="fragment fade-in" data-fragment-index="2"/>
+  <img src="/assets/img/svg/institutes_2020.svg" title="Institutes part of nf-core in 2020" alt="39 institutes part of nf-core in 2020" class="fragment fade-in" data-fragment-index="2"/>
 </div>
 
 Note:
 
-Started in late 2017 early 2018.
+3 - 12 - 27 - 39
 
-NGI had been developing analysis pipelines for several years and using a set of standards
+Started in late 2017 Phil Ewels (NGI), Alex Peltzer (QBiC), Sven Fillinger (QBiC) and Andreas Wilm (A*STAR)
+
+NGI had been developing analysis pipelines for years and using a set of standards
 
 This helped other group run the pipelines on their own
 
-Swedish research groups at first, but later on other groups and core genomics facilities too such as QBIC in Tübingen
+Swedish research groups at first, but later on other groups and core genomics facilities too
 
-Pipelines began to outgrow the SciLifeLab and NGI branding
+Pipelines began to outgrow the SciLifeLab/NGI branding
 
 nf-core was created and all relevant pipelines moved to this new GitHub Organisation
 
-The early days of nf-core were greatly shaped by Phil Ewels (@ewels), Alex Peltzer (@apeltzer), Sven Fillinger (@sven1103) and Andreas Wilm (@andreas-wilm)
-Without them, the project would not exist
-
 ===
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-25" -->
+
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/join](https://nf-co.re/join)
 
 <div class="fragment fade-in">
 
-* [<i class="fas fa-laptop-code"></i> 4 Hackathons](https://nf-co.re/events)
-  * [Next one is online from July 13th till 17th](https://nf-co.re/events/2020/hackathon-july-2020)
+[<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core)
 
 </div>
 
+<div class="fragment fade-in">
+
+[<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core)
+
+</div>
+
+<div class="fragment fade-in">
+
+[<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
+
+</div>
+
+<div class="fragment fade-in">
+
+[<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core/)
+
+</div>
 ===
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/pipelines](https://nf-co.re/pipelines)
 
-<div class="fragment fade-in">
-
-* [<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core) - 1 273 followers
-
-</div>
-
-<div class="fragment fade-in">
-
-* [<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core) - 147 subscribers
-
-</div>
-
-<div class="fragment fade-in">
-
-* [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/) - 136 active users
-
-</div>
-
-===
-
-* [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core/) - 165 members
-
-<div class="fragment fade-in">
-* [25 released pipelines - 14 under development](https://nf-co.re/pipelines)
-
+<div class="r-stack">
+  <img src="/assets/img/slides/nf-core_latest_pipelines_20200629.png" title="nf-core latest released pipelines" alt="nf-core latest released pipelines" class="image-50 fragment fade-out" data-fragment-index="0"/>
+  <img src="/assets/img/slides/nf-core_starred_pipelines_20200629.png" title="nf-core most starred pipelines" alt="nf-core most starred pipelines" class="image-50 fragment fade-in" data-fragment-index="0"/>
 </div>
 
 ---
 
 [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
+
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/developers/guidelines](https://nf-co.re/developers/guidelines)
 
 ## Pipeline requirements
 
@@ -221,9 +224,11 @@ We do follow Nextflow development, and consult regularly with the developers
 
 ---
 
-[![nf-core tools]({{ site.url }}/assets/img/svg/nf-core-tools_logo.svg "nf-core tools")](https://nf-co.re/tools) <!-- .element class="image-50" -->
+[![nf-core tools]({{ site.url }}/assets/img/svg/nf-core-tools_logo.svg "nf-core tools")](https://github.com/nf-core/tools) <!-- .element class="image-50" -->
 
 ===
+
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/tools](https://nf-co.re/tools)
 
 A companion tool to help with common tasks
 
@@ -239,6 +244,8 @@ A companion tool to help with common tasks
 
 ## Making a pipeline
 
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/tools#creating-a-new-workflow](https://nf-co.re/tools#creating-a-new-workflow)
+
 Pipeline template and companion tools help to validate your code and simplify common tasks
 
 [![nf-core create]({{ site.url }}/assets/img/slides/nf-core_create_jobim.png "nf-core create")](https://nf-co.re/tools#creating-a-new-workflow) <!-- .element class="image-75" -->
@@ -247,37 +254,93 @@ Note:
 
 nf-core create can be used to create non nf-core pipeline, and is a good help to start with a minimal skeleton
 
----
-
-## <i class="fas fa-industry"></i> Facilities
-
-Highly optimised pipelines with excellent reporting
-
-Validated releases ensure reproducibility
-
 ===
 
-## <i class="fas fa-users"></i> Users
+## Software dependencies
 
-Portable, documented and easy to use workflows
+[![Bioconda]({{ site.url }}/assets/img/svg/bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-50" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
+:-:|:-:|:-:
 
-Pipelines that you can trust
+<div class="fragment fade-in">
 
-===
+* All tools are installed with Conda/Bioconda
+  * which allow set up of a new environment
+* Bundled into a Docker container
+  * which Nextflow can automatically download from DockerHub
+* Built from the Docker container
+  * Singularity images can solve HPC container problems
 
-## <i class="fas fa-laptop-code"></i> Developers
-
-Companion templates and tools help to validate your code and simplify common tasks
+</div>
 
 ---
 
-[![Barncancerfonden]({{ site.url }}/assets/img/svg/barncancerfonden_logo.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H75" --> | [![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://www.ki.se/) <!-- .element class="image-H75" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H75" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H75" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-75" -->
-:-:|:-:|:-:|:-:|:-:
+## Configurations
 
-## Acknowledgments
+All pipelines come with a default sensible configuration for a regular sized HPC.
 
-[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H75" --> | [![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H75" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H75" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-75" -->
-:-:|:-:|:-:|:-:
+<div class="fragment fade-in">
+
+[<i class="fab fa-github"></i> nf-core/configs](https://github.com/nf-core/configs/) allows shared configurations between pipelines at an institutional level
+
+* cpus, time and memory requirements
+* scheduler
+* queues
+* environments
+* path to common references files
+* ...
+
+</div>
+
+---
+
+## Coming Next
+
+<div class="fragment fade-in">
+
+* Graphical user interface to launch pipelines
+
+* Modules with `Nextflow DSL 2`
+
+* Testing on real life data for each pipelines releases on AWS
+
+</div>
+
+---
+
+## [<i class="fas fa-laptop-code"></i> Hackathons](https://nf-co.re/events)
+
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/events](https://nf-co.re/events)
+
+<div class="fragment fade-in">
+
+[![Hackathon at Crick 2020]({{ site.url }}/assets/img/slides/nf-core_hackathon_crick2020.jpg "Hackathon at Crick 2020")](https://nf-co.re/events/2020/hackathon-francis-crick-2020) <!-- .element class="image-50" -->
+
+Next one is online from July 13th to 17th:
+
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
+
+</div>
+
+---
+
+## Stay at home message
+
+===
+
+* <i class="fas fa-industry"></i> Facilities
+  * Highly optimised pipelines with excellent reporting
+  * Validated releases ensure reproducibility
+* <i class="fas fa-users"></i> Users
+  * Portable, documented and easy to use workflows that you can trust
+* <i class="fas fa-laptop-code"></i> Developers
+  * Companion templates and tools help to validate your code and simplify common tasks
+
+---
+
+<div class="r-stack">
+  <img src="/assets/img/svg/acknowledgments_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="fragment fade-out" data-fragment-index="0"/>
+  <img src="/assets/img/svg/institutes_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="fragment fade-in" data-fragment-index="0"/>
+</div>
 
 ---
 
@@ -286,9 +349,7 @@ Companion templates and tools help to validate your code and simplify common tas
 ## Any questions
 
 - [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
-- [<i class="fab fa-github"></i> nf-co.re/sarek](https://nf-co.re/sarek)
-- [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
-- [<i class="fab fa-github"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
-- [<i class="fab fa-slack"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
-
-</section>
+- [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core)
+- [<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core)
+- [<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core)
+- [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
