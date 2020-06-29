@@ -24,17 +24,17 @@ Solstrand, Bergen - 2019/10/24
 
 ---
 
-[![Barntumörbanken]({{ site.url }}/assets/img/svg/BTB_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
+[![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
 
 Swedish Childhood Tumor Biobank
 
 ---
 
-[![SciLifeLab]({{ site.url }}/assets/img/svg/SciLifeLab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
 
 National centre for molecular biosciences with focus on health and environmental research
 
-[![KI]({{ site.url }}/assets/img/svg/KI.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/KTH.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/SU.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/UU.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
 :-:|:-:|:-:|:-:
 
 Note:
@@ -43,7 +43,7 @@ Note:
 
 ===
 
-[![NGI]({{ site.url }}/assets/img/svg/NGI_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
+[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
 * State-of-the-art infrastructure
   * Sequencing (DNA, RNA ...)
@@ -53,7 +53,7 @@ Note:
 
 ===
 
-[![NBIS]({{ site.url }}/assets/img/svg/NBIS_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
+[![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
 
 * Swedish ELIXIR node
 * Bioinformatics support for Swedish researchers
@@ -97,7 +97,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ===
 
-[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://nextflow.io/) <!-- .element class="image-50" -->
+[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -112,7 +112,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ## Software dependencies
 
-[![Bioconda]({{ site.url }}/assets/img/svg/Bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-H75" --> | [![Docker]({{ site.url }}/assets/img/svg/Docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-H75" --> | [![Singularity]({{ site.url }}/assets/img/svg/Singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-H75" -->
+[![Bioconda]({{ site.url }}/assets/img/svg/bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-H75" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-H75" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-H75" -->
 :-:|:-:|:-:
 
 <div class="fragment fade-in" data-fragment-index="2">
@@ -155,7 +155,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ## Preprocessing
 
-[![GATKBP]({{ site.url }}/assets/img/svg/GATKBP.svg "GATK Best Practices")](https://software.broadinstitute.org/gatk/best-practices/) <!-- .element class="image-H25" -->
+[![GATKBP]({{ site.url }}/assets/img/svg/gatk-bp_logo.svg "GATK Best Practices")](https://software.broadinstitute.org/gatk/best-practices/) <!-- .element class="image-H25" -->
 
 Based on GATK Best Practices (GATK 4.1.2.0)
 
@@ -203,7 +203,7 @@ Based on GATK Best Practices (GATK 4.1.2.0)
 
 ## Reports
 
-[![MultiQC]({{ site.url }}/assets/img/svg/MultiQC_logo.svg "MultiQC")](https://multiqc.info/) <!-- .element class="image-H25" -->
+[![MultiQC]({{ site.url }}/assets/img/svg/multiqc_logo.svg "MultiQC")](https://multiqc.info/) <!-- .element class="image-H25" -->
 
 ---
 
@@ -297,7 +297,7 @@ Maxime Garcia, Szilveszter Juhos, Malin Larsson, Pall I Olason, Marcel Martin, J
 
 ---
 
-[![Barncancerfonden]({{ site.url }}/assets/img/svg/Barncancerfonden.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H75" --> | [![KI]({{ site.url }}/assets/img/svg/KI.svg)](https://www.ki.se/) <!-- .element class="image-H75" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/BTB_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H75" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/SciLifeLab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H75" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-75" -->
+[![Barncancerfonden]({{ site.url }}/assets/img/svg/barncancerfonden_logo.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H75" --> | [![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://www.ki.se/) <!-- .element class="image-H75" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H75" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H75" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-75" -->
 :-:|:-:|:-:|:-:|:-:
 
 ## Acknowledgments
@@ -313,7 +313,7 @@ Teresita Díaz De Ståhl | Max Käller | Björn Nystedt | |
 
 </small>
 
-[![NGI]({{ site.url }}/assets/img/svg/NGI_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H75" --> | [![NBIS]({{ site.url }}/assets/img/svg/NBIS_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H75" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H75" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://nextflow.io/) <!-- .element class="image-75" -->
+[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H75" --> | [![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H75" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H75" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-75" -->
 :-:|:-:|:-:|:-:
 
 ---

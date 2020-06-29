@@ -1,4 +1,4 @@
-![Title]({{ site.url }}/assets/img/svg/CIJOE.svg)
+![Title]({{ site.url }}/assets/img/svg/cijoe.svg)
 
 <small>
 Maxime Garcia
@@ -16,11 +16,11 @@ Coffee n' Code Club - Science for Life Laboratory, Stockholm - 2020/05/28
 
 ---
 
-<a href="https://ki.se/forskning/barntumorbanken"><img class="image-25" src="/assets/img/svg/BTB_logo.svg" title="Barntumörbanken" alt="Barntumörbanken logo"/></a>
+<a href="https://ki.se/forskning/barntumorbanken"><img class="image-25" src="/assets/img/svg/barntumorbanken_logo.svg" title="Barntumörbanken" alt="Barntumörbanken logo"/></a>
 
-<a href="https://ngisweden.scilifelab.se/" class="fragment"><img class="image-25" src="/assets/img/svg/NGI_logo.svg" title="NGI" alt="NGI logo"/></a>
+<a href="https://ngisweden.scilifelab.se/" class="fragment"><img class="image-25" src="/assets/img/svg/ngi_logo.svg" title="NGI" alt="NGI logo"/></a>
 
-<a href="https://www.nbis.se/" class="fragment"><img class="image-25" src="/assets/img/svg/NBIS_logo.svg" title="NBIS" alt="NBIS logo"/></a>
+<a href="https://www.nbis.se/" class="fragment"><img class="image-25" src="/assets/img/svg/nbis_logo.svg" title="NBIS" alt="NBIS logo"/></a>
 
 ===
 
@@ -101,12 +101,10 @@ DO TESTS
 
 ## Where
 
-|||
-|---|---|
-|<a href="https://www.jenkins.io/">Jenkins</a>|<i class="fas fa-2x fa-server"></i>|
-|<a href="https://circleci.com/">circleci</a>|<i class="fas fa-2x fa-cloud"></i>|
-|<a href="https://travis-ci.com/">Travis CI</a>|<i class="fas fa-2x fa-cloud"></i>|
-|<a href="https://github.com/features/actions">GitHub Actions</a>|<i class="fas fa-2x fa-cloud"></i>|
+- [<i class="fas fa-server"></i> Jenkins](https://www.jenkins.io/)
+- [<i class="fas fa-cloud"></i> circleci](https://circleci.com/)
+- [<i class="fas fa-cloud"></i> Travis CI](https://travis-ci.com/)
+- [<i class="fas fa-cloud"></i> GitHub Actions](https://github.com/features/actions)
 
 ---
 
@@ -248,12 +246,12 @@ Currently 6 different tests with multiple conditions
 
 ---
 
-[![Barncancerfonden]({{ site.url }}/assets/img/svg/Barncancerfonden.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H75" --> | [![KI]({{ site.url }}/assets/img/svg/KI.svg)](https://www.ki.se/) <!-- .element class="image-H75" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/BTB_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H75" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/SciLifeLab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H75" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-75" -->
+[![Barncancerfonden]({{ site.url }}/assets/img/svg/barncancerfonden_logo.svg)](https://www.barncancerfonden.se/en/) <!-- .element class="image-H75" --> | [![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://www.ki.se/) <!-- .element class="image-H75" --> | [![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg)](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H75" --> | [![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg)](https://scilifelab.se/) <!-- .element class="image-H75" --> | [![UPPMAX]({{ site.url }}/assets/img/slides/uppmax.png)](https://uppmax.uu.se/) <!-- .element class="image-75" -->
 :-:|:-:|:-:|:-:|:-:
 
 ## Acknowledgments
 
-[![NGI]({{ site.url }}/assets/img/svg/NGI_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H75" --> | [![NBIS]({{ site.url }}/assets/img/svg/NBIS_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H75" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H75" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://nextflow.io/) <!-- .element class="image-75" -->
+[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H75" --> | [![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H75" --> | [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg)](https://nf-co.re/) <!-- .element class="image-H75" --> | [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-75" -->
 :-:|:-:|:-:|:-:
 
 ---
