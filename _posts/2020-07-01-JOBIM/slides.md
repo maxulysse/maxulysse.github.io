@@ -1,4 +1,4 @@
-<img src="/assets/img/svg/nf-core_jobim2020.svg" title="nf-core, a community effort for collaborative, peer-reviewed analysis pipelines" alt="nf-core logo + presentation title"/>
+<img src="/assets/img/svg/nf-core_jobim2020.svg" title="nf-core, a community effort for collaborative, peer-reviewed analysis pipelines" alt="nf-core logo + presentation title" class="image-75"/>
 
 <small>
 
@@ -245,8 +245,6 @@ A companion tool to help with common tasks
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/tools#creating-a-new-workflow](https://nf-co.re/tools#creating-a-new-workflow)
 
-Pipeline template and companion tools help to validate your code and simplify common tasks
-
 [![nf-core create]({{ site.url }}/assets/img/slides/nf-core_create_jobim.png "nf-core create")](https://nf-co.re/tools#creating-a-new-workflow) <!-- .element class="image-75" -->
 
 Note:
@@ -263,9 +261,9 @@ nf-core create can be used to create non nf-core pipeline, and is a good help to
 <div class="fragment fade-in">
 
 * All tools are installed with Conda/Bioconda
-  * which allow set up of a new environment
+  * Allows set up of a new environment
 * Bundled into a Docker container
-  * which Nextflow can automatically download from DockerHub
+  * Nextflow can automatically download from DockerHub
 * Built from the Docker container
   * Singularity images can solve HPC container problems
 
@@ -279,7 +277,7 @@ All pipelines come with a default sensible configuration for a regular sized HPC
 
 <div class="fragment fade-in">
 
-[<i class="fab fa-github"></i> nf-core/configs](https://github.com/nf-core/configs/) allows shared configurations between pipelines at an institutional level
+[<i class="fab fa-github"></i> nf-core/configs](https://github.com/nf-core/configs/) allows shared configurations between pipelines for a specific HPC
 
 * cpus, time and memory requirements
 * scheduler
@@ -300,7 +298,7 @@ All pipelines come with a default sensible configuration for a regular sized HPC
 
 * Modules with `Nextflow DSL 2`
 
-* Testing on real life data for each pipelines releases on AWS
+* Full-sized dataset testing for pipeline releases on AWS
 
 </div>
 
@@ -331,6 +329,7 @@ Next one is online from July 13th to 17th:
   * Validated releases ensure reproducibility
 * <i class="fas fa-users"></i> Users
   * Portable, documented and easy to use workflows that you can trust
+  * Shareability between different collaborators
 * <i class="fas fa-laptop-code"></i> Developers
   * Companion templates and tools help to validate your code and simplify common tasks
 
