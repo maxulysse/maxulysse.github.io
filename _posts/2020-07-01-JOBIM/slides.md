@@ -8,7 +8,7 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> https://maxulysse.github.io/jobim2020]({{ site.url }}/jobim2020)
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020]({{ site.url }}/jobim2020)
 
 [JOBIM 2020](https://jobim2020.sciencesconf.org/) - Montpellier, France [virtual] - 2020/07/01
 </small>
@@ -321,6 +321,7 @@ The nf-core framework for community-curated bioinformatics pipelines
 [Nat Biotechnology (2020)](https://www.nature.com/articles/s41587-020-0439-x); doi: [10.1038/s41587-020-0439-x](https://doi.org/10.1038/s41587-020-0439-x)
 
 </small>
+
 ---
 
 ## <i class="fas fa-chart-bar"></i> Extensive statistics
