@@ -73,9 +73,14 @@ img {
   height: 75%;
 }
 
+.avatar img {
+  border-radius: 50%;
+}
+
 .reveal .slides {
   font-size: 0.82em;
 }
+
 
 .footnote {
   position: absolute;
