@@ -8,7 +8,7 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> {{ site.url }}/jobim2020]({{ site.url }}/jobim2020)
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020]({{ site.url }}/jobim2020)
 
 [JOBIM 2020](https://jobim2020.sciencesconf.org/) - Montpellier, France [virtual] - 2020/07/01
 </small>
@@ -108,7 +108,7 @@ and is calculated before launch
 
 <div class="fragment fade-in">
 
-[Nextflow docs on executors](https://www.nextflow.io/docs/latest/executor.html)
+Nextflow docs on executors: [www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
 
 </div>
 
@@ -304,13 +304,41 @@ All pipelines come with a default sensible configuration for a regular sized HPC
 
 ---
 
+## <i class="fas fa-users-cog"></i> Core team
+
+[![@alneberg]({{ site.url }}/assets/img/slides/alneberg.jpeg)](https://github.com/alneberg) <!-- .element class="image-50 avatar" --> | [![@apeltzer]({{ site.url }}/assets/img/slides/apeltzer.jpeg)](https://github.com/apeltzer) <!-- .element class="image-50 avatar" --> | [![@drpatelh]({{ site.url }}/assets/img/slides/drpatelh.jpeg)](https://github.com/drpatelh) <!-- .element class="image-50 avatar" --> | [![@ewels]({{ site.url }}/assets/img/slides/ewels.jpeg)](https://github.com/ewels) <!-- .element class="image-50 avatar" -->
+:-:|:-:|:-:|:-:
+Johannes Alneberg | Alexander Peltzer | Harshil Patel | Phil Ewels
+
+[![@maxulysse]({{ site.url }}/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-50 avatar" --> | [![@olgabot]({{ site.url }}/assets/img/slides/olgabot.jpeg)](https://github.com/olgabot) <!-- .element class="image-50 avatar" --> | [![@sven1103]({{ site.url }}/assets/img/slides/sven1103.jpeg)](https://github.com/sven1103) <!-- .element class="image-50 avatar" --> | [![@ggabernet]({{ site.url }}/assets/img/slides/ggabernet.jpeg)](https://github.com/ggabernet) <!-- .element class="image-50 avatar" -->
+:-:|:-:|:-:|:-:
+Maxime Garcia | Olga Botvinnik | Sven Fillinger | Gisela Gabernet
+
+<small>
+
+The nf-core framework for community-curated bioinformatics pipelines
+
+[Nat Biotechnology (2020)](https://www.nature.com/articles/s41587-020-0439-x); [<i class="ai ai-doi"></i> 10.1038/s41587-020-0439-x](https://doi.org/10.1038/s41587-020-0439-x)
+
+</small>
+
+---
+
+## <i class="fas fa-chart-bar"></i> Extensive statistics
+
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/stats](https://nf-co.re/stats)
+
+[![nf-core stats]({{ site.url }}/assets/img/slides/nf-core_stats_jobim.png "nf-core stats")](https://nf-co.re/stats) <!-- .element class="image-50" -->
+
+---
+
 ## [<i class="fas fa-laptop-code"></i> Hackathons](https://nf-co.re/events)
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/events](https://nf-co.re/events)
 
-<div class="fragment fade-in">
-
 [![Hackathon at Crick 2020]({{ site.url }}/assets/img/slides/nf-core_hackathon_crick2020.jpg "Hackathon at Crick 2020")](https://nf-co.re/events/2020/hackathon-francis-crick-2020) <!-- .element class="image-50" -->
+
+<div class="fragment fade-in">
 
 Next one is online from July 13th to 17th:
 
@@ -336,8 +364,9 @@ Next one is online from July 13th to 17th:
 ---
 
 <div class="r-stack">
-  <img src="/assets/img/svg/acknowledgments_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="fragment fade-out" data-fragment-index="0"/>
-  <img src="/assets/img/svg/institutes_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="fragment fade-in" data-fragment-index="0"/>
+  <img src="/assets/img/svg/acknowledgments_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-out" data-fragment-index="0"/>
+  <img src="/assets/img/svg/institutes_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="0"/>
+  <img src="/assets/img/slides/nf-core_contributors_jobim.png" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-fade-out" data-fragment-index="1"/>
 </div>
 
 ---
@@ -347,6 +376,9 @@ Next one is online from July 13th to 17th:
 ## Any questions
 
 * [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020]({{ site.url }}/jobim2020)
+* [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+* [<i class="fa fa-globe-europe"></i> nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
 * [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core)
 * [<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core)
 * [<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core)
