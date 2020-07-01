@@ -15,45 +15,59 @@ Maxime Garcia
 
 ---
 
-<div class="r-stack">
-    <a href="https://ki.se/forskning/barntumorbanken" class="fragment fade-out" data-fragment-index="0"><img src="/assets/img/svg/barntumorbanken_logo.svg" title="Barntumörbanken" alt="Barntumörbanken logo" class="image-10"/></a>
-    <a href="https://ki.se" class="fragment fade-in" data-fragment-index="0"><img src="/assets/img/svg/ki_logo.svg" title="Karolinska Institutet" alt="Karolinska Institutet logo" class="image-10"/></a>
-</div>
+[![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
 
-<div class="r-stack">
-  <a href="https://ngisweden.scilifelab.se/" class="fragment fade-in-then-out"><img src="/assets/img/svg/ngi_logo.svg" title="NGI" alt="NGI logo" class="image-10"/></a>
-  <a href="https://www.nbis.se/" class="fragment fade-in-then-out"><img src="/assets/img/svg/nbis_logo.svg" title="NBIS" alt="NBIS logo" class="image-10"/></a>
+The Swedish Childhood Tumor Biobank
 
-  <a href="https://www.scilifelab.se/" class="fragment fade-in"><img src="/assets/img/svg/scilifelab_logo.svg" title="SciLifeLab" alt="SciLifeLab logo" class="image-10"/></a>
-</div>
+[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
 
 Note:
 
-Working for Barntumörbanken (the Swedish Childhood Tumor Biobank), at the Karolinska Institute
+* Working for The Swedish Childhood Tumor Biobank located at KI
 
-Sitting half time at NGI (the National Genomics Infrastructure) to collaborate on developing pipelines
+---
 
-And collaborating with NBIS (the National Bioinformatics Infrastructure Sweden)
+[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
-Which are both infrastructures within Science For Life Laboratory, a Swedish national center for large-scale research.
+* State-of-the-art infrastructure
+  * Sequencing (DNA, RNA ...)
+* Guidelines and support
+  * Sample collection, study design, protocol selection
+  * Bioinformatics analysis
+
+Note:
+
+* NGI is a sequencing facility used by researchers all over Sweden
+
+===
+
+[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+
+National centre for molecular biosciences with focus on health and environmental research
+
+[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+:-:|:-:|:-:|:-:
+
+Note:
+
+* SciLifeLab is several infrastructures
+* NGI collaborates a lot with NBIS the National Bioinformatics Infrastructure Sweden which is the local Elixir node
 
 ---
 
 ## Reproducibility is central
 
-<div class="fragment fade-in">
-
 [![Figure 1]({{ site.url }}/assets/img/slides/gigascience_giy077_fig1.jpg "figure 1")](https://academic.oup.com/view-large/figure/118918033/giy077fig1.jpg) <!-- .element class="image-50" -->
 
 [<i class="ai ai-doi"></i> 10.1093/gigascience/giy077](https://doi.org/10.1093/gigascience/giy077)
 
-</div>
+Note:
+
+* For me, as a bioinformatician it is a crucial matter
 
 ---
 
 [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
-
-<div class="fragment fade-in">
 
 * Workflow manager
   * Data driven language
@@ -62,19 +76,17 @@ Which are both infrastructures within Science For Life Laboratory, a Swedish nat
   * Shareable and reproducible
     * with containers or virtual environments
 
-</div>
+Note:
+
+* Early adopters of Nextflow for its portability, shareability and of course reproducibility
 
 ===
 
-## Data driven language
-
-<div class="fragment fade-in">
+## <i class="fas fa-project-diagram"></i> Data driven language
 
 The execution graph depends on the input data,
 
 and is calculated on the go
-
-</div>
 
 <div class="fragment fade-in">
 
@@ -90,52 +102,41 @@ and is calculated before launch
 
 </div>
 
+Note:
+
+* Execution graph = the way to link all the different tools within the pipeline
+* For me, this is the main difference between Snakemake and Nextflow
+
 ===
 
 ## Portability
 
-<div class="fragment fade-in">
+[www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
 
 * <i class="fas fa-server"></i> Sun Grid Engine, SLURM, PBS/Torque, OAR ...
 
-</div>
-
-<div class="fragment fade-in">
-
 * <i class="fas fa-cloud"></i> AWS Batch, Kubernetes, Google Life Sciences
-
-</div>
-
-<div class="fragment fade-in">
-
-Nextflow docs on executors: [www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
-
-</div>
 
 Note:
 
-Nextflow supports main schedulers on premise or in the cloud
+* Nextflow supports main schedulers on HPCs or in the cloud
 
 ===
 
 ## Reproducibility
 
-<div class="fragment fade-in">
-
 [![Conda]({{ site.url }}/assets/img/svg/conda_logo.svg)](https://docs.conda.io/) <!-- .element class="image-50" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
 :-:|:-:|:-:
 
-</div>
-
 Note:
 
-Nextflow also supports modules, pod
+* Nextflow supports container engines and virtual environments
 
 ---
 
 [![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
 
-===
+---
 
 <div class="r-stack">
   <img src="/assets/img/svg/institutes_2017.svg" title="Institutes part of nf-core in 2017" alt="3 institutes part of nf-core in 2017" class="fragment fade-out" data-fragment-index="0"/>
@@ -148,17 +149,15 @@ Note:
 
 3 - 12 - 27 - 39
 
-Started in late 2017 Phil Ewels (NGI), Alex Peltzer (QBiC), Sven Fillinger (QBiC) and Andreas Wilm (A*STAR)
+* NGI had been developing analysis pipelines for years and using a set of standards
 
-NGI had been developing analysis pipelines for years and using a set of standards
+* This helped other group run the pipelines on their own
 
-This helped other group run the pipelines on their own
+* Pipelines began to outgrow the SciLifeLab/NGI branding
 
-Swedish research groups at first, but later on other groups and core genomics facilities too
+* In late 2017, nf-core was created, thanks to Phil Ewels (NGI), Alex Peltzer (QBiC), Sven Fillinger (QBiC) and Andreas Wilm (A*STAR)
 
-Pipelines began to outgrow the SciLifeLab/NGI branding
-
-nf-core was created and all relevant pipelines moved to this new GitHub Organisation
+* All relevant pipelines were moved to this new GitHub organisation
 
 ===
 
@@ -190,6 +189,13 @@ nf-core was created and all relevant pipelines moved to this new GitHub Organisa
 
 </div>
 
+Note:
+
+* As a community we are active on twitter
+* We're using YouTube more and more especially nowadays
+* Always using Slack a lot (probably too much in my case)
+* And of course GitHub
+
 ===
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/pipelines](https://nf-co.re/pipelines)
@@ -199,13 +205,21 @@ nf-core was created and all relevant pipelines moved to this new GitHub Organisa
   <img src="/assets/img/slides/nf-core_starred_pipelines_20200629.png" title="nf-core most starred pipelines" alt="nf-core most starred pipelines" class="image-50 fragment fade-in" data-fragment-index="0"/>
 </div>
 
+Note:
+
+* Our website has pages for each pipeline that renders the documentation available on github
+
+* 24 released pipelines, and 14 in development
+
+* Most recently released
+
+* Most starred
+
 ---
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
+## Pipeline requirements
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/developers/guidelines](https://nf-co.re/developers/guidelines)
-
-## Pipeline requirements
 
 * Nextflow based
 * Common structure (based on the nf-core template)
@@ -215,11 +229,8 @@ nf-core was created and all relevant pipelines moved to this new GitHub Organisa
 * Continuous Integration testing (e.g. GitHub Actions)
 
 Note:
-nf stands for Nextflow
-core for the core facilities
 
-Our community is closely tied to Nextflow
-We do follow Nextflow development, and consult regularly with the developers
+* Our community is closely tied to Nextflow
 
 ---
 
@@ -227,17 +238,21 @@ We do follow Nextflow development, and consult regularly with the developers
 
 ===
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/tools](https://nf-co.re/tools)
+## A companion tool
 
-A companion tool to help with common tasks
+[<i class="fa fa-globe-europe"></i> https://nf-co.re/tools](https://nf-co.re/tools)
 
 * [nf-core list](https://nf-co.re/tools#listing-pipelines) - List available pipelines
 * [nf-core launch](https://nf-co.re/tools#launch-a-pipeline) - Run pipeline with interactive prompts
 * [nf-core download](https://nf-co.re/tools#downloading-pipelines-for-offline-use) - Download pipeline for offline use
 * [nf-core licences](https://nf-co.re/tools#pipeline-software-licences) - List software licences in a pipeline
-* [nf-core create](https://nf-co.re/tools#creating-a-new-workflow) - Create a new workflow from the template
+* [nf-core create](https://nf-co.re/tools#creating-a-new-workflow) - Create a new pipeline from the template
 * [nf-core lint](https://nf-co.re/tools#linting-a-workflow) - Check pipeline code against guidelines
 * ...
+
+Note:
+
+* We provide a companion tool to help with common tasks
 
 ===
 
@@ -249,7 +264,10 @@ A companion tool to help with common tasks
 
 Note:
 
-nf-core create can be used to create non nf-core pipeline, and is a good help to start with a minimal skeleton
+* nf-core create can be used to create non nf-core pipeline, and
+* it is a good help to start with a minimal skeleton
+* with at least a MultiQC process for reporting
+* we're working on making it less specific to nf-core to help the whole Nextflow community
 
 ===
 
@@ -258,8 +276,6 @@ nf-core create can be used to create non nf-core pipeline, and is a good help to
 [![Bioconda]({{ site.url }}/assets/img/svg/bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-50" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
 :-:|:-:|:-:
 
-<div class="fragment fade-in">
-
 * All tools are installed with Conda/Bioconda
   * Allows set up of a new environment
 * Bundled into a Docker container
@@ -267,17 +283,20 @@ nf-core create can be used to create non nf-core pipeline, and is a good help to
 * Built from the Docker container
   * Singularity images can solve HPC container problems
 
-</div>
+Note:
+
+* We do recommend to publish tools using bioconda and are involved within the community
+* This setting allow for an easy update of tools, and easy usage of all the different technologies depending on the system
 
 ---
 
 ## Configurations
 
-All pipelines come with a default sensible configuration for a regular sized HPC.
+All pipelines come with a default sensible configuration for a regular sized HPC
 
 <div class="fragment fade-in">
 
-[<i class="fab fa-github"></i> nf-core/configs](https://github.com/nf-core/configs/) allows shared configurations between pipelines for a specific HPC
+[<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs/) allows shared configurations between pipelines for a specific HPC
 
 * cpus, time and memory requirements
 * scheduler
@@ -288,19 +307,24 @@ All pipelines come with a default sensible configuration for a regular sized HPC
 
 </div>
 
+Note:
+
+* This allows anyone using a nf-core pipeline in a infrastructure, or anyone else in the same infrastructure to easily any nf-core pipeline
+
 ---
 
-## Coming Next
+## Coming soon
 
-<div class="fragment fade-in">
+* Full-sized dataset testing for pipeline releases on AWS
 
 * Graphical user interface to launch pipelines
 
 * Modules with `Nextflow DSL 2`
 
-* Full-sized dataset testing for pipeline releases on AWS
+Note:
 
-</div>
+* We do collaborate with Nextflow developers, and are up to date with the latest developments
+* Nextflow DSL 2 will allow for more modular pipelines similar to the snakemake rules
 
 ---
 
@@ -330,9 +354,13 @@ The nf-core framework for community-curated bioinformatics pipelines
 
 [![nf-core stats]({{ site.url }}/assets/img/slides/nf-core_stats_jobim.png "nf-core stats")](https://nf-co.re/stats) <!-- .element class="image-50" -->
 
+Note:
+
+* Phil loves to make stats
+
 ---
 
-## [<i class="fas fa-laptop-code"></i> Hackathons](https://nf-co.re/events)
+## <i class="fas fa-laptop-code"></i> Hackathons
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/events](https://nf-co.re/events)
 
@@ -348,7 +376,7 @@ Next one is online from July 13th to 17th:
 
 ---
 
-## Stay at home message
+## <i class="fas fa-home"></i> Stay at home message
 
 ===
 
@@ -356,8 +384,8 @@ Next one is online from July 13th to 17th:
   * Highly optimised pipelines with excellent reporting
   * Validated releases ensure reproducibility
 * <i class="fas fa-users"></i> Users
-  * Portable, documented and easy to use workflows that you can trust
-  * Shareability between different collaborators
+  * Portable, documented and easy to use pipelines
+  * Easy to share between different collaborators
 * <i class="fas fa-laptop-code"></i> Developers
   * Companion templates and tools help to validate your code and simplify common tasks
 
