@@ -318,7 +318,7 @@ Maxime Garcia | Olga Botvinnik | Sven Fillinger | Gisela Gabernet
 
 The nf-core framework for community-curated bioinformatics pipelines
 
-[Nat Biotechnology (2020)](https://www.nature.com/articles/s41587-020-0439-x); doi: [10.1038/s41587-020-0439-x](https://doi.org/10.1038/s41587-020-0439-x)
+[Nat Biotechnology (2020)](https://www.nature.com/articles/s41587-020-0439-x); [<i class="ai ai-doi"></i> 10.1038/s41587-020-0439-x](https://doi.org/10.1038/s41587-020-0439-x)
 
 </small>
 
