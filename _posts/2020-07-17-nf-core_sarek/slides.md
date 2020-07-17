@@ -102,6 +102,19 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ---
 
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+
+* [Ruotes](https://github.com/SciLifeLab/Sarek/releases/tag/2.1.0)
+* [Skårki](https://github.com/SciLifeLab/Sarek/releases/tag/2.2.0)
+* [Äpar](https://github.com/SciLifeLab/Sarek/releases/tag/2.3)
+* [Ålkatj](https://github.com/nf-core/sarek/releases/tag/2.5)
+* [Årjep-Ålkatjjekna](https://github.com/nf-core/sarek/releases/tag/2.5.1)
+* [Jåkkåtjkaskajekna](https://github.com/nf-core/sarek/releases/tag/2.5.2)
+* [Piellorieppe](https://github.com/nf-core/sarek/releases/tag/2.6)
+* [Gådokgaskatjåhkkå](https://github.com/nf-core/sarek/releases/tag/2.6.1)
+
+---
+
 [![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
