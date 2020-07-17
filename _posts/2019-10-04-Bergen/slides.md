@@ -149,7 +149,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ## WES and Targeted Sequencing
 
-![]({{ site.url }}/assets/img/svg/AppleSeq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
+![]({{ site.url }}/assets/img/svg/appleseq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
 
 ---
 

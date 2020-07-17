@@ -32,6 +32,19 @@ Note:
 
 ---
 
+[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+
+National centre for molecular biosciences with focus on health and environmental research
+
+[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+:-:|:-:|:-:|:-:
+
+Note:
+
+* SciLifeLab is several infrastructures
+
+===
+
 [![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
 * State-of-the-art infrastructure
@@ -46,17 +59,10 @@ Note:
 
 ===
 
-[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+[![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
 
-National centre for molecular biosciences with focus on health and environmental research
-
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
-:-:|:-:|:-:|:-:
-
-Note:
-
-* SciLifeLab is several infrastructures
-* NGI collaborates a lot with NBIS the National Bioinformatics Infrastructure Sweden which is the local Elixir node
+* Swedish ELIXIR node
+* Bioinformatics support for Swedish researchers
 
 ---
 
@@ -101,7 +107,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 <div class="fragment fade-in" data-fragment-index="2">
 
 * Open-Source Nextflow Pipeline
-* Developed at NGI
+* Started at NGI
 * In collaboration with NBIS
 * Support from Barntumörbanken
 
@@ -139,7 +145,7 @@ Note:
 
 ## WES and Targeted Sequencing
 
-![]({{ site.url }}/assets/img/svg/AppleSeq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
+![]({{ site.url }}/assets/img/svg/appleseq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
 
 ---
 
@@ -219,16 +225,21 @@ Based on GATK Best Practices (GATK 4.1.7.0)
 
 ---
 
-## What's next
+## What is coming soon
+
+* <i class="far fa-check-square"></i> @sarek-team to mention the core sarek developers on Slack
+* <i class="far fa-check-square"></i> @nf-core/sarek to mention the core sarek developers on GitHub
+* <i class="far fa-check-square"></i> BWA-MEM2 ([dev](https://github.com/nf-core/sarek/tree/dev))
+* <i class="far fa-check-square"></i> Bug-fixes ([dev](https://github.com/nf-core/sarek/tree/dev))
+* <i class="far fa-square"></i> DSL 2 ([dsl2](https://github.com/nf-core/sarek/tree/dsl2)) with [@ggabernet](https://github.com/ggabernet) and [@FriederikeHanssen](https://github.com/FriederikeHanssen)
+
+===
+
+## What is next
 
 * More tools
-  * More downstream processing of the final vcf files
-  * Connection to [Scout](https://www.clinicalgenomics.se/scout/)
-* More genomes
-  * Mouse
-  * Dog
-  * Cattle
-* DSL 2
+* More downstream processing of the final vcf files
+* Connection to [Scout](https://www.clinicalgenomics.se/scout/)
 
 Note:
 
