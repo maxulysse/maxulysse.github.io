@@ -361,6 +361,16 @@ Generate a nice final report
 
 ---
 
+## What is coming next
+
+* Validation tests
+* More tools
+* DSL2
+* More genomes
+* Open to non-cancer specific usage
+
+---
+
 ## Get involved
 
 * Our code is hosted on Github
