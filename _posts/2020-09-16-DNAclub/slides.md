@@ -272,6 +272,7 @@ Based on GATK Best Practices (GATK 4.1.7.0)
 * Sub-workflows for specific usage
   * Improved cloud usage
   * Improved usage for non-model organism
+  * Joint Variant Calling
 * More downstream processing of the final vcf files
 * Easier connection to [Scout](https://www.clinicalgenomics.se/scout/)
 
@@ -379,8 +380,8 @@ Generate a nice final report
   * [<i class="fab fa-github"></i> github.com/nf-core/rnafusion](https://github.com/nf-core/rnafusion)
 * We have Slack
   * [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
-  * [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
-  * [<i class="fab fa-slack"></i> #rnafusion](https://nfcore.slack.com/channels/rnafusion)
+  * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)
+  * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/rnafusion](https://nfcore.slack.com/channels/rnafusion)
 
 ---
 

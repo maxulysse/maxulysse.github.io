@@ -266,6 +266,7 @@ Based on GATK Best Practices (GATK 4.1.7.0)
 * Sub-workflows for specific usage
   * Improved cloud usage
   * Improved usage for non-model organism
+  * Joint Variant Calling
 * More downstream processing of the final vcf files
 * Easier connection to [Scout](https://www.clinicalgenomics.se/scout/)
 
