@@ -362,7 +362,7 @@ Generate a nice final report
 
 ---
 
-## What is coming next
+## What is coming next in rnafusion
 
 * Validation tests
 * More tools
