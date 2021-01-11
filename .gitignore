@@ -3,3 +3,4 @@
 .vscode
 Gemfile.lock
 _site/
+*.code-workspace
