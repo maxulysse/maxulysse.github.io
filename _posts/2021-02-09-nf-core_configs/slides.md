@@ -33,6 +33,8 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
 * On a new machine (with `Docker` installed)
 * Specify everything on the command line
 
+<div class="fragment fade-in">
+
 ```text
 export NXF_VER=20.04.0 ; curl -s https://get.nextflow.io | bash
 
@@ -46,6 +48,8 @@ nextflow run nf-core/eager -r 2.3.1 \
   --fasta data/reference/Mammoth/Mammoth_MT_Krause.fasta \
   --input data/testdata/Mammoth/mammoth_design_fastq.tsv
 ```
+
+</div>
 
 ---
 
@@ -68,6 +72,8 @@ nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
   --input data/testdata/Mammoth/mammoth_design_fastq.tsv
 ```
 
+<div class="fragment fade-in">
+
 > `my_computer.config`
 >
 > ```groovy
@@ -87,15 +93,19 @@ nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
 > process.container = 'nfcore/eager:2.3.1'
 > ```
 
+</div>
+
 ---
 
-## With profile
+## With profiles
 
 [<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html#config-profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles)
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,docker
 ```
+
+<div class="fragment fade-in">
 
 > `docker`
 >
@@ -117,6 +127,42 @@ nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,docker
 > }
 > ```
 
+</div>
+
+===
+
+## With singularity
+
+[<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html#config-profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles)
+
+```text
+nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,singularity
+```
+
+<div class="fragment fade-in">
+
+> `singularity`
+>
+> ```groovy
+> singularity.enabled = true
+> singularity.autoMounts = true
+> ```
+>
+> `test_tsv`
+>
+> ```groovy
+> params {
+>   max_cpus = 2
+>   max_memory = 6.GB
+>   genome = false
+>
+>   fasta = 'data/reference/Mammoth/Mammoth_MT_Krause.fasta'
+>   input = 'data/testdata/Mammoth/mammoth_design_fastq.tsv'
+> }
+> ```
+
+</div>
+
 ---
 
 ## On my institutional HPC
@@ -132,10 +178,13 @@ nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,docker
 ## Let's make a config file
 
 ```text
-nextflow run nf-core/eager -r 2.3.1 -c my_hpc.config /
+nextflow run nf-core/eager -r 2.3.1 -c my_hpc.config --project MUG_210209 /
+  --genome false /
   --fasta /data1/maxime/workspace/nf-core/eager/data/reference/Mammoth/Mammoth_MT_Krause.fasta /
   --input /data1/maxime/workspace/nf-core/eager/data/testdata/Mammoth/mammoth_design_fastq.tsv
 ```
+
+<div class="fragment fade-in">
 
 `my_hpc.config`
 
@@ -159,13 +208,21 @@ params {
 }
 ```
 
+</div>
+
 ---
 
 ## Let's make a profile
 
 [<i class="fab fa-github"></i> github.com/nf-core/configs#adding-a-new-config](https://github.com/nf-core/configs#adding-a-new-config)
 
+<div class="fragment fade-in">
+
 `nf-core/configs/conf/my_hpc.config`
+
+</div>
+
+<div class="fragment fade-in">
 
 `nf-core/configs/nfcore_custom.config`
 
@@ -173,7 +230,15 @@ params {
   my_hpc       { includeConfig "${params.custom_config_base}/conf/my_hpc.config" }
 ```
 
-> __NB:__ Don't forget docs and CI tests.
+</div>
+
+<div class="fragment fade-in">
+
+__NB:__ Don't forget docs and CI tests.
+
+_cf_ [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
+
+</div>
 
 ---
 
@@ -239,6 +304,13 @@ process {
     cpus = 40
     time = 24.h
   }
+
+  withLabel: PROCESS_LABEL {
+    maxRetries = 3
+    memory = 110.GB
+    cpus = 20
+    time = 24.h
+  }
 }
 ```
 
@@ -256,9 +328,10 @@ includeConfig 'my_conf.config'
 
 ## Test online
 
-```bash
-nextflow run nf-core/eager -r 2.3.1 -profile my_hpc /
+```text
+nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 / 
   -custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/my_hpc /
+  --genome false /
   --fasta /data1/maxime/workspace/nf-core/eager/data/reference/Mammoth/Mammoth_MT_Krause.fasta /
   --input /data1/maxime/workspace/nf-core/eager/data/testdata/Mammoth/mammoth_design_fastq.tsv
 ```
@@ -275,25 +348,20 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc /
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
-
 ## Get involved
 
-* Our code is hosted on Github
-  * [<i class="fab fa-github"></i> github.com/nf-core](https://github.com/nf-core)
-  * [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
-* We have Slack
-  * [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
-  * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/configs](https://nfcore.slack.com/channels/configs)
+[<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+
+<img src="/assets/img/svg/social_media_2021.svg" title="GitHub, Slack, Twitter and YouTube" alt="GitHub, Slack, Twitter and YouTube"/>
 
 ---
 
 <div class="r-stack">
-  <img src="/assets/img/svg/acknowledgments_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-out" data-fragment-index="0"/>
+  <img src="/assets/img/svg/acknowledgments_2021.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-out" data-fragment-index="0"/>
   <a href="https://nf-co.re/community#organisations">
-    <img src="/assets/img/svg/institutes_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="0"/></a>
+    <img src="/assets/img/svg/institutes_2021.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="0"/></a>
   <a href="https://nf-co.re/community#contributors">
-    <img src="/assets/img/slides/nf-core_contributors_jobim.png" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="1"/></a>
+    <img src="/assets/img/slides/nf-core_contributors_2021_02.png" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="1"/></a>
 </div>
 
 ---
@@ -302,12 +370,11 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc /
 
 ## Join us
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re)
-* [<i class="fab fa-github"></i> github.com/nf-core](https://github.com/nf-core)
-* [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
-* [<i class="fab fa-slack"></i> nfcore.slack.com/channels/configs](https://nfcore.slack.com/channels/configs)
+* [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
 
 ## References
 
 * [<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
 * [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
+* [<i class="fas fa-images"></i> maxulysse.github.io/bytesize_2](https://maxulysse.github.io/bytesize_2)
+* [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
