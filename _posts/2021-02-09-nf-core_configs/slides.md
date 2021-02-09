@@ -14,6 +14,10 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
 
 </small>
 
+Note:
+
+Working for The Swedish Childhood Tumor Biobank, located at KI, and sitting half-time at National Genomics Infrastructure from Scilifelab
+
 ---
 
 [![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
@@ -25,6 +29,10 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
   * __Shareable and reproducible__
     * with containers or virtual environments
     * `Docker`, `Singularity` or `Conda`
+
+Note:
+
+I especially love Nextflow for its portability, shareability and reproducibility
 
 ---
 
@@ -51,14 +59,20 @@ nextflow run nf-core/eager -r 2.3.1 \
 
 </div>
 
----
-
-## Why is it working
+<div class="fragment fade-in">
 
 * container engine with `container:tag`
 * available resources
 * path to reference genome file
 * path to input files
+
+</div>
+
+Note:
+
+* Let's try a challenge and run nf-core/eager without config files or profile
+
+* And here is why it is working
 
 ---
 
@@ -68,6 +82,7 @@ nextflow run nf-core/eager -r 2.3.1 \
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
+  --genome false /
   --fasta data/reference/Mammoth/Mammoth_MT_Krause.fasta /
   --input data/testdata/Mammoth/mammoth_design_fastq.tsv
 ```
@@ -83,7 +98,6 @@ nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
 > params {
 >   max_cpus = 2
 >   max_memory = 6.GB
->   genome = false
 >}
 >```
 >
@@ -94,6 +108,11 @@ nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
 > ```
 
 </div>
+
+Note:
+
+* I could have specify genome and input files in a config file as well
+* But as I'm planning to run that only once, and not frequently I won't
 
 ---
 
@@ -120,14 +139,19 @@ nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,docker
 > params {
 >   max_cpus = 2
 >   max_memory = 6.GB
->   genome = false
 >
+>   genome = false
 >   fasta = 'data/reference/Mammoth/Mammoth_MT_Krause.fasta'
 >   input = 'data/testdata/Mammoth/mammoth_design_fastq.tsv'
 > }
 > ```
 
 </div>
+
+Note:
+
+* profiles are like aliases for configs
+* `test_tsv` is a profile used for CI tests, so it is use very frequently, that's why it is here in a profile
 
 ===
 
@@ -154,14 +178,19 @@ nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,singularity
 > params {
 >   max_cpus = 2
 >   max_memory = 6.GB
->   genome = false
 >
+>   genome = false
 >   fasta = 'data/reference/Mammoth/Mammoth_MT_Krause.fasta'
 >   input = 'data/testdata/Mammoth/mammoth_design_fastq.tsv'
 > }
 > ```
 
 </div>
+
+Note:
+
+* If singularity is already installed, just change profiles, and voilà
+* This is why I like Nexflow and nf-core, it's easy
 
 ---
 
@@ -209,6 +238,10 @@ params {
 ```
 
 </div>
+
+Note:
+
+* This won't work for you
 
 ---
 
@@ -338,13 +371,16 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
-
 ## Stay at home message
 
 * Read the docs -> [<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
 * Check out the repo -> [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
 * Stay tuned for future `nf-core/bytesize`
+
+Note:
+
+* Reads the docs, try things out, and don't hesitate to ask questions
+* More talks are coming
 
 ---
 
@@ -353,6 +389,13 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
 [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
 
 <img src="/assets/img/svg/social_media_2021.svg" title="GitHub, Slack, Twitter and YouTube" alt="GitHub, Slack, Twitter and YouTube"/>
+
+Note:
+
+* Join us on Github
+* Join our Slack
+* Follow us on Twitter
+* Follow us on Youtube
 
 ---
 
@@ -363,6 +406,11 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
   <a href="https://nf-co.re/community#contributors">
     <img src="/assets/img/slides/nf-core_contributors_2021_02.png" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="1"/></a>
 </div>
+
+Note:
+
+* Thank institutes and sponsors + collaborators
+* Thank all nf-core contributors
 
 ---
 
@@ -378,3 +426,8 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
 * [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
 * [<i class="fas fa-images"></i> maxulysse.github.io/bytesize_2](https://maxulysse.github.io/bytesize_2)
 * [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
+
+Note:
+
+Here are some important links, including the docs, and the slide for this talk on my website
+If you have any question, now is the time
