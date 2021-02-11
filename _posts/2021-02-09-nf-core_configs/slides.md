@@ -363,7 +363,7 @@ includeConfig 'my_conf.config'
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 / 
-  -custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/my_hpc /
+  --custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/my_hpc /
   --genome false /
   --fasta /data1/maxime/workspace/nf-core/eager/data/reference/Mammoth/Mammoth_MT_Krause.fasta /
   --input /data1/maxime/workspace/nf-core/eager/data/testdata/Mammoth/mammoth_design_fastq.tsv
