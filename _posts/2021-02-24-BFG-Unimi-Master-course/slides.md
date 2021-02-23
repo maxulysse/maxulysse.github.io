@@ -20,7 +20,7 @@ BFG Unimi Master course - online - 2021/02/24-25
 
 Updated for the BFG Unimi Master course
 
-Slides: [maxulyse.github.io/bfg2021](https://maxulyse.github.io/bfg2021)
+Slides: [maxulysse.github.io/bfg2021](https://maxulysse.github.io/bfg2021)
 
 ---
 
