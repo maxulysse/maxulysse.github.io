@@ -1,36 +1,29 @@
-img {
-  border: 0 !important;
-  box-shadow: none !important;
-  background: none !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  width: auto;
-  height: auto;
-}
-
-.requirements li {
-  list-style-type: none;
+#left {
+  left:-8.33%;
   text-align: left;
+  float: left;
+  width:50%;
+  z-index:-10;
 }
 
-.me {
-  margin: 0 !important;
-  text-align: center !important;
+#right {
+  left:31.25%;
+  top: 75px;
+  float: right;
+  text-align: right;
+  z-index:-10;
+  width:50%;
 }
 
-.me li {
-  list-style-type: none;
-  text-align: left;
+.avatar img {
+  border-radius: 50%;
 }
 
-.me li a {
-  margin-left: 15px;
-}
-
-.reveal pre code{
-  font-size: .8em;
-  line-height: 1em;
-  max-height: 500px;
+.footnote {
+  position: absolute;
+  bottom: 20px;
+  size: 0.6em;
+  color: #444444;
 }
 
 .image-05 img {
@@ -73,38 +66,41 @@ img {
   height: 75%;
 }
 
-.avatar img {
-  border-radius: 50%;
+.me li a {
+  margin-left: 15px;
+}
+
+.me li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.me {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.requirements li {
+  list-style-type: none;
+  text-align: left;
 }
 
 .reveal .slides {
   font-size: 0.82em;
 }
 
-
-.footnote {
-  position: absolute;
-  bottom: 20px;
-  size: 0.6em;
-  color: #444444;
+.reveal pre code{
+  font-size: .8em;
+  line-height: 1em;
+  max-height: 500px;
 }
 
 .reveal table td {
   font-size: 0.7em;
 }
 
-table {
-  table-layout: fixed ;
-  width: 100% ;
-}
-
-td {
-  width: 25% ;
-}
-
-td img{
-  display: block;
-  margin: auto auto auto auto;
+.text-right {
+  text-align: right;
 }
 
 html.dim-background .slide-background.present {
@@ -117,27 +113,30 @@ html.dim-background-2 .slide-background.present {
   background-color: rgb(255, 255, 255);
 }
 
-.text-right {
-  text-align: right;
+img {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto;
+  height: auto;
 }
 
-#left {
-  left:-8.33%;
-  text-align: left;
-  float: left;
-  width:50%;
-  z-index:-10;
-}
-
-#right {
-  left:31.25%;
-  top: 75px;
-  float: right;
-  text-align: right;
-  z-index:-10;
-  width:50%;
+table {
+  table-layout: fixed ;
+  width: 100% ;
 }
 
 table, th, td {
   border-style: hidden;
+}
+
+td img{
+  display: block;
+  margin: auto auto auto auto;
+}
+
+td {
+  width: 25% ;
 }
