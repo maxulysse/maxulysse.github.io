@@ -1,3 +1,8 @@
+.author-avatar {
+  float: left;
+  margin-right: 1em;
+}
+
 .blog-footer {
   padding: 2.5rem 0;
   color: #999;
@@ -6,16 +11,77 @@
   border-top: .05rem solid #e5e5e5;
 }
 
-body {
-  padding-top: 1.25rem;
-}
-
 .card-columns.only-one-column {
   column-count: 1;
 }
 
 .card-columns.two-columns {
   column-count: 2;
+}
+
+.container {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.footericon {
+  color: gray;
+  transition: transform 0.3s ease;
+}
+
+.footericon:hover {
+  transform: scale(1.5);
+}
+
+.header-link:hover .link-icon:before {
+  transition: opacity 0.5s linear;
+  content: "\f0c1";
+}
+
+.icon-2x {
+  height: 2em;
+  width: 2em;
+}
+
+.img-post {
+  @extend .rounded;
+  @extend .img-fluid;
+  @extend .mx-auto;
+  @extend .d-block;
+}
+
+.logo {
+  height: 3em;
+  width: 3em;
+}
+
+.nav-footer .ai-google-scholar:hover {color: #4885ED;}
+.nav-footer .ai-orcid:hover {color: #A6CE39;}
+.nav-footer .fa-github:hover {color: #000000;}
+.nav-footer .fa-instagram:hover {color: #000000;}
+.nav-footer .fa-keybase:hover {color: #3DCC8E;}
+.nav-footer .fa-linkedin-in:hover {color: #007BB6;}
+.nav-footer .fa-mastodon:hover {color: #3088D4;}
+.nav-footer .fa-reddit-alien:hover {color: #FF4500;}
+.nav-footer .fa-researchgate:hover {color: #00D0B0;}
+.nav-footer .fa-rss-square:hover {color: #FF6600;}
+.nav-footer .fa-stack-exchange:hover {color: #4CA2DA;}
+.nav-footer .fa-twitter:hover {color: #4099FF;}
+.nav-footer .fa-youtube:hover {color: #FF0000;}
+
+.nav-footer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.navbar {
+  margin-bottom: 1.25rem;
+}
+
+@media all and (max-width: 550px) { .flex-container {flex-flow:column wrap;}}
+
+blockquote p {
+  display: inline;
 }
 
 blockquote {
@@ -31,85 +97,6 @@ blockquote:before {
   vertical-align: -0.4em;
 }
 
-blockquote p {
-  display: inline;
-}
-
-.img-post {
-  @extend .rounded;
-  @extend .img-fluid;
-  @extend .mx-auto;
-  @extend .d-block;
-}
-
-.container {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-
-@media all and (max-width: 550px) {
-  .flex-container {flex-flow:column wrap;}
-}
-
-.logo {
-  height: 3em;
-  width: 3em;
-}
-
-.navbar {
-  margin-bottom: 1.25rem;
-}
-
-.nav-footer {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.footericon {
-  color: gray;
-  transition: transform 0.3s ease;
-}
-
-.footericon:hover {
-  transform: scale(1.5);
-}
-
-.icon-2x {
-  height: 2em;
-  width: 2em;
-}
-
-.mydocpro-svg {
-  color: gray;
-  transition: transform 0.3s ease;
-}
-
-.mydocpro-svg:hover {
-  transform: scale(1.5);
-}
-
-.nav-footer .ai-google-scholar:hover {color: #4885ED;}
-.nav-footer .ai-orcid:hover {color: #A6CE39;}
-.nav-footer .fa-bitbucket:hover {color: #205081;}
-.nav-footer .fa-github:hover {color: #000000;}
-.nav-footer .fa-gitlab:hover {color: #FCA326;}
-.nav-footer .fa-instagram:hover {color: #000000;}
-.nav-footer .fa-keybase:hover {color: #3DCC8E;}
-.nav-footer .fa-linkedin-in:hover {color: #007BB6;}
-.nav-footer .fa-mastodon:hover {color: #3088D4;}
-.nav-footer .fa-reddit-alien:hover {color: #FF4500;}
-.nav-footer .fa-researchgate:hover {color: #00D0B0;}
-.nav-footer .fa-rss-square:hover {color: #FF6600;}
-.nav-footer .fa-stack-exchange:hover {color: #4CA2DA;}
-.nav-footer .fa-twitter:hover {color: #4099FF;}
-.nav-footer .mydocpro-svg:hover .mydocpro {fill: #000000;}
-
-.author-avatar {
-  float: left;
-  margin-right: 1em;
-}
-
-.header-link:hover .link-icon:before {
-  transition: opacity 0.5s linear;
-  content: "\f0c1";
+body {
+  padding-top: 1.25rem;
 }

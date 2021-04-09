@@ -13,6 +13,9 @@
 - name         : Google Schoolar
   url          : https://scholar.google.fr/citations?user=bzhsE6oAAAAJ
   academicons  : ai-google-scholar
+- name         : YouTube
+  url          : https://www.youtube.com/c/maximegarcia
+  font_awesome : fa-youtube
 - name         : LinkedIn
   url          : https://www.linkedin.com/in/maxugarcia/
   font_awesome : fa-linkedin-in
