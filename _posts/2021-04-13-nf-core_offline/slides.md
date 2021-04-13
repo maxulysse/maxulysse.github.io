@@ -32,9 +32,19 @@ Working for The Swedish Childhood Tumor Biobank, located at KI, and sitting half
 
 ---
 
+## Today's workflow
+
+<img src="/assets/img/svg/offline.svg" title="Offline set-up" alt="Offline set-up" class="image-75"/>
+
+Note:
+
+This fictional set up is based on UPPMAX rackham / bianca servers
+
+---
+
 ## Install nf-core tools
 
-on a machine that can communicate to the offline machine
+on the machine that can communicate to the offline machine
 
 ```bash
 $ ssh -X user@online.server.com
@@ -49,10 +59,6 @@ $ nf-core --version
 
 nf-core, version 1.14.dev0
 ```
-
-Note:
-
-This fictional set up is based on UPPMAX rackham / bianca servers
 
 ---
 
@@ -98,8 +104,8 @@ INFO:    Creating SIF file...
 
 Note:
 
-* The main Singularity container could have been downloaded with nf-core tools
-* But as I was downloading extra containers anyway, I wanted to show that it can be done this way too
+* The main Singularity container was downloaded with nf-core tools
+* But as I was downloading extra containers anyway, I could have downloaded it this way too
 
 ---
 
@@ -171,10 +177,17 @@ sftp> put -r igenomes .
 
 ## Run the pipeline
 
+<small style="color:red;">
+
+> EDIT: No need to set up `--custom_config_base`
+>
+> nf-core `tools` does that for you
+
+</small>
+
 ```bash
 export NXF_SINGULARITY_CACHEDIR=/path/to/nf-core-sarek-2.7/singularity-images
 nextflow run sarek/workflow/main.nf -profile offline [...]  \
-    --custom_config_base /path/to/nf-core-sarek-2.7/configs/  \
     --igenomes_base /path/to/igenomes
 ```
 
@@ -182,7 +195,6 @@ Can add to the offline profile:
 
 * Path to local AWS iGenomes
 * `cacheDir` setting to the `singularity` scope
-* Path to `custom_config_base`
 
 ```bash
 nextflow run rnaseq/workflow/main.nf -profile offline [...]
@@ -251,7 +263,6 @@ Note:
 
 ## References
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re/usage/offline](https://nf-co.re/usage/offline)
 * [<i class="fa fa-globe-europe"></i> nf-co.re/usage/offline](https://nf-co.re/usage/offline)
 * [<i class="fa fa-globe-europe"></i> nf-co.re/tools#downloading-pipelines-for-offline-use](https://nf-co.re/tools#downloading-pipelines-for-offline-use)
 * [<i class="fa fa-globe-europe"></i> nf-co.re/tools#singularity-cache-directory](https://nf-co.re/tools#singularity-cache-directory)
