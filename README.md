@@ -11,9 +11,9 @@ Using:
 - [bootstrap](https://getbootstrap.com/) `4.4.1`
 - [font-awesome](http://fontawesome.io/) `5.12.0`
 - [jekyll-search](https://github.com/RishikeshDarandale/jekyll-search) `1.1`
-- [jquery](https://jquery.com/) `3.4.1`
-- [lunr](https://lunrjs.com/) `2.3.8`
-- [popper](https://popper.js.org/) `2.0.0`
+- [jquery](https://jquery.com/) `3.6.0`
+- [lunr](https://lunrjs.com/) `2.3.9`
+- [popper](https://popper.js.org/) `2.9.2`
 - [revealjs](https://github.com/hakimel/reveal.js/) `4.1.0`
 - [staticman](https://staticman.net/) `1.0.0`
 
