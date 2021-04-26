@@ -26,7 +26,7 @@ It is developed in collaboration with two infrastructures within [Science for Li
 CAW is based on [GATK Best Practices](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows) for the preprocessing of FastQ files, then uses various variant calling tools to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
 Annotation tools ([snpEff](http://snpeff.sourceforge.net/), [VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)) are also used, and finally [MultiQC](http://multiqc.info/) for handling reports.
 
-We are currently working on a manuscript, but you're welcome to look at (or even contribute to) our [github repository](https://github.com/SciLifeLab/CAW/) or talk with us on our [gitter channel](https://gitter.im/SciLifeLab/CAW/).
+We are currently working on a manuscript, but you're welcome to look at (or even contribute to) our [github repository](https://github.com/SciLifeLab/CAW/) or talk with us on our gitter channel.
 
 ## Singularity and UPPMAX
 
