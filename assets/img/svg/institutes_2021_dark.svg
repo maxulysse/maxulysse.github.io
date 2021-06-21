@@ -24,7 +24,7 @@
    inkscape:export-ydpi="37.783001"><metadata
      id="metadata8"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
      id="defs6"><linearGradient
    id="linearGradient41174"
    osb:paint="solid"><stop
@@ -3172,8 +3172,8 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.70710678"
-     inkscape:cx="335.25969"
-     inkscape:cy="332.53135"
+     inkscape:cx="837.52636"
+     inkscape:cy="457.16259"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -3766,7 +3766,14 @@
 
 
 
-<g
+<rect
+   style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.71200693;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   id="rect2934"
+   width="1656.5702"
+   height="1187.3326"
+   x="1525.1932"
+   y="-2375.8147"
+   transform="scale(1,-1)" /><g
    style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
    id="Clip-7"
    transform="matrix(1.42769,0,0,-1.42769,1020.2636,1681.4354)" /><g
@@ -7567,6 +7574,7 @@
      y="-1771.6204"
      x="3783.0339">y </tspan></text>
 
+
 <text
    y="-1723.0933"
    x="3357.9963"
@@ -7645,6 +7653,7 @@
      id="tspan12980"
      y="-1723.0933"
      x="3707.3093">y </tspan></text>
+
 
 <text
    y="-1674.566"
@@ -7744,6 +7753,7 @@
      id="tspan13020"
      y="-1674.566"
      x="3788.3022">&quot; </tspan></text>
+
 
 <g
    style="fill:#000000"
@@ -13014,6 +13024,7 @@
    transform="scale(1,-1)"
    class="cls-3"
    style="font-weight:700;font-size:59.5346756px;font-family:Arial-BoldMT, Arial;letter-spacing:-0.02em;fill:#1d1d1b;stroke-width:1.42769003">CANCER INSTITUTE</text>
+
 
 <g
    transform="matrix(1.8097826,0,0,-1.8097826,798.50349,1878.001)"

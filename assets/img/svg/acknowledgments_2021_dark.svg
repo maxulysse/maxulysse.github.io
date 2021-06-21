@@ -42,12 +42,12 @@
      id="namedview27"
      showgrid="false"
      inkscape:zoom="0.92709555"
-     inkscape:cx="430.18602"
-     inkscape:cy="185.49939"
+     inkscape:cx="572.23456"
+     inkscape:cy="229.814"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1827"
+     inkscape:current-layer="svg25"
      fit-margin-top="5"
      fit-margin-left="5"
      fit-margin-right="5"
@@ -188,7 +188,14 @@
   </defs>
   <g
      id="g1827"
-     transform="translate(18.897642,18.897638)">
+     transform="matrix(0.99710806,0,0,1,17.322187,16.223776)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1170"
+       width="1121.1864"
+       height="511.01697"
+       x="-17.372219"
+       y="-19.651625" />
     <g
        id="g2014"
        transform="translate(0,0.79611356)">
