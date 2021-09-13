@@ -72,7 +72,8 @@ Note:
 
 ## Background <i class="fas fa-university"></i>
 
-- After High-School Diploma
+* After High-School Diploma
+
 <p class="fragment">- 2001-2003: Medical school @ La Timone, Marseille</p>
 <p class="fragment">- 2003-2007: Bachelor's degree in Biology / Biochemistry @ Faculté des sciences de Luminy, Marseille</p>
 <p class="fragment">- Erasmus semester in School of Biological Sciences @ University of East Anglia, Norwich</p>
@@ -83,7 +84,8 @@ Note:
 
 ## The thesis <i class="fas fa-book"></i>
 
-- Presented my work while doing my PhD
+* Presented my work while doing my PhD
+
 <p class="fragment">- Publications (Article and Chapters in Handbooks)</p>
 <p class="fragment">- Internal presentations at the lab</p>
 <p class="fragment">- Presentation at congresses</p>
@@ -93,7 +95,8 @@ Note:
 
 ## Skills learned during the thesis <i class="fas fa-tools"></i>
 
-- Practicals and management skills
+* Practicals and management skills
+
 <p class="fragment">- Managing a project for 3 years</p>
 <p class="fragment">- Talking with Researchers, Socio-economical partner, MDs</p>
 <p class="fragment">- Programming and computer skills</p>
@@ -103,7 +106,8 @@ Note:
 
 ## Outside the thesis <i class="fas fa-users"></i>
 
-- Involved at the lab and in young researchers associations
+* Involved at the lab and in young researchers associations
+
 <p class="fragment">- Co-organised after-works</p>
 <p class="fragment">- Co-designed and presented a science popularization poster</p>
 <p class="fragment">- Co-organised events</p>
@@ -120,7 +124,8 @@ Si ce n’est pas le cas, comment expliqueriez vous le rôle de votre thèse dan
 
 ## After the thesis <i class="fas fa-leaf"></i>
 
-- Moving around
+* Moving around
+
 <p class="fragment">- 2013-2014: Post-doc @ Cancer Science Institute of Singapore, National University of Singapore</p>
 <p class="fragment">- 2014-2016: Unemployment in Marseille</p>
 <p class="fragment">- Since 2016: Bioinformatician @ The Swedish Childhood Tumor Biobank, Karolinska Institutet, Stockholm</p>
@@ -137,7 +142,8 @@ Si non, qu’est-ce qui a changé et pourquoi ?
 
 ## A regular day <i class="fas fa-clock"></i>
 
-- At work, or working from home
+* At work, or working from home
+
 <p class="fragment">- Coffee</p>
 <p class="fragment">- Reply to emails and Slack messages</p>
 <p class="fragment">- Attend meetings</p>
