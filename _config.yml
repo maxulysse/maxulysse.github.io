@@ -30,6 +30,7 @@ plugins:
 
 include:
   - "_pages"
+  - ".well-known"
 
 exclude:
   - "_posts/*/slides.md"
