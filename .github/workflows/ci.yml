@@ -47,5 +47,8 @@ jobs:
       - name: Install prek
         run: curl -sSL https://github.com/j178/prek/releases/download/v0.4.4/prek-x86_64-unknown-linux-gnu -o prek && chmod +x prek && sudo mv prek /usr/local/bin/
 
+      - name: Install prek hooks
+        run: prek install-hooks
+
       - name: Run prek hooks
         run: prek run --all-files
