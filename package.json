@@ -11,7 +11,7 @@
     "check": "astro check",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!dist'",
     "lint": "npm run check && npm run lint:md",
-    "prek:install": "curl -sSL https://github.com/j178/prek/releases/download/v0.4.4/prek-x86_64-unknown-linux-gnu -o prek && chmod +x prek && sudo mv prek /usr/local/bin/",
+    "prek:install": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.3.3/prek-installer.sh | sh",
     "prek": "prek run"
   },
   "dependencies": {

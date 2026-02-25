@@ -45,7 +45,10 @@ jobs:
         run: npm ci
 
       - name: Install prek
-        run: curl -sSL https://github.com/j178/prek/releases/download/v0.4.4/prek-x86_64-unknown-linux-gnu -o prek && chmod +x prek && sudo mv prek /usr/local/bin/
+        run: curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.3.3/prek-installer.sh | sh
+
+      - name: Add prek to PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Install prek hooks
         run: prek install-hooks
