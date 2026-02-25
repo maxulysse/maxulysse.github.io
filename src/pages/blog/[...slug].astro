@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("blog");
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+interface Props {
+    entry: any;
+}
+
+const { slug } = Astro.params;
+const allEntries = await getCollection("blog");
+const entry = allEntries.find((e) => e.slug === slug);
+
+if (!entry) {
+    return Astro.redirect("/");
+}
+
+const normalizeDate = (value) => {
+    if (!value) return "";
+    if (value instanceof Date) {
+        return value.toISOString().split("T")[0];
+    }
+    const match = value.toString().match(/\d{4}-\d{2}-\d{2}/);
+    return match ? match[0] : "";
+};
+
+const findSlideRedirect = async (postEntry) => {
+    const tags = (postEntry.data.tags || []).map((tag) => tag.toLowerCase());
+    if (!tags.includes("presentation")) return null;
+
+    const presentations = await getCollection("presentations");
+    const targetDate = normalizeDate(postEntry.data.date);
+    const targetTitle = postEntry.data.title || "";
+
+    for (const presentation of presentations) {
+        const slideDate = normalizeDate(presentation.data.date);
+        const slideTitle = presentation.data.title || "";
+
+        if (slideDate === targetDate && slideTitle === targetTitle) {
+            const redirects = presentation.data.redirects || [];
+            const redirect = redirects[0] || presentation.slug;
+            const normalized = redirect.replace(/^\/+/, "");
+            return `/${normalized}/`;
+        }
+    }
+
+    return null;
+};
+
+const slideRedirect = await findSlideRedirect(entry);
+if (slideRedirect) {
+    return Astro.redirect(slideRedirect, 302);
+}
+
+const { Content } = await entry.render();
+---
+
+<PostLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    date={entry.data.date}
+    author={entry.data.author}
+    tags={entry.data.tags}
+    image={entry.data.image}
+>
+    <Content />
+</PostLayout>

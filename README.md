@@ -1,20 +1,19 @@
-# [![maxulysse.github.io](assets/img/logo/logo.png "Sarek")](https://maxulysse.github.io)
+# [![maxulysse.github.io](assets/img/logo/logo.png "Owl logo")](https://maxulysse.github.io)
 
-My own personal website made with Jekyll
+My own personal website made with Astro
 
 [![License][license-badge]][license-link]
 [![GitHub Actions Linting status][github-actions-badge]][github-actions-link]
 
 Using:
 
-- [academicons](https://jpswalsh.github.io/academicons/) `1.9.1`
-- [bootstrap](https://getbootstrap.com/) `4.4.1`
-- [font-awesome](http://fontawesome.io/) `5.12.0`
-- [jekyll-search](https://github.com/RishikeshDarandale/jekyll-search) `1.1`
+- [academicons](https://jpswalsh.github.io/academicons/) `1.9.6`
+- [astro](https://astro.build/) `5.2.0`
+- [bootstrap](https://getbootstrap.com/) `5.3.8`
+- [font-awesome](http://fontawesome.io/) `6.5.2`
 - [jquery](https://jquery.com/) `3.6.0`
 - [lunr](https://lunrjs.com/) `2.3.9`
-- [popper](https://popper.js.org/) `2.9.2`
-- [revealjs](https://github.com/hakimel/reveal.js/) `4.1.0`
+- [revealjs](https://github.com/hakimel/reveal.js/) `5.2.1`
 - [staticman](https://staticman.net/) `1.0.0`
 
 Inspired by:

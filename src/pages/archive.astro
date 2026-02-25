@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("blog");
+const sortedPosts = allPosts
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Group posts by year
+const postsByYear: { [key: string]: any[] } = {};
+for (const post of sortedPosts) {
+    const year = post.data.date.getFullYear().toString();
+    if (!postsByYear[year]) {
+        postsByYear[year] = [];
+    }
+    postsByYear[year].push(post);
+}
+
+const years = Object.keys(postsByYear).sort(
+    (a, b) => parseInt(b) - parseInt(a),
+);
+---
+
+<BaseLayout title="Archive" description="All post entries ordered by date">
+    <div class="card bg-light mb-4">
+        <div class="card-body">
+            <h6 class="card-text text-muted mb-0">
+                {
+                    years.map((year, idx) => (
+                        <>
+                            <a href={`#${year}`}>{year}</a>
+                            {idx < years.length - 1 && " • "}
+                        </>
+                    ))
+                }
+            </h6>
+        </div>
+    </div>
+
+    <div class="archive-grid">
+        {
+            years.map((year) => (
+                <div id={year}>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0">
+                                <i
+                                    class="fa-regular fa-folder-open me-2"
+                                    aria-hidden="true"
+                                />
+                                {year}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                {postsByYear[year]?.map((post) => (
+                                    <li class="mb-3">
+                                        <small class="text-muted d-block">
+                                            <i
+                                                class="fa-regular fa-calendar me-1"
+                                                aria-hidden="true"
+                                            />
+                                            {
+                                                post.data.date
+                                                    .toISOString()
+                                                    .split("T")[0]
+                                            }
+                                        </small>
+                                        <a href={`/blog/${post.slug}/`}>
+                                            {post.data.title}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .archive-grid {
+        column-count: 3;
+        column-gap: 1.5rem;
+    }
+
+    .archive-grid > div {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 991px) {
+        .archive-grid {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .archive-grid {
+            column-count: 1;
+        }
+    }
+</style>

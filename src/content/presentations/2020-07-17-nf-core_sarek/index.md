@@ -1,0 +1,335 @@
+---
+title: Sarek, a workflow to detect germline and somatic mutations in WGS/WES
+description: Presentation of Sarek for the nf-core Hackathon
+date: 2020-07-17
+author: maxulysse
+duration: 15min
+location:
+  city: Heidelberg
+  country: Germany
+redirects: ["/nf-core2020"]
+---
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+
+# Sarek
+
+## a workflow to detect germline and somatic mutations in WGS/WES
+
+Maxime Garcia
+
+<small>
+
+[<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
+
+[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io/nf-core2020]({{ site.url }}/nf-core2020)
+
+[nf-core Hackathon July 2020](https://nf-co.re/events/2020/hackathon-july-2020) - Heidelberg, Germany [virtual] - 2020/07/17
+
+</small>
+
+---
+
+[![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
+
+The Swedish Childhood Tumor Biobank
+
+[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
+
+Note:
+
+* Working for The Swedish Childhood Tumor Biobank located at KI
+
+---
+
+[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+
+National centre for molecular biosciences with focus on health and environmental research
+
+[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+:-:|:-:|:-:|:-:
+
+Note:
+
+* SciLifeLab is several infrastructures
+
+===
+
+[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
+
+* State-of-the-art infrastructure
+  * Sequencing (DNA, RNA ...)
+* Guidelines and support
+  * Sample collection, study design, protocol selection
+  * Bioinformatics analysis
+
+Note:
+
+* NGI is a sequencing facility used by researchers all over Sweden
+
+===
+
+[![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
+
+* Swedish ELIXIR node
+* Bioinformatics support for Swedish researchers
+
+---
+
+## Reproducibility is central
+
+[![Figure 1]({{ site.url }}/assets/img/slides/gigascience_giy077_fig1.jpg "figure 1")](https://academic.oup.com/view-large/figure/118918033/giy077fig1.jpg) <!-- .element class="image-50" -->
+
+[<i class="ai ai-doi"></i> 10.1093/gigascience/giy077](https://doi.org/10.1093/gigascience/giy077)
+
+Note:
+
+* For me, as a bioinformatician it is a crucial matter
+
+---
+
+## What is Sarek
+
+<div class="fragment fade-in" data-fragment-index="2">
+
+A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sarek-national-park/) in Northern Sweden.
+
+<small>
+
+* Long, deep, narrow valleys and wild, turbulent water
+* A tortuous delta landscape
+* Completely lacking in comfortable accommodations
+* One of Sweden’s most inaccessible national parks
+* There are no roads leading up to the national park
+
+</small>
+
+</div>
+
+---
+
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg">
+
+---
+
+<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+
+* [Ruotes](https://github.com/SciLifeLab/Sarek/releases/tag/2.1.0)
+* [Skårki](https://github.com/SciLifeLab/Sarek/releases/tag/2.2.0)
+* [Äpar](https://github.com/SciLifeLab/Sarek/releases/tag/2.3)
+* [Ålkatj](https://github.com/nf-core/sarek/releases/tag/2.5)
+* [Årjep-Ålkatjjekna](https://github.com/nf-core/sarek/releases/tag/2.5.1)
+* [Jåkkåtjkaskajekna](https://github.com/nf-core/sarek/releases/tag/2.5.2)
+* [Piellorieppe](https://github.com/nf-core/sarek/releases/tag/2.6)
+* [Gådokgaskatjåhkkå](https://github.com/nf-core/sarek/releases/tag/2.6.1)
+
+---
+
+[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+
+<div class="fragment fade-in" data-fragment-index="2">
+
+* Open-Source Nextflow Pipeline
+* Started at NGI
+* In collaboration with NBIS
+* Support from Barntumörbanken
+
+</div>
+
+===
+
+[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
+
+* Workflow manager
+  * Data driven language
+  * Portable
+    * executable on multiple platforms
+  * Shareable and reproducible
+    * with containers or virtual environments
+
+Note:
+
+* Early adopters of Nextflow for its portability, shareability and of course reproducibility
+
+---
+
+## Multiple flavors
+
+![Sarek]({{ site.url }}/assets/img/svg/sarek_logo.svg "Sarek") <!-- .element class="image-10" -->
+
+<div class="fragment fade-in" data-fragment-index="2">
+
+![Sarek]({{ site.url }}/assets/img/svg/sarek-germline.svg "Sarek") <!-- .element class="image-10" --> | ![Sarek]({{ site.url }}/assets/img/svg/sarek-somatic.svg "Sarek") <!-- .element class="image-10" -->
+:-:|:-:
+
+</div>
+
+===
+
+## WES and Targeted Sequencing
+
+![]({{ site.url }}/assets/img/svg/appleseq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
+
+---
+
+## Preprocessing
+
+[![GATKBP]({{ site.url }}/assets/img/svg/gatk-bp_logo.svg "GATK Best Practices")](https://software.broadinstitute.org/gatk/best-practices/) <!-- .element class="image-H25" -->
+
+Based on GATK Best Practices (GATK 4.1.7.0)
+
+<div class="fragment fade-in" data-fragment-index="2">
+
+* Reads mapped to reference genome with `bwa`
+* Duplicates marked with `picard MarkDuplicates`
+* Recalibrate with `GATK BaseRecalibrator`
+
+</div>
+
+===
+
+## Germline Variant Calling
+
+* SNVs and small indels
+  * HaplotypeCaller
+  * Strelka2
+  * Freebayes
+  * mpileup
+* Structural variants
+  * Manta
+  * TIDDIT
+
+===
+
+## Somatic Variant Calling
+
+* SNVs and small indels
+  * Mutect2
+  * Strelka2
+  * Freebayes
+* Structural variants
+  * Manta
+* Sample heterogeneity, ploidy and CNVs
+  * ASCAT
+  * Control-FREEC
+* Microsatellite instability
+  * MSIsensor
+
+===
+
+## Annotation
+
+* VEP and SnpEff
+  * <i class="fas fa-database"></i> ClinVar, COSMIC, dbSNP, GENCODE, gnomAD, polyphen, sift, etc.
+
+===
+
+## Reports
+
+[![MultiQC]({{ site.url }}/assets/img/svg/multiqc_logo.svg "MultiQC")](https://multiqc.info/) <!-- .element class="image-H25" -->
+
+---
+
+## Workflow
+
+[![Sarek Workflow]({{ site.url }}/assets/img/svg/sarek_workflow_2.6.1.svg "Sarek Workflow 2.6.1")](https://github.com/nf-core/sarek/releases/tag/2.6.1) <!-- .element class="image-25" -->
+
+---
+
+## Prioritization
+
+* First step towards clinical use
+* Rank scores are computed for all variants
+  * COSMIC, ClinVar, SweFreq and MSK-IMPACT (cancerhotspots.org)
+* Findings are ranked
+  * Well known, high-impact variants
+  * Variants in known cancer-related genes
+  * Remaining variants
+
+---
+
+## What is coming soon
+
+* <i class="far fa-check-square"></i> @sarek-team to mention the core sarek developers on Slack
+* <i class="far fa-check-square"></i> @nf-core/sarek to mention the core sarek developers on GitHub
+* <i class="far fa-check-square"></i> BWA-MEM2 ([dev](https://github.com/nf-core/sarek/tree/dev))
+* <i class="far fa-check-square"></i> Bug-fixes ([dev](https://github.com/nf-core/sarek/tree/dev))
+* <i class="far fa-square"></i> DSL 2 ([dsl2](https://github.com/nf-core/sarek/tree/dsl2)) with [@ggabernet](https://github.com/ggabernet) and [@FriederikeHanssen](https://github.com/FriederikeHanssen)
+
+===
+
+## What is next
+
+* More tools
+* More downstream processing of the final vcf files
+* Connection to [Scout](https://www.clinicalgenomics.se/scout/)
+
+Note:
+
+* Scout is a tool developed by SciLifeLab Clinical Genomics to analyse VCF files
+
+---
+
+## Sarek usage
+
+* Within BTB
+  * Tumor/normal pairs
+
+* In production at NGI
+  * All normal samples
+  * Tumor/normal pairs
+
+* The whole SweGen dataset
+  * 1 000 normal samples (GRCh38)
+
+* Genome Medicine Sweden
+
+Note:
+
+* GMS is an initiative to implement Precision Medicine at a national level
+
+---
+
+## Article in F1000Research
+
+Sarek: A portable workflow for whole-genome sequencing analysis of germline and somatic variants [version 1; peer review: 2 approved]
+
+<small>
+
+Maxime Garcia, Szilveszter Juhos, Malin Larsson, Pall I. Olason, Marcel Martin, Jesper Eisfeldt, Sebastian DiLorenzo, Johanna Sandgren, Teresita Díaz De Ståhl, Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
+
+</small>
+
+[<i class="ai ai-doi"></i> doi.org/10.12688/f1000research.16665.1](https://doi.org/10.12688/f1000research.16665.1)
+
+---
+
+## Get involved
+
+* Our code is hosted on Github
+  * [<i class="fab fa-github"></i> github.com/nf-core](https://github.com/nf-core)
+  * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
+* We have slack
+  * [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
+  * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)
+
+---
+
+<div class="r-stack">
+  <img src="/assets/img/svg/acknowledgments_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-out" data-fragment-index="0"/>
+  <img src="/assets/img/svg/institutes_2020.svg" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="0"/>
+  <img src="/assets/img/slides/nf-core_contributors_jobim.png" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="1"/>
+  <img src="/assets/img/slides/nf-core_sarek_contributors_2.6.1.png" title="Acknowledgements" alt="Acknowledgements" class="image-75 fragment fade-in-then-out" data-fragment-index="2"/>
+</div>
+
+---
+
+<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+
+## Any questions
+
+* [<i class="fa fa-globe-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
+* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/nf-core2020]({{ site.url }}/nf-core2020)
+* [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
+* [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)

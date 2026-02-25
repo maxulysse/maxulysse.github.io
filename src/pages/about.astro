@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About" description="About me">
+    <div class="card-columns">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        <span><i class="fa fa-id-card"></i></span> Maxime Garcia
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="author-avatar">
+                        <img
+                            class="avatar img-fluid"
+                            src="/assets/img/avatar/snow.jpeg"
+                            alt="MaxUlysse"
+                            width="150"
+                            height="150"
+                        />
+                    </div>
+                    <div class="card-text">
+                        <p>
+                            I'm a bioinformatician, from Marseille, working in
+                            Stockholm. I'm interested in Reproducible Research
+                            (and obviously open-source), Cancer, Automation,
+                            Containers, Data Integration, Visualization and much
+                            more...
+                        </p>
+                        <p>
+                            I enjoy doing pipelines with Nextflow, that are
+                            reproducible using Conda, Docker, Singularity and
+                            can run anywhere, including AWS. I'm part of the
+                            core team that administrates the <a
+                                href="https://github.com/nf-core"
+                                target="_blank">@nf-core</a
+                            > community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        <span><i class="fa fa-paint-brush"></i></span> The logo
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="author-avatar">
+                        <img
+                            class="avatar img-fluid"
+                            src="/assets/img/avatar/owl.svg"
+                            alt="Owl"
+                            width="150"
+                            height="150"
+                        />
+                    </div>
+                    <div class="card-text">
+                        <p>
+                            The owl is the symbol of Athena or Minerva. Athena
+                            who protected Ulysses during his journey. This owl
+                            is made from an idea I had, magnified and re-drawn
+                            by Célia. Then vectorized via Inkscape by my own
+                            hands. And finally redesigned again.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<style is:global>
+    .author-avatar {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .avatar {
+        border-radius: 50%;
+        max-width: 150px;
+        height: auto;
+    }
+</style>

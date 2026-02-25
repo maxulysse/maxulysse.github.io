@@ -4,3 +4,31 @@
 Gemfile.lock
 _site/
 *.code-workspace
+
+# Astro build
+dist/
+.astro/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Dependencies
+.pnpm-store/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local

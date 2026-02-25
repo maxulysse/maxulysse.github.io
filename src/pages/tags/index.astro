@@ -1,0 +1,164 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("blog");
+const sortedPosts = allPosts
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Group posts by tag
+const postsByTag: { [key: string]: any[] } = {};
+const tagOriginalCase: { [key: string]: string } = {};
+for (const post of sortedPosts) {
+    if (post.data.tags) {
+        post.data.tags.forEach((tag) => {
+            const tagLower = tag.toLowerCase();
+            if (!postsByTag[tagLower]) {
+                postsByTag[tagLower] = [];
+                tagOriginalCase[tagLower] = tag; // Store original case
+            }
+            postsByTag[tagLower].push(post);
+        });
+    }
+}
+
+const tags = Object.keys(postsByTag).sort((a, b) => a.localeCompare(b));
+
+// Calculate font size based on post count for tag cloud
+const counts = tags.map((tag) => postsByTag[tag]?.length || 0);
+const minCount = Math.min(...counts);
+const maxCount = Math.max(...counts);
+const minSize = 0.9;
+const maxSize = 1.8;
+
+function getTagSize(count: number): number {
+    if (maxCount === minCount) return (minSize + maxSize) / 2;
+    return (
+        minSize +
+        ((count - minCount) / (maxCount - minCount)) * (maxSize - minSize)
+    );
+}
+---
+
+<BaseLayout title="Tags" description="Browse articles by tag">
+    <div class="card bg-light mb-4">
+        <div class="card-body">
+            <h6 class="card-text text-muted tag-cloud mb-0">
+                {
+                    tags.map((tag) => (
+                        <a
+                            href={`#${tag}`}
+                            class="tag-link"
+                            style={`font-size: ${getTagSize(postsByTag[tag]?.length || 0)}rem;`}
+                        >
+                            {tagOriginalCase[tag]}
+                            <span class="badge badge-secondary badge-sm ml-1">
+                                {postsByTag[tag]?.length}
+                            </span>
+                        </a>
+                    ))
+                }
+            </h6>
+        </div>
+    </div>
+
+    <div class="archive-grid">
+        {
+            tags.map((tag) => (
+                <div id={tag}>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0">
+                                <i
+                                    class="fa-solid fa-tag me-2"
+                                    aria-hidden="true"
+                                />
+                                {tagOriginalCase[tag]}
+                                <span class="badge badge-secondary ml-2">
+                                    {postsByTag[tag]?.length}
+                                </span>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                {postsByTag[tag]?.map((post) => (
+                                    <li class="mb-3">
+                                        <small class="text-muted d-block">
+                                            <i
+                                                class="fa-regular fa-calendar me-1"
+                                                aria-hidden="true"
+                                            />
+                                            {
+                                                post.data.date
+                                                    .toISOString()
+                                                    .split("T")[0]
+                                            }
+                                        </small>
+                                        <a href={`/blog/${post.slug}/`}>
+                                            {post.data.title}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .tag-link {
+        text-decoration: none;
+        color: #0d6efd;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .tag-link:hover {
+        background-color: #e7f1ff;
+        color: #0a58ca;
+        text-decoration: none;
+    }
+
+    .tag-link .badge {
+        font-size: 0.6em;
+    }
+
+    .archive-grid {
+        column-count: 3;
+        column-gap: 1.5rem;
+    }
+
+    .archive-grid > div {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 991px) {
+        .archive-grid {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .archive-grid {
+            column-count: 1;
+        }
+    }
+</style>

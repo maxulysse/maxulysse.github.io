@@ -1,0 +1,148 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("blog");
+const sortedPosts = allPosts
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const postsPerPage = 6;
+const paginatedPosts = sortedPosts.slice(0, postsPerPage);
+const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+---
+
+<BaseLayout>
+    <div class="row">
+        {
+            paginatedPosts.map((post) => (
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        {post.data.image && (
+                            <div class="card-header p-3">
+                                <img
+                                    src={post.data.image.path}
+                                    class="card-img-top"
+                                    alt={post.data.title}
+                                />
+                            </div>
+                        )}
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href={`/blog/${post.slug}/`}>
+                                    {post.data.title}
+                                </a>
+                            </h5>
+                            <p class="card-text">
+                                {post.data.description ||
+                                    post.body.substring(0, 150)}
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted d-block mb-2">
+                                <i
+                                    class="fa-regular fa-calendar me-1"
+                                    aria-hidden="true"
+                                />
+                                {post.data.date.toISOString().split("T")[0]}
+                            </small>
+                            {post.data.tags && post.data.tags.length > 0 && (
+                                <div class="tags-container">
+                                    <span class="text-muted me-2">
+                                        <i
+                                            class="fa-solid fa-tags"
+                                            aria-hidden="true"
+                                        />
+                                    </span>
+                                    {post.data.tags.map((tag, index) => (
+                                        <>
+                                            <a
+                                                href={`/tags/${tag.toLowerCase()}/`}
+                                                class="tag-badge"
+                                            >
+                                                {tag}
+                                            </a>
+                                            {index <
+                                                post.data.tags.length - 1 && (
+                                                <span class="tag-separator">
+                                                    •
+                                                </span>
+                                            )}
+                                        </>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <span class="page-link" aria-disabled="true">
+                    <span aria-hidden="true">&laquo; Previous</span>
+                </span>
+            </li>
+
+            {
+                Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                    (pageNum) => (
+                        <li
+                            class={`page-item ${pageNum === 1 ? "active" : ""}`}
+                        >
+                            <a
+                                class="page-link"
+                                href={
+                                    pageNum === 1
+                                        ? "/"
+                                        : `/blog/page/${pageNum}/`
+                                }
+                            >
+                                {pageNum}
+                            </a>
+                        </li>
+                    ),
+                )
+            }
+
+            <li class={`page-item ${totalPages > 1 ? "" : "disabled"}`}>
+                {
+                    totalPages > 1 ? (
+                        <a
+                            class="page-link"
+                            href="/blog/page/2/"
+                            aria-label="Next"
+                        >
+                            <span aria-hidden="true">Next &raquo;</span>
+                        </a>
+                    ) : (
+                        <span class="page-link" aria-disabled="true">
+                            <span aria-hidden="true">Next &raquo;</span>
+                        </span>
+                    )
+                }
+            </li>
+        </ul>
+    </nav>
+</BaseLayout>
+
+<style>
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .badge {
+        text-decoration: none;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.65rem;
+    }
+
+    .badge:hover {
+        opacity: 0.8;
+    }
+</style>

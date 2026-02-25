@@ -1,0 +1,133 @@
+---
+import { getCollection } from "astro:content";
+
+const siteUrl = "https://maxulysse.github.io";
+
+const replaceJekyllVars = (value) =>
+    value
+        .replace(/\{\{\s*site\.url\s*\}\}/g, siteUrl)
+        .replace(/\{\{\s*site\.baseurl\s*\}\}/g, "")
+        .replace(
+            /\{\{\s*"([^"]+)"\s*\|\s*prepend:\s*site\.baseurl\s*\}\}/g,
+            "$1",
+        )
+        .replace(
+            /\{\{\s*"([^"]+)"\s*\|\s*prepend:\s*site\.url\s*\}\}/g,
+            `${siteUrl}$1`,
+        );
+
+export async function getStaticPaths() {
+    const presentations = await getCollection("presentations");
+
+    const normalizePath = (value) =>
+        value.trim().replace(/^\/+/, "").replace(/\/+$/, "");
+
+    const paths = [];
+
+    for (const presentation of presentations) {
+        const slug = normalizePath(presentation.slug);
+        const redirects = presentation.data.redirects || [];
+
+        // Main path: /folder-name/
+        if (slug) {
+            paths.push({
+                params: { slideslug: slug },
+                props: { presentation },
+            });
+            // Also: /slides/folder-name/
+            paths.push({
+                params: { slideslug: `slides/${slug}` },
+                props: { presentation },
+            });
+        }
+
+        // Redirect paths from frontmatter
+        for (const redirect of redirects) {
+            paths.push({
+                params: { slideslug: normalizePath(redirect) },
+                props: { presentation },
+            });
+        }
+    }
+
+    return paths;
+}
+
+const { presentation } = Astro.props;
+const slidesContent = replaceJekyllVars(presentation.body);
+const pageTitle = presentation.data.title;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>{pageTitle}</title>
+        {
+            presentation.data.description && (
+                <meta
+                    name="description"
+                    content={presentation.data.description}
+                />
+            )
+        }
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reset.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/simple.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css"
+        />
+        <link rel="stylesheet" href="/assets/css/slides.css" />
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section
+                    data-markdown
+                    data-separator="^---\n"
+                    data-separator-vertical="^===\n"
+                    data-separator-notes="^Note:"
+                >
+                    <textarea data-template set:html={slidesContent} />
+                </section>
+            </div>
+        </div>
+        <script
+            is:inline
+            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"
+        ></script>
+        <script
+            is:inline
+            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"
+        ></script>
+        <script
+            is:inline
+            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"
+        ></script>
+        <script
+            is:inline
+            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"
+        ></script>
+        <script is:inline>
+            Reveal.initialize({
+                hash: true,
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            });
+        </script>
+    </body>
+</html>

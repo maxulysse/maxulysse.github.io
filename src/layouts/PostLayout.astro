@@ -1,0 +1,131 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Authors } from "../data/authors";
+
+interface Props {
+    title: string;
+    description: string;
+    date: Date;
+    author?: string;
+    image?: { path: string };
+    tags?: string[];
+    lastModified?: Date;
+}
+
+const {
+    title,
+    description,
+    date,
+    author = "maxulysse",
+    image,
+    tags = [],
+    lastModified,
+} = Astro.props as Props;
+
+// Calculate read time
+const content = await Astro.slots.render("default");
+const words = content.split(/\s+/).length;
+const readTime = Math.ceil(words / 160); // 160 words per minute
+
+const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
+const modifiedDate = lastModified || date;
+
+// Get the current page URL to construct GitHub edit link
+const currentUrl = Astro.url.pathname;
+// Convert blog URL path to source file path
+// e.g., /blog/2020/2020-07-01-jobim/ -> src/content/blog/2020/2020-07-01-jobim.md
+const pathSegments = currentUrl.split("/").filter(Boolean);
+const githubBaseUrl = "https://github.com/MaxUlysse/maxulysse.github.io";
+
+// Extract year and slug from path
+let editUrl = githubBaseUrl;
+if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
+    const year = pathSegments[1];
+    const slug = pathSegments[2];
+    editUrl = `${githubBaseUrl}/edit/main/src/content/blog/${year}/${slug}.md`;
+}
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    author={author}
+    image={image}
+>
+    <div class="card-columns only-one-column">
+        <div class="card rounded">
+            <div class="card-header">
+                <h2 class="card-title">{title}</h2>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <span><i class="fa fa-user"></i></span>
+                    <em>{authorInfo.name}</em>
+                    <span><i class="fa fa-calendar"></i></span>
+                    {
+                        date.toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                        })
+                    }
+                    {
+                        lastModified && (
+                            <div class="float-right">
+                                <span>
+                                    Last modified <i class="fa fa-calendar" />
+                                </span>
+                                {modifiedDate.toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "2-digit",
+                                    day: "2-digit",
+                                })}
+                            </div>
+                        )
+                    }
+                    <br />
+                    <i class="fa fa-clock"></i>
+                    {readTime} min read
+                </h6>
+            </div>
+            <div class="card-body">
+                <slot />
+
+                {
+                    tags && tags.length > 0 && (
+                        <div class="tags mt-3">
+                            {tags.map((tag) => (
+                                <a
+                                    href={`/tags/${tag.toLowerCase()}/`}
+                                    class="badge badge-primary"
+                                >
+                                    {tag}
+                                </a>
+                            ))}
+                        </div>
+                    )
+                }
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"
+                    >This site is using <a
+                        href="https://github.com/MaxUlysse/maxulysse.github.io"
+                        target="_blank"
+                        rel="noopener"><i class="fab fa-github"></i> GitHub</a
+                    > for versioning. You can fix this page by suggesting changes
+                    <a href={editUrl} target="_blank" rel="noopener">here.</a
+                    ></small
+                >
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<style is:global>
+    .card-columns {
+        column-count: 1;
+    }
+
+    .tags a {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+</style>

@@ -1,0 +1,115 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("blog");
+
+// Collect all tags
+const allTags = new Set<string>();
+for (const post of allPosts) {
+    if (post.data.tags) {
+        post.data.tags.forEach((tag) => allTags.add(tag.toLowerCase()));
+    }
+}
+
+const sortedTags = Array.from(allTags).sort();
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    const tags = new Set<string>();
+
+    posts.forEach((post) => {
+        if (post.data.tags) {
+            post.data.tags.forEach((tag) => tags.add(tag.toLowerCase()));
+        }
+    });
+
+    return Array.from(tags).map((tag) => ({
+        params: { tag },
+        props: {
+            posts: posts
+                .filter(
+                    (post) =>
+                        post.data.tags &&
+                        post.data.tags.some((t) => t.toLowerCase() === tag),
+                )
+                .sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+        },
+    }));
+}
+
+interface Props {
+    posts: any[];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout title={`Tags: ${tag}`} description={`Posts tagged with ${tag}`}>
+    <h1>Tags</h1>
+
+    <div class="tag-cloud">
+        {
+            sortedTags.map((t) => (
+                <a
+                    href={`/tags/${t}/`}
+                    class={`badge ${t === tag ? "badge-primary" : "badge-light"}`}
+                >
+                    {t}
+                </a>
+            ))
+        }
+    </div>
+
+    {
+        tag && (
+            <div class="posts-for-tag">
+                <h2>Posts tagged with "{tag}"</h2>
+                {posts.length === 0 ? (
+                    <p>No posts found for this tag.</p>
+                ) : (
+                    <ul class="list-unstyled">
+                        {posts.map((post) => (
+                            <li class="post-item">
+                                <a href={`/blog/${post.slug}/`}>
+                                    {post.data.title}
+                                </a>
+                                <small class="text-muted">
+                                    {post.data.date.toLocaleDateString(
+                                        "en-US",
+                                        {
+                                            year: "numeric",
+                                            month: "short",
+                                            day: "numeric",
+                                        },
+                                    )}
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        )
+    }
+</BaseLayout>
+
+<style>
+    .tag-cloud {
+        margin-bottom: 2rem;
+    }
+
+    .tag-cloud a {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .post-item {
+        margin-bottom: 1rem;
+    }
+
+    .post-item a {
+        display: block;
+        font-weight: 500;
+    }
+</style>
