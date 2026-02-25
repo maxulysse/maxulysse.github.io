@@ -45,11 +45,11 @@ async function migrateJekyllToPosts() {
   for (const filePath of markdownFiles) {
     try {
       let content = fs.readFileSync(filePath, 'utf-8');
-      
+
       let year, slug;
       const filename = path.basename(filePath, path.extname(filePath));
       const dirName = path.basename(path.dirname(filePath));
-      
+
       // Handle both traditional .md files and index.html files
       if (filename === 'index') {
         // index.html file - extract year and slug from parent directory
@@ -76,7 +76,7 @@ async function migrateJekyllToPosts() {
         year = fileYear;
         slug = titleSlug.toLowerCase().replace(/\s+/g, '-');
       }
-      
+
       // Parse frontmatter
       // Handle both formats: with content after (md files) and without (html files)
       let frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -84,17 +84,17 @@ async function migrateJekyllToPosts() {
         // Try format without content after (html presentations)
         frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\s*$/);
       }
-      
+
       if (!frontmatterMatch) {
         console.log(`⊘ Skipped (no frontmatter): ${path.relative(jekyllPostsDir, filePath)}`);
         continue;
       }
-      
+
       if (frontmatterMatch) {
         const frontmatterStr = frontmatterMatch[1];
         // frontmatterMatch[2] might be content or undefined (for html-only frontmatter)
         let postContent = frontmatterMatch[2] || '';
-        
+
         // For presentations (index.html), merge slides.md content if frontmatter-only
         if (filename === 'index' && !postContent) {
           // Try to find and include slides.md content
@@ -105,11 +105,11 @@ async function migrateJekyllToPosts() {
             postContent = slidesContent.replace(/<section[^>]*>\n*/, '').replace(/<\/section>/, '').trim();
           }
         }
-          
+
           // Parse YAML frontmatter
           const frontmatter = {};
           const lines = frontmatterStr.split('\n');
-          
+
           let i = 0;
           while (i < lines.length) {
             const line = lines[i];
@@ -117,12 +117,12 @@ async function migrateJekyllToPosts() {
               i++;
               continue;
             }
-            
+
             const colonIndex = line.indexOf(':');
             if (colonIndex > -1) {
               const key = line.substring(0, colonIndex).trim();
               const value = line.substring(colonIndex + 1).trim();
-              
+
               if (key === 'date') {
                 // Convert Jekyll date format to ISO
                 frontmatter.date = new Date(value).toISOString().split('T')[0];
@@ -182,13 +182,13 @@ async function migrateJekyllToPosts() {
             }
             i++;
           }
-          
+
           // Handle image path if it exists
           const imagePathMatch = frontmatterStr.match(/path:\s*['"]([^'"]+)['"]/);
           if (imagePathMatch) {
             frontmatter.image = { path: imagePathMatch[1] };
           }
-          
+
           // Ensure date is in ISO format
           if (frontmatter.date && typeof frontmatter.date === 'string') {
             if (frontmatter.date.includes(':')) {
@@ -196,7 +196,7 @@ async function migrateJekyllToPosts() {
               frontmatter.date = dateObj.toISOString().split('T')[0];
             }
           }
-          
+
           // Create new frontmatter as Astro expects it
           const newFrontmatter = `---
 title: ${JSON.stringify(frontmatter.title || slug)}
@@ -208,17 +208,17 @@ ${frontmatter.image ? `image:\n  path: ${JSON.stringify(frontmatter.image.path)}
 ---
 
 ${postContent}`;
-          
+
           // Create year subdirectories for organization
           const yearDir = path.join(astroContentDir, year);
           if (!fs.existsSync(yearDir)) {
             fs.mkdirSync(yearDir, { recursive: true });
           }
-          
+
           // Write new file
           const newFilePath = path.join(yearDir, `${slug}.md`);
           fs.writeFileSync(newFilePath, newFrontmatter);
-          
+
           migratedCount++;
           console.log(`✓ Migrated: ${slug}`);
         }

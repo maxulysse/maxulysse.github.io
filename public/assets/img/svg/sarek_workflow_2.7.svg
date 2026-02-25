@@ -3328,7 +3328,7 @@
      aria-label="
 Germline
 • GATK HaplotypeCaller
-    FreeBayes, mpileup, 
+    FreeBayes, mpileup,
     Strelka2
 • Manta, TIDDIT"
      transform="matrix(1.1618218,0,0,-1.1618218,937.4341,4106.637)"

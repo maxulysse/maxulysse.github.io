@@ -135,7 +135,7 @@ I do that on every project
 ```yaml
 name: ci
 # This workflow is triggered on pushes and PRs to the repository.
-on: [push, pull_request]  
+on: [push, pull_request]
 
 jobs:
   htmlproofer:
