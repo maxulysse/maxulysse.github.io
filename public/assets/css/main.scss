@@ -1,0 +1,17 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "variables";
+
+@import "academicons.min";
+@import "bootstrap/bootstrap";
+@import "custom";
+@import "fontawesome/fontawesome";
+@import "fontawesome/solid.scss";
+@import "fontawesome/brands.scss";
+@import "fontawesome/regular.scss";
+@import "prism";
+@import "syntax-monokai-sublime";
