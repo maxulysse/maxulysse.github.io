@@ -7,14 +7,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!dist'",
+    "lint": "npm run check && npm run lint:md"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.1",
     "astro": "^5.2.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "0.9.2",
+    "markdownlint-cli2": "^0.21.0",
     "typescript": "^5.3.0"
   }
 }
