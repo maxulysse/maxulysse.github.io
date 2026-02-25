@@ -285,7 +285,7 @@ const currentPath = Astro.url.pathname;
                 updateThemeIcon(theme);
             }
 
-            function updateThemeIcon(theme) {
+            function updateThemeIcon(theme: string) {
                 const icon = document.querySelector("#theme-toggle i");
                 if (icon) {
                     if (theme === "dark") {

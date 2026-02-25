@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 const siteUrl = "https://maxulysse.github.io";
 
-const replaceJekyllVars = (value) =>
+const replaceJekyllVars = (value: string) =>
     value
         .replace(/\{\{\s*site\.url\s*\}\}/g, siteUrl)
         .replace(/\{\{\s*site\.baseurl\s*\}\}/g, "")
@@ -19,7 +19,7 @@ const replaceJekyllVars = (value) =>
 export async function getStaticPaths() {
     const presentations = await getCollection("presentations");
 
-    const normalizePath = (value) =>
+    const normalizePath = (value: string) =>
         value.trim().replace(/^\/+/, "").replace(/\/+$/, "");
 
     const paths = [];

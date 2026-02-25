@@ -3,8 +3,11 @@
   "compilerOptions": {
     "jsxImportSource": "astro",
     "resolveJsonModule": true,
+    "noEmit": true,
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "dist", "public/assets"]
 }

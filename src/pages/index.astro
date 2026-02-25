@@ -54,7 +54,7 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
                                             aria-hidden="true"
                                         />
                                     </span>
-                                    {post.data.tags.map((tag, index) => (
+                                    {post.data.tags?.map((tag: string, index: number) => (
                                         <>
                                             <a
                                                 href={`/tags/${tag.toLowerCase()}/`}
@@ -63,7 +63,8 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
                                                 {tag}
                                             </a>
                                             {index <
-                                                post.data.tags.length - 1 && (
+                                                (post.data.tags?.length ?? 0) -
+                                                    1 && (
                                                 <span class="tag-separator">
                                                     •
                                                 </span>
