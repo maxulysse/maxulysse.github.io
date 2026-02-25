@@ -1,12 +1,9 @@
-[submodule "assets/presentations"]
-	path = assets/presentations
+[submodule "public/assets/presentations"]
+	path = public/assets/presentations
 	url = https://github.com/maxulysse/Presentations.git
-[submodule "assets/mycv"]
-	path = assets/mycv
-	url = https://github.com/maxulysse/myCV.git
-[submodule "assets/courses"]
-	path = assets/courses
+[submodule "public/assets/courses"]
+	path = public/assets/courses
 	url = https://github.com/maxulysse/Courses.git
-[submodule "assets/reveal.js"]
-	path = assets/reveal.js
+[submodule "public/assets/reveal.js"]
+	path = public/assets/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
