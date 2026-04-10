@@ -1,8 +1,4 @@
-.jekyll-metadata
-.sass-cache/
 .vscode
-Gemfile.lock
-_site/
 *.code-workspace
 
 # Astro build
