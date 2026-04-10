@@ -5,7 +5,7 @@ date: 2020-10-22
 author: maxulysse
 duration: 5min
 ---
-<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
 
 # Bioinformatics
 
@@ -25,7 +25,7 @@ Maxime Garcia
 
 ---
 
-[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+[![Sarek](/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
 
 * Detect germline and somatic variants (WGS/WES)
   * Open-Source Nextflow Pipeline
@@ -67,7 +67,7 @@ Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
 
 ---
 
-[![rnafusion]({{ site.url }}/assets/img/svg/nf-core_rnafusion_logo.svg "rnafusion")](https://nf-co.re/rnafusion) <!-- .element class="image-H10" -->
+[![rnafusion](/assets/img/svg/nf-core_rnafusion_logo.svg "rnafusion")](https://nf-co.re/rnafusion) <!-- .element class="image-H10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -98,7 +98,7 @@ shamelessly taken over by me.
 
 ---
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re) <!-- .element class="image-H10" -->
+[![nf-core](/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re) <!-- .element class="image-H10" -->
 
 Publication in Nat Biotechnology:
 
@@ -126,7 +126,7 @@ bioinformatics pipelines
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Any questions
 

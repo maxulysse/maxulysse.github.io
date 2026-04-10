@@ -6,9 +6,9 @@ author: maxulysse
 duration: 15min
 redirects: ["/bytesize_8"]
 ---
-<section data-background-image="{{ site.url }}/assets/img/svg/green_white_bg.svg" data-background-opacity=0.9 >
+<section data-background-image="/assets/img/svg/green_white_bg.svg" data-background-opacity=0.9 >
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_bytesize8_logo.svg "nf-core-bytesize")](https://nf-co.re) <!-- .element class="image-H10" -->
+[![nf-core](/assets/img/svg/nf-core_bytesize8_logo.svg "nf-core-bytesize")](https://nf-co.re) <!-- .element class="image-H10" -->
 
 ## Running pipelines offline
 
@@ -263,7 +263,7 @@ Note:
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Join us
 

@@ -19,18 +19,18 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020]({{ site.url }}/jobim2020)
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020](/jobim2020)
 
 [JOBIM 2020](https://jobim2020.sciencesconf.org/) - Montpellier, France [virtual] - 2020/07/01
 </small>
 
 ---
 
-[![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
+[![Barntumörbanken](/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
 
 The Swedish Childhood Tumor Biobank
 
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
+[![KI](/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
 
 Note:
 
@@ -38,7 +38,7 @@ Note:
 
 ---
 
-[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
+[![NGI](/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
 * State-of-the-art infrastructure
   * Sequencing (DNA, RNA ...)
@@ -52,11 +52,11 @@ Note:
 
 ===
 
-[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+[![SciLifeLab](/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
 
 National centre for molecular biosciences with focus on health and environmental research
 
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+[![KI](/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH](/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU](/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU](/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
 :-:|:-:|:-:|:-:
 
 Note:
@@ -68,7 +68,7 @@ Note:
 
 ## Reproducibility is central
 
-[![Figure 1]({{ site.url }}/assets/img/slides/gigascience_giy077_fig1.jpg "figure 1")](https://academic.oup.com/view-large/figure/118918033/giy077fig1.jpg) <!-- .element class="image-50" -->
+[![Figure 1](/assets/img/slides/gigascience_giy077_fig1.jpg "figure 1")](https://academic.oup.com/view-large/figure/118918033/giy077fig1.jpg) <!-- .element class="image-50" -->
 
 [<i class="ai ai-doi"></i> 10.1093/gigascience/giy077](https://doi.org/10.1093/gigascience/giy077)
 
@@ -78,7 +78,7 @@ Note:
 
 ---
 
-[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
+[![Nextflow](/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
 
 * Workflow manager
   * Data driven language
@@ -136,7 +136,7 @@ Note:
 
 ## Reproducibility
 
-[![Conda]({{ site.url }}/assets/img/svg/conda_logo.svg)](https://docs.conda.io/) <!-- .element class="image-50" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
+[![Conda](/assets/img/svg/conda_logo.svg)](https://docs.conda.io/) <!-- .element class="image-50" --> | [![Docker](/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity](/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
 :-:|:-:|:-:
 
 Note:
@@ -145,7 +145,7 @@ Note:
 
 ---
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
+[![nf-core](/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
 
 ---
 
@@ -172,7 +172,7 @@ Note:
 
 ===
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-25" -->
+[![nf-core](/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-25" -->
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/join](https://nf-co.re/join)
 
@@ -245,7 +245,7 @@ Note:
 
 ---
 
-[![nf-core tools]({{ site.url }}/assets/img/svg/nf-core-tools_logo.svg "nf-core tools")](https://github.com/nf-core/tools) <!-- .element class="image-50" -->
+[![nf-core tools](/assets/img/svg/nf-core-tools_logo.svg "nf-core tools")](https://github.com/nf-core/tools) <!-- .element class="image-50" -->
 
 ===
 
@@ -271,7 +271,7 @@ Note:
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/tools#creating-a-new-workflow](https://nf-co.re/tools#creating-a-new-workflow)
 
-[![nf-core create]({{ site.url }}/assets/img/slides/nf-core_create_jobim.png "nf-core create")](https://nf-co.re/tools#creating-a-new-workflow) <!-- .element class="image-75" -->
+[![nf-core create](/assets/img/slides/nf-core_create_jobim.png "nf-core create")](https://nf-co.re/tools#creating-a-new-workflow) <!-- .element class="image-75" -->
 
 Note:
 
@@ -284,7 +284,7 @@ Note:
 
 ## Software dependencies
 
-[![Bioconda]({{ site.url }}/assets/img/svg/bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-50" --> | [![Docker]({{ site.url }}/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity]({{ site.url }}/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
+[![Bioconda](/assets/img/svg/bioconda_logo.svg)](https://bioconda.github.io/) <!-- .element class="image-50" --> | [![Docker](/assets/img/svg/docker_logo.svg)](https://www.docker.com/) <!-- .element class="image-50" --> | [![Singularity](/assets/img/svg/singularity_logo.svg)](https://sylabs.io/singularity/) <!-- .element class="image-50" -->
 :-:|:-:|:-:
 
 * All tools are installed with Conda/Bioconda
@@ -341,11 +341,11 @@ Note:
 
 ## <i class="fas fa-users-cog"></i> Core team
 
-[![@alneberg]({{ site.url }}/assets/img/slides/alneberg.jpeg)](https://github.com/alneberg) <!-- .element class="image-50 avatar" --> | [![@apeltzer]({{ site.url }}/assets/img/slides/apeltzer.jpeg)](https://github.com/apeltzer) <!-- .element class="image-50 avatar" --> | [![@drpatelh]({{ site.url }}/assets/img/slides/drpatelh.jpeg)](https://github.com/drpatelh) <!-- .element class="image-50 avatar" --> | [![@ewels]({{ site.url }}/assets/img/slides/ewels.jpeg)](https://github.com/ewels) <!-- .element class="image-50 avatar" -->
+[![@alneberg](/assets/img/slides/alneberg.jpeg)](https://github.com/alneberg) <!-- .element class="image-50 avatar" --> | [![@apeltzer](/assets/img/slides/apeltzer.jpeg)](https://github.com/apeltzer) <!-- .element class="image-50 avatar" --> | [![@drpatelh](/assets/img/slides/drpatelh.jpeg)](https://github.com/drpatelh) <!-- .element class="image-50 avatar" --> | [![@ewels](/assets/img/slides/ewels.jpeg)](https://github.com/ewels) <!-- .element class="image-50 avatar" -->
 :-:|:-:|:-:|:-:
 Johannes Alneberg | Alexander Peltzer | Harshil Patel | Phil Ewels
 
-[![@maxulysse]({{ site.url }}/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-50 avatar" --> | [![@olgabot]({{ site.url }}/assets/img/slides/olgabot.jpeg)](https://github.com/olgabot) <!-- .element class="image-50 avatar" --> | [![@sven1103]({{ site.url }}/assets/img/slides/sven1103.jpeg)](https://github.com/sven1103) <!-- .element class="image-50 avatar" --> | [![@ggabernet]({{ site.url }}/assets/img/slides/ggabernet.jpeg)](https://github.com/ggabernet) <!-- .element class="image-50 avatar" -->
+[![@maxulysse](/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-50 avatar" --> | [![@olgabot](/assets/img/slides/olgabot.jpeg)](https://github.com/olgabot) <!-- .element class="image-50 avatar" --> | [![@sven1103](/assets/img/slides/sven1103.jpeg)](https://github.com/sven1103) <!-- .element class="image-50 avatar" --> | [![@ggabernet](/assets/img/slides/ggabernet.jpeg)](https://github.com/ggabernet) <!-- .element class="image-50 avatar" -->
 :-:|:-:|:-:|:-:
 Maxime Garcia | Olga Botvinnik | Sven Fillinger | Gisela Gabernet
 
@@ -363,7 +363,7 @@ The nf-core framework for community-curated bioinformatics pipelines
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/stats](https://nf-co.re/stats)
 
-[![nf-core stats]({{ site.url }}/assets/img/slides/nf-core_stats_jobim.png "nf-core stats")](https://nf-co.re/stats) <!-- .element class="image-50" -->
+[![nf-core stats](/assets/img/slides/nf-core_stats_jobim.png "nf-core stats")](https://nf-co.re/stats) <!-- .element class="image-50" -->
 
 Note:
 
@@ -375,7 +375,7 @@ Note:
 
 [<i class="fa fa-globe-europe"></i> https://nf-co.re/events](https://nf-co.re/events)
 
-[![Hackathon at Crick 2020]({{ site.url }}/assets/img/slides/nf-core_hackathon_crick2020.jpg "Hackathon at Crick 2020")](https://nf-co.re/events/2020/hackathon-francis-crick-2020) <!-- .element class="image-50" -->
+[![Hackathon at Crick 2020](/assets/img/slides/nf-core_hackathon_crick2020.jpg "Hackathon at Crick 2020")](https://nf-co.re/events/2020/hackathon-francis-crick-2020) <!-- .element class="image-50" -->
 
 <div class="fragment fade-in">
 
@@ -410,12 +410,12 @@ Next one is online from July 13th to 17th:
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Any questions
 
 * [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
-* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020]({{ site.url }}/jobim2020)
+* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020](/jobim2020)
 * [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
 * [<i class="fa fa-globe-europe"></i> nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
 * [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core)
