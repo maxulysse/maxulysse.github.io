@@ -6,9 +6,9 @@ author: maxulysse
 duration: 15min
 redirects: ["/bytesize_2"]
 ---
-<section data-background-image="{{ site.url }}/assets/img/svg/green_white_bg.svg" data-background-opacity=0.9 >
+<section data-background-image="/assets/img/svg/green_white_bg.svg" data-background-opacity=0.9 >
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_bytesize2_logo.svg "nf-core-bytesize")](https://nf-co.re) <!-- .element class="image-H10" -->
+[![nf-core](/assets/img/svg/nf-core_bytesize2_logo.svg "nf-core-bytesize")](https://nf-co.re) <!-- .element class="image-H10" -->
 
 ## How nf-core/configs work?
 
@@ -28,7 +28,7 @@ Working for The Swedish Childhood Tumor Biobank, located at KI, and sitting half
 
 ---
 
-[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
+[![Nextflow](/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
 
 * Workflow manager
   * Data driven language
@@ -422,7 +422,7 @@ Note:
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Join us
 

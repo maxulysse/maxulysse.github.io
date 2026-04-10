@@ -1,9 +1,0 @@
-[submodule "public/assets/presentations"]
-	path = public/assets/presentations
-	url = https://github.com/maxulysse/Presentations.git
-[submodule "public/assets/courses"]
-	path = public/assets/courses
-	url = https://github.com/maxulysse/Courses.git
-[submodule "public/assets/reveal.js"]
-	path = public/assets/reveal.js
-	url = https://github.com/hakimel/reveal.js.git
