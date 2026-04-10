@@ -10,7 +10,7 @@ redirects: ["/post-thesis-career"]
 
 <small>
 
-[![@maxulysse]({{ site.url }}/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-25 avatar" -->
+[![@maxulysse](/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-25 avatar" -->
 
 Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
@@ -24,11 +24,11 @@ Working for The Swedish Childhood Tumor Biobank, located at KI, and sitting half
 
 ---
 
-[![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
+[![Barntumörbanken](/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
 
 The Swedish Childhood Tumor Biobank (BTB)
 
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
+[![KI](/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
 
 Note:
 
@@ -36,11 +36,11 @@ Note:
 
 ---
 
-[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+[![SciLifeLab](/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
 
 National centre for molecular biosciences with focus on health and environmental research
 
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+[![KI](/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH](/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU](/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU](/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
 :-:|:-:|:-:|:-:
 
 Note:
@@ -49,7 +49,7 @@ Note:
 
 ---
 
-[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
+[![NGI](/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
 * State-of-the-art infrastructure
   * Sequencing (DNA, RNA ...)
@@ -64,7 +64,7 @@ Note:
 
 ---
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
+[![nf-core](/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-50" -->
 
 ---
 

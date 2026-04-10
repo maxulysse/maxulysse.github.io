@@ -6,9 +6,9 @@ author: maxulysse
 duration: 6hours
 redirects: ["/bfg2021"]
 ---
-<section data-background-image="{{ site.url }}/assets/img/svg/green_white_bg.svg" data-background-opacity=0.9 >
+<section data-background-image="/assets/img/svg/green_white_bg.svg" data-background-opacity=0.9 >
 
-[![nf-core]({{ site.url }}/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re) <!-- .element class="image-H10" -->
+[![nf-core](/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re) <!-- .element class="image-H10" -->
 
 ## Introduction to nf-core
 
@@ -47,7 +47,7 @@ This tutorial attempts to give an overview of how _nf-core_ works:
 
 ## Who am I
 
-[![@maxulysse]({{ site.url }}/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-25 avatar" -->
+[![@maxulysse](/assets/img/slides/maxulysse.jpeg)](https://github.com/maxulysse) <!-- .element class="image-25 avatar" -->
 
 Bioinformatician working at [National Genomics Infrastructure](https://ngisweden.scilifelab.se).
 

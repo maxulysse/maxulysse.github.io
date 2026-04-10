@@ -6,9 +6,9 @@ author: maxulysse
 duration: 3min
 redirects: ["/vcbs2020"]
 ---
-<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
 
-[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+[![Sarek](/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
 
 ## a workflow to detect germline and somatic mutations in WGS/WES
 
@@ -16,7 +16,7 @@ redirects: ["/vcbs2020"]
 
 Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io/vcbs2020]({{ site.url }}/vcbs2020)
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io/vcbs2020](/vcbs2020)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
@@ -26,7 +26,7 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
 
 ---
 
-[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
+[![Nextflow](/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
 
 * Workflow manager
   * Data driven language
@@ -38,7 +38,7 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
 
 ---
 
-[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+[![Sarek](/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
 
 * Open-Source [Nextflow](https://www.nextflow.io/) Pipeline
 * Started at [SciLifeLab](https://scilifelab.se/)
@@ -52,7 +52,7 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
 
 ## Workflow
 
-[![Sarek Workflow]({{ site.url }}/assets/img/svg/sarek_workflow_2.6.1.svg "Sarek Workflow 2.6.1")](https://github.com/nf-core/sarek/releases/tag/2.6.1) <!-- .element class="image-25" -->
+[![Sarek Workflow](/assets/img/svg/sarek_workflow_2.6.1.svg "Sarek Workflow 2.6.1")](https://github.com/nf-core/sarek/releases/tag/2.6.1) <!-- .element class="image-25" -->
 
 ---
 
@@ -130,7 +130,7 @@ Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Any questions
 
