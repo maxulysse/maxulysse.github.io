@@ -9,7 +9,7 @@ location:
   country: Germany
 redirects: ["/nf-core2020"]
 ---
-<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
 
 # Sarek
 
@@ -23,7 +23,7 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io/nf-core2020]({{ site.url }}/nf-core2020)
+[<i class="fa fa-globe-europe"></i> maxulysse.github.io/nf-core2020](/nf-core2020)
 
 [nf-core Hackathon July 2020](https://nf-co.re/events/2020/hackathon-july-2020) - Heidelberg, Germany [virtual] - 2020/07/17
 
@@ -31,11 +31,11 @@ Maxime Garcia
 
 ---
 
-[![Barntumörbanken]({{ site.url }}/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
+[![Barntumörbanken](/assets/img/svg/barntumorbanken_logo.svg "Barntumörbanken")](https://ki.se/forskning/barntumorbanken) <!-- .element class="image-H10" -->
 
 The Swedish Childhood Tumor Biobank
 
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
+[![KI](/assets/img/svg/ki_logo.svg "KI")](https://ki.se) <!-- .element class="image-H10" -->
 
 Note:
 
@@ -43,11 +43,11 @@ Note:
 
 ---
 
-[![SciLifeLab]({{ site.url }}/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
+[![SciLifeLab](/assets/img/svg/scilifelab_logo.svg "SciLifeLab")](https://scilifelab.se/) <!-- .element class="image-H10" -->
 
 National centre for molecular biosciences with focus on health and environmental research
 
-[![KI]({{ site.url }}/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH]({{ site.url }}/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU]({{ site.url }}/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU]({{ site.url }}/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
+[![KI](/assets/img/svg/ki_logo.svg)](https://ki.se/) <!-- .element class="image-H75" --> | [![KTH](/assets/img/svg/kth_logo.svg)](https://www.kth.se/) <!-- .element class="image-H75" --> | [![SU](/assets/img/svg/su_logo.svg)](https://www.su.se/) <!-- .element class="image-H75" --> | [![UU](/assets/img/svg/uu_logo.svg)](https://www.uu.se/) <!-- .element class="image-H75" -->
 :-:|:-:|:-:|:-:
 
 Note:
@@ -56,7 +56,7 @@ Note:
 
 ===
 
-[![NGI]({{ site.url }}/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
+[![NGI](/assets/img/svg/ngi_logo.svg "NGI")](https://ngisweden.scilifelab.se/) <!-- .element class="image-H10" -->
 
 * State-of-the-art infrastructure
   * Sequencing (DNA, RNA ...)
@@ -70,7 +70,7 @@ Note:
 
 ===
 
-[![NBIS]({{ site.url }}/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
+[![NBIS](/assets/img/svg/nbis_logo.svg "NBIS")](https://www.nbis.se/) <!-- .element class="image-H10" -->
 
 * Swedish ELIXIR node
 * Bioinformatics support for Swedish researchers
@@ -79,7 +79,7 @@ Note:
 
 ## Reproducibility is central
 
-[![Figure 1]({{ site.url }}/assets/img/slides/gigascience_giy077_fig1.jpg "figure 1")](https://academic.oup.com/view-large/figure/118918033/giy077fig1.jpg) <!-- .element class="image-50" -->
+[![Figure 1](/assets/img/slides/gigascience_giy077_fig1.jpg "figure 1")](https://academic.oup.com/view-large/figure/118918033/giy077fig1.jpg) <!-- .element class="image-50" -->
 
 [<i class="ai ai-doi"></i> 10.1093/gigascience/giy077](https://doi.org/10.1093/gigascience/giy077)
 
@@ -109,11 +109,11 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg">
+<section data-background-image="/assets/img/background/Sarek-Park-02.jpg">
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Sarek-Park-02.jpg" data-background-opacity=0.5 >
 
 * [Ruotes](https://github.com/SciLifeLab/Sarek/releases/tag/2.1.0)
 * [Skårki](https://github.com/SciLifeLab/Sarek/releases/tag/2.2.0)
@@ -126,7 +126,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ---
 
-[![Sarek]({{ site.url }}/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
+[![Sarek](/assets/img/svg/nf-core_sarek_logo.svg "Sarek")](https://nf-co.re/sarek) <!-- .element class="image-H10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
@@ -139,7 +139,7 @@ A [National Park](https://www.sverigesnationalparker.se/en/choose-park---list/sa
 
 ===
 
-[![Nextflow]({{ site.url }}/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
+[![Nextflow](/assets/img/slides/nextflow.png "Nextflow")](https://www.nextflow.io/) <!-- .element class="image-50" -->
 
 * Workflow manager
   * Data driven language
@@ -156,11 +156,11 @@ Note:
 
 ## Multiple flavors
 
-![Sarek]({{ site.url }}/assets/img/svg/sarek_logo.svg "Sarek") <!-- .element class="image-10" -->
+![Sarek](/assets/img/svg/sarek_logo.svg "Sarek") <!-- .element class="image-10" -->
 
 <div class="fragment fade-in" data-fragment-index="2">
 
-![Sarek]({{ site.url }}/assets/img/svg/sarek-germline.svg "Sarek") <!-- .element class="image-10" --> | ![Sarek]({{ site.url }}/assets/img/svg/sarek-somatic.svg "Sarek") <!-- .element class="image-10" -->
+![Sarek](/assets/img/svg/sarek-germline.svg "Sarek") <!-- .element class="image-10" --> | ![Sarek](/assets/img/svg/sarek-somatic.svg "Sarek") <!-- .element class="image-10" -->
 :-:|:-:
 
 </div>
@@ -169,13 +169,13 @@ Note:
 
 ## WES and Targeted Sequencing
 
-![]({{ site.url }}/assets/img/svg/appleseq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
+![](/assets/img/svg/appleseq.svg "WGS, WES, and Targeted") <!-- .element class="image-25" -->
 
 ---
 
 ## Preprocessing
 
-[![GATKBP]({{ site.url }}/assets/img/svg/gatk-bp_logo.svg "GATK Best Practices")](https://software.broadinstitute.org/gatk/best-practices/) <!-- .element class="image-H25" -->
+[![GATKBP](/assets/img/svg/gatk-bp_logo.svg "GATK Best Practices")](https://software.broadinstitute.org/gatk/best-practices/) <!-- .element class="image-H25" -->
 
 Based on GATK Best Practices (GATK 4.1.7.0)
 
@@ -227,13 +227,13 @@ Based on GATK Best Practices (GATK 4.1.7.0)
 
 ## Reports
 
-[![MultiQC]({{ site.url }}/assets/img/svg/multiqc_logo.svg "MultiQC")](https://multiqc.info/) <!-- .element class="image-H25" -->
+[![MultiQC](/assets/img/svg/multiqc_logo.svg "MultiQC")](https://multiqc.info/) <!-- .element class="image-H25" -->
 
 ---
 
 ## Workflow
 
-[![Sarek Workflow]({{ site.url }}/assets/img/svg/sarek_workflow_2.6.1.svg "Sarek Workflow 2.6.1")](https://github.com/nf-core/sarek/releases/tag/2.6.1) <!-- .element class="image-25" -->
+[![Sarek Workflow](/assets/img/svg/sarek_workflow_2.6.1.svg "Sarek Workflow 2.6.1")](https://github.com/nf-core/sarek/releases/tag/2.6.1) <!-- .element class="image-25" -->
 
 ---
 
@@ -325,11 +325,11 @@ Maxime Garcia, Szilveszter Juhos, Malin Larsson, Pall I. Olason, Marcel Martin, 
 
 ---
 
-<section data-background-image="{{ site.url }}/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
+<section data-background-image="/assets/img/background/Stockholm-by-night.jpg" data-background-opacity=0.5 >
 
 ## Any questions
 
 * [<i class="fa fa-globe-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
-* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/nf-core2020]({{ site.url }}/nf-core2020)
+* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/nf-core2020](/nf-core2020)
 * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
 * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)
