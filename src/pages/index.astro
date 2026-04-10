@@ -54,23 +54,26 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
                                             aria-hidden="true"
                                         />
                                     </span>
-                                    {post.data.tags?.map((tag: string, index: number) => (
-                                        <>
-                                            <a
-                                                href={`/tags/${tag.toLowerCase()}/`}
-                                                class="tag-badge"
-                                            >
-                                                {tag}
-                                            </a>
-                                            {index <
-                                                (post.data.tags?.length ?? 0) -
-                                                    1 && (
-                                                <span class="tag-separator">
-                                                    •
-                                                </span>
-                                            )}
-                                        </>
-                                    ))}
+                                    {post.data.tags?.map(
+                                        (tag: string, index: number) => (
+                                            <>
+                                                <a
+                                                    href={`/tags/${tag.toLowerCase()}/`}
+                                                    class="tag-badge"
+                                                >
+                                                    {tag}
+                                                </a>
+                                                {index <
+                                                    (post.data.tags?.length ??
+                                                        0) -
+                                                        1 && (
+                                                    <span class="tag-separator">
+                                                        •
+                                                    </span>
+                                                )}
+                                            </>
+                                        ),
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -92,18 +95,24 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
                 Array.from({ length: totalPages }, (_, i) => i + 1).map(
                     (pageNum) => (
                         <li
-                            class={`page-item ${pageNum === 1 ? "active" : ""}`}
+                            class={`page-item ${pageNum === 1 ? "disabled" : ""}`}
                         >
-                            <a
-                                class="page-link"
-                                href={
-                                    pageNum === 1
-                                        ? "/"
-                                        : `/blog/page/${pageNum}/`
-                                }
-                            >
-                                {pageNum}
-                            </a>
+                            {pageNum === 1 ? (
+                                <span
+                                    class="page-link"
+                                    aria-current="page"
+                                    aria-disabled="true"
+                                >
+                                    {pageNum}
+                                </span>
+                            ) : (
+                                <a
+                                    class="page-link"
+                                    href={`/blog/page/${pageNum}/`}
+                                >
+                                    {pageNum}
+                                </a>
+                            )}
                         </li>
                     ),
                 )

@@ -1,21 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 
-const siteUrl = "https://maxulysse.github.io";
-
-const replaceJekyllVars = (value: string) =>
-    value
-        .replace(/\{\{\s*site\.url\s*\}\}/g, siteUrl)
-        .replace(/\{\{\s*site\.baseurl\s*\}\}/g, "")
-        .replace(
-            /\{\{\s*"([^"]+)"\s*\|\s*prepend:\s*site\.baseurl\s*\}\}/g,
-            "$1",
-        )
-        .replace(
-            /\{\{\s*"([^"]+)"\s*\|\s*prepend:\s*site\.url\s*\}\}/g,
-            `${siteUrl}$1`,
-        );
-
 export async function getStaticPaths() {
     const presentations = await getCollection("presentations");
 
@@ -54,7 +39,7 @@ export async function getStaticPaths() {
 }
 
 const { presentation } = Astro.props;
-const slidesContent = replaceJekyllVars(presentation.body);
+const slidesContent = presentation.body;
 const pageTitle = presentation.data.title;
 ---
 

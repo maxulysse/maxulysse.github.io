@@ -62,7 +62,7 @@ const socialMedia = [
   {
     name: "Stack Exchange",
     url: "https://stackexchange.com/users/2204471/maxulysse/",
-    font_awesome: "fa-stack-exchange",
+    font_awesome: "fa-stack-overflow",
   },
   {
     name: "ResearchGate",
