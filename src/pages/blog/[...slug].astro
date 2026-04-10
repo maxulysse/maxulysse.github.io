@@ -1,11 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection("blog");
     return blogEntries.map((entry) => ({
-        params: { slug: entry.slug },
+        params: { slug: entry.id },
         props: { entry },
     }));
 }
@@ -16,7 +16,7 @@ interface Props {
 
 const { slug } = Astro.params;
 const allEntries = await getCollection("blog");
-const entry = allEntries.find((e) => e.slug === slug);
+const entry = allEntries.find((e) => e.id === slug);
 
 if (!entry) {
     return Astro.redirect("/");
@@ -32,7 +32,9 @@ const normalizeDate = (value: unknown) => {
 };
 
 const findSlideRedirect = async (postEntry: any) => {
-    const tags = (postEntry.data.tags || []).map((tag: string) => tag.toLowerCase());
+    const tags = (postEntry.data.tags || []).map((tag: string) =>
+        tag.toLowerCase(),
+    );
     if (!tags.includes("presentation")) return null;
 
     const presentations = await getCollection("presentations");
@@ -45,7 +47,7 @@ const findSlideRedirect = async (postEntry: any) => {
 
         if (slideDate === targetDate && slideTitle === targetTitle) {
             const redirects = presentation.data.redirects || [];
-            const redirect = redirects[0] || presentation.slug;
+            const redirect = redirects[0] || presentation.id;
             const normalized = redirect.replace(/^\/+/, "");
             return `/${normalized}/`;
         }
@@ -59,7 +61,7 @@ if (slideRedirect) {
     return Astro.redirect(slideRedirect, 302);
 }
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <PostLayout
