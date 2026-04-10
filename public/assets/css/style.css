@@ -321,6 +321,10 @@ footer {
   filter: brightness(0);
 }
 
+.nav-footer a[href*="seqera.io"]:hover .footericon-img {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(62%) saturate(1738%) hue-rotate(127deg) brightness(94%) contrast(90%);
+}
+
 .nav-footer a:hover {
   text-decoration: none !important;
 }
@@ -330,13 +334,13 @@ footer {
 .nav-footer .fa-bluesky:hover { color: #1185fe; }
 .nav-footer .fa-github:hover { color: #000000; }
 .nav-footer .fa-instagram:hover { color: #000000; }
-.nav-footer .fa-keybase:hover { color: #3dcc8e; }
+.nav-footer .fa-keybase:hover { color: #3763eaff; }
 .nav-footer .fa-linkedin-in:hover { color: #007bb6; }
 .nav-footer .fa-mastodon:hover { color: #3088d4; }
 .nav-footer .fa-reddit-alien:hover { color: #ff4500; }
 .nav-footer .fa-researchgate:hover { color: #00d0b0; }
 .nav-footer .fa-rss-square:hover { color: #ff6600; }
-.nav-footer .fa-stack-exchange:hover { color: #4ca2da; }
+.nav-footer .fa-stack-overflow:hover { color: #F47F24; }
 .nav-footer .fa-x-twitter:hover { color: #000000; }
 .nav-footer .fa-youtube:hover { color: #ff0000; }
 
