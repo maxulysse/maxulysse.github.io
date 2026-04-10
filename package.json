@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
-    "markdownlint-cli2": "^0.21.0",
+    "markdownlint-cli2": "^0.22.0",
     "typescript": "^5.3.0"
   },
   "overrides": {
