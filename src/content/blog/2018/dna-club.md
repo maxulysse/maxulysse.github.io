@@ -9,4 +9,4 @@ image:
 ---
 
 
-I made a quick [presentation <i class="fa fa-file-pdf" aria-hidden="true"></i>](https://maxulysse.github.io/assets/presentations/2018/2018-01-31-DNA-Club.pdf) about using CAW with AWS for the SciLifeLab DNA Club.
+I made a quick [presentation <i class="fa fa-file-pdf" aria-hidden="true"></i>](https://raw.githubusercontent.com/maxulysse/Presentations/main/2018/2018-01-31-DNA-Club.pdf) about using CAW with AWS for the SciLifeLab DNA Club.
