@@ -89,15 +89,17 @@ body {
 
 @media (max-width: 992px) {
   .row {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, auto) !important;
+    grid-auto-flow: column !important;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .row {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    grid-auto-flow: row !important;
   }
 }
 

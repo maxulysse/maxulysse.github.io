@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About" description="About me">
-    <div class="card-columns">
+    <div class="card-columns about-grid">
         <div class="card-deck">
             <div class="card">
                 <div class="card-header">
@@ -74,6 +74,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style is:global>
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .about-grid .card-deck {
+        display: contents;
+    }
+
     .author-avatar {
         text-align: center;
         margin-bottom: 1rem;
@@ -83,5 +93,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         border-radius: 50%;
         max-width: 150px;
         height: auto;
+    }
+
+    @media (max-width: 767px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-grid .card {
+            min-width: 0;
+        }
     }
 </style>
