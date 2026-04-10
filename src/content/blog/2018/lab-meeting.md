@@ -9,4 +9,4 @@ image:
 ---
 
 
-I made a quick [presentation <i class="fa fa-file-pdf" aria-hidden="true"></i>](https://maxulysse.github.io/assets/presentations/2018/2018-02-20-Lab-meeting.pdf) about the change of name from CAW to Sarek, and also using it with AWS for our lab meeting.
+I made a quick [presentation <i class="fa fa-file-pdf" aria-hidden="true"></i>](https://raw.githubusercontent.com/maxulysse/Presentations/main/2018/2018-02-20-Lab-meeting.pdf) about the change of name from CAW to Sarek, and also using it with AWS for our lab meeting.
