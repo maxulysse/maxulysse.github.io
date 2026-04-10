@@ -10,7 +10,7 @@ export async function getStaticPaths() {
     const paths = [];
 
     for (const presentation of presentations) {
-        const slug = normalizePath(presentation.slug);
+        const slug = normalizePath(presentation.id);
         const redirects = presentation.data.redirects || [];
 
         // Main path: /folder-name/
@@ -39,7 +39,7 @@ export async function getStaticPaths() {
 }
 
 const { presentation } = Astro.props;
-const slidesContent = presentation.body;
+const slidesContent = presentation.body || "";
 const pageTitle = presentation.data.title;
 ---
 
