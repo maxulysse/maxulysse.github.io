@@ -55,7 +55,8 @@ const searchItems = allPosts
                             <i class="fa-solid fa-tags me-1"></i>Browse tags
                         </a>
                         <a href="/archive" class="btn btn-outline-primary">
-                            <i class="fa-regular fa-calendar me-1"></i>Browse archive
+                            <i class="fa-regular fa-calendar me-1"></i>Browse
+                            archive
                         </a>
                     </div>
                 </div>
@@ -63,39 +64,13 @@ const searchItems = allPosts
         </div>
     </section>
 
-    <script
-        id="search-data"
-        type="application/json"
-        set:text={JSON.stringify(searchItems)}
-    ></script>
-    <script lang="ts">
-        type SearchItem = {
-            id: string;
-            title: string;
-            description: string;
-            date: string;
-            tags: string[];
-        };
+    <script is:inline define:vars={{ searchItems }}>
+        const searchInput = document.getElementById("search-input");
+        const searchSummary = document.getElementById("search-summary");
+        const searchResults = document.getElementById("search-results");
+        const searchEmpty = document.getElementById("search-empty");
 
-        const dataElement = document.getElementById("search-data");
-        const searchInput = document.getElementById(
-            "search-input",
-        ) as HTMLInputElement | null;
-        const searchSummary = document.getElementById(
-            "search-summary",
-        ) as HTMLParagraphElement | null;
-        const searchResults = document.getElementById(
-            "search-results",
-        ) as HTMLDivElement | null;
-        const searchEmpty = document.getElementById(
-            "search-empty",
-        ) as HTMLDivElement | null;
-
-        const searchItems: SearchItem[] = dataElement
-            ? JSON.parse(dataElement.textContent || "[]")
-            : [];
-
-        function normalize(value: string): string {
+        function normalize(value) {
             return value
                 .toLowerCase()
                 .normalize("NFD")
@@ -103,7 +78,7 @@ const searchItems = allPosts
                 .trim();
         }
 
-        function buildHaystack(item: SearchItem): string {
+        function buildHaystack(item) {
             return normalize(
                 [
                     item.title,
@@ -114,7 +89,7 @@ const searchItems = allPosts
             );
         }
 
-        function createResultNode(item: SearchItem): HTMLAnchorElement {
+        function createResultNode(item) {
             const anchor = document.createElement("a");
             anchor.className = "list-group-item list-group-item-action";
             anchor.href = `/blog/${item.id}/`;
@@ -135,7 +110,7 @@ const searchItems = allPosts
             return anchor;
         }
 
-        function renderResults(rawQuery: string): void {
+        function renderResults(rawQuery) {
             if (!searchSummary || !searchResults || !searchEmpty) {
                 return;
             }
@@ -145,16 +120,16 @@ const searchItems = allPosts
             if (!query) {
                 searchSummary.textContent = `Showing ${searchItems.length} posts. Enter a search term to filter.`;
                 searchEmpty.classList.add("d-none");
-                searchItems.slice(0, 12).forEach((item: SearchItem) => {
+                searchItems.slice(0, 12).forEach((item) => {
                     searchResults.appendChild(createResultNode(item));
                 });
                 return;
             }
 
             const terms = query.split(/\s+/).filter(Boolean);
-            const results = searchItems.filter((item: SearchItem) => {
+            const results = searchItems.filter((item) => {
                 const haystack = buildHaystack(item);
-                return terms.every((term: string) => haystack.includes(term));
+                return terms.every((term) => haystack.includes(term));
             });
 
             searchSummary.textContent = `${results.length} result${results.length === 1 ? "" : "s"} for "${rawQuery}".`;
@@ -165,14 +140,14 @@ const searchItems = allPosts
             }
 
             searchEmpty.classList.add("d-none");
-            results.slice(0, 50).forEach((item: SearchItem) => {
+            results.slice(0, 50).forEach((item) => {
                 searchResults.appendChild(createResultNode(item));
             });
         }
 
         const params = new URLSearchParams(window.location.search);
         const initialQuery = params.get("q") || "";
-        if (searchInput) {
+        if (searchInput instanceof HTMLInputElement) {
             searchInput.value = initialQuery;
             searchInput.focus();
         }
