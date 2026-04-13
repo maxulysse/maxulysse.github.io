@@ -66,8 +66,8 @@ const searchItems = allPosts
     <script
         id="search-data"
         type="application/json"
-        set:html={JSON.stringify(searchItems)}
-    />
+        set:text={JSON.stringify(searchItems)}
+    ></script>
     <script>
         type SearchItem = {
             id: string;
