@@ -16,7 +16,7 @@ image:
 
 Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
-[<i class="fa fa-globe-europe"></i> SYMPOSIUM POST-THESIS CAREERS 2021](https://www.univ-amu.fr/en/public/actualites/career-day-what-do-after-science-thesis), 2021/06/08
+[<i class="fa-solid fa-globe-europe"></i> SYMPOSIUM POST-THESIS CAREERS 2021](https://www.univ-amu.fr/en/public/actualites/career-day-what-do-after-science-thesis), 2021/06/08
 
 </small>
 
@@ -70,7 +70,7 @@ Note:
 
 ---
 
-## Today's plan <i class="fas fa-calendar"></i>
+## Today's plan <i class="fa-solid fa-calendar"></i>
 
 * Background
 * Thesis
@@ -80,7 +80,7 @@ Note:
 
 ---
 
-## Background <i class="fas fa-university"></i>
+## Background <i class="fa-solid fa-university"></i>
 
 * After High-School Diploma
 
@@ -92,7 +92,7 @@ Note:
 
 ---
 
-## The thesis <i class="fas fa-book"></i>
+## The thesis <i class="fa-solid fa-book"></i>
 
 * Presented my work while doing my PhD
 
@@ -103,7 +103,7 @@ Note:
 
 ---
 
-## Skills learned during the thesis <i class="fas fa-tools"></i>
+## Skills learned during the thesis <i class="fa-solid fa-tools"></i>
 
 * Practicals and management skills
 
@@ -114,7 +114,7 @@ Note:
 
 ---
 
-## Outside the thesis <i class="fas fa-users"></i>
+## Outside the thesis <i class="fa-solid fa-users"></i>
 
 * Involved at the lab and in young researchers associations
 
@@ -132,7 +132,7 @@ Si ce n’est pas le cas, comment expliqueriez vous le rôle de votre thèse dan
 
 ---
 
-## After the thesis <i class="fas fa-leaf"></i>
+## After the thesis <i class="fa-solid fa-leaf"></i>
 
 * Moving around
 
@@ -150,7 +150,7 @@ Si non, qu’est-ce qui a changé et pourquoi ?
 
 ---
 
-## A regular day <i class="fas fa-clock"></i>
+## A regular day <i class="fa-solid fa-clock"></i>
 
 * At work, or working from home
 
@@ -167,7 +167,7 @@ Là est la partie que nous préférons avec les autres organisateurs : racontez
 
 ---
 
-## Stay at home message <i class="fas fa-home"></i>
+## Stay at home message <i class="fa-solid fa-home"></i>
 
 * Talk with others
 * Get involved

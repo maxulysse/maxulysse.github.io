@@ -22,7 +22,7 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
+[<i class="fa-solid fa-globe-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
 
 </small>
 
@@ -207,7 +207,7 @@ Based on GATK Best Practices (GATK 4.1.2.0)
 ## Annotation
 
 * VEP and SnpEff
-  * <i class="fas fa-database"></i> ClinVar, COSMIC, dbSNP, GENCODE, gnomAD, polyphen, sift, etc.
+  * <i class="fa-solid fa-database"></i> ClinVar, COSMIC, dbSNP, GENCODE, gnomAD, polyphen, sift, etc.
 
 ===
 
@@ -332,6 +332,6 @@ Teresita Díaz De Ståhl | Max Käller | Björn Nystedt | |
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fa-solid fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
 * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
 * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)

@@ -17,7 +17,7 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> https://maxulysse.github.io/coffeencode2020](https://maxulysse.github.io/coffeencode2020)
+[<i class="fa-solid fa-globe-europe"></i> https://maxulysse.github.io/coffeencode2020](https://maxulysse.github.io/coffeencode2020)
 
 [<i class="fab fa-youtube"></i> Coffee & Code: Continuous Integration](https://www.youtube.com/watch?v=gm_f_FeYHWA)
 
@@ -111,10 +111,10 @@ DO TESTS
 
 ## Where
 
-- [<i class="fas fa-server"></i> Jenkins](https://www.jenkins.io/)
-- [<i class="fas fa-cloud"></i> circleci](https://circleci.com/)
-- [<i class="fas fa-cloud"></i> Travis CI](https://travis-ci.com/)
-- [<i class="fas fa-cloud"></i> GitHub Actions](https://github.com/features/actions)
+- [<i class="fa-solid fa-server"></i> Jenkins](https://www.jenkins.io/)
+- [<i class="fa-solid fa-cloud"></i> circleci](https://circleci.com/)
+- [<i class="fa-solid fa-cloud"></i> Travis CI](https://travis-ci.com/)
+- [<i class="fa-solid fa-cloud"></i> GitHub Actions](https://github.com/features/actions)
 
 ---
 
@@ -268,7 +268,7 @@ Currently 6 different tests with multiple conditions
 
 ## Any questions
 
-- [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+- [<i class="fa-solid fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
 - [<i class="fab fa-github"></i> nf-co.re/sarek](https://nf-co.re/sarek)
 - [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
 - [<i class="fab fa-github"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)

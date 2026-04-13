@@ -57,9 +57,9 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
             <div class="card-header">
                 <h2 class="card-title">{title}</h2>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    <span><i class="fa fa-user"></i></span>
+                    <span><i class="fa-solid fa-user" aria-hidden="true"></i></span>
                     <em>{authorInfo.name}</em>
-                    <span><i class="fa fa-calendar"></i></span>
+                    <span><i class="fa-solid fa-calendar" aria-hidden="true"></i></span>
                     {
                         date.toLocaleDateString("en-US", {
                             year: "numeric",
@@ -71,7 +71,7 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
                         lastModified && (
                             <div class="float-right">
                                 <span>
-                                    Last modified <i class="fa fa-calendar" />
+                                    Last modified <i class="fa-solid fa-calendar" aria-hidden="true" />
                                 </span>
                                 {modifiedDate.toLocaleDateString("en-US", {
                                     year: "numeric",
@@ -82,7 +82,7 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
                         )
                     }
                     <br />
-                    <i class="fa fa-clock"></i>
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
                     {readTime} min read
                 </h6>
             </div>

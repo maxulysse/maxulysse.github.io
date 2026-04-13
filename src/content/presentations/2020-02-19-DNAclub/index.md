@@ -22,7 +22,7 @@ Maxime Garcia
 
 [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
+[<i class="fa-solid fa-globe-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
 
 </small>
 
@@ -268,7 +268,7 @@ Martin Proks           |                   |                  |                 
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fa-solid fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
 * [<i class="fab fa-github"></i> nf-co.re/sarek](https://nf-co.re/sarek)
 * [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
 * [<i class="fab fa-github"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
