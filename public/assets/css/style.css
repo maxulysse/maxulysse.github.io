@@ -58,6 +58,11 @@ body {
   font-weight: 600;
 }
 
+.navbar-nav .nav-link {
+  display: inline-flex !important;
+  align-items: center;
+}
+
 /* Cards */
 .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
