@@ -16,7 +16,7 @@ image:
 
 Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
-[<i class="fa-solid fa-globe-europe"></i> SYMPOSIUM POST-THESIS CAREERS 2021](https://www.univ-amu.fr/en/public/actualites/career-day-what-do-after-science-thesis), 2021/06/08
+[<i class="fa-solid fa-earth-europe"></i> SYMPOSIUM POST-THESIS CAREERS 2021](https://www.univ-amu.fr/en/public/actualites/career-day-what-do-after-science-thesis), 2021/06/08
 
 </small>
 

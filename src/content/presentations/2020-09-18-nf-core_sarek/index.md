@@ -345,6 +345,6 @@ Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
 
 ## Any questions
 
-* [<i class="fa-solid fa-globe-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
 * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
 * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)

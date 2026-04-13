@@ -53,7 +53,7 @@ Bioinformatician working at [National Genomics Infrastructure](https://ngisweden
 
 ---
 
-[<i class="fa-solid fa-globe-europe"></i> ngisweden.scilifelab.se/resources/ngi-stockholm-status](https://ngisweden.scilifelab.se/resources/ngi-stockholm-status/)
+[<i class="fa-solid fa-earth-europe"></i> ngisweden.scilifelab.se/resources/ngi-stockholm-status](https://ngisweden.scilifelab.se/resources/ngi-stockholm-status/)
 
 <iframe width="1120" height="580" src="https://ngisweden.scilifelab.se/resources/ngi-stockholm-status/" frameborder="0"></iframe>
 
@@ -63,7 +63,7 @@ Bioinformatician working at [National Genomics Infrastructure](https://ngisweden
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfxOFYXmiNw?start=139" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[<i class="fa-solid fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+[<i class="fa-solid fa-earth-europe"></i> nf-co.re](https://nf-co.re/)
 
 ---
 
@@ -81,7 +81,7 @@ nextflow run nf-core/sarek -r 2.7 -profile test,docker
 
 ### Installing the nf-core helper tools
 
-[<i class="fa-solid fa-globe-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#installing-the-nf-core-helper-tools)
+[<i class="fa-solid fa-earth-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#installing-the-nf-core-helper-tools)
 
 * Install nf-core/tools
 * Use the help flag to list the available commands
@@ -106,7 +106,7 @@ pip install --upgrade --force-reinstall git+https://github.com/nf-core/tools.git
 
 ### Listing pipelines
 
-[<i class="fa-solid fa-globe-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#listing-available-nf-core-pipelines)
+[<i class="fa-solid fa-earth-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#listing-available-nf-core-pipelines)
 
 * Use the help flag to print the list command usage
 * List all pipelines
