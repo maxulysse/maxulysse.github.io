@@ -1,0 +1,181 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("blog");
+const searchItems = allPosts
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .map((post) => ({
+        id: post.id,
+        title: post.data.title,
+        description: post.data.description ?? "",
+        date: post.data.date.toISOString().split("T")[0],
+        tags: post.data.tags ?? [],
+    }));
+---
+
+<BaseLayout title="Search" description="Search blog posts.">
+    <section class="py-3">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="h4 mb-0">Search</h1>
+            </div>
+            <div class="card-body">
+                <form
+                    action="/search"
+                    method="get"
+                    class="row g-2 mb-3"
+                    id="search-form"
+                >
+                    <div class="col-12 col-md-9">
+                        <input
+                            id="search-input"
+                            class="form-control"
+                            type="text"
+                            name="q"
+                            placeholder="Search posts, tags, or keywords"
+                            aria-label="Search posts"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="col-12 col-md-3 d-grid">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                    </div>
+                </form>
+
+                <p id="search-summary" class="text-muted mb-3"></p>
+                <div id="search-results" class="list-group"></div>
+                <div id="search-empty" class="d-none text-center py-3">
+                    <p class="text-muted mb-3">No results found.</p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="/tags" class="btn btn-outline-primary">
+                            <i class="fa-solid fa-tags me-1"></i>Browse tags
+                        </a>
+                        <a href="/archive" class="btn btn-outline-primary">
+                            <i class="fa-regular fa-calendar me-1"></i>Browse archive
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script
+        id="search-data"
+        type="application/json"
+        set:html={JSON.stringify(searchItems)}
+    />
+    <script>
+        type SearchItem = {
+            id: string;
+            title: string;
+            description: string;
+            date: string;
+            tags: string[];
+        };
+
+        const dataElement = document.getElementById("search-data");
+        const searchInput = document.getElementById(
+            "search-input",
+        ) as HTMLInputElement | null;
+        const searchSummary = document.getElementById(
+            "search-summary",
+        ) as HTMLParagraphElement | null;
+        const searchResults = document.getElementById(
+            "search-results",
+        ) as HTMLDivElement | null;
+        const searchEmpty = document.getElementById(
+            "search-empty",
+        ) as HTMLDivElement | null;
+
+        const searchItems: SearchItem[] = dataElement
+            ? JSON.parse(dataElement.textContent || "[]")
+            : [];
+
+        function normalize(value: string): string {
+            return value
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+        }
+
+        function buildHaystack(item: SearchItem): string {
+            return normalize(
+                [
+                    item.title,
+                    item.description,
+                    item.tags.join(" "),
+                    item.id.replaceAll("/", " "),
+                ].join(" "),
+            );
+        }
+
+        function createResultNode(item: SearchItem): HTMLAnchorElement {
+            const anchor = document.createElement("a");
+            anchor.className = "list-group-item list-group-item-action";
+            anchor.href = `/blog/${item.id}/`;
+
+            const title = document.createElement("h2");
+            title.className = "h6 mb-1";
+            title.textContent = item.title;
+
+            const meta = document.createElement("small");
+            meta.className = "text-muted d-block mb-1";
+            meta.textContent = `${item.date}${item.tags.length ? ` - ${item.tags.join(", ")}` : ""}`;
+
+            const description = document.createElement("p");
+            description.className = "mb-0 text-muted";
+            description.textContent = item.description || "Open post";
+
+            anchor.append(title, meta, description);
+            return anchor;
+        }
+
+        function renderResults(rawQuery: string): void {
+            if (!searchSummary || !searchResults || !searchEmpty) {
+                return;
+            }
+            const query = normalize(rawQuery || "");
+            searchResults.innerHTML = "";
+
+            if (!query) {
+                searchSummary.textContent = `Showing ${searchItems.length} posts. Enter a search term to filter.`;
+                searchEmpty.classList.add("d-none");
+                searchItems.slice(0, 12).forEach((item: SearchItem) => {
+                    searchResults.appendChild(createResultNode(item));
+                });
+                return;
+            }
+
+            const terms = query.split(/\s+/).filter(Boolean);
+            const results = searchItems.filter((item: SearchItem) => {
+                const haystack = buildHaystack(item);
+                return terms.every((term: string) => haystack.includes(term));
+            });
+
+            searchSummary.textContent = `${results.length} result${results.length === 1 ? "" : "s"} for "${rawQuery}".`;
+
+            if (!results.length) {
+                searchEmpty.classList.remove("d-none");
+                return;
+            }
+
+            searchEmpty.classList.add("d-none");
+            results.slice(0, 50).forEach((item: SearchItem) => {
+                searchResults.appendChild(createResultNode(item));
+            });
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const initialQuery = params.get("q") || "";
+        if (searchInput) {
+            searchInput.value = initialQuery;
+            searchInput.focus();
+        }
+        renderResults(initialQuery);
+    </script>
+</BaseLayout>
