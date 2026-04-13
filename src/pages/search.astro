@@ -49,10 +49,10 @@ const searchItems = allPosts
                     <p class="text-muted mb-3">No results found.</p>
                     <div class="d-flex justify-content-center gap-2 flex-wrap">
                         <a href="/tags" class="btn btn-outline-primary">
-                            <i class="fa-solid fa-tags me-1"></i>Browse tags
+                            <i class="fa-solid fa-tags me-1" aria-hidden="true"></i>Browse tags
                         </a>
                         <a href="/archive" class="btn btn-outline-primary">
-                            <i class="fa-regular fa-calendar me-1"></i>Browse
+                            <i class="fa-regular fa-calendar me-1" aria-hidden="true"></i>Browse
                             archive
                         </a>
                     </div>
@@ -146,7 +146,6 @@ const searchItems = allPosts
         const initialQuery = params.get("q") || "";
         if (searchInput instanceof HTMLInputElement) {
             searchInput.value = initialQuery;
-            searchInput.focus();
         }
         renderResults(initialQuery);
     </script>
