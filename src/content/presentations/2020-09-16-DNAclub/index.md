@@ -20,9 +20,9 @@ Maxime Garcia
 
 [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
 
-[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+[<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
+[<i class="fa-solid fa-earth-europe"></i> maxulysse.github.io](https://maxulysse.github.io/)
 
 </small>
 
@@ -237,7 +237,7 @@ Based on GATK Best Practices (GATK 4.1.7.0)
 ## Annotation
 
 * VEP and SnpEff
-  * <i class="fas fa-database"></i> ClinVar, COSMIC, dbSNP, GENCODE, gnomAD, polyphen, sift, etc.
+  * <i class="fa-solid fa-database"></i> ClinVar, COSMIC, dbSNP, GENCODE, gnomAD, polyphen, sift, etc.
 
 ===
 
@@ -409,7 +409,7 @@ Generate a nice final report
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re](https://nf-co.re/)
 * [<i class="fab fa-github"></i> nf-co.re/sarek](https://nf-co.re/sarek)
 * [<i class="fab fa-slack"></i> #sarek](https://nfcore.slack.com/channels/sarek)
 * [<i class="fab fa-github"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)

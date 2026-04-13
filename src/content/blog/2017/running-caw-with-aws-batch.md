@@ -208,7 +208,7 @@ Tried to correct it within a new Secure Groups settings.
 
 But nothing seems to work, so asking Paolo to the rescue (cf: [issue](https://github.com/nextflow-io/nextflow/issues/535))
 
-> @pditomaso: @MaxUlysse if still not working open an issue including NF output, `.nextflow.log` file and task `.command.run`, `.command.log`, `.command.out` and `.command.err`
+> @pditomaso: @maxulysse if still not working open an issue including NF output, `.nextflow.log` file and task `.command.run`, `.command.log`, `.command.out` and `.command.err`
 
 ### Seventh try
 

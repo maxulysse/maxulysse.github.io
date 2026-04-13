@@ -18,7 +18,7 @@ Maxime Garcia
 
 [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
 
-[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+[<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [virtual] - 2020/10/22
 
@@ -131,12 +131,12 @@ bioinformatics pipelines
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re](https://nf-co.re)
   * [<i class="fab fa-github"></i> github.com/nf-core](https://github.com/nf-core)
   * [<i class="fab fa-slack"></i> nfcore.slack.com](https://nfcore.slack.com/)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
   * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
   * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/rnafusion](https://nf-co.re/rnafusion)
   * [<i class="fab fa-github"></i> github.com/nf-core/rnafusion](https://github.com/nf-core/rnafusion)
   * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/rnafusion](https://nfcore.slack.com/channels/rnafusion)

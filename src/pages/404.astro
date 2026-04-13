@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="404 - Page not found"
+    description="The requested page could not be found."
+>
+    <div class="card shadow-sm w-100">
+        <div class="card-header text-center p-3">
+            <h1 class="h3 fw-bold mb-0">404 - Page not found</h1>
+        </div>
+        <div class="card-body text-center p-3">
+            <img
+                src="/assets/img/404/404.png"
+                alt="Ulysses and the Sirens by Herbert James Draper"
+                class="img-fluid not-found-image mb-3"
+                loading="lazy"
+            />
+            <p class="lead text-muted">
+                The page you requested does not exist, may have moved, or the
+                URL has a typo. It won't take 10 years to find a way back.
+            </p>
+
+            <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
+                <a href="/" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-house me-1" aria-hidden="true"></i>Back to home
+                </a>
+                <a href="/tags" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-tags me-1" aria-hidden="true"></i>Browse tags
+                </a>
+                <a href="/archive" class="btn btn-outline-primary">
+                    <i class="fa-regular fa-calendar me-1" aria-hidden="true"></i>Browse archive
+                </a>
+            </div>
+        </div>
+        <div class="card-footer text-center small text-muted p-3">
+            Image source:
+            <a
+                href="https://en.wikipedia.org/wiki/File:Herbert-James-Draper-Ulysses-and-the-Sirens.jpg"
+                target="_blank"
+                rel="noopener"
+            >
+                Wikimedia Commons
+            </a>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .not-found-image {
+        max-height: 300px;
+        object-fit: contain;
+    }
+</style>

@@ -71,7 +71,7 @@ const socialMedia = [
   },
   {
     name: "reddit",
-    url: "https://www.reddit.com/user/maxUlysse",
+    url: "https://www.reddit.com/user/maxulysse",
     font_awesome: "fa-reddit-alien",
   },
   {

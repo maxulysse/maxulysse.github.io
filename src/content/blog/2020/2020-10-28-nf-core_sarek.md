@@ -14,9 +14,9 @@ image:
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io/vcbs2020](https://maxulysse.github.io/vcbs2020)
+[<i class="fa-solid fa-earth-europe"></i> maxulysse.github.io/vcbs2020](https://maxulysse.github.io/vcbs2020)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
@@ -134,8 +134,8 @@ Philip Ewels, Valtteri Wirta, Monica Nistér, Max Käller, Björn Nystedt
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re](https://nf-co.re)
 * [<i class="fab fa-github"></i> github.com/nf-core](https://github.com/nf-core)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/sarek](https://nf-co.re/sarek)
 * [<i class="fab fa-github"></i> github.com/nf-core/sarek](https://github.com/nf-core/sarek)
 * [<i class="fab fa-slack"></i> nfcore.slack.com/channels/sarek](https://nfcore.slack.com/channels/sarek)

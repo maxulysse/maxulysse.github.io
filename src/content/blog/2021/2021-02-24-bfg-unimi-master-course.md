@@ -14,7 +14,7 @@ image:
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
@@ -53,7 +53,7 @@ Bioinformatician working at [National Genomics Infrastructure](https://ngisweden
 
 ---
 
-[<i class="fa fa-globe-europe"></i> ngisweden.scilifelab.se/resources/ngi-stockholm-status](https://ngisweden.scilifelab.se/resources/ngi-stockholm-status/)
+[<i class="fa-solid fa-earth-europe"></i> ngisweden.scilifelab.se/resources/ngi-stockholm-status](https://ngisweden.scilifelab.se/resources/ngi-stockholm-status/)
 
 <iframe width="1120" height="580" src="https://ngisweden.scilifelab.se/resources/ngi-stockholm-status/" frameborder="0"></iframe>
 
@@ -63,7 +63,7 @@ Bioinformatician working at [National Genomics Infrastructure](https://ngisweden
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfxOFYXmiNw?start=139" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
+[<i class="fa-solid fa-earth-europe"></i> nf-co.re](https://nf-co.re/)
 
 ---
 
@@ -81,7 +81,7 @@ nextflow run nf-core/sarek -r 2.7 -profile test,docker
 
 ### Installing the nf-core helper tools
 
-[<i class="fa fa-globe-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#installing-the-nf-core-helper-tools)
+[<i class="fa-solid fa-earth-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#installing-the-nf-core-helper-tools)
 
 * Install nf-core/tools
 * Use the help flag to list the available commands
@@ -106,7 +106,7 @@ pip install --upgrade --force-reinstall git+https://github.com/nf-core/tools.git
 
 ### Listing pipelines
 
-[<i class="fa fa-globe-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#listing-available-nf-core-pipelines)
+[<i class="fa-solid fa-earth-europe"></i> Tutorial](https://nf-co.re/usage/nf_core_tutorial#listing-available-nf-core-pipelines)
 
 * Use the help flag to print the list command usage
 * List all pipelines
@@ -214,4 +214,4 @@ If in doubt, please ask for help on Slack.
 
 If you have any suggestions for how to improve this tutorial, or spot any mistakes, please create an issue or pull request on the [nf-core/nf-co.re repository](https://github.com/nf-core/nf-co.re).
 
-> [Phil Ewels](https://github.com/ewels/), [Maxime Garcia](https://github.com/MaxUlysse) for _nf-core_, February 2021
+> [Phil Ewels](https://github.com/ewels/), [Maxime Garcia](https://github.com/maxulysse) for _nf-core_, February 2021

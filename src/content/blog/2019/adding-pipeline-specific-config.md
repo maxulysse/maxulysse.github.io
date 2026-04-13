@@ -88,7 +88,7 @@ Then, just need to add the additional params that are `sarek` specific, and load
 
 params {
   // Specific nf-core/configs params
-  config_profile_contact = 'Maxime Garcia (@MaxUlysse)'
+  config_profile_contact = 'Maxime Garcia (@maxulysse)'
   config_profile_description = 'nf-core/sarek MUNIN profile provided by nf-core/configs'
 
   // Specific nf-core/sarek configs params
@@ -118,17 +118,17 @@ process {
 ## Tests
 
 Both following commands worked as expected on munin.
-Since [PR#66](https://github.com/nf-core/sarek/pull/66) is not merged yet, I used `MaxUlysse/sarek -r sention` to specify my own branch of sarek.
+Since [PR#66](https://github.com/nf-core/sarek/pull/66) is not merged yet, I used `maxulysse/sarek -r sention` to specify my own branch of sarek.
 Since [PR#85](https://github.com/nf-core/configs/pull/85) is not merged yet, I used `--custom_config_base` to specify my own fork of nf-core/configs.
 
 ```bash
-nextflow run MaxUlysse/sarek -r sentieon -profile test,munin --sentieon /
---custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/sarek
+nextflow run maxulysse/sarek -r sentieon -profile test,munin --sentieon /
+--custom_config_base https://raw.githubusercontent.com/maxulysse/nf-core_configs/sarek
 ```
 
 ```bash
-nextflow run MaxUlysse/sarek -r sentieon -profile test,munin /
---custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/sarek
+nextflow run maxulysse/sarek -r sentieon -profile test,munin /
+--custom_config_base https://raw.githubusercontent.com/maxulysse/nf-core_configs/sarek
 ```
 
 All new params were used, and the `Sentieon` specific module was only loaded (and container set to '' ) for all processes with the `sentieon` label when the `params.sentieon` was specified.
@@ -138,11 +138,11 @@ All new params were used, and the `Sentieon` specific module was only loaded (an
 On any other system, the first command is failing, because `Sentieon` is not available, but the second worked as before.
 
 ```bash
-nextflow run MaxUlysse/sarek -r sentieon -profile test,docker --sentieon /
---custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/sarek
+nextflow run maxulysse/sarek -r sentieon -profile test,docker --sentieon /
+--custom_config_base https://raw.githubusercontent.com/maxulysse/nf-core_configs/sarek
 ```
 
 ```bash
-nextflow run MaxUlysse/sarek -r sentieon -profile test,docker /
---custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/sarek
+nextflow run maxulysse/sarek -r sentieon -profile test,docker /
+--custom_config_base https://raw.githubusercontent.com/maxulysse/nf-core_configs/sarek
 ```

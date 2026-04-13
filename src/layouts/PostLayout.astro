@@ -35,7 +35,7 @@ const currentUrl = Astro.url.pathname;
 // Convert blog URL path to source file path
 // e.g., /blog/2020/2020-07-01-jobim/ -> src/content/blog/2020/2020-07-01-jobim.md
 const pathSegments = currentUrl.split("/").filter(Boolean);
-const githubBaseUrl = "https://github.com/MaxUlysse/maxulysse.github.io";
+const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
 
 // Extract year and slug from path
 let editUrl = githubBaseUrl;
@@ -57,9 +57,15 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
             <div class="card-header">
                 <h2 class="card-title">{title}</h2>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    <span><i class="fa fa-user"></i></span>
+                    <span
+                        ><i class="fa-solid fa-user" aria-hidden="true"
+                        ></i></span
+                    >
                     <em>{authorInfo.name}</em>
-                    <span><i class="fa fa-calendar"></i></span>
+                    <span
+                        ><i class="fa-solid fa-calendar" aria-hidden="true"
+                        ></i></span
+                    >
                     {
                         date.toLocaleDateString("en-US", {
                             year: "numeric",
@@ -69,9 +75,13 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
                     }
                     {
                         lastModified && (
-                            <div class="float-right">
+                            <div class="float-end">
                                 <span>
-                                    Last modified <i class="fa fa-calendar" />
+                                    Last modified{" "}
+                                    <i
+                                        class="fa-solid fa-calendar"
+                                        aria-hidden="true"
+                                    />
                                 </span>
                                 {modifiedDate.toLocaleDateString("en-US", {
                                     year: "numeric",
@@ -82,7 +92,7 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
                         )
                     }
                     <br />
-                    <i class="fa fa-clock"></i>
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
                     {readTime} min read
                 </h6>
             </div>
@@ -107,7 +117,7 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
             <div class="card-footer">
                 <small class="text-muted"
                     >This site is using <a
-                        href="https://github.com/MaxUlysse/maxulysse.github.io"
+                        href="https://github.com/maxulysse/maxulysse.github.io"
                         target="_blank"
                         rel="noopener"><i class="fab fa-github"></i> GitHub</a
                     > for versioning. You can fix this page by suggesting changes

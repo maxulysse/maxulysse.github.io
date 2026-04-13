@@ -14,11 +14,11 @@ redirects: ["/bytesize_2"]
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
-[<i class="fa fa-globe-europe"></i> nf-co.re/events/2021/bytesize-2-configs](https://nf-co.re/events/2021/bytesize-2-configs), online - 2021/02/09
+[<i class="fa-solid fa-earth-europe"></i> nf-co.re/events/2021/bytesize-2-configs](https://nf-co.re/events/2021/bytesize-2-configs), online - 2021/02/09
 
 </small>
 
@@ -86,7 +86,7 @@ Note:
 
 ## With configs
 
-[<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
+[<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
@@ -126,7 +126,7 @@ Note:
 
 ## With profiles
 
-[<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html#config-profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles)
+[<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html#config-profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles)
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,docker
@@ -165,7 +165,7 @@ Note:
 
 ## With singularity
 
-[<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html#config-profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles)
+[<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html#config-profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles)
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -profile test_tsv,singularity
@@ -277,7 +277,7 @@ Note:
 
 __NB:__ Don't forget docs and CI tests.
 
-_cf_ [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
+_cf_ [<i class="fab fa-github"></i> github.com/maxulysse/nf-core_configs/tree/my_hpc](https://github.com/maxulysse/nf-core_configs/tree/my_hpc)
 
 </div>
 
@@ -335,7 +335,7 @@ look at the `cpus`, `memory` and `time` properties in the scope `process`.
 
 ## Change resource requirements
 
-[<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html#process-selectors](https://www.nextflow.io/docs/latest/config.html#process-selectors)
+[<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html#process-selectors](https://www.nextflow.io/docs/latest/config.html#process-selectors)
 
 ```groovy
 process {
@@ -359,7 +359,7 @@ process {
 
 ## Include a config file in a profile
 
-[<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html#config-include](https://www.nextflow.io/docs/latest/config.html#config-include)
+[<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html#config-include](https://www.nextflow.io/docs/latest/config.html#config-include)
 
 ```groovy
 includeConfig 'my_conf.config'
@@ -371,7 +371,7 @@ includeConfig 'my_conf.config'
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
-  --custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/my_hpc /
+  --custom_config_base https://raw.githubusercontent.com/maxulysse/nf-core_configs/my_hpc /
   --genome false /
   --fasta /data1/maxime/workspace/nf-core/eager/data/reference/Mammoth/Mammoth_MT_Krause.fasta /
   --input /data1/maxime/workspace/nf-core/eager/data/testdata/Mammoth/mammoth_design_fastq.tsv
@@ -381,7 +381,7 @@ nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
 
 ## Stay at home message
 
-* Read the docs -> [<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
+* Read the docs -> [<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
 * Check out the repo -> [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
 * Stay tuned for future `nf-core/bytesize`
 
@@ -394,7 +394,7 @@ Note:
 
 ## Get involved
 
-[<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+[<i class="fa-solid fa-earth-europe"></i> nf-co.re/join](https://nf-co.re/join)
 
 <img src="/assets/img/svg/social_media_2021.svg" title="GitHub, Slack, Twitter and YouTube" alt="GitHub, Slack, Twitter and YouTube"/>
 
@@ -426,14 +426,14 @@ Note:
 
 ## Join us
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/join](https://nf-co.re/join)
 
 ## References
 
-* [<i class="fa fa-globe-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
+* [<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
 * [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
-* [<i class="fas fa-images"></i> maxulysse.github.io/bytesize_2](https://maxulysse.github.io/bytesize_2)
-* [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
+* [<i class="fa-solid fa-images"></i> maxulysse.github.io/bytesize_2](https://maxulysse.github.io/bytesize_2)
+* [<i class="fab fa-github"></i> github.com/maxulysse/nf-core_configs/tree/my_hpc](https://github.com/maxulysse/nf-core_configs/tree/my_hpc)
 
 Note:
 

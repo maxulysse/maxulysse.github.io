@@ -14,11 +14,11 @@ image:
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
-[<i class="fa fa-globe-europe"></i> nf-co.re/events/2021/bytesize-8-nf-core-offline](https://nf-co.re/events/2021/bytesize-8-nf-core-offline), online - 2021/04/13
+[<i class="fa-solid fa-earth-europe"></i> nf-co.re/events/2021/bytesize-8-nf-core-offline](https://nf-co.re/events/2021/bytesize-8-nf-core-offline), online - 2021/04/13
 
 </small>
 
@@ -221,9 +221,9 @@ nextflow run rnaseq/workflow/main.nf -profile offline [...]
 ## Stay at home message
 
 * Read the docs
-  * [<i class="fa fa-globe-europe"></i> nf-co.re/usage/offline](https://nf-co.re/usage/offline)
-  * [<i class="fa fa-globe-europe"></i> nf-co.re/tools#downloading-pipelines-for-offline-use](https://nf-co.re/tools#downloading-pipelines-for-offline-use)
-  * [<i class="fa fa-globe-europe"></i> nf-co.re/tools#singularity-cache-directory](https://nf-co.re/tools#singularity-cache-directory)
+  * [<i class="fa-solid fa-earth-europe"></i> nf-co.re/usage/offline](https://nf-co.re/usage/offline)
+  * [<i class="fa-solid fa-earth-europe"></i> nf-co.re/tools#downloading-pipelines-for-offline-use](https://nf-co.re/tools#downloading-pipelines-for-offline-use)
+  * [<i class="fa-solid fa-earth-europe"></i> nf-co.re/tools#singularity-cache-directory](https://nf-co.re/tools#singularity-cache-directory)
 * Stay tuned for future `nf-core/bytesize`
 
 Note:
@@ -235,7 +235,7 @@ Note:
 
 ## Get involved
 
-[<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+[<i class="fa-solid fa-earth-europe"></i> nf-co.re/join](https://nf-co.re/join)
 
 <img src="/assets/img/svg/social_media_2021.svg" title="GitHub, Slack, Twitter and YouTube" alt="GitHub, Slack, Twitter and YouTube"/>
 
@@ -267,15 +267,15 @@ Note:
 
 ## Join us
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/join](https://nf-co.re/join)
 
 ## References
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re/usage/offline](https://nf-co.re/usage/offline)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/tools#downloading-pipelines-for-offline-use](https://nf-co.re/tools#downloading-pipelines-for-offline-use)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/tools#singularity-cache-directory](https://nf-co.re/tools#singularity-cache-directory)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/usage/offline](https://nf-co.re/usage/offline)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/tools#downloading-pipelines-for-offline-use](https://nf-co.re/tools#downloading-pipelines-for-offline-use)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/tools#singularity-cache-directory](https://nf-co.re/tools#singularity-cache-directory)
 
-* [<i class="fas fa-images"></i> maxulysse.github.io/bytesize_8](https://maxulysse.github.io/bytesize_8)
+* [<i class="fa-solid fa-images"></i> maxulysse.github.io/bytesize_8](https://maxulysse.github.io/bytesize_8)
 
 Note:
 

@@ -17,9 +17,9 @@ Maxime Garcia
 
 [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
 
-[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+[<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
-[<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020](/jobim2020)
+[<i class="fa-solid fa-earth-europe"></i> maxulysse.github.io/jobim2020](/jobim2020)
 
 [JOBIM 2020](https://jobim2020.sciencesconf.org/) - Montpellier, France [virtual] - 2020/07/01
 </small>
@@ -93,7 +93,7 @@ Note:
 
 ===
 
-## <i class="fas fa-project-diagram"></i> Data driven language
+## <i class="fa-solid fa-project-diagram"></i> Data driven language
 
 The execution graph depends on the input data,
 
@@ -124,9 +124,9 @@ Note:
 
 [www.nextflow.io/docs/latest/executor.html](https://www.nextflow.io/docs/latest/executor.html)
 
-* <i class="fas fa-server"></i> Sun Grid Engine, SLURM, PBS/Torque, OAR ...
+* <i class="fa-solid fa-server"></i> Sun Grid Engine, SLURM, PBS/Torque, OAR ...
 
-* <i class="fas fa-cloud"></i> AWS Batch, Kubernetes, Google Life Sciences
+* <i class="fa-solid fa-cloud"></i> AWS Batch, Kubernetes, Google Life Sciences
 
 Note:
 
@@ -174,7 +174,7 @@ Note:
 
 [![nf-core](/assets/img/svg/nf-core_logo.svg "nf-core")](https://nf-co.re/) <!-- .element class="image-25" -->
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/join](https://nf-co.re/join)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/join](https://nf-co.re/join)
 
 <div class="fragment fade-in">
 
@@ -209,7 +209,7 @@ Note:
 
 ===
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/pipelines](https://nf-co.re/pipelines)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/pipelines](https://nf-co.re/pipelines)
 
 <div class="r-stack">
   <img src="/assets/img/slides/nf-core_latest_pipelines_20200629.png" title="nf-core latest released pipelines" alt="nf-core latest released pipelines" class="image-50 fragment fade-out" data-fragment-index="0"/>
@@ -230,7 +230,7 @@ Note:
 
 ## Pipeline requirements
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/developers/guidelines](https://nf-co.re/developers/guidelines)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/developers/guidelines](https://nf-co.re/developers/guidelines)
 
 * Nextflow based
 * Common structure (based on the nf-core template)
@@ -251,7 +251,7 @@ Note:
 
 ## A companion tool
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/tools](https://nf-co.re/tools)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/tools](https://nf-co.re/tools)
 
 * [nf-core list](https://nf-co.re/tools#listing-pipelines) - List available pipelines
 * [nf-core launch](https://nf-co.re/tools#launch-a-pipeline) - Run pipeline with interactive prompts
@@ -269,7 +269,7 @@ Note:
 
 ## Making a pipeline
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/tools#creating-a-new-workflow](https://nf-co.re/tools#creating-a-new-workflow)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/tools#creating-a-new-workflow](https://nf-co.re/tools#creating-a-new-workflow)
 
 [![nf-core create](/assets/img/slides/nf-core_create_jobim.png "nf-core create")](https://nf-co.re/tools#creating-a-new-workflow) <!-- .element class="image-75" -->
 
@@ -339,7 +339,7 @@ Note:
 
 ---
 
-## <i class="fas fa-users-cog"></i> Core team
+## <i class="fa-solid fa-users-cog"></i> Core team
 
 [![@alneberg](/assets/img/slides/alneberg.jpeg)](https://github.com/alneberg) <!-- .element class="image-50 avatar" --> | [![@apeltzer](/assets/img/slides/apeltzer.jpeg)](https://github.com/apeltzer) <!-- .element class="image-50 avatar" --> | [![@drpatelh](/assets/img/slides/drpatelh.jpeg)](https://github.com/drpatelh) <!-- .element class="image-50 avatar" --> | [![@ewels](/assets/img/slides/ewels.jpeg)](https://github.com/ewels) <!-- .element class="image-50 avatar" -->
 :-:|:-:|:-:|:-:
@@ -359,9 +359,9 @@ The nf-core framework for community-curated bioinformatics pipelines
 
 ---
 
-## <i class="fas fa-chart-bar"></i> Extensive statistics
+## <i class="fa-solid fa-chart-bar"></i> Extensive statistics
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/stats](https://nf-co.re/stats)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/stats](https://nf-co.re/stats)
 
 [![nf-core stats](/assets/img/slides/nf-core_stats_jobim.png "nf-core stats")](https://nf-co.re/stats) <!-- .element class="image-50" -->
 
@@ -371,9 +371,9 @@ Note:
 
 ---
 
-## <i class="fas fa-laptop-code"></i> Hackathons
+## <i class="fa-solid fa-laptop-code"></i> Hackathons
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/events](https://nf-co.re/events)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/events](https://nf-co.re/events)
 
 [![Hackathon at Crick 2020](/assets/img/slides/nf-core_hackathon_crick2020.jpg "Hackathon at Crick 2020")](https://nf-co.re/events/2020/hackathon-francis-crick-2020) <!-- .element class="image-50" -->
 
@@ -381,23 +381,23 @@ Note:
 
 Next one is online from July 13th to 17th:
 
-[<i class="fa fa-globe-europe"></i> https://nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
+[<i class="fa-solid fa-earth-europe"></i> https://nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
 
 </div>
 
 ---
 
-## <i class="fas fa-home"></i> Stay at home message
+## <i class="fa-solid fa-home"></i> Stay at home message
 
 ===
 
-* <i class="fas fa-industry"></i> Facilities
+* <i class="fa-solid fa-industry"></i> Facilities
   * Highly optimised pipelines with excellent reporting
   * Validated releases ensure reproducibility
-* <i class="fas fa-users"></i> Users
+* <i class="fa-solid fa-users"></i> Users
   * Portable, documented and easy to use pipelines
   * Easy to share between different collaborators
-* <i class="fas fa-laptop-code"></i> Developers
+* <i class="fa-solid fa-laptop-code"></i> Developers
   * Companion templates and tools help to validate your code and simplify common tasks
 
 ---
@@ -414,10 +414,10 @@ Next one is online from July 13th to 17th:
 
 ## Any questions
 
-* [<i class="fa fa-globe-europe"></i> nf-co.re](https://nf-co.re/)
-* [<i class="fa fa-globe-europe"></i> maxulysse.github.io/jobim2020](/jobim2020)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/join](https://nf-co.re/join)
-* [<i class="fa fa-globe-europe"></i> nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re](https://nf-co.re/)
+* [<i class="fa-solid fa-earth-europe"></i> maxulysse.github.io/jobim2020](/jobim2020)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/join](https://nf-co.re/join)
+* [<i class="fa-solid fa-earth-europe"></i> nf-co.re/events/2020/hackathon-july-2020](https://nf-co.re/events/2020/hackathon-july-2020)
 * [<i class="fab fa-github"></i> @nf-core](https://github.com/nf-core)
 * [<i class="fab fa-twitter"></i> @nf_core](https://twitter.com/nf_core)
 * [<i class="fab fa-youtube"></i> @nf-core](https://www.youtube.com/c/nf-core)
