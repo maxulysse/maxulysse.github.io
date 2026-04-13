@@ -68,7 +68,7 @@ const searchItems = allPosts
         type="application/json"
         set:text={JSON.stringify(searchItems)}
     ></script>
-    <script>
+    <script lang="ts">
         type SearchItem = {
             id: string;
             title: string;
