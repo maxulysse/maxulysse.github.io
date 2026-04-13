@@ -14,7 +14,7 @@ image:
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
@@ -214,4 +214,4 @@ If in doubt, please ask for help on Slack.
 
 If you have any suggestions for how to improve this tutorial, or spot any mistakes, please create an issue or pull request on the [nf-core/nf-co.re repository](https://github.com/nf-core/nf-co.re).
 
-> [Phil Ewels](https://github.com/ewels/), [Maxime Garcia](https://github.com/MaxUlysse) for _nf-core_, February 2021
+> [Phil Ewels](https://github.com/ewels/), [Maxime Garcia](https://github.com/maxulysse) for _nf-core_, February 2021

@@ -14,7 +14,7 @@ redirects: ["/bytesize_2"]
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
@@ -277,7 +277,7 @@ Note:
 
 __NB:__ Don't forget docs and CI tests.
 
-_cf_ [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
+_cf_ [<i class="fab fa-github"></i> github.com/maxulysse/nf-core_configs/tree/my_hpc](https://github.com/maxulysse/nf-core_configs/tree/my_hpc)
 
 </div>
 
@@ -371,7 +371,7 @@ includeConfig 'my_conf.config'
 
 ```text
 nextflow run nf-core/eager -r 2.3.1 -profile my_hpc --project MUG_210209 /
-  --custom_config_base https://raw.githubusercontent.com/MaxUlysse/nf-core_configs/my_hpc /
+  --custom_config_base https://raw.githubusercontent.com/maxulysse/nf-core_configs/my_hpc /
   --genome false /
   --fasta /data1/maxime/workspace/nf-core/eager/data/reference/Mammoth/Mammoth_MT_Krause.fasta /
   --input /data1/maxime/workspace/nf-core/eager/data/testdata/Mammoth/mammoth_design_fastq.tsv
@@ -433,7 +433,7 @@ Note:
 * [<i class="fa-solid fa-earth-europe"></i> nextflow.io/docs/latest/config.html](https://www.nextflow.io/docs/latest/config.html)
 * [<i class="fab fa-github"></i> github.com/nf-core/configs](https://github.com/nf-core/configs)
 * [<i class="fa-solid fa-images"></i> maxulysse.github.io/bytesize_2](https://maxulysse.github.io/bytesize_2)
-* [<i class="fab fa-github"></i> github.com/MaxUlysse/nf-core_configs/tree/my_hpc](https://github.com/MaxUlysse/nf-core_configs/tree/my_hpc)
+* [<i class="fab fa-github"></i> github.com/maxulysse/nf-core_configs/tree/my_hpc](https://github.com/maxulysse/nf-core_configs/tree/my_hpc)
 
 Note:
 

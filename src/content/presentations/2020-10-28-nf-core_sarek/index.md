@@ -14,7 +14,7 @@ redirects: ["/vcbs2020"]
 
 <small>
 
-Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) / [<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [<i class="fa-solid fa-earth-europe"></i> maxulysse.github.io/vcbs2020](/vcbs2020)
 

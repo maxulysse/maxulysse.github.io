@@ -17,7 +17,7 @@ Maxime Garcia
 
 [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
 
-[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+[<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 Sarek flash presentation [virtual] - 2020/09/18
 

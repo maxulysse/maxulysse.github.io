@@ -14,7 +14,7 @@ If you missed [this article (in french)](https://bioinfo-fr.net/un-bookmarklet-p
  [Bookmarklets <i class="fa-brands fa-wikipedia-w" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/Bookmarklet), one click tools, are little scripts stored as URL in a bookmark, or as an hyperlink in a web page. Coded in JavaScript, they add new functionalities, and can even call more complex scripts, stored somewhere else.
 
 The code here is very simple :
-<script src="https://gist.github.com/MaxUlysse/6218598.js"></script>
+<script src="https://gist.github.com/maxulysse/6218598.js"></script>
 
 `javascript`: The language used for writing the bookmarklet.
 

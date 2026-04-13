@@ -16,7 +16,7 @@ Maxime Garcia
 
 [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau)
 
-[<i class="fab fa-github"></i> @MaxUlysse](https://github.com/MaxUlysse)
+[<i class="fab fa-github"></i> @maxulysse](https://github.com/maxulysse)
 
 [<i class="fa-solid fa-earth-europe"></i> /coffeencode2020](/coffeencode2020)
 
@@ -129,7 +129,7 @@ Be lazy and automate
 
 I do that on every project
 
-[maxulysse.github.io](https://github.com/MaxUlysse/maxulysse.github.io)
+[maxulysse.github.io](https://github.com/maxulysse/maxulysse.github.io)
 
 {% raw %}
 

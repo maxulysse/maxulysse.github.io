@@ -35,7 +35,7 @@ const currentUrl = Astro.url.pathname;
 // Convert blog URL path to source file path
 // e.g., /blog/2020/2020-07-01-jobim/ -> src/content/blog/2020/2020-07-01-jobim.md
 const pathSegments = currentUrl.split("/").filter(Boolean);
-const githubBaseUrl = "https://github.com/MaxUlysse/maxulysse.github.io";
+const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
 
 // Extract year and slug from path
 let editUrl = githubBaseUrl;
@@ -117,7 +117,7 @@ if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
             <div class="card-footer">
                 <small class="text-muted"
                     >This site is using <a
-                        href="https://github.com/MaxUlysse/maxulysse.github.io"
+                        href="https://github.com/maxulysse/maxulysse.github.io"
                         target="_blank"
                         rel="noopener"><i class="fab fa-github"></i> GitHub</a
                     > for versioning. You can fix this page by suggesting changes
