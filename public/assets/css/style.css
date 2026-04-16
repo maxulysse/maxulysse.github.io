@@ -130,32 +130,6 @@ body {
   padding: 1.5rem;
 }
 
-/* Academicons (local fallback) */
-@font-face {
-  font-family: "Academicons";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("/assets/webfonts/academicons/academicons.eot");
-  src:
-    url("/assets/webfonts/academicons/academicons.eot") format("embedded-opentype"),
-    url("/assets/webfonts/academicons/academicons.ttf") format("truetype"),
-    url("/assets/webfonts/academicons/academicons.woff") format("woff"),
-    url("/assets/webfonts/academicons/academicons.svg") format("svg");
-}
-
-.ai {
-  font-family: "Academicons";
-  font-weight: 400;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-}
-
 .ai-2x {
   font-size: 2em;
 }
@@ -355,6 +329,7 @@ footer {
 
 .nav-footer .ai-google-scholar:hover { color: #4885ed; }
 .nav-footer .ai-orcid:hover { color: #a6ce39; }
+.nav-footer .ai-hal:hover { color: #000000; }
 .nav-footer .fa-bluesky:hover { color: #1185fe; }
 .nav-footer .fa-github:hover { color: #000000; }
 .nav-footer .fa-instagram:hover { color: #000000; }

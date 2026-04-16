@@ -27,7 +27,7 @@ const socialMedia = [
   {
     name: "HAL",
     url: "https://cv.hal.science/maxime-garcia",
-    icon_svg: "/assets/img/icons/hal.svg",
+    academicons: "ai-hal",
   },
   {
     name: "Google Schoolar",
