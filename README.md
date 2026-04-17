@@ -2,18 +2,21 @@
 
 [![License](https://img.shields.io/github/license/maxulysse/maxulysse.github.io.svg)](https://github.com/maxulysse/maxulysse.github.io/blob/main/LICENSE)
 [![CI](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/ci.yml)
+[![build-cv](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/build-cv.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/build-cv.yml)
+[![Deploy to GitHub Pages](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/deploy.yml)
 
 Personal website built with [Astro](https://astro.build).
 
 ## Dependencies
 
-- [academicons](https://jpswalsh.github.io/academicons/) `1.9.6`
-- [Astro](https://astro.build/) `^5.2.0`
-- [@astrojs/rss](https://docs.astro.build/en/guides/rss/) `^4.0.1`
-- [Bootstrap](https://getbootstrap.com/) `5.3.8`
-- [Font Awesome](https://fontawesome.com/) `6.5.2`
-- [Prism](https://prismjs.com/) `1.29.0`
-- [Reveal.js](https://revealjs.com/) `5.2.1`
+- [Astro](https://astro.build/)
+- [@astrojs/rss](https://docs.astro.build/en/guides/rss/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [@orcid/bibtex-parse-js](https://github.com/ORCID/bibtexParseJs)
+- [Prism](https://prismjs.com/)
+- [Reveal.js](https://revealjs.com/)
+- [academicons](https://jpswalsh.github.io/academicons/)
 
 ## Inspirations
 
@@ -66,3 +69,12 @@ src/data/         Site data (authors, social links)
 ## Deployment
 
 Deployment is handled by GitHub Actions to GitHub Pages.
+
+## CV Automation
+
+The CV PDF is rebuilt automatically by the [build-cv workflow](.github/workflows/build-cv.yml).
+Generation is done via the [maxulysse/compile-latex](https://github.com/maxulysse/compile-latex) Nextflow lightweight pipeline.
+
+- Triggered on pushes to `main` when either `src/data/CV-MGarcia.tex` or `src/data/biblio.bib` changes
+- Can also be run on demand with `workflow_dispatch` from the GitHub Actions UI
+- Generates `CV-MGarcia-latest.pdf` and force-pushes it to the `cv` branch
