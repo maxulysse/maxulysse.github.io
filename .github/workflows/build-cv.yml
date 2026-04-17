@@ -25,9 +25,11 @@ jobs:
           java-version: "17"
 
       - name: Set up Nextflow
-        uses: nf-core/setup-nextflow@v2
-        with:
-          version: "25.10.4"
+        run: |
+          export NXF_VER=25.10.4
+          curl -fsSL https://get.nextflow.io | bash
+          sudo mv nextflow /usr/local/bin/nextflow
+          nextflow -version
 
       - name: Compile latest CV
         run: nextflow run maxulysse/compile-latex -r 3.0.1 -profile docker --outdir . --github_avatar 'https://avatars.githubusercontent.com/u/1019628?s=300&v=4' --input src/data/CV-MGarcia.tex --outname CV-MGarcia-latest.pdf --biblio src/data/biblio.bib
