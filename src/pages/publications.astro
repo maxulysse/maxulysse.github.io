@@ -101,7 +101,7 @@ function normalizeTags(entry: BibEntry): NormalizedTags {
     ) as NormalizedTags;
 }
 
-function parseMonth(month: string): number {
+function parseMonth(month?: string): number {
     if (!month) return 0;
 
     const numeric = Number.parseInt(month, 10);
@@ -113,12 +113,12 @@ function parseMonth(month: string): number {
     return monthOrder[normalized] ?? 0;
 }
 
-function parseYear(year: string): number {
+function parseYear(year?: string): number {
     const parsed = Number.parseInt(year ?? "", 10);
     return Number.isNaN(parsed) ? 0 : parsed;
 }
 
-function formatAuthors(author: string): string {
+function formatAuthors(author?: string): string {
     if (!author) return "";
     const authors = author.split(/\s+and\s+/i).map((a) => a.trim());
     const first = authors[0];
@@ -217,7 +217,7 @@ function buildVenue(tags: NormalizedTags): string {
     return venueParts.join(", ");
 }
 
-function toIsoDateString(value: string): string {
+function toIsoDateString(value?: string): string {
     if (!value) return "";
 
     const normalized = value.trim().replace(/\//g, "-");
@@ -254,11 +254,11 @@ const publications: Publication[] = entries
         const tags = normalizeTags(entry);
         return {
             id: entry.citationKey,
-            section: tags.section,
+            section: tags.section ?? "",
             year: parseYear(tags.year),
             month: parseMonth(tags.month),
             authors: formatAuthors(tags.author),
-            title: tags.title,
+            title: tags.title ?? "",
             venue: buildVenue(tags),
             date: buildDate(tags),
             links: buildLinks(tags),
