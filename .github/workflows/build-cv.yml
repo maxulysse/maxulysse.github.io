@@ -1,7 +1,9 @@
 name: build-cv
 
 on:
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
+  # Trigger the workflow every time you push to the `main` branch
   push:
     branches:
       - main
@@ -9,15 +11,24 @@ on:
       - src/data/CV-MGarcia.tex
       - src/data/biblio.bib
 
+# Allow this job to clone the repo and create a cv build
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent build
+concurrency:
+  group: "cv"
+  cancel-in-progress: true
+
 jobs:
-  build-cv:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -35,7 +46,12 @@ jobs:
       - name: Compile latest CV
         run: nextflow run maxulysse/compile-latex -r 3.0.1 -profile docker --outdir . --github_avatar 'https://avatars.githubusercontent.com/u/1019628?s=300&v=4' --input src/data/CV-MGarcia.tex --outname CV-MGarcia-latest.pdf --biblio src/data/biblio.bib
 
-      - name: Commit and push to cv branch
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to cv branch
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "action@github.com"
