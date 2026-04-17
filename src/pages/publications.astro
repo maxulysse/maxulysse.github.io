@@ -200,7 +200,7 @@ function buildVenue(tags: NormalizedTags): string {
     const venueParts = [
         tags.journal,
         tags.booktitle,
-        tags.event,
+        tags.event_url ? undefined : tags.event,
         tags.location,
     ].filter(Boolean);
 
