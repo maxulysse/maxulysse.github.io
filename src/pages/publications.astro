@@ -3,7 +3,40 @@ import bibtexParse from "@orcid/bibtex-parse-js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import bibContent from "../data/publications.bib?raw";
 
-const sections = [
+type BibEntry = {
+    citationKey: string;
+    entryTags?: Record<string, unknown>;
+};
+
+type SectionConfig = {
+    id: string;
+    label: string;
+    icon: string;
+    sourceSections: string[];
+};
+
+type PublicationLink = {
+    href: string;
+    label: string;
+    iconClass?: string;
+    text?: string;
+};
+
+type Publication = {
+    id: string;
+    section: string;
+    year: number;
+    month: number;
+    authors: string;
+    title: string;
+    venue: string;
+    date: string;
+    links: PublicationLink[];
+};
+
+type NormalizedTags = Record<string, string>;
+
+const sections: SectionConfig[] = [
     {
         id: "thesis",
         label: "Thesis",
@@ -41,7 +74,7 @@ const sections = [
     },
 ];
 
-const monthOrder = {
+const monthOrder: Record<string, number> = {
     jan: 1,
     feb: 2,
     mar: 3,
@@ -56,19 +89,19 @@ const monthOrder = {
     dec: 12,
 };
 
-const entries = bibtexParse.toJSON(bibContent);
+const entries = bibtexParse.toJSON(bibContent) as BibEntry[];
 
-function normalizeTags(entry) {
+function normalizeTags(entry: BibEntry): NormalizedTags {
     const tags = entry.entryTags ?? {};
     return Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
             key.toLowerCase(),
             String(value ?? "").trim(),
         ]),
-    );
+    ) as NormalizedTags;
 }
 
-function parseMonth(month) {
+function parseMonth(month: string): number {
     if (!month) return 0;
 
     const numeric = Number.parseInt(month, 10);
@@ -80,28 +113,28 @@ function parseMonth(month) {
     return monthOrder[normalized] ?? 0;
 }
 
-function parseYear(year) {
+function parseYear(year: string): number {
     const parsed = Number.parseInt(year ?? "", 10);
     return Number.isNaN(parsed) ? 0 : parsed;
 }
 
-function formatAuthors(author) {
+function formatAuthors(author: string): string {
     if (!author) return "";
     const authors = author.split(/\s+and\s+/i).map((a) => a.trim());
     const first = authors[0];
     return authors.length > 1 ? `${first} et al.` : first;
 }
 
-function toPubMedUrl(pubmed) {
+function toPubMedUrl(pubmed: string): string {
     return `https://pubmed.ncbi.nlm.nih.gov/${pubmed}/`;
 }
 
-function toDoiUrl(doi) {
+function toDoiUrl(doi: string): string {
     return `https://doi.org/${doi}`;
 }
 
-function buildLinks(tags) {
-    const links = [];
+function buildLinks(tags: NormalizedTags): PublicationLink[] {
+    const links: PublicationLink[] = [];
 
     if (tags.pubmed) {
         links.push({
@@ -163,7 +196,7 @@ function buildLinks(tags) {
     return links;
 }
 
-function buildVenue(tags) {
+function buildVenue(tags: NormalizedTags): string {
     const venueParts = [
         tags.journal,
         tags.booktitle,
@@ -184,7 +217,7 @@ function buildVenue(tags) {
     return venueParts.join(", ");
 }
 
-function toIsoDateString(value) {
+function toIsoDateString(value: string): string {
     if (!value) return "";
 
     const normalized = value.trim().replace(/\//g, "-");
@@ -205,7 +238,7 @@ function toIsoDateString(value) {
     return `${year}-${monthPadded}-${String(dayInt).padStart(2, "0")}`;
 }
 
-function buildDate(tags) {
+function buildDate(tags: NormalizedTags): string {
     if (tags.date) return toIsoDateString(tags.date);
 
     const year = parseYear(tags.year);
@@ -216,8 +249,8 @@ function buildDate(tags) {
     return "";
 }
 
-const publications = entries
-    .map((entry) => {
+const publications: Publication[] = entries
+    .map((entry: BibEntry) => {
         const tags = normalizeTags(entry);
         return {
             id: entry.citationKey,
@@ -231,16 +264,16 @@ const publications = entries
             links: buildLinks(tags),
         };
     })
-    .filter((publication) => publication.section)
-    .sort((a, b) => {
+    .filter((publication: Publication) => publication.section)
+    .sort((a: Publication, b: Publication) => {
         if (a.year !== b.year) return b.year - a.year;
         return b.month - a.month;
     });
 
-const publicationsBySection = Object.fromEntries(
+const publicationsBySection: Record<string, Publication[]> = Object.fromEntries(
     sections.map((section) => [
         section.id,
-        publications.filter((publication) =>
+        publications.filter((publication: Publication) =>
             section.sourceSections.includes(publication.section),
         ),
     ]),
