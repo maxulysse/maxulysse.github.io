@@ -4,355 +4,373 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import bibContent from "../data/publications.bib?raw";
 
 const sections = [
-  {
-    id: "thesis",
-    label: "Thesis",
-    icon: "fa-solid fa-graduation-cap",
-    sourceSections: ["thesis"],
-  },
-  {
-    id: "research-outputs",
-    label: "Articles",
-    icon: "fa-solid fa-file-lines",
-    sourceSections: ["articles", "correspondences", "preprints", "chapters"],
-  },
-  {
-    id: "talks",
-    label: "Talks",
-    icon: "fa-solid fa-comments",
-    sourceSections: ["talks"],
-  },
-  {
-    id: "posters",
-    label: "Posters",
-    icon: "fa-solid fa-file-image",
-    sourceSections: ["posters"],
-  },
-  {
-    id: "outreach",
-    label: "Outreach",
-    icon: "fa-solid fa-users",
-    sourceSections: ["scientific-animation-workshop"],
-  },
+    {
+        id: "thesis",
+        label: "Thesis",
+        icon: "fa-solid fa-graduation-cap",
+        sourceSections: ["thesis"],
+    },
+    {
+        id: "research-outputs",
+        label: "Articles",
+        icon: "fa-solid fa-file-lines",
+        sourceSections: [
+            "articles",
+            "correspondences",
+            "preprints",
+            "chapters",
+        ],
+    },
+    {
+        id: "talks",
+        label: "Talks",
+        icon: "fa-solid fa-comments",
+        sourceSections: ["talks"],
+    },
+    {
+        id: "posters",
+        label: "Posters",
+        icon: "fa-solid fa-file-image",
+        sourceSections: ["posters"],
+    },
+    {
+        id: "outreach",
+        label: "Outreach",
+        icon: "fa-solid fa-users",
+        sourceSections: ["scientific-animation-workshop"],
+    },
 ];
 
 const monthOrder = {
-  jan: 1,
-  feb: 2,
-  mar: 3,
-  apr: 4,
-  may: 5,
-  jun: 6,
-  jul: 7,
-  aug: 8,
-  sep: 9,
-  oct: 10,
-  nov: 11,
-  dec: 12,
+    jan: 1,
+    feb: 2,
+    mar: 3,
+    apr: 4,
+    may: 5,
+    jun: 6,
+    jul: 7,
+    aug: 8,
+    sep: 9,
+    oct: 10,
+    nov: 11,
+    dec: 12,
 };
 
 const entries = bibtexParse.toJSON(bibContent);
 
 function normalizeTags(entry) {
-  const tags = entry.entryTags ?? {};
-  return Object.fromEntries(
-    Object.entries(tags).map(([key, value]) => [
-      key.toLowerCase(),
-      String(value ?? "").trim(),
-    ]),
-  );
+    const tags = entry.entryTags ?? {};
+    return Object.fromEntries(
+        Object.entries(tags).map(([key, value]) => [
+            key.toLowerCase(),
+            String(value ?? "").trim(),
+        ]),
+    );
 }
 
 function parseMonth(month) {
-  if (!month) return 0;
+    if (!month) return 0;
 
-  const numeric = Number.parseInt(month, 10);
-  if (!Number.isNaN(numeric) && numeric >= 1 && numeric <= 12) {
-    return numeric;
-  }
+    const numeric = Number.parseInt(month, 10);
+    if (!Number.isNaN(numeric) && numeric >= 1 && numeric <= 12) {
+        return numeric;
+    }
 
-  const normalized = month.toLowerCase().slice(0, 3);
-  return monthOrder[normalized] ?? 0;
+    const normalized = month.toLowerCase().slice(0, 3);
+    return monthOrder[normalized] ?? 0;
 }
 
 function parseYear(year) {
-  const parsed = Number.parseInt(year ?? "", 10);
-  return Number.isNaN(parsed) ? 0 : parsed;
+    const parsed = Number.parseInt(year ?? "", 10);
+    return Number.isNaN(parsed) ? 0 : parsed;
 }
 
 function formatAuthors(author) {
-  if (!author) return "";
-  const authors = author.split(/\s+and\s+/i).map((a) => a.trim());
-  const first = authors[0];
-  return authors.length > 1 ? `${first} et al.` : first;
+    if (!author) return "";
+    const authors = author.split(/\s+and\s+/i).map((a) => a.trim());
+    const first = authors[0];
+    return authors.length > 1 ? `${first} et al.` : first;
 }
 
 function toPubMedUrl(pubmed) {
-  return `https://pubmed.ncbi.nlm.nih.gov/${pubmed}/`;
+    return `https://pubmed.ncbi.nlm.nih.gov/${pubmed}/`;
 }
 
 function toDoiUrl(doi) {
-  return `https://doi.org/${doi}`;
+    return `https://doi.org/${doi}`;
 }
 
 function buildLinks(tags) {
-  const links = [];
+    const links = [];
 
-  if (tags.pubmed) {
-    links.push({
-      href: toPubMedUrl(tags.pubmed),
-      iconClass: "ai ai-pubmed",
-      label: "PubMed",
-    });
-  }
-  if (tags.doi) {
-    links.push({
-      href: toDoiUrl(tags.doi),
-      iconClass: "ai ai-doi",
-      label: "DOI",
-    });
-  }
-  if (tags.url) {
-    links.push({
-      href: tags.url,
-      iconClass: "fa-solid fa-earth-europe",
-      label: "Link",
-    });
-  }
-  if (tags.pdf) {
-    links.push({
-      href: tags.pdf,
-      iconClass: "fa-solid fa-file-pdf",
-      label: "PDF",
-    });
-  }
-  if (tags.github) {
-    links.push({
-      href: tags.github,
-      iconClass: "fab fa-github",
-      label: "GitHub",
-    });
-  }
-  if (tags.slides) {
-    links.push({
-      href: tags.slides,
-      iconClass: "fa-solid fa-chalkboard-user",
-      label: "Slides",
-    });
-  }
-  if (tags.video) {
-    links.push({
-      href: tags.video,
-      iconClass: "fab fa-youtube",
-      label: "Video",
-    });
-  }
-  if (tags.event_url && tags.event) {
-    links.push({
-      href: tags.event_url,
-      text: tags.event,
-      label: tags.event,
-    });
-  }
+    if (tags.pubmed) {
+        links.push({
+            href: toPubMedUrl(tags.pubmed),
+            iconClass: "ai ai-pubmed",
+            label: "PubMed",
+        });
+    }
+    if (tags.doi) {
+        links.push({
+            href: toDoiUrl(tags.doi),
+            iconClass: "ai ai-doi",
+            label: "DOI",
+        });
+    }
+    if (tags.url) {
+        links.push({
+            href: tags.url,
+            iconClass: "fa-solid fa-earth-europe",
+            label: "Link",
+        });
+    }
+    if (tags.pdf) {
+        links.push({
+            href: tags.pdf,
+            iconClass: "fa-solid fa-file-pdf",
+            label: "PDF",
+        });
+    }
+    if (tags.github) {
+        links.push({
+            href: tags.github,
+            iconClass: "fab fa-github",
+            label: "GitHub",
+        });
+    }
+    if (tags.slides) {
+        links.push({
+            href: tags.slides,
+            iconClass: "fa-solid fa-chalkboard-user",
+            label: "Slides",
+        });
+    }
+    if (tags.video) {
+        links.push({
+            href: tags.video,
+            iconClass: "fab fa-youtube",
+            label: "Video",
+        });
+    }
+    if (tags.event_url && tags.event) {
+        links.push({
+            href: tags.event_url,
+            text: tags.event,
+            label: tags.event,
+        });
+    }
 
-  return links;
+    return links;
 }
 
 function buildVenue(tags) {
-  const venueParts = [
-    tags.journal,
-    tags.booktitle,
-    tags.event,
-    tags.location,
-  ].filter(Boolean);
+    const venueParts = [
+        tags.journal,
+        tags.booktitle,
+        tags.event,
+        tags.location,
+    ].filter(Boolean);
 
-  const details = [
-    tags.volume && `vol. ${tags.volume}`,
-    tags.number && `no. ${tags.number}`,
-    tags.pages && `pp. ${tags.pages}`,
-  ].filter(Boolean);
+    const details = [
+        tags.volume && `vol. ${tags.volume}`,
+        tags.number && `no. ${tags.number}`,
+        tags.pages && `pp. ${tags.pages}`,
+    ].filter(Boolean);
 
-  if (details.length > 0) {
-    venueParts.push(details.join(", "));
-  }
+    if (details.length > 0) {
+        venueParts.push(details.join(", "));
+    }
 
-  return venueParts.join(", ");
+    return venueParts.join(", ");
 }
 
 function toIsoDateString(value) {
-  if (!value) return "";
+    if (!value) return "";
 
-  const normalized = value.trim().replace(/\//g, "-");
-  const match = normalized.match(/^(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?$/);
-  if (!match) return value;
+    const normalized = value.trim().replace(/\//g, "-");
+    const match = normalized.match(/^(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?$/);
+    if (!match) return value;
 
-  const [, year, month, day] = match;
-  if (!month) return year;
+    const [, year, month, day] = match;
+    if (!month) return year;
 
-  const monthInt = Number.parseInt(month, 10);
-  if (Number.isNaN(monthInt) || monthInt < 1 || monthInt > 12) return value;
-  const monthPadded = String(monthInt).padStart(2, "0");
+    const monthInt = Number.parseInt(month, 10);
+    if (Number.isNaN(monthInt) || monthInt < 1 || monthInt > 12) return value;
+    const monthPadded = String(monthInt).padStart(2, "0");
 
-  if (!day) return `${year}-${monthPadded}`;
+    if (!day) return `${year}-${monthPadded}`;
 
-  const dayInt = Number.parseInt(day, 10);
-  if (Number.isNaN(dayInt) || dayInt < 1 || dayInt > 31) return value;
-  return `${year}-${monthPadded}-${String(dayInt).padStart(2, "0")}`;
+    const dayInt = Number.parseInt(day, 10);
+    if (Number.isNaN(dayInt) || dayInt < 1 || dayInt > 31) return value;
+    return `${year}-${monthPadded}-${String(dayInt).padStart(2, "0")}`;
 }
 
 function buildDate(tags) {
-  if (tags.date) return toIsoDateString(tags.date);
+    if (tags.date) return toIsoDateString(tags.date);
 
-  const year = parseYear(tags.year);
-  const month = parseMonth(tags.month);
+    const year = parseYear(tags.year);
+    const month = parseMonth(tags.month);
 
-  if (year && month) return `${year}-${String(month).padStart(2, "0")}`;
-  if (year) return String(year);
-  return "";
+    if (year && month) return `${year}-${String(month).padStart(2, "0")}`;
+    if (year) return String(year);
+    return "";
 }
 
 const publications = entries
-  .map((entry) => {
-    const tags = normalizeTags(entry);
-    return {
-      id: entry.citationKey,
-      section: tags.section,
-      year: parseYear(tags.year),
-      month: parseMonth(tags.month),
-      authors: formatAuthors(tags.author),
-      title: tags.title,
-      venue: buildVenue(tags),
-      date: buildDate(tags),
-      links: buildLinks(tags),
-    };
-  })
-  .filter((publication) => publication.section)
-  .sort((a, b) => {
-    if (a.year !== b.year) return b.year - a.year;
-    return b.month - a.month;
-  });
+    .map((entry) => {
+        const tags = normalizeTags(entry);
+        return {
+            id: entry.citationKey,
+            section: tags.section,
+            year: parseYear(tags.year),
+            month: parseMonth(tags.month),
+            authors: formatAuthors(tags.author),
+            title: tags.title,
+            venue: buildVenue(tags),
+            date: buildDate(tags),
+            links: buildLinks(tags),
+        };
+    })
+    .filter((publication) => publication.section)
+    .sort((a, b) => {
+        if (a.year !== b.year) return b.year - a.year;
+        return b.month - a.month;
+    });
 
 const publicationsBySection = Object.fromEntries(
-  sections.map((section) => [
-    section.id,
-    publications.filter((publication) =>
-      section.sourceSections.includes(publication.section),
-    ),
-  ]),
+    sections.map((section) => [
+        section.id,
+        publications.filter((publication) =>
+            section.sourceSections.includes(publication.section),
+        ),
+    ]),
 );
 ---
 
 <BaseLayout
-  title="Publications"
-  description="Maxime Garcia, PhD in Bioinformatics"
+    title="Publications"
+    description="Maxime Garcia, PhD in Bioinformatics"
 >
-  <div class="card-columns only-one-column">
-    <div class="card bg-light">
-      <div class="card-body">
-        <h6 class="card-text text-muted">
-          {
-            sections.map((section, index) => (
-              <>
-                <a href={`#${section.id}`}>{section.label}</a>
-                {index < sections.length - 1 && " • "}
-              </>
-            ))
-          }
-        </h6>
-      </div>
-    </div>
-
-    {
-      sections.map((section) => {
-        const sectionPublications = publicationsBySection[section.id] ?? [];
-        if (sectionPublications.length === 0) return null;
-
-        return (
-          <div class="card">
-            <a id={section.id}></a>
-            <div class="card-header h2 header-link">
-              <i class={section.icon}></i> {section.label}
-              <a href={`#${section.id}`}>
-                <i class="fa-solid fa-link link-icon"></i>
-              </a>
+    <div class="card-columns only-one-column">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h6 class="card-text text-muted">
+                    {
+                        sections.map((section, index) => (
+                            <>
+                                <a href={`#${section.id}`}>{section.label}</a>
+                                {index < sections.length - 1 && " • "}
+                            </>
+                        ))
+                    }
+                </h6>
             </div>
-            <ul class="publications-list mb-0">
-              {sectionPublications.map((publication) => (
-                <li id={publication.id}>
-                  {publication.authors && <>{publication.authors}, </>}
-                  <em>{publication.title}</em>
-                  {(publication.venue || publication.date) && ", "}
-                  {publication.venue}
-                  {publication.venue && publication.date && ", "}
-                  {publication.date}
-                  .
-                  {publication.links.length > 0 && (
-                    <span class="publication-links">
-                      {publication.links.map((link) => (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={link.label}
-                          title={link.label}
-                        >
-                          {link.text ? link.text : <i class={link.iconClass}></i>}
-                        </a>
-                      ))}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      })
-    }
-  </div>
+        </div>
+
+        {
+            sections.map((section) => {
+                const sectionPublications =
+                    publicationsBySection[section.id] ?? [];
+                if (sectionPublications.length === 0) return null;
+
+                return (
+                    <div class="card">
+                        <a id={section.id} />
+                        <div class="card-header h2 header-link">
+                            <i class={section.icon} /> {section.label}
+                            <a href={`#${section.id}`}>
+                                <i class="fa-solid fa-link link-icon" />
+                            </a>
+                        </div>
+                        <ul class="publications-list mb-0">
+                            {sectionPublications.map((publication) => (
+                                <li id={publication.id}>
+                                    {publication.authors && (
+                                        <>{publication.authors}, </>
+                                    )}
+                                    <em>{publication.title}</em>
+                                    {(publication.venue || publication.date) &&
+                                        ", "}
+                                    {publication.venue}
+                                    {publication.venue &&
+                                        publication.date &&
+                                        ", "}
+                                    {publication.date}.
+                                    {publication.links.length > 0 && (
+                                        <span class="publication-links">
+                                            {publication.links.map((link) => (
+                                                <a
+                                                    href={link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={link.label}
+                                                    title={link.label}
+                                                >
+                                                    {link.text ? (
+                                                        link.text
+                                                    ) : (
+                                                        <i
+                                                            class={
+                                                                link.iconClass
+                                                            }
+                                                        />
+                                                    )}
+                                                </a>
+                                            ))}
+                                        </span>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                );
+            })
+        }
+    </div>
 </BaseLayout>
 
 <style>
-  .header-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+    .header-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
-  .link-icon {
-    font-size: 0.8em;
-    opacity: 0.6;
-  }
+    .link-icon {
+        font-size: 0.8em;
+        opacity: 0.6;
+    }
 
-  .header-link a {
-    text-decoration: none;
-    color: inherit;
-  }
+    .header-link a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-  .header-link a:hover .link-icon {
-    opacity: 1;
-  }
+    .header-link a:hover .link-icon {
+        opacity: 1;
+    }
 
-  .publications-list {
-    margin: 0;
-    padding-left: 1.25rem;
-  }
+    .publications-list {
+        margin: 0;
+        padding-left: 1.25rem;
+    }
 
-  .publications-list li {
-    padding: 0.75rem 0;
-  }
+    .publications-list li {
+        padding: 0.75rem 0;
+    }
 
-  .publications-list li + li {
-    border-top: 1px solid var(--list-divider-color);
-  }
+    .publications-list li + li {
+        border-top: 1px solid var(--list-divider-color);
+    }
 
-  .publication-links {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-left: 0.5rem;
-  }
+    .publication-links {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-left: 0.5rem;
+    }
 
-  .publication-links a {
-    text-decoration: none;
-  }
+    .publication-links a {
+        text-decoration: none;
+    }
 </style>

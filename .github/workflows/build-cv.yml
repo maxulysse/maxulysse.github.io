@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-  pull_request:
+    paths:
+      - src/data/CV-MGarcia.tex
+      - src/data/biblio.bib
 
 jobs:
   build-cv:
