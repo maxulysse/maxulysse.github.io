@@ -34,7 +34,7 @@ type Publication = {
     links: PublicationLink[];
 };
 
-type NormalizedTags = Record<string, string>;
+type NormalizedTags = Record<string, string | undefined>;
 
 const sections: SectionConfig[] = [
     {
