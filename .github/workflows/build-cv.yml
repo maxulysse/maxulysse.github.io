@@ -11,12 +11,6 @@ on:
       - src/data/CV-MGarcia.tex
       - src/data/biblio.bib
 
-# Allow this job to clone the repo and create a cv build
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 # Allow one concurrent build
 concurrency:
   group: "cv"
@@ -25,13 +19,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
         with:
           distribution: temurin
           java-version: "17"
@@ -49,6 +45,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Deploy to cv branch
@@ -58,5 +56,9 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout -B cv
           git add -f CV-MGarcia-latest.pdf
+          if git diff --staged --quiet; then
+            echo "No CV changes to commit"
+            exit 0
+          fi
           git commit -m "Update CV - $(date +%Y-%m-%d)"
           git push -f origin cv
