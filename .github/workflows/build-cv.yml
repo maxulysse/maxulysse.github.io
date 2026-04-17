@@ -1,6 +1,7 @@
 name: build-cv
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -35,7 +36,7 @@ jobs:
         run: nextflow run maxulysse/compile-latex -r 3.0.1 -profile docker --outdir . --github_avatar 'https://avatars.githubusercontent.com/u/1019628?s=300&v=4' --input src/data/CV-MGarcia.tex --outname CV-MGarcia-latest.pdf --biblio src/data/biblio.bib
 
       - name: Commit and push to cv branch
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
