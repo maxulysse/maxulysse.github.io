@@ -1,0 +1,39 @@
+name: build-cv
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Nextflow
+        uses: nf-core/setup-nextflow@v2
+        with:
+          version: "25.10.4"
+
+      - name: Compile latest CV
+        run: nextflow run maxulysse/compile-latex -r 3.0.1 -profile docker --outdir . --github_avatar 'https://avatars.githubusercontent.com/u/1019628?s=300&v=4' --input src/data/CV-MGarcia.tex --outname CV-MGarcia-latest.pdf --biblio src/data/biblio.bib
+
+      - name: Commit and push to cv branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -B cv
+          git add -f CV-MGarcia-latest.pdf
+          git commit -m "Update CV - $(date +%Y-%m-%d)"
+          git push -f origin cv
