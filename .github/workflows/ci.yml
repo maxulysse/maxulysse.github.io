@@ -28,6 +28,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        # TODO: Remove --legacy-peer-deps when @astrojs/check supports TypeScript 6.
         run: npm ci --legacy-peer-deps
 
       - name: Run Astro type check
@@ -49,6 +50,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        # TODO: Remove --legacy-peer-deps when @astrojs/check supports TypeScript 6.
         run: npm ci --legacy-peer-deps
 
       - name: Install prek
