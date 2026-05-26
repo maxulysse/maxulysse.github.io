@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog");
@@ -8,7 +8,7 @@ const sortedPosts = allPosts
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 // Group posts by year
-const postsByYear: { [key: string]: any[] } = {};
+const postsByYear: { [key: string]: CollectionEntry<"blog">[] } = {};
 for (const post of sortedPosts) {
     const year = post.data.date.getFullYear().toString();
     if (!postsByYear[year]) {
@@ -67,7 +67,7 @@ const years = Object.keys(postsByYear).sort(
                                                     .split("T")[0]
                                             }
                                         </small>
-                                        <a href={`/blog/${post.slug}/`}>
+                                        <a href={`/blog/${post.id}/`}>
                                             {post.data.title}
                                         </a>
                                     </li>
