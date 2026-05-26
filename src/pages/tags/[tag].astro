@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
+import { getAllPosts } from "../../lib/posts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const allPosts = await getCollection("blog");
+const allPosts = await getAllPosts();
 
 // Collect all tags
 const allTags = new Set<string>();
@@ -15,7 +15,7 @@ for (const post of allPosts) {
 const sortedTags = Array.from(allTags).sort();
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog");
+    const posts = await getAllPosts();
     const tags = new Set<string>();
 
     posts.forEach((post) => {
