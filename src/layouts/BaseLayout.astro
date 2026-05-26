@@ -108,6 +108,7 @@ const currentPath = Astro.url.pathname;
         />
     </head>
     <body data-theme="light">
+        <a class="skip-link" href="#main-content">Skip to main content</a>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                 <a class="navbar-brand" href="/">
@@ -203,7 +204,7 @@ const currentPath = Astro.url.pathname;
                 </div>
             </nav>
 
-            <main class="page-content" aria-label="Content">
+            <main id="main-content" class="page-content" aria-label="Content">
                 <slot />
             </main>
 
@@ -343,5 +344,22 @@ const currentPath = Astro.url.pathname;
                 .getElementById("theme-toggle")
                 ?.addEventListener("click", toggleTheme);
         </script>
+
+        <style>
+            .skip-link {
+                position: absolute;
+                top: -100%;
+                left: 0;
+                z-index: 10000;
+                padding: 0.5rem 1rem;
+                background: #212529;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .skip-link:focus {
+                top: 0;
+            }
+        </style>
     </body>
 </html>
