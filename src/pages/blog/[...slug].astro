@@ -19,7 +19,7 @@ const allEntries = await getCollection("blog");
 const entry = allEntries.find((e) => e.id === slug);
 
 if (!entry) {
-    return Astro.redirect("/");
+    return Astro.redirect("/404");
 }
 
 const normalizeDate = (value: unknown) => {
