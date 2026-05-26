@@ -64,3 +64,4 @@ jobs:
 
       - name: Run prek hooks
         run: prek run --all-files
+
