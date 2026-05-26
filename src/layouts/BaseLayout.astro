@@ -63,14 +63,20 @@ const currentPath = Astro.url.pathname;
         {imageUrl && <meta property="og:image" content={imageUrl} />}
         {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
+        <meta property="og:locale" content="en_US" />
         <meta name="author" content={authorInfo.name} />
         <meta name="twitter:site" content={`@${authorInfo.twitter}`} />
         <meta name="twitter:creator" content={`@${authorInfo.twitter}`} />
         <meta property="og:type" content={title ? "article" : "website"} />
 
+        <meta name="theme-color" content="#f8f9fa" />
         <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
         <!-- Favicon -->
+        <link
+            rel="manifest"
+            href="/assets/img/favicons/site.webmanifest"
+        />
         <link
             rel="icon"
             type="image/png"
