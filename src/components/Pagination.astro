@@ -1,0 +1,69 @@
+---
+interface Props {
+    currentPage: number;
+    totalPages: number;
+}
+
+const { currentPage, totalPages } = Astro.props;
+
+const pageHref = (pageNum: number) =>
+    pageNum === 1 ? "/" : `/blog/page/${pageNum}/`;
+---
+
+{totalPages > 1 && (
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class={`page-item ${currentPage > 1 ? "" : "disabled"}`}>
+                {currentPage > 1 ? (
+                    <a
+                        class="page-link"
+                        href={pageHref(currentPage - 1)}
+                        aria-label="Previous"
+                    >
+                        <span aria-hidden="true">&laquo; Previous</span>
+                    </a>
+                ) : (
+                    <span class="page-link" aria-disabled="true">
+                        <span aria-hidden="true">&laquo; Previous</span>
+                    </span>
+                )}
+            </li>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (pageNum) => (
+                    <li
+                        class={`page-item ${pageNum === currentPage ? "disabled" : ""}`}
+                    >
+                        {pageNum === currentPage ? (
+                            <span class="page-link" aria-current="page" aria-disabled="true">
+                                {pageNum}
+                            </span>
+                        ) : (
+                            <a class="page-link" href={pageHref(pageNum)}>
+                                {pageNum}
+                            </a>
+                        )}
+                    </li>
+                ),
+            )}
+
+            <li
+                class={`page-item ${currentPage < totalPages ? "" : "disabled"}`}
+            >
+                {currentPage < totalPages ? (
+                    <a
+                        class="page-link"
+                        href={pageHref(currentPage + 1)}
+                        aria-label="Next"
+                    >
+                        <span aria-hidden="true">Next &raquo;</span>
+                    </a>
+                ) : (
+                    <span class="page-link" aria-disabled="true">
+                        <span aria-hidden="true">Next &raquo;</span>
+                    </span>
+                )}
+            </li>
+        </ul>
+    </nav>
+)}
