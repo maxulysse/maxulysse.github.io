@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-    entry: any;
+    entry: CollectionEntry<"blog">;
 }
 
 const { slug } = Astro.params;
@@ -31,7 +31,7 @@ const normalizeDate = (value: unknown) => {
     return match ? match[0] : "";
 };
 
-const findSlideRedirect = async (postEntry: any) => {
+const findSlideRedirect = async (postEntry: CollectionEntry<"blog">) => {
     const tags = (postEntry.data.tags || []).map((tag: string) =>
         tag.toLowerCase(),
     );

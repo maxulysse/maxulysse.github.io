@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog");
@@ -8,7 +8,7 @@ const sortedPosts = allPosts
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 // Group posts by tag
-const postsByTag: { [key: string]: any[] } = {};
+const postsByTag: { [key: string]: CollectionEntry<"blog">[] } = {};
 const tagOriginalCase: { [key: string]: string } = {};
 for (const post of sortedPosts) {
     if (post.data.tags) {
@@ -95,7 +95,7 @@ function getTagSize(count: number): number {
                                                     .split("T")[0]
                                             }
                                         </small>
-                                        <a href={`/blog/${post.slug}/`}>
+                                        <a href={`/blog/${post.id}/`}>
                                             {post.data.title}
                                         </a>
                                     </li>

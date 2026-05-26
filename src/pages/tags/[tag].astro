@@ -1,5 +1,6 @@
 ---
 import { getAllPosts } from "../../lib/posts";
+import { type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allPosts = await getAllPosts();
@@ -39,7 +40,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-    posts: any[];
+    posts: CollectionEntry<"blog">[];
 }
 
 const { tag } = Astro.params;
@@ -72,7 +73,7 @@ const { posts } = Astro.props;
                     <ul class="list-unstyled">
                         {posts.map((post) => (
                             <li class="post-item">
-                                <a href={`/blog/${post.slug}/`}>
+                                <a href={`/blog/${post.id}/`}>
                                     {post.data.title}
                                 </a>
                                 <small class="text-muted">
