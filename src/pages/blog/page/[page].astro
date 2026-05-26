@@ -37,7 +37,7 @@ if (currentPage === 1) {
 ---
 
 <BaseLayout title={`Blog - Page ${currentPage}`} description="Blog posts">
-    <div class="row">
+    <div class="post-grid">
         {paginatedPosts.map((post) => <PostCard post={post} />)}
     </div>
 
