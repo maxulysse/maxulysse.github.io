@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
+import { getAllPosts } from "../../../lib/posts";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
-const allPosts = await getCollection("blog");
+const allPosts = await getAllPosts();
 const sortedPosts = allPosts
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -15,7 +15,7 @@ const paginatedPosts = sortedPosts.slice(startIndex, endIndex);
 const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog");
+    const posts = await getAllPosts();
     const sortedPosts = posts
         .filter((post) => !post.data.draft)
         .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
