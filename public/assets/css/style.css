@@ -35,6 +35,18 @@ body {
   padding: 1.5rem 1rem;
 }
 
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row !important;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+  }
+  .navbar-expand-lg .navbar-toggler {
+    display: none !important;
+  }
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
