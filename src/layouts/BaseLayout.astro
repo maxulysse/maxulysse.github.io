@@ -236,6 +236,7 @@ const currentPath = Astro.url.pathname;
                         href="/rss.xml"
                         target="_blank"
                         rel="noopener"
+                        aria-label="RSS feed"
                     >
                         <i
                             class="fa-solid fa-square-rss footericon fa-2x"
@@ -252,6 +253,7 @@ const currentPath = Astro.url.pathname;
                                         ? "me noopener"
                                         : "noopener"
                                 }
+                                aria-label={item.name}
                             >
                                 {item.icon_svg && (
                                     <img
