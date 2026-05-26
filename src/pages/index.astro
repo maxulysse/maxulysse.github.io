@@ -15,7 +15,7 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
 ---
 
 <BaseLayout>
-    <div class="row">
+    <div class="post-grid">
         {paginatedPosts.map((post) => <PostCard post={post} />)}
     </div>
 
