@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://maxulysse.github.io/sitemap-index.xml
