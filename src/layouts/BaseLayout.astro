@@ -32,9 +32,11 @@ const Authors = {
 
 const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
 
+const DEFAULT_OG_IMAGE = "/assets/img/avatar/owl.svg";
+
 const pageTitle = title ? `${title}` : siteTitle;
 const pageDescription = description || siteDescription;
-const imageUrl = image?.path ? `${url}${image.path}` : undefined;
+const imageUrl = image?.path ? `${url}${image.path}` : `${url}${DEFAULT_OG_IMAGE}`;
 
 // Get current path for active nav highlighting
 const currentPath = Astro.url.pathname;
@@ -64,7 +66,7 @@ const currentPath = Astro.url.pathname;
         <meta name="author" content={authorInfo.name} />
         <meta name="twitter:site" content={`@${authorInfo.twitter}`} />
         <meta name="twitter:creator" content={`@${authorInfo.twitter}`} />
-        {title && <meta property="og:type" content="article" />}
+        <meta property="og:type" content={title ? "article" : "website"} />
 
         <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
