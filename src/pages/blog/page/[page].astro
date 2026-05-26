@@ -105,7 +105,8 @@ if (currentPage === 1) {
         }
     </div>
 
-    <nav aria-label="Page navigation" class="mt-4">
+    {totalPages > 1 && (
+        <nav aria-label="Page navigation" class="mt-4">
         <ul class="pagination justify-content-center">
             <li class={`page-item ${currentPage > 1 ? "" : "disabled"}`}>
                 {
@@ -181,6 +182,7 @@ if (currentPage === 1) {
             </li>
         </ul>
     </nav>
+    )}
 </BaseLayout>
 
 <style>
