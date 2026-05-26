@@ -68,6 +68,7 @@ const currentPath = Astro.url.pathname;
         {title && <meta property="og:type" content="article" />}
 
         <meta name="theme-color" content="#f8f9fa" />
+        <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
         <!-- Favicon -->
         <link
