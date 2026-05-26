@@ -66,6 +66,8 @@ const currentPath = Astro.url.pathname;
         <meta name="twitter:creator" content={`@${authorInfo.twitter}`} />
         {title && <meta property="og:type" content="article" />}
 
+        <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+
         <!-- Favicon -->
         <link
             rel="icon"
