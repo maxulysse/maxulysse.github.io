@@ -8,6 +8,7 @@ interface Props {
 }
 
 import socialMedia from "../data/socialMedia.js";
+import { Authors } from "../data/authors";
 
 const {
     lang = "en",
@@ -20,15 +21,6 @@ const {
 const siteTitle = "maxulysse.github.io";
 const siteDescription = description;
 const url = "https://maxulysse.github.io";
-
-// Author info
-const Authors = {
-    maxulysse: {
-        name: "Maxime U. Garcia",
-        twitter: "gau",
-        github: "maxulysse",
-    },
-};
 
 const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
 
