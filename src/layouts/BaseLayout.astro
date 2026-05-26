@@ -242,8 +242,8 @@ const currentPath = Astro.url.pathname;
                                 target="_blank"
                                 rel={
                                     item.name === "Mastodon"
-                                        ? "me noopener"
-                                        : "noopener"
+                                        ? "me noopener noreferrer"
+                                        : "noopener noreferrer"
                                 }
                                 aria-label={item.name}
                             >
@@ -273,7 +273,7 @@ const currentPath = Astro.url.pathname;
                     <a
                         href="https://creativecommons.org/licenses/by-sa/4.0/"
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                     >
                         <i class="fab fa-creative-commons fa-1x"></i>
                     </a>
@@ -281,7 +281,7 @@ const currentPath = Astro.url.pathname;
                     <a
                         href="https://astro.build/"
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                     >
                         <svg
                             style="width:1em;height:1em;vertical-align:-0.15em;fill:currentColor"
