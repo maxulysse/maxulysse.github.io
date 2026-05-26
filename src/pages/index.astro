@@ -85,7 +85,8 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
         }
     </div>
 
-    <nav aria-label="Page navigation" class="mt-4">
+    {totalPages > 1 && (
+        <nav aria-label="Page navigation" class="mt-4">
         <ul class="pagination justify-content-center">
             <li class="page-item disabled">
                 <span class="page-link" aria-disabled="true">
@@ -139,6 +140,7 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
             </li>
         </ul>
     </nav>
+    )}
 </BaseLayout>
 
 <style>
