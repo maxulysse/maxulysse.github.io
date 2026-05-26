@@ -24,6 +24,7 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
                                     src={post.data.image.path}
                                     class="card-img-top"
                                     alt={post.data.title}
+                                    loading="lazy"
                                 />
                             </div>
                         )}
