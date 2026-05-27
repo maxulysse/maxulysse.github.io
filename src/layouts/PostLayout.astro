@@ -10,6 +10,7 @@ interface Props {
     image?: { path: string };
     tags?: string[];
     lastModified?: Date;
+    entryId?: string;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
     image,
     tags = [],
     lastModified,
+    entryId,
 } = Astro.props as Props;
 
 // Calculate read time
@@ -30,20 +32,12 @@ const readTime = Math.ceil(words / 160); // 160 words per minute
 const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
 const modifiedDate = lastModified || date;
 
-// Get the current page URL to construct GitHub edit link
-const currentUrl = Astro.url.pathname;
-// Convert blog URL path to source file path
-// e.g., /blog/2020/2020-07-01-jobim/ -> src/content/blog/2020/2020-07-01-jobim.md
-const pathSegments = currentUrl.split("/").filter(Boolean);
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
-
-// Extract year and slug from path
-let editUrl = githubBaseUrl;
-if (pathSegments[0] === "blog" && pathSegments.length >= 3) {
-    const year = pathSegments[1];
-    const slug = pathSegments[2];
-    editUrl = `${githubBaseUrl}/edit/main/src/content/blog/${year}/${slug}.md`;
-}
+// Use entryId (e.g. "2020/2020-07-01-jobim.md") when available — it includes
+// the correct file extension, so .mdx files are handled correctly too.
+const editUrl = entryId
+    ? `${githubBaseUrl}/edit/main/src/content/blog/${entryId}`
+    : githubBaseUrl;
 ---
 
 <BaseLayout
