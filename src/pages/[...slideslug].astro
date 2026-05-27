@@ -53,6 +53,7 @@ const pageTitle = presentation.data.title;
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <title>{pageTitle}</title>
+        <meta name="robots" content="noindex" />
         {
             presentation.data.description && (
                 <meta
@@ -61,6 +62,9 @@ const pageTitle = presentation.data.title;
                 />
             )
         }
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reset.css"
