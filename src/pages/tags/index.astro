@@ -53,7 +53,7 @@ function getTagSize(count: number): number {
                             style={`font-size: ${getTagSize(postsByTag[tag]?.length || 0)}rem;`}
                         >
                             {tagOriginalCase[tag]}
-                            <span class="badge badge-secondary badge-sm ml-1">
+                            <span class="badge text-bg-secondary badge-sm ms-1">
                                 {postsByTag[tag]?.length}
                             </span>
                         </a>
@@ -75,7 +75,7 @@ function getTagSize(count: number): number {
                                     aria-hidden="true"
                                 />
                                 {tagOriginalCase[tag]}
-                                <span class="badge badge-secondary ml-2">
+                                <span class="badge text-bg-secondary ms-2">
                                     {postsByTag[tag]?.length}
                                 </span>
                             </h3>

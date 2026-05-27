@@ -55,7 +55,7 @@ const { posts } = Astro.props;
             sortedTags.map((t) => (
                 <a
                     href={`/tags/${t}/`}
-                    class={`badge ${t === tag ? "badge-primary" : "badge-light"}`}
+                    class={`badge ${t === tag ? "text-bg-primary" : "text-bg-light"}`}
                 >
                     {t}
                 </a>

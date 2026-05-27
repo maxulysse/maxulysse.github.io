@@ -215,21 +215,6 @@ body {
   border-top: 1px solid #dee2e6;
 }
 
-.badge-primary {
-  background-color: #007bff;
-  color: white;
-}
-
-.badge-secondary {
-  background-color: #5f6670;
-  color: #ffffff;
-}
-
-.badge-light {
-  background-color: #f8f9fa;
-  color: #333;
-  border: 1px solid #dee2e6;
-}
 
 .tag-cloud {
   margin-bottom: 2rem;
