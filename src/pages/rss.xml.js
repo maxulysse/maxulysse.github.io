@@ -15,7 +15,7 @@ export async function GET(context) {
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
-      description: post.data.description || post.body.substring(0, 150),
+      description: post.data.description || post.body?.substring(0, 150) || "",
       link: `/blog/${post.id}/`,
     })),
   });
