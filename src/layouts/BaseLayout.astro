@@ -49,12 +49,14 @@ const currentPath = Astro.url.pathname;
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:site_name" content={siteTitle} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
 
         {imageUrl && <meta property="og:image" content={imageUrl} />}
         {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
+        <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
         <meta property="og:locale" content="en_US" />
         <meta name="author" content={authorInfo.name} />
         <meta name="twitter:site" content={`@${authorInfo.twitter}`} />
