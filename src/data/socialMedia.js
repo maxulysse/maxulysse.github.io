@@ -30,7 +30,7 @@ const socialMedia = [
     academicons: "ai-hal",
   },
   {
-    name: "Google Schoolar",
+    name: "Google Scholar",
     url: "https://scholar.google.fr/citations?user=bzhsE6oAAAAJ",
     academicons: "ai-google-scholar",
   },
