@@ -6,7 +6,6 @@ import Pagination from "../../../components/Pagination.astro";
 
 const allPosts = await getAllPosts();
 const sortedPosts = allPosts
-    .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const postsPerPage = 6;
@@ -19,7 +18,6 @@ const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
 export async function getStaticPaths() {
     const posts = await getAllPosts();
     const sortedPosts = posts
-        .filter((post) => !post.data.draft)
         .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
     const postsPerPage = 6;

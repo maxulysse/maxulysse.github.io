@@ -6,7 +6,6 @@ import Pagination from "../components/Pagination.astro";
 
 const allPosts = await getCollection("blog");
 const sortedPosts = allPosts
-    .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const postsPerPage = 6;
