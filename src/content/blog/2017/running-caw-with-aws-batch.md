@@ -9,7 +9,7 @@ image:
 ---
 
 
-Following [this post](https://www.nextflow.io/blog/2017/scaling-with-aws-batch.html) from Nextflow blog, I'm writing a small guide on how I'm doing that for [CAW](http://opensource.scilifelab.se/projects/caw/).
+Following [this post](https://www.nextflow.io/blog/2017/scaling-with-aws-batch.html) from Nextflow blog, I'm writing a small guide on how I'm doing that for [CAW](https://github.com/maxulysse/opensource-scilifelab).
 
 ## The useful documentation
 
