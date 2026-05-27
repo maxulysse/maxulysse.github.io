@@ -34,7 +34,7 @@ jobs:
 
       - name: Set up Nextflow
         run: |
-          export NXF_VER=25.10.4
+          export NXF_VER=25.10.5
           curl -fsSL https://get.nextflow.io | bash
           sudo mv nextflow /usr/local/bin/nextflow
           nextflow -version
