@@ -15,7 +15,7 @@ This post was written for the [Nextflow blog](https://www.nextflow.io/blog/2017/
 
 ![Cancer Analysis Workflow logo](https://maxulysse.github.io/assets/img/category/caw.png "Cancer Analysis Workflow")
 
-[Cancer Analysis Workflow](http://opensource.scilifelab.se/projects/caw/) (CAW for short) is an analysis pipeline developed for the analysis of tumour : normal pairs.
+[Cancer Analysis Workflow](https://github.com/maxulysse/opensource-scilifelab) (CAW for short) is an analysis pipeline developed for the analysis of tumour : normal pairs.
 It is developed in collaboration with two infrastructures within [Science for Life Laboratory](https://www.scilifelab.se/): [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), in The Stockholm [Genomics Applications Development Facility](https://www.scilifelab.se/facilities/ngi-stockholm/) to be precise and [National Bioinformatics Infrastructure Sweden](https://www.nbis.se/) (NBIS).
 
 CAW is based on [GATK Best Practices](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows) for the preprocessing of FastQ files, then uses various variant calling tools to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
