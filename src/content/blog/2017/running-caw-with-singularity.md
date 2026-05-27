@@ -19,13 +19,13 @@ This post was written for the [Nextflow blog](https://www.nextflow.io/blog/2017/
 It is developed in collaboration with two infrastructures within [Science for Life Laboratory](https://www.scilifelab.se/): [National Genomics Infrastructure](https://ngisweden.scilifelab.se/) (NGI), in The Stockholm [Genomics Applications Development Facility](https://www.scilifelab.se/facilities/ngi-stockholm/) to be precise and [National Bioinformatics Infrastructure Sweden](https://www.nbis.se/) (NBIS).
 
 CAW is based on [GATK Best Practices](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows) for the preprocessing of FastQ files, then uses various variant calling tools to look for somatic SNVs and small indels ([MuTect1](https://github.com/broadinstitute/mutect/), [MuTect2](https://github.com/broadgsa/gatk-protected/), [Strelka](https://github.com/Illumina/strelka/), [Freebayes](https://github.com/ekg/freebayes/)), ([GATK HaplotyeCaller](https://github.com/broadgsa/gatk-protected/)), for structural variants([Manta](https://github.com/Illumina/manta/)) and for CNVs ([ASCAT](https://github.com/Crick-CancerGenomics/ascat/)).
-Annotation tools ([snpEff](http://snpeff.sourceforge.net/), [VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)) are also used, and finally [MultiQC](http://multiqc.info/) for handling reports.
+Annotation tools ([snpEff](https://snpeff.sourceforge.net/), [VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)) are also used, and finally [MultiQC](https://multiqc.info/) for handling reports.
 
 We are currently working on a manuscript, but you're welcome to look at (or even contribute to) our [github repository](https://github.com/SciLifeLab/CAW/) or talk with us on our gitter channel.
 
 ## Singularity and UPPMAX
 
-[Singularity](http://singularity.lbl.gov/) is a tool package software dependencies into a contained environment, much like Docker. It's designed to run on HPC environments where Docker is often a problem due to its requirement for administrative privileges.
+[Singularity](https://singularity.lbl.gov/) is a tool package software dependencies into a contained environment, much like Docker. It's designed to run on HPC environments where Docker is often a problem due to its requirement for administrative privileges.
 
 We're based in Sweden, and [Uppsala Multidisciplinary Center for Advanced Computational Science](https://uppmax.uu.se/) (UPPMAX) provides Computational infrastructures for all Swedish researchers.
 Since we're analyzing sensitive data, we are using secure clusters (with a two factor authentication), set up by UPPMAX: [SNIC-SENS](https://www.uppmax.uu.se/projects-and-collaborations/snic-sens/).
@@ -34,12 +34,12 @@ In my case, since we're still developing the pipeline, I am mainly using the res
 So I can only transfer files and data in one specific repository using SFTP.
 
 UPPMAX provides computing resources for Swedish researchers for all scientific domains, so getting software updates can occasionally take some time.
-Typically, [environment modules](http://modules.sourceforge.net/) are used which allow several versions of different tools - this is good for reproducibility and is quite easy to use. However, the approach is not portable across different clusters outside of UPPMAX.
+Typically, [environment modules](https://modules.sourceforge.net/) are used which allow several versions of different tools - this is good for reproducibility and is quite easy to use. However, the approach is not portable across different clusters outside of UPPMAX.
 
 ## Why use containers
 
 The idea of using containers, for improved portability and reproducibility, and more up to date tools, came naturally to us, as it is easily managed within Nextflow.
-We cannot use [Docker](https://www.docker.com/) on our secure cluster, so we wanted to run CAW with [Singularity](http://singularity.lbl.gov/) images instead.
+We cannot use [Docker](https://www.docker.com/) on our secure cluster, so we wanted to run CAW with [Singularity](https://singularity.lbl.gov/) images instead.
 
 ## How was the switch made
 
