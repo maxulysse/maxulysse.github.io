@@ -14,7 +14,7 @@ image:
 I was recently working on [`nf-core/sarek`](https://github.com/nf-core/sarek) to add [Sentieon](https://www.sentieon.com/) possibilities.
 I added `Senteion` specific processes and channels, but only if a `--sentieon` param is specified on the command line.
 
-While developing on our server `munin`, I used our local [environment modules](http://modules.sourceforge.net/) to access our installation of `Sentieon`.
+While developing on our server `munin`, I used our local [environment modules](https://modules.sourceforge.net/) to access our installation of `Sentieon`.
 Now that my [PR#66](https://github.com/nf-core/sarek/pull/66) is open, I figured that it would be an improvement if the `sarek`/`munin` specific configuration was included in the `munin` profile already shared with [nf-core/configs](https://github.com/nf-core/configs).
 
 However, within [`nf-core/configs`](https://github.com/nf-core/configs), configuration is at an institutional level across all pipelines.

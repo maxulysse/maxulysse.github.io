@@ -20,7 +20,7 @@ Maxime Garcia / [<i class="fab fa-twitter"></i> @gau](https://twitter.com/gau) /
 
 [The Swedish Childhood Tumor Biobank](https://ki.se/forskning/barntumorbanken) / [National Genomics Infrastructure](https://ngisweden.scilifelab.se/)
 
-[Victorian Cancer Bioinformatics Symposium 2020](http://viccancerbioinfsymposium.org/), Victoria, Australia [virtual] - 2020/10/28
+[Victorian Cancer Bioinformatics Symposium 2020](https://viccancerbioinfsymposium.org/), Victoria, Australia [virtual] - 2020/10/28
 
 </small>
 

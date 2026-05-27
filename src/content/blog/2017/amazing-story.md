@@ -9,6 +9,6 @@ image:
 ---
 
 
-Amazing read of the day by the excellent Dr Mary-Claire King: [The Week My Husband Left And My House Was Burgled I Secured A Grant To Begin The Project That Became BRCA1](http://www.huffingtonpost.co.uk/dr-maryclaire-king/brca-marriage-testing_b_17908074.html)
+Amazing read of the day by the excellent Dr Mary-Claire King: [The Week My Husband Left And My House Was Burgled I Secured A Grant To Begin The Project That Became BRCA1](https://www.huffingtonpost.co.uk/dr-maryclaire-king/brca-marriage-testing_b_17908074.html)
 
 She describes how almost everything in her life crumbles, but she still manages to pull through, goes to an interview for a grant and get the grant...
