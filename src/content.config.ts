@@ -15,7 +15,6 @@ const blogCollection = defineCollection({
         path: z.string(),
       })
       .optional(),
-    draft: z.boolean().optional().default(false),
   }),
 });
 

@@ -4,7 +4,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog");
 const sortedPosts = allPosts
-    .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 // Group posts by year
