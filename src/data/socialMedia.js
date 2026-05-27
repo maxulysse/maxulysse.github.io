@@ -15,8 +15,8 @@ const socialMedia = [
     font_awesome: "fa-mastodon",
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/gau/",
+    name: "X (Twitter)",
+    url: "https://x.com/gau/",
     font_awesome: "fa-x-twitter",
   },
   {
