@@ -25,7 +25,7 @@ id = "mixed-line-ending"
 
 [[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
-rev = "v0.12.1"
+rev = "v0.22.1"
 
 [[repos.hooks]]
 id = "markdownlint-cli2"
