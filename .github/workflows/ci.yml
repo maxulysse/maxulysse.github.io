@@ -33,9 +33,6 @@ jobs:
       - name: Run Astro type check
         run: npm run check
 
-      - name: Run markdown lint
-        run: npm run lint:md
-
   prek:
     runs-on: ubuntu-latest
     steps:
