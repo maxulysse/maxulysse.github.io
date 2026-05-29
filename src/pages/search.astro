@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getAllPosts } from "../lib/posts";
 
-const allPosts = await getCollection("blog");
+const allPosts = await getAllPosts();
 const searchItems = allPosts
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
     .map((post) => ({

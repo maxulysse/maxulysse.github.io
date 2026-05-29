@@ -19,15 +19,14 @@ const {
 } = Astro.props as Props;
 
 const siteTitle = "maxulysse.github.io";
-const siteDescription = description;
 const url = "https://maxulysse.github.io";
 
 const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
 
 const DEFAULT_OG_IMAGE = "/assets/img/avatar/owl.svg";
 
-const pageTitle = title ? `${title}` : siteTitle;
-const pageDescription = description || siteDescription;
+const pageTitle = title || siteTitle;
+const pageDescription = description || siteTitle;
 const imageUrl = image?.path ? `${url}${image.path}` : `${url}${DEFAULT_OG_IMAGE}`;
 
 // Get current path for active nav highlighting
