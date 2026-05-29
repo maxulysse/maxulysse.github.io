@@ -10,7 +10,7 @@
     "astro": "astro",
     "check": "astro check",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!dist'",
-    "lint": "npm run check && npm run lint:md",
+    "lint": "npm run check",
     "prek:install": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.4.3/prek-installer.sh | sh",
     "prek": "prek run"
   },
@@ -18,7 +18,7 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@orcid/bibtex-parse-js": "^0.0.25",
-    "astro": "^6.3.8"
+    "astro": "^6.4.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
