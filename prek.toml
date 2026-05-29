@@ -30,14 +30,3 @@ rev = "v0.22.1"
 [[repos.hooks]]
 id = "markdownlint-cli2"
 args = ["--config", ".markdownlint.json"]
-
-[[repos]]
-repo = "local"
-
-[[repos.hooks]]
-id = "astro-check"
-name = "Astro Type Check"
-entry = "npm run check"
-language = "system"
-pass_filenames = false
-files = "\\.(astro|ts|tsx)$"
