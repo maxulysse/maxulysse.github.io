@@ -51,14 +51,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install prek
-        run: curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.4.3/prek-installer.sh | sh
-
-      - name: Add prek to PATH
-        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
-
-      - name: Install prek hooks
-        run: prek install-hooks
-
       - name: Run prek hooks
-        run: prek run --all-files
+        uses: j178/prek-action@bdca6f102f98e2b4c7029491a53dfd366469e33d # v2.0.4
