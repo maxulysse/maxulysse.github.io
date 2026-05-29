@@ -33,7 +33,6 @@ jobs:
       - name: Run Astro type check
         run: npm run check
 
-
   prek:
     runs-on: ubuntu-latest
     steps:
