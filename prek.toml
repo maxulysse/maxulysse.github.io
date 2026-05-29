@@ -30,5 +30,3 @@ rev = "v0.22.1"
 [[repos.hooks]]
 id = "markdownlint-cli2"
 args = ["--config", ".markdownlint.json"]
-
-
