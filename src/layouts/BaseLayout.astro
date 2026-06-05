@@ -123,6 +123,20 @@ const currentPath = Astro.url.pathname;
         />
     </head>
     <body data-theme="light">
+        <script is:inline>
+            (function () {
+                var saved = localStorage.getItem("theme");
+                var theme = "light";
+                if (saved === "dark") {
+                    theme = "dark";
+                } else if (saved === "light") {
+                    theme = "light";
+                } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    theme = "dark";
+                }
+                document.body.setAttribute("data-theme", theme);
+            })();
+        </script>
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-light rounded">
                 <a class="navbar-brand" href="/">
@@ -191,7 +205,7 @@ const currentPath = Astro.url.pathname;
                         method="get"
                     >
                         <input
-                            class="form-control me-sm-2"
+                            class="form-control me-3 my-2 my-sm-0"
                             type="text"
                             name="q"
                             placeholder="Search for..."
@@ -205,15 +219,28 @@ const currentPath = Astro.url.pathname;
                                 class="fa-solid fa-magnifying-glass"
                                 aria-hidden="true"></i> go!
                         </button>
-                        <button
-                            id="theme-toggle"
-                            class="btn btn-outline-secondary my-2 my-sm-0 ms-2"
-                            type="button"
-                            title="Toggle dark/light mode"
-                            aria-label="Toggle dark/light mode"
-                        >
-                            <i class="fa-solid fa-moon" aria-hidden="true"></i>
-                        </button>
+                        <div class="theme-dropdown ms-2">
+                            <button
+                                id="theme-toggle"
+                                class="btn btn-outline-secondary my-2 my-sm-0"
+                                type="button"
+                                title="Select theme"
+                                aria-label="Select theme"
+                            >
+                                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                            </button>
+                            <div class="theme-dropdown-menu">
+                                <button class="theme-option" data-theme="light">
+                                    <i class="fa-solid fa-sun"></i> Light
+                                </button>
+                                <button class="theme-option" data-theme="dark">
+                                    <i class="fa-solid fa-moon"></i> Dark
+                                </button>
+                                <button class="theme-option" data-theme="auto">
+                                    <i class="fa-solid fa-adjust"></i> System
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </nav>
@@ -326,47 +353,89 @@ const currentPath = Astro.url.pathname;
 
         <!-- Theme toggle script -->
         <script>
-            // Initialize theme from localStorage or system preference
-            function initTheme() {
-                const savedTheme = localStorage.getItem("theme");
-                const prefersDark = window.matchMedia(
-                    "(prefers-color-scheme: dark)",
-                ).matches;
-                const theme = savedTheme || (prefersDark ? "dark" : "light");
-
-                document.body.setAttribute("data-theme", theme);
-                updateThemeIcon(theme);
+            function resolveTheme(saved: string | null): string {
+                if (saved === "dark") return "dark";
+                if (saved === "light") return "light";
+                return window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
             }
 
-            function updateThemeIcon(theme: string) {
+            function updateToggleIcon(theme: string): void {
                 const icon = document.querySelector("#theme-toggle i");
-                if (icon) {
-                    if (theme === "dark") {
-                        icon.classList.remove("fa-moon");
-                        icon.classList.add("fa-sun");
-                    } else {
-                        icon.classList.remove("fa-sun");
-                        icon.classList.add("fa-moon");
-                    }
-                }
+                if (!icon) return;
+                icon.className = "fa-solid";
+                icon.classList.add(
+                    theme === "dark" ? "fa-moon" : "fa-sun",
+                );
             }
 
-            function toggleTheme() {
-                const currentTheme = document.body.getAttribute("data-theme");
-                const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-                document.body.setAttribute("data-theme", newTheme);
-                localStorage.setItem("theme", newTheme);
-                updateThemeIcon(newTheme);
+            function updateThemeColor(theme: string): void {
+                const meta = document.querySelector("meta[name='theme-color']");
+                if (meta) meta.setAttribute("content", theme === "dark" ? "#1a1a1a" : "#f8f9fa");
             }
 
-            // Initialize on page load
-            initTheme();
+            function setActiveOption(saved: string | null): void {
+                document.querySelectorAll(".theme-option").forEach((opt) => {
+                    const el = opt as HTMLElement;
+                    el.classList.toggle(
+                        "active",
+                        el.dataset.theme === saved,
+                    );
+                });
+            }
 
-            // Add event listener to theme toggle button
+            function setTheme(saved: string | null): void {
+                const theme = resolveTheme(saved);
+                document.body.setAttribute("data-theme", theme);
+                updateToggleIcon(theme);
+                updateThemeColor(theme);
+                setActiveOption(saved);
+            }
+
+            function switchTheme(e: Event): void {
+                const opt = e.currentTarget as HTMLElement | null;
+                if (!opt?.dataset?.theme) return;
+                const saved = opt.dataset.theme;
+                localStorage.setItem("theme", saved);
+                setTheme(saved);
+                closeDropdown();
+            }
+
+            function toggleDropdown(e: Event): void {
+                e.stopPropagation();
+                const dropdown = document.querySelector(".theme-dropdown");
+                dropdown?.classList.toggle("open");
+            }
+
+            function closeDropdown(): void {
+                document.querySelector(".theme-dropdown")?.classList.remove("open");
+            }
+
+            const saved = localStorage.getItem("theme");
+            const currentTheme = document.body.getAttribute("data-theme") || "light";
+            updateToggleIcon(currentTheme);
+            updateThemeColor(currentTheme);
+            if (!saved) localStorage.setItem("theme", "auto");
+            setActiveOption(saved || "auto");
+
             document
                 .getElementById("theme-toggle")
-                ?.addEventListener("click", toggleTheme);
+                ?.addEventListener("click", toggleDropdown);
+
+            document.querySelectorAll(".theme-option").forEach((opt) => {
+                opt.addEventListener("click", switchTheme);
+            });
+
+            document.addEventListener("click", (e: Event) => {
+                const target = e.target as HTMLElement | null;
+                if (target && !target.closest(".theme-dropdown")) closeDropdown();
+            });
+
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+                const current = localStorage.getItem("theme");
+                if (!current || current === "auto") setTheme("auto");
+            });
         </script>
     </body>
 </html>

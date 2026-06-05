@@ -411,6 +411,55 @@ a:hover {
   }
 }
 
+/* Theme dropdown */
+.theme-dropdown {
+  position: relative;
+  display: flex;
+}
+
+.theme-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  min-width: 150px;
+  z-index: 200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-dropdown.open .theme-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  width: 100%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.theme-option:hover {
+  background: #f0f0f0;
+}
+
+.theme-option.active {
+  font-weight: 600;
+}
+
 /* Dark mode styles */
 body[data-theme="dark"] {
   background-color: #1a1a1a;
@@ -444,6 +493,10 @@ body[data-theme="dark"] .nav-link:hover {
 body[data-theme="dark"] .navbar-nav .nav-link.active {
   color: #ffffff !important;
   font-weight: 600;
+}
+
+body[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
 }
 
 body[data-theme="dark"] .card {
@@ -664,6 +717,10 @@ body[data-theme="dark"] input.form-control {
   border-color: #555;
 }
 
+body[data-theme="dark"] input.form-control::placeholder {
+  color: #aaa;
+}
+
 body[data-theme="dark"] input.form-control:focus {
   background-color: #3a3a3a;
   color: #e0e0e0;
@@ -691,6 +748,20 @@ body[data-theme="dark"] .btn-outline-secondary:hover {
   background-color: #555;
   border-color: #999;
   color: #e0e0e0;
+}
+
+body[data-theme="dark"] .theme-dropdown-menu {
+  background: #2d2d2d;
+  border-color: #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body[data-theme="dark"] .theme-option {
+  color: #e0e0e0;
+}
+
+body[data-theme="dark"] .theme-option:hover {
+  background: #3a3a3a;
 }
 
 body[data-theme="dark"] a {
