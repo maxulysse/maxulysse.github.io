@@ -1,9 +1,7 @@
 name: Deploy
 
 on:
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
-  # Trigger the workflow every time you push to the `main` branch
   push:
     branches:
       - main
@@ -18,7 +16,6 @@ on:
       - "!src/data/CV-MGarcia.tex"
       - "!src/data/biblio.bib"
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
