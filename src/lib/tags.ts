@@ -8,16 +8,12 @@ export type TagItem =
 export type TagEntry = {
     /** Lowercase tag. Also the display label, the URL slug and the anchor id. */
     tag: string;
-    /** Every post and project carrying this tag, newest posts first. */
+    /** Every post and project carrying this tag. */
     items: TagItem[];
 };
 
 let cachedTags: TagEntry[] | null = null;
 
-/**
- * Builds a unified index of every tag used by blog posts and projects, so
- * both share the same tag cloud, the same counts, and the same detail pages.
- */
 export async function getTagIndex(): Promise<TagEntry[]> {
     if (cachedTags) {
         return cachedTags;

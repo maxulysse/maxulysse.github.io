@@ -48,7 +48,7 @@ function getTagSize(count: number): number {
     <div class="archive-grid">
         {
             tags.map((entry) => {
-                // Projects first, then posts, matching the previous layout.
+                // Projects first, then posts.
                 const items = [
                     ...itemsOfKind(entry, "project"),
                     ...itemsOfKind(entry, "post"),
