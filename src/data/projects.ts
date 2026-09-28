@@ -9,7 +9,7 @@ export type Project = {
     tags: string[];
 };
 
-export const projects: Project[] = [
+const declaredProjects: Project[] = [
     {
         id: "nf-core-utils",
         name: "nf-core-utils",
@@ -153,3 +153,13 @@ export const projects: Project[] = [
         tags: ["method"],
     },
 ];
+
+/**
+ * Every project, with its tags sorted alphabetically. The raw array keeps the
+ * declared order (id, name, relevance) so callers can match on it; for display
+ * the tags should always come out sorted.
+ */
+export const projects: Project[] = declaredProjects.map((project) => ({
+    ...project,
+    tags: [...project.tags].sort(),
+}));
