@@ -20,17 +20,40 @@ import { projects } from "../data/projects";
             <div class="card" id={project.id}>
                 <div class="card-body">
                     <h5 class="card-title">
-                        {project.name}
-                        <span class="text-muted project-role">
-                            — {project.role}
-                        </span>
+                        {project.url ? (
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {project.name}
+                            </a>
+                        ) : (
+                            project.name
+                        )}
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-github ms-2"
+                                aria-label={`${project.name} on GitHub`}
+                            >
+                                <i class="fab fa-github" aria-hidden="true" />
+                            </a>
+                        )}
                     </h5>
-                    <p class="project-years text-muted">
-                        <i class="fa-regular fa-calendar" aria-hidden="true" />{" "}
-                        {project.years}
-                    </p>
+                    <h6 class="card-subtitle text-muted">
+                        {project.role}
+                    </h6>
                     <p class="card-text">{project.description}</p>
-                    <div class="tags-container project-tags">
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted d-block mb-2">
+                        <i class="fa-regular fa-calendar me-1" aria-hidden="true" />
+                        {project.years}
+                    </small>
+                    <div class="tags-container">
                         <span class="text-muted me-2">
                             <i class="fa-solid fa-tags" aria-hidden="true" />
                         </span>
@@ -48,29 +71,6 @@ import { projects } from "../data/projects";
                             </>
                         ))}
                     </div>
-                    <div class="project-links mt-1">
-                        {project.url && (
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-outline-primary btn-sm"
-                            >
-                                <i class="fa-solid fa-earth-europe" />{" "}
-                                Website
-                            </a>
-                        )}
-                        {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-outline-dark btn-sm"
-                            >
-                                <i class="fab fa-github" /> GitHub
-                            </a>
-                        )}
-                    </div>
                 </div>
             </div>
         ))}
@@ -78,17 +78,18 @@ import { projects } from "../data/projects";
 </BaseLayout>
 
 <style>
-    .project-role {
+    .project-github {
+        color: var(--text-muted);
         font-size: 0.9em;
     }
 
-    .project-years {
-        font-size: 0.85em;
+    .project-github:hover {
+        color: var(--accent-link-hover);
     }
 
-    .project-links {
+    .tags-container {
         display: flex;
-        gap: 0.5rem;
         flex-wrap: wrap;
+        gap: 0.25rem;
     }
 </style>
