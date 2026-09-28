@@ -9,11 +9,6 @@ import { projects } from "../data/projects";
     description="Maxime Garcia, PhD in Bioinformatics"
 >
     <div class="card-columns only-one-column">
-        <div class="card bg-light">
-            <div class="card-body">
-                <h2 class="mb-0">Projects</h2>
-            </div>
-        </div>
         {projects.map((project) => (
             <div class="card" id={project.id}>
                 <div class="card-body">
