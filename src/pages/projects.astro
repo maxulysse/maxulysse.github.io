@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+---
+
+<BaseLayout
+    title="Projects"
+    description="Maxime Garcia, PhD in Bioinformatics"
+>
+    <div class="card-columns only-one-column">
+        <div class="card">
+            <a id="projects" />
+            <div class="card-header h2 header-link">
+                <i class="fa-solid fa-flask" /> Projects
+                <a href="#projects">
+                    <i class="fa-solid fa-link link-icon" />
+                </a>
+            </div>
+            <ul class="projects-list mb-0">
+                {projects.map((project) => (
+                    <li>
+                        <div class="project-item">
+                            <strong>{project.name}</strong>
+                            <span class="text-muted project-role">
+                                {" "}— {project.role}
+                            </span>
+                            <br />
+                            <span class="project-years text-muted">
+                                <i class="fa-regular fa-calendar" />{" "}
+                                {project.years}
+                            </span>
+                            <p class="mb-0 mt-1">{project.description}</p>
+                            <div class="project-links mt-1">
+                                {project.url && (
+                                    <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="btn btn-outline-primary btn-sm"
+                                    >
+                                        <i class="fa-solid fa-earth-europe" />{" "}
+                                        Website
+                                    </a>
+                                )}
+                                {project.github && (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="btn btn-outline-dark btn-sm"
+                                    >
+                                        <i class="fab fa-github" /> GitHub
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .header-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .link-icon {
+        font-size: 0.8em;
+        opacity: 0.6;
+    }
+
+    .header-link a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header-link a:hover .link-icon {
+        opacity: 1;
+    }
+
+    .projects-list {
+        margin: 0;
+        padding-left: 1.25rem;
+    }
+
+    .projects-list li {
+        padding: 0.75rem 0;
+    }
+
+    .projects-list li + li {
+        border-top: 1px solid var(--list-divider-color);
+    }
+
+    .project-role {
+        font-size: 0.9em;
+    }
+
+    .project-years {
+        font-size: 0.85em;
+    }
+
+    .project-links {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+</style>

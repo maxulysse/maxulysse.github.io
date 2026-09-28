@@ -163,17 +163,17 @@ const currentPath = Astro.url.pathname;
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a
-                                class={`nav-link ${currentPath.startsWith("/cv") ? "active" : ""}`}
-                                href="/cv"
-                                ><i class="fa-solid fa-id-badge me-2"></i>cv</a
+                                class={`nav-link ${currentPath.startsWith("/projects") ? "active" : ""}`}
+                                href="/projects"
+                                ><i class="fa-solid fa-flask me-2"
+                                ></i>projects</a
                             >
                         </li>
                         <li class="nav-item">
                             <a
-                                class={`nav-link ${currentPath.startsWith("/publications") ? "active" : ""}`}
-                                href="/publications"
-                                ><i class="fa-solid fa-book me-2"
-                                ></i>publications</a
+                                class={`nav-link ${currentPath.startsWith("/cv") ? "active" : ""}`}
+                                href="/cv"
+                                ><i class="fa-solid fa-id-badge me-2"></i>cv</a
                             >
                         </li>
                         <li class="nav-item">
