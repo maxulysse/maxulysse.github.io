@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionCard from "../components/SectionCard.astro";
 import {
     publicationSections,
     publicationsBySection,
@@ -36,13 +37,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="experience"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-building"></i> Experience <a
-                    href="#experience"
-                    ><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="experience"
+                icon="fa-solid fa-building"
+                title="Experience"
+            />
             <div class="card-body">
                 <table class="cv-table">
                     <tbody>
@@ -230,13 +229,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="education"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-university"></i> Education <a
-                    href="#education"
-                    ><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="education"
+                icon="fa-solid fa-university"
+                title="Education"
+            />
             <div class="card-body">
                 <table class="cv-table">
                     <tbody>
@@ -304,12 +301,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="skills"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-laptop"></i> Computer Skills <a
-                    href="#skills"><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="skills"
+                icon="fa-solid fa-laptop"
+                title="Computer Skills"
+            />
             <div class="card-body">
                 <div class="row cv-skills">
                     <div class="cv-item">
@@ -364,13 +360,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="publications" />
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-book"></i> Publications
-                <a href="#publications">
-                    <i class="fa-solid fa-link link-icon" />
-                </a>
-            </div>
+            <SectionCard
+                id="publications"
+                icon="fa-solid fa-book"
+                title="Publications"
+            />
             <div class="card-body">
                 {
                     publicationSections.map((section) => {
@@ -438,13 +432,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="languages"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-comment"></i> Languages <a
-                    href="#languages"
-                    ><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="languages"
+                icon="fa-solid fa-comment"
+                title="Languages"
+            />
             <div class="card-body">
                 <div class="row cv-languages">
                     <div class="cv-item">
@@ -464,13 +456,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="societies"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-flask"></i> Scientific Societies <a
-                    href="#societies"
-                    ><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="societies"
+                icon="fa-solid fa-flask"
+                title="Scientific Societies"
+            />
             <div class="card-body">
                 <div class="cv-full-item">
                     • Member of the International Society of Computational
@@ -511,13 +501,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="associations"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-users"></i> Associations <a
-                    href="#associations"
-                    ><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="associations"
+                icon="fa-solid fa-users"
+                title="Associations"
+            />
             <div class="card-body">
                 <table class="cv-table">
                     <tbody>
@@ -593,12 +581,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="events"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-list"></i> Organization and Events <a
-                    href="#events"><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="events"
+                icon="fa-solid fa-list"
+                title="Organization and Events"
+            />
             <div class="card-body">
                 <table class="cv-table">
                     <tbody>
@@ -666,13 +653,11 @@ import {
         </div>
 
         <div class="card">
-            <a id="interests"></a>
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-info-circle"></i> Interests <a
-                    href="#interests"
-                    ><i class="fa-solid fa-link link-icon"></i></a
-                >
-            </div>
+            <SectionCard
+                id="interests"
+                icon="fa-solid fa-info-circle"
+                title="Interests"
+            />
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -685,31 +670,11 @@ import {
 </BaseLayout>
 
 <style>
-    .header-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .link-icon {
-        font-size: 0.8em;
-        opacity: 0.6;
-    }
-
     .cv-toc {
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
         gap: 0.5rem;
-    }
-
-    .header-link a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .header-link a:hover .link-icon {
-        opacity: 1;
     }
 
     .list-group-item {

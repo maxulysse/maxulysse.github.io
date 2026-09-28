@@ -1,12 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionCard from "../components/SectionCard.astro";
 import { projects } from "../data/projects";
-
-// Display tags alphabetically, whatever order they are declared in.
-const sortedProjects = projects.map((project) => ({
-    ...project,
-    tags: [...project.tags].sort(),
-}));
 ---
 
 <BaseLayout
@@ -15,15 +10,13 @@ const sortedProjects = projects.map((project) => ({
 >
     <div class="card-columns only-one-column">
         <div class="card">
-            <a id="projects" />
-            <div class="card-header h2 header-link">
-                <i class="fa-solid fa-flask" /> Projects
-                <a href="#projects">
-                    <i class="fa-solid fa-link link-icon" />
-                </a>
-            </div>
+            <SectionCard
+                id="projects"
+                icon="fa-solid fa-flask"
+                title="Projects"
+            />
         </div>
-        {sortedProjects.map((project) => (
+        {projects.map((project) => (
             <div class="card" id={project.id}>
                 <div class="card-body">
                     <h5 class="card-title">
@@ -85,26 +78,6 @@ const sortedProjects = projects.map((project) => ({
 </BaseLayout>
 
 <style>
-    .header-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .link-icon {
-        font-size: 0.8em;
-        opacity: 0.6;
-    }
-
-    .header-link a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .header-link a:hover .link-icon {
-        opacity: 1;
-    }
-
     .project-role {
         font-size: 0.9em;
     }

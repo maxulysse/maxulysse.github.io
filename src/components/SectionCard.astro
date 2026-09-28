@@ -1,0 +1,39 @@
+---
+interface Props {
+    id: string;
+    icon: string;
+    title: string;
+}
+
+const { id, icon, title } = Astro.props;
+---
+
+<a id={id}></a>
+<div class="card-header h2 header-link">
+    <i class={icon}></i> {title}
+    <a href={`#${id}`}>
+        <i class="fa-solid fa-link link-icon"></i>
+    </a>
+</div>
+
+<style>
+    .header-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .link-icon {
+        font-size: 0.8em;
+        opacity: 0.6;
+    }
+
+    .header-link a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header-link a:hover .link-icon {
+        opacity: 1;
+    }
+</style>
