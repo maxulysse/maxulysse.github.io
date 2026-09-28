@@ -28,6 +28,28 @@ body {
   padding: 0 15px;
 }
 
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  z-index: 10000;
+  padding: 0.5rem 1rem;
+  background-color: #212529;
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+body[data-theme="dark"] .skip-link {
+  background-color: #e0e0e0;
+  color: #1a1a1a;
+}
+
 /* Navigation */
 .navbar {
   margin-bottom: 2rem;
