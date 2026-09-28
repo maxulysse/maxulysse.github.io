@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionCard from "../components/SectionCard.astro";
+import MetaFooter from "../components/MetaFooter.astro";
 import { projects } from "../data/projects";
 ---
 
@@ -9,28 +9,22 @@ import { projects } from "../data/projects";
     description="Maxime Garcia, PhD in Bioinformatics"
 >
     <div class="card-columns only-one-column">
-        <div class="card">
-            <SectionCard
-                id="projects"
-                icon="fa-solid fa-flask"
-                title="Projects"
-            />
+        <div class="card bg-light">
+            <div class="card-body">
+                <h2 class="mb-0">Projects</h2>
+            </div>
         </div>
         {projects.map((project) => (
             <div class="card" id={project.id}>
                 <div class="card-body">
                     <h5 class="card-title">
-                        {project.url ? (
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {project.name}
-                            </a>
-                        ) : (
-                            project.name
-                        )}
+                        <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {project.name}
+                        </a>
                         {project.github && (
                             <a
                                 href={project.github}
@@ -48,48 +42,8 @@ import { projects } from "../data/projects";
                     </h6>
                     <p class="card-text">{project.description}</p>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted d-block mb-2">
-                        <i class="fa-regular fa-calendar me-1" aria-hidden="true" />
-                        {project.years}
-                    </small>
-                    <div class="tags-container">
-                        <span class="text-muted me-2">
-                            <i class="fa-solid fa-tags" aria-hidden="true" />
-                        </span>
-                        {project.tags.map((tag: string, index: number) => (
-                            <>
-                                <a
-                                    href={`/tags/${tag.toLowerCase()}/`}
-                                    class="tag-badge"
-                                >
-                                    {tag}
-                                </a>
-                                {index < project.tags.length - 1 && (
-                                    <span class="tag-separator">•</span>
-                                )}
-                            </>
-                        ))}
-                    </div>
-                </div>
+                <MetaFooter date={project.years} tags={project.tags} />
             </div>
         ))}
     </div>
 </BaseLayout>
-
-<style>
-    .project-github {
-        color: var(--text-muted);
-        font-size: 0.9em;
-    }
-
-    .project-github:hover {
-        color: var(--accent-link-hover);
-    }
-
-    .tags-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-    }
-</style>
