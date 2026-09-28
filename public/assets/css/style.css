@@ -240,10 +240,25 @@ body[data-theme="dark"] .skip-link {
   display: inline-block;
 }
 
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 .tags-container .tag-separator {
   color: var(--text-muted);
   margin: 0 0.25rem;
   font-size: 1.2em;
+}
+
+.project-github {
+  color: var(--accent-link);
+  font-size: 0.9em;
+}
+
+.project-github:hover {
+  color: var(--accent-link-hover);
 }
 
 .card-footer {

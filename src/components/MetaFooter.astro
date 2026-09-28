@@ -1,0 +1,33 @@
+---
+interface Props {
+    date: string;
+    tags?: string[];
+}
+const { date, tags } = Astro.props;
+---
+<div class="card-footer">
+    <small class="text-muted d-block mb-2">
+        <i class="fa-regular fa-calendar me-1" aria-hidden="true" />
+        {date}
+    </small>
+    {tags && tags.length > 0 && (
+        <div class="tags-container">
+            <span class="text-muted me-2">
+                <i class="fa-solid fa-tags" aria-hidden="true" />
+            </span>
+            {tags.map((tag: string, index: number) => (
+                <>
+                    <a
+                        href={`/tags/${tag.toLowerCase()}/`}
+                        class="tag-badge"
+                    >
+                        {tag}
+                    </a>
+                    {index < tags.length - 1 && (
+                        <span class="tag-separator">•</span>
+                    )}
+                </>
+            ))}
+        </div>
+    )}
+</div>
