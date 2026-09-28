@@ -6,6 +6,7 @@ export type Project = {
     github?: string;
     years: string;
     role: string;
+    tags: string[];
 };
 
 export const projects: Project[] = [
@@ -14,10 +15,11 @@ export const projects: Project[] = [
         name: "nf-core-utils",
         description:
             "A Nextflow plugin providing utility functions used by nf-core pipelines, including genome attribute resolution, reference file management, and pipeline initialization.",
-        url: "https://nf-co.re/nf-core-utils",
+        url: "https://registry.nextflow.io/plugins/nf-core-utils",
         github: "https://github.com/nf-core/nf-core-utils",
         years: "2025–present",
         role: "Contributor",
+        tags: ["plugin", "nf-core"],
     },
     {
         id: "seqinspector",
@@ -28,6 +30,7 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core/seqinspector",
         years: "2024–present",
         role: "Developer and maintainer",
+        tags: ["pipeline", "nextflow", "quality-control", "nf-core"],
     },
     {
         id: "nft-utils",
@@ -38,6 +41,7 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core/nft-utils",
         years: "2024–present",
         role: "Maintainer",
+        tags: ["plugin", "nf-test", "testing", "nf-core"],
     },
     {
         id: "createpanelrefs",
@@ -48,6 +52,7 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core/createpanelrefs",
         years: "2023–present",
         role: "Developer and maintainer",
+        tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
     },
     {
         id: "references",
@@ -58,6 +63,7 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core/references",
         years: "2023–present",
         role: "Developer and maintainer",
+        tags: ["pipeline", "nextflow", "resource", "nf-core"],
     },
     {
         id: "annotation-cache",
@@ -68,6 +74,29 @@ export const projects: Project[] = [
         github: "https://github.com/annotation-cache",
         years: "2023–present",
         role: "Developer and maintainer",
+        tags: ["resource"],
+    },
+    {
+        id: "fetchngs",
+        name: "nf-core/fetchngs",
+        description:
+            "A bioinformatics pipeline to fetch metadata and raw FastQ files from public sequencing databases, supporting SRA, ENA, DDBJ, and GEO identifiers.",
+        url: "https://nf-co.re/fetchngs",
+        github: "https://github.com/nf-core/fetchngs",
+        years: "2023–present",
+        role: "Maintainer",
+        tags: ["pipeline", "nextflow", "data-retrieval", "nf-core"],
+    },
+    {
+        id: "demultiplex",
+        name: "nf-core/demultiplex",
+        description:
+            "A pipeline to demultiplex the raw data produced by next generation sequencing machines, supporting Illumina, Element Biosciences, Singular Genomics, and 10x Genomics platforms, as well as FASTQ files with user supplied read structures.",
+        url: "https://nf-co.re/demultiplex",
+        github: "https://github.com/nf-core/demultiplex",
+        years: "2023–present",
+        role: "Maintainer",
+        tags: ["pipeline", "nextflow", "preprocessing", "nf-core"],
     },
     {
         id: "rnavar",
@@ -78,8 +107,9 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core/rnavar",
         years: "2021–present",
         role: "Developer and maintainer",
+        tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
     },
-{
+    {
         id: "nf-core",
         name: "nf-core",
         description:
@@ -88,6 +118,7 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core",
         years: "2017–present",
         role: "Core team member",
+        tags: ["community", "nf-core"],
     },
     {
         id: "rnafusion",
@@ -97,7 +128,8 @@ export const projects: Project[] = [
         url: "https://nf-co.re/rnafusion",
         github: "https://github.com/nf-core/rnafusion",
         years: "2017–present",
-        role: "Maintainer",
+        role: "Contributor",
+        tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
     },
     {
         id: "sarek",
@@ -108,6 +140,7 @@ export const projects: Project[] = [
         github: "https://github.com/nf-core/sarek",
         years: "2016–present",
         role: "Developer and maintainer",
+        tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
     },
     {
         id: "iti",
@@ -117,5 +150,6 @@ export const projects: Project[] = [
         url: "https://sourceforge.net/projects/iti/",
         years: "2009–2013",
         role: "Developer",
+        tags: ["method"],
     },
 ];

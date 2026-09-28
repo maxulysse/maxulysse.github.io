@@ -1,6 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { projects } from "../data/projects";
+
+// Display tags alphabetically, whatever order they are declared in.
+const sortedProjects = projects.map((project) => ({
+    ...project,
+    tags: [...project.tags].sort(),
+}));
 ---
 
 <BaseLayout
@@ -16,48 +22,65 @@ import { projects } from "../data/projects";
                     <i class="fa-solid fa-link link-icon" />
                 </a>
             </div>
-            <ul class="projects-list mb-0">
-                {projects.map((project) => (
-                    <li>
-                        <div class="project-item">
-                            <strong>{project.name}</strong>
-                            <span class="text-muted project-role">
-                                {" "}— {project.role}
-                            </span>
-                            <br />
-                            <span class="project-years text-muted">
-                                <i class="fa-regular fa-calendar" />{" "}
-                                {project.years}
-                            </span>
-                            <p class="mb-0 mt-1">{project.description}</p>
-                            <div class="project-links mt-1">
-                                {project.url && (
-                                    <a
-                                        href={project.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="btn btn-outline-primary btn-sm"
-                                    >
-                                        <i class="fa-solid fa-earth-europe" />{" "}
-                                        Website
-                                    </a>
-                                )}
-                                {project.github && (
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="btn btn-outline-dark btn-sm"
-                                    >
-                                        <i class="fab fa-github" /> GitHub
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
         </div>
+        {sortedProjects.map((project) => (
+            <div class="card" id={project.id}>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {project.name}
+                        <span class="text-muted project-role">
+                            — {project.role}
+                        </span>
+                    </h5>
+                    <p class="project-years text-muted">
+                        <i class="fa-regular fa-calendar" aria-hidden="true" />{" "}
+                        {project.years}
+                    </p>
+                    <p class="card-text">{project.description}</p>
+                    <div class="tags-container project-tags">
+                        <span class="text-muted me-2">
+                            <i class="fa-solid fa-tags" aria-hidden="true" />
+                        </span>
+                        {project.tags.map((tag: string, index: number) => (
+                            <>
+                                <a
+                                    href={`/tags/${tag.toLowerCase()}/`}
+                                    class="tag-badge"
+                                >
+                                    {tag}
+                                </a>
+                                {index < project.tags.length - 1 && (
+                                    <span class="tag-separator">•</span>
+                                )}
+                            </>
+                        ))}
+                    </div>
+                    <div class="project-links mt-1">
+                        {project.url && (
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-primary btn-sm"
+                            >
+                                <i class="fa-solid fa-earth-europe" />{" "}
+                                Website
+                            </a>
+                        )}
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm"
+                            >
+                                <i class="fab fa-github" /> GitHub
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        ))}
     </div>
 </BaseLayout>
 
@@ -80,19 +103,6 @@ import { projects } from "../data/projects";
 
     .header-link a:hover .link-icon {
         opacity: 1;
-    }
-
-    .projects-list {
-        margin: 0;
-        padding-left: 1.25rem;
-    }
-
-    .projects-list li {
-        padding: 0.75rem 0;
-    }
-
-    .projects-list li + li {
-        border-top: 1px solid var(--list-divider-color);
     }
 
     .project-role {
