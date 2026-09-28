@@ -2,9 +2,7 @@ import rss from "@astrojs/rss";
 import { getAllPosts } from "../lib/posts";
 
 export async function GET(context) {
-  const allPosts = await getAllPosts();
-  const posts = allPosts
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  const posts = await getAllPosts();
 
   return rss({
     title: "maxulysse.github.io",

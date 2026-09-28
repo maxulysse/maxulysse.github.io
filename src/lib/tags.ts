@@ -1,73 +1,69 @@
-import type { CollectionEntry } from "astro:content";
 import { getAllPosts } from "./posts";
-import { projects, type Project } from "../data/projects";
+import { projects } from "../data/projects";
 
-type BlogEntry = CollectionEntry<"blog">;
+export type TagItem =
+    | { kind: "post"; label: string; href: string; date: Date }
+    | { kind: "project"; label: string; href: string; years: string };
 
 export type TagEntry = {
-    /** Lowercase key, used for URLs and matching. */
+    /** Lowercase tag. Also the display label, the URL slug and the anchor id. */
     tag: string;
-    /** Display label, preserving the casing from the first entry seen. */
-    label: string;
-    posts: BlogEntry[];
-    projects: Project[];
-    /** Total number of items carrying this tag. */
-    count: number;
+    /** Every post and project carrying this tag. */
+    items: TagItem[];
 };
 
-export type TagIndex = {
-    tags: TagEntry[];
-    byTag: Map<string, TagEntry>;
-};
+let cachedTags: TagEntry[] | null = null;
 
-let cachedIndex: TagIndex | null = null;
-
-/**
- * Builds a unified index of every tag used by blog posts and projects, so
- * both share the same tag cloud, the same counts, and the same detail pages.
- */
-export async function getTagIndex(): Promise<TagIndex> {
-    if (cachedIndex) {
-        return cachedIndex;
+export async function getTagIndex(): Promise<TagEntry[]> {
+    if (cachedTags) {
+        return cachedTags;
     }
 
-    const allPosts = (await getAllPosts()).sort(
-        (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-    );
+    const itemsByTag = new Map<string, TagItem[]>();
 
-    const byTag = new Map<string, TagEntry>();
-
-    function entryFor(tag: string): TagEntry {
+    function add(tag: string, item: TagItem) {
         const key = tag.toLowerCase();
-        let entry = byTag.get(key);
-        if (!entry) {
-            entry = { tag: key, label: tag, posts: [], projects: [], count: 0 };
-            byTag.set(key, entry);
+        const items = itemsByTag.get(key);
+        if (items) {
+            items.push(item);
+        } else {
+            itemsByTag.set(key, [item]);
         }
-        return entry;
     }
 
-    for (const post of allPosts) {
+    for (const post of await getAllPosts()) {
         for (const tag of post.data.tags ?? []) {
-            entryFor(tag).posts.push(post);
+            add(tag, {
+                kind: "post",
+                label: post.data.title,
+                href: `/blog/${post.id}/`,
+                date: post.data.date,
+            });
         }
     }
 
     for (const project of projects) {
         for (const tag of project.tags) {
-            entryFor(tag).projects.push(project);
+            add(tag, {
+                kind: "project",
+                label: project.name,
+                href: `/projects/#${project.id}`,
+                years: project.years,
+            });
         }
     }
 
-    for (const entry of byTag.values()) {
-        entry.count = entry.posts.length + entry.projects.length;
-    }
+    cachedTags = Array.from(itemsByTag, ([tag, items]) => ({ tag, items })).sort(
+        (a, b) => a.tag.localeCompare(b.tag),
+    );
+    return cachedTags;
+}
 
-    cachedIndex = {
-        tags: Array.from(byTag.values()).sort((a, b) =>
-            a.tag.localeCompare(b.tag),
-        ),
-        byTag,
-    };
-    return cachedIndex;
+export function itemsOfKind<K extends TagItem["kind"]>(
+    entry: TagEntry,
+    kind: K,
+): Extract<TagItem, { kind: K }>[] {
+    return entry.items.filter(
+        (item): item is Extract<TagItem, { kind: K }> => item.kind === kind,
+    );
 }

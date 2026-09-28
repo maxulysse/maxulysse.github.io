@@ -1,12 +1,12 @@
 ---
-import { getTagIndex, type TagEntry } from "../../lib/tags";
+import { getTagIndex, itemsOfKind, type TagEntry } from "../../lib/tags";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const { tags } = await getTagIndex();
+const tags = await getTagIndex();
 
 export async function getStaticPaths() {
-    const { tags } = await getTagIndex();
-    return tags.map((entry: TagEntry) => ({
+    const tags = await getTagIndex();
+    return tags.map((entry) => ({
         params: { tag: entry.tag },
         props: { entry },
     }));
@@ -18,6 +18,9 @@ interface Props {
 
 const { tag } = Astro.params;
 const { entry } = Astro.props;
+
+const posts = itemsOfKind(entry, "post");
+const projects = itemsOfKind(entry, "project");
 ---
 
 <BaseLayout
@@ -39,60 +42,51 @@ const { entry } = Astro.props;
         }
     </div>
 
-    {
-        tag && (
-            <div>
-                {entry.posts.length > 0 && (
-                    <div class="posts-for-tag">
-                        <h2>Posts tagged with "{tag}"</h2>
-                        <ul class="list-unstyled">
-                            {entry.posts.map((post) => (
-                                <li class="post-item">
-                                    <a href={`/blog/${post.id}/`}>
-                                        {post.data.title}
-                                    </a>
-                                    <small class="text-muted">
-                                        {post.data.date.toLocaleDateString(
-                                            "en-US",
-                                            {
-                                                year: "numeric",
-                                                month: "short",
-                                                day: "numeric",
-                                            },
-                                        )}
-                                    </small>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+    <div>
+        {
+            posts.length > 0 && (
+                <div class="posts-for-tag">
+                    <h2>Posts tagged with "{tag}"</h2>
+                    <ul class="list-unstyled">
+                        {posts.map((post) => (
+                            <li class="post-item">
+                                <a href={post.href}>{post.label}</a>
+                                <small class="text-muted">
+                                    {post.date.toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "short",
+                                        day: "numeric",
+                                    })}
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
 
-                {entry.projects.length > 0 && (
-                    <div class="projects-for-tag">
-                        <h2>Projects tagged with "{tag}"</h2>
-                        <ul class="list-unstyled">
-                            {entry.projects.map((project) => (
-                                <li class="project-item">
-                                    <a href={`/projects/#${project.id}`}>
-                                        {project.name}
-                                    </a>
-                                    <small class="text-muted">
-                                        <i
-                                            class="fa-solid fa-diagram-project me-1"
-                                            aria-hidden="true"
-                                        />
-                                        {project.years}
-                                    </small>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-
-                {entry.count === 0 && <p>Nothing found for this tag.</p>}
-            </div>
-        )
-    }
+        {
+            projects.length > 0 && (
+                <div class="projects-for-tag">
+                    <h2>Projects tagged with "{tag}"</h2>
+                    <ul class="list-unstyled">
+                        {projects.map((project) => (
+                            <li class="project-item">
+                                <a href={project.href}>{project.label}</a>
+                                <small class="text-muted">
+                                    <i
+                                        class="fa-solid fa-diagram-project me-1"
+                                        aria-hidden="true"
+                                    />
+                                    {project.years}
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
+    </div>
 </BaseLayout>
 
 <style>
