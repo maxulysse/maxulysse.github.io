@@ -10,7 +10,7 @@ import {
     <div class="card-columns only-one-column cv-page">
         <div class="card bg-light">
             <div class="card-body">
-                <h6 class="card-text text-muted">
+                <h6 class="card-text text-muted cv-toc">
                     <a href="#experience">Experience</a> •
                     <a href="#education">Education</a> •
                     <a href="#skills">Computer skills</a> •
@@ -694,6 +694,13 @@ import {
     .link-icon {
         font-size: 0.8em;
         opacity: 0.6;
+    }
+
+    .cv-toc {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.5rem;
     }
 
     .header-link a {
