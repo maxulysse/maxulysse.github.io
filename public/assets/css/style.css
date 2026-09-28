@@ -499,13 +499,13 @@ a:hover {
 body[data-theme="dark"] {
   /* Dark palette */
   --text-primary: #e0e0e0;
-  --text-muted: #999;
+  --text-muted: #a3a3a3;
   --text-secondary: #b0b0b0;
   --text-inverse: #ffffff;
   --surface-base: #1a1a1a;
   --surface-raised: #2d2d2d;
   --surface-sunken: #2a2a2a;
-  --surface-header: #3a3a3a;
+  --surface-header: #333;
   --border: #444;
   --border-strong: #555;
   --accent: #007bff;
