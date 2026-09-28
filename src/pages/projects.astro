@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+
+// Display tags alphabetically, whatever order they are declared in.
+const sortedProjects = projects.map((project) => ({
+    ...project,
+    tags: [...project.tags].sort(),
+}));
+---
+
+<BaseLayout
+    title="Projects"
+    description="Maxime Garcia, PhD in Bioinformatics"
+>
+    <div class="card-columns only-one-column">
+        <div class="card">
+            <a id="projects" />
+            <div class="card-header h2 header-link">
+                <i class="fa-solid fa-flask" /> Projects
+                <a href="#projects">
+                    <i class="fa-solid fa-link link-icon" />
+                </a>
+            </div>
+        </div>
+        {sortedProjects.map((project) => (
+            <div class="card" id={project.id}>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {project.name}
+                        <span class="text-muted project-role">
+                            — {project.role}
+                        </span>
+                    </h5>
+                    <p class="project-years text-muted">
+                        <i class="fa-regular fa-calendar" aria-hidden="true" />{" "}
+                        {project.years}
+                    </p>
+                    <p class="card-text">{project.description}</p>
+                    <div class="tags-container project-tags">
+                        <span class="text-muted me-2">
+                            <i class="fa-solid fa-tags" aria-hidden="true" />
+                        </span>
+                        {project.tags.map((tag: string, index: number) => (
+                            <>
+                                <a
+                                    href={`/tags/${tag.toLowerCase()}/`}
+                                    class="tag-badge"
+                                >
+                                    {tag}
+                                </a>
+                                {index < project.tags.length - 1 && (
+                                    <span class="tag-separator">•</span>
+                                )}
+                            </>
+                        ))}
+                    </div>
+                    <div class="project-links mt-1">
+                        {project.url && (
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-primary btn-sm"
+                            >
+                                <i class="fa-solid fa-earth-europe" />{" "}
+                                Website
+                            </a>
+                        )}
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm"
+                            >
+                                <i class="fab fa-github" /> GitHub
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+</BaseLayout>
+
+<style>
+    .header-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .link-icon {
+        font-size: 0.8em;
+        opacity: 0.6;
+    }
+
+    .header-link a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header-link a:hover .link-icon {
+        opacity: 1;
+    }
+
+    .project-role {
+        font-size: 0.9em;
+    }
+
+    .project-years {
+        font-size: 0.85em;
+    }
+
+    .project-links {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+</style>

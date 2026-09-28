@@ -1,6 +1,4 @@
----
 import bibtexParse from "@orcid/bibtex-parse-js";
-import BaseLayout from "../layouts/BaseLayout.astro";
 import bibContent from "../data/publications.bib?raw";
 
 type BibEntry = {
@@ -8,7 +6,7 @@ type BibEntry = {
     entryTags?: Record<string, unknown>;
 };
 
-type SectionConfig = {
+export type PublicationSection = {
     id: string;
     label: string;
     icon: string;
@@ -22,7 +20,7 @@ type PublicationLink = {
     text?: string;
 };
 
-type Publication = {
+export type Publication = {
     id: string;
     section: string;
     year: number;
@@ -36,7 +34,7 @@ type Publication = {
 
 type NormalizedTags = Record<string, string | undefined>;
 
-const sections: SectionConfig[] = [
+export const publicationSections: PublicationSection[] = [
     {
         id: "thesis",
         label: "Thesis",
@@ -276,140 +274,12 @@ const publications: Publication[] = entries
         return b.month - a.month;
     });
 
-const publicationsBySection: Record<string, Publication[]> = Object.fromEntries(
-    sections.map((section) => [
-        section.id,
-        publications.filter((publication: Publication) =>
-            section.sourceSections.includes(publication.section),
-        ),
-    ]),
-);
----
-
-<BaseLayout
-    title="Publications"
-    description="Maxime Garcia, PhD in Bioinformatics"
->
-    <div class="card-columns only-one-column">
-        <div class="card bg-light">
-            <div class="card-body">
-                <h6 class="card-text text-muted">
-                    {
-                        sections.map((section, index) => (
-                            <>
-                                <a href={`#${section.id}`}>{section.label}</a>
-                                {index < sections.length - 1 && " • "}
-                            </>
-                        ))
-                    }
-                </h6>
-            </div>
-        </div>
-
-        {
-            sections.map((section) => {
-                const sectionPublications =
-                    publicationsBySection[section.id] ?? [];
-                if (sectionPublications.length === 0) return null;
-
-                return (
-                    <div class="card">
-                        <a id={section.id} />
-                        <div class="card-header h2 header-link">
-                            <i class={section.icon} /> {section.label}
-                            <a href={`#${section.id}`}>
-                                <i class="fa-solid fa-link link-icon" />
-                            </a>
-                        </div>
-                        <ul class="publications-list mb-0">
-                            {sectionPublications.map((publication) => (
-                                <li id={publication.id}>
-                                    {publication.authors && (
-                                        <>{publication.authors}, </>
-                                    )}
-                                    <em>{publication.title}</em>
-                                    {(publication.venue || publication.date) &&
-                                        ", "}
-                                    {publication.venue}
-                                    {publication.venue &&
-                                        publication.date &&
-                                        ", "}
-                                    {publication.date}.
-                                    {publication.links.length > 0 && (
-                                        <span class="publication-links">
-                                            {publication.links.map((link) => (
-                                                <a
-                                                    href={link.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    aria-label={link.label}
-                                                    title={link.label}
-                                                >
-                                                    {link.text ? (
-                                                        link.text
-                                                    ) : (
-                                                        <i
-                                                            class={
-                                                                link.iconClass
-                                                            }
-                                                        />
-                                                    )}
-                                                </a>
-                                            ))}
-                                        </span>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                );
-            })
-        }
-    </div>
-</BaseLayout>
-
-<style>
-    .header-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .link-icon {
-        font-size: 0.8em;
-        opacity: 0.6;
-    }
-
-    .header-link a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .header-link a:hover .link-icon {
-        opacity: 1;
-    }
-
-    .publications-list {
-        margin: 0;
-        padding-left: 1.25rem;
-    }
-
-    .publications-list li {
-        padding: 0.75rem 0;
-    }
-
-    .publications-list li + li {
-        border-top: 1px solid var(--list-divider-color);
-    }
-
-    .publication-links {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-left: 0.5rem;
-    }
-
-    .publication-links a {
-        text-decoration: none;
-    }
-</style>
+export const publicationsBySection: Record<string, Publication[]> =
+    Object.fromEntries(
+        publicationSections.map((section) => [
+            section.id,
+            publications.filter((publication: Publication) =>
+                section.sourceSections.includes(publication.section),
+            ),
+        ]),
+    );
