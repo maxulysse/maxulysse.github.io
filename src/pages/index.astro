@@ -4,9 +4,7 @@ import PostCard from "../components/PostCard.astro";
 import Pagination from "../components/Pagination.astro";
 import { getAllPosts } from "../lib/posts";
 
-const allPosts = await getAllPosts();
-const sortedPosts = allPosts
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedPosts = await getAllPosts();
 
 const postsPerPage = 6;
 const paginatedPosts = sortedPosts.slice(0, postsPerPage);

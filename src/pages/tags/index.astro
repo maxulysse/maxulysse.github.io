@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getTagIndex } from "../../lib/tags";
+import { getTagIndex, itemsOfKind } from "../../lib/tags";
 
-const { tags } = await getTagIndex();
+const tags = await getTagIndex();
 
 // Scale the tag cloud by the total number of items per tag.
-const counts = tags.map((entry) => entry.count);
+const counts = tags.map((entry) => entry.items.length);
 const minCount = Math.min(...counts);
 const maxCount = Math.max(...counts);
 const minSize = 0.9;
@@ -32,11 +32,11 @@ function getTagSize(count: number): number {
                         <a
                             href={`#${entry.tag}`}
                             class="tag-link"
-                            style={`font-size: ${getTagSize(entry.count)}rem;`}
+                            style={`font-size: ${getTagSize(entry.items.length)}rem;`}
                         >
-                            {entry.label}
+                            {entry.tag}
                             <span class="badge text-bg-secondary badge-sm ms-1">
-                                {entry.count}
+                                {entry.items.length}
                             </span>
                         </a>
                     ))
@@ -47,64 +47,60 @@ function getTagSize(count: number): number {
 
     <div class="archive-grid">
         {
-            tags.map((entry) => (
-                <div id={entry.tag}>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="mb-0">
-                                <i
-                                    class="fa-solid fa-tag me-2"
-                                    aria-hidden="true"
-                                />
-                                {entry.label}
-                                <span class="badge text-bg-secondary ms-2">
-                                    {entry.count}
-                                </span>
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                            {entry.projects.length > 0 && (
-                                <ul class="list-unstyled mb-0 mb-3">
-                                    {entry.projects.map((project) => (
-                                        <li class="mb-3">
-                                            <small class="text-muted d-block">
-                                                <i
-                                                    class="fa-solid fa-diagram-project me-1"
-                                                    aria-hidden="true"
-                                                />
-                                                {project.years}
-                                            </small>
-                                            <a href={`/projects/#${project.id}`}>
-                                                {project.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                            <ul class="list-unstyled mb-0">
-                                {entry.posts.map((post) => (
-                                    <li class="mb-3">
-                                        <small class="text-muted d-block">
-                                            <i
-                                                class="fa-regular fa-calendar me-1"
-                                                aria-hidden="true"
-                                            />
-                                            {
-                                                post.data.date
-                                                    .toISOString()
-                                                    .split("T")[0]
-                                            }
-                                        </small>
-                                        <a href={`/blog/${post.id}/`}>
-                                            {post.data.title}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
+            tags.map((entry) => {
+                // Projects first, then posts, matching the previous layout.
+                const items = [
+                    ...itemsOfKind(entry, "project"),
+                    ...itemsOfKind(entry, "post"),
+                ];
+                return (
+                    <div id={entry.tag}>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="mb-0">
+                                    <i
+                                        class="fa-solid fa-tag me-2"
+                                        aria-hidden="true"
+                                    />
+                                    {entry.tag}
+                                    <span class="badge text-bg-secondary ms-2">
+                                        {entry.items.length}
+                                    </span>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                {items.length > 0 && (
+                                    <ul class="list-unstyled mb-0">
+                                        {items.map((item) => (
+                                            <li class="mb-3">
+                                                <small class="text-muted d-block">
+                                                    <i
+                                                        class={
+                                                            item.kind ===
+                                                            "project"
+                                                                ? "fa-solid fa-diagram-project me-1"
+                                                                : "fa-regular fa-calendar me-1"
+                                                        }
+                                                        aria-hidden="true"
+                                                    />
+                                                    {item.kind === "project"
+                                                        ? item.years
+                                                        : item.date
+                                                              .toISOString()
+                                                              .split("T")[0]}
+                                                </small>
+                                                <a href={item.href}>
+                                                    {item.label}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))
+                );
+            })
         }
     </div>
 </BaseLayout>

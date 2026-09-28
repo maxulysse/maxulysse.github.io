@@ -4,9 +4,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PostCard from "../../../components/PostCard.astro";
 import Pagination from "../../../components/Pagination.astro";
 
-const allPosts = await getAllPosts();
-const sortedPosts = allPosts
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedPosts = await getAllPosts();
 
 const postsPerPage = 6;
 const currentPage = parseInt((Astro.params.page as string) || "1");
@@ -16,9 +14,7 @@ const paginatedPosts = sortedPosts.slice(startIndex, endIndex);
 const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
 
 export async function getStaticPaths() {
-    const posts = await getAllPosts();
-    const sortedPosts = posts
-        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+    const sortedPosts = await getAllPosts();
 
     const postsPerPage = 6;
     const totalPages = Math.ceil(sortedPosts.length / postsPerPage);

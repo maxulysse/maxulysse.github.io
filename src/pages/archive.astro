@@ -3,9 +3,7 @@ import { type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllPosts } from "../lib/posts";
 
-const allPosts = await getAllPosts();
-const sortedPosts = allPosts
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedPosts = await getAllPosts();
 
 // Group posts by year
 const postsByYear: { [key: string]: CollectionEntry<"blog">[] } = {};
