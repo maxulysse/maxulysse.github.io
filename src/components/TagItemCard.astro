@@ -1,0 +1,18 @@
+---
+import type { TagItem } from "../lib/tags";
+import { itemDate, itemIcon } from "../lib/tags";
+
+interface Props {
+    item: TagItem;
+}
+
+const { item } = Astro.props;
+---
+
+<li class="mb-3">
+    <small class="text-muted d-block">
+        <i class={`${itemIcon(item)} me-1`} aria-hidden="true" />
+        {itemDate(item)}
+    </small>
+    <a href={item.href}>{item.label}</a>
+</li>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getTagIndex, itemsOfKind } from "../../lib/tags";
+import TagItemCard from "../../components/TagItemCard.astro";
 
 const tags = await getTagIndex();
 
@@ -72,27 +73,7 @@ function getTagSize(count: number): number {
                                 {items.length > 0 && (
                                     <ul class="list-unstyled mb-0">
                                         {items.map((item) => (
-                                            <li class="mb-3">
-                                                <small class="text-muted d-block">
-                                                    <i
-                                                        class={
-                                                            item.kind ===
-                                                            "project"
-                                                                ? "fa-solid fa-diagram-project me-1"
-                                                                : "fa-regular fa-calendar me-1"
-                                                        }
-                                                        aria-hidden="true"
-                                                    />
-                                                    {item.kind === "project"
-                                                        ? item.years
-                                                        : item.date
-                                                              .toISOString()
-                                                              .split("T")[0]}
-                                                </small>
-                                                <a href={item.href}>
-                                                    {item.label}
-                                                </a>
-                                            </li>
+                                            <TagItemCard {item} />
                                         ))}
                                     </ul>
                                 )}
