@@ -95,36 +95,76 @@ const currentPath = Astro.url.pathname;
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-        <!-- Bootstrap CSS -->
+        <!-- Bootstrap CSS (preload) -->
         <link
-            rel="stylesheet"
+            rel="preload"
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            as="style"
+            onload="this.rel='stylesheet'"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+                integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+                crossorigin="anonymous"
+            />
+        </noscript>
         <link
-            rel="stylesheet"
+            rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            as="style"
+            onload="this.rel='stylesheet'"
             integrity="sha384-rWj9FmWWt3OMqd9vBkWRhFavvVUYalYqGPoMdL1brs/qvvqz88gvLShYa4hKNyqb"
             crossorigin="anonymous"
         />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+                integrity="sha384-rWj9FmWWt3OMqd9vBkWRhFavvVUYalYqGPoMdL1brs/qvvqz88gvLShYa4hKNyqb"
+                crossorigin="anonymous"
+            />
+        </noscript>
         <link
-            rel="stylesheet"
+            rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css"
+            as="style"
+            onload="this.rel='stylesheet'"
             integrity="sha384-IAnhEDrYZnLsYcVzowpizdxXTHFovW5/CkZObGfY2QuaCKaQpvLCjj45LGb4Q/yE"
             crossorigin="anonymous"
         />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css"
+                integrity="sha384-IAnhEDrYZnLsYcVzowpizdxXTHFovW5/CkZObGfY2QuaCKaQpvLCjj45LGb4Q/yE"
+                crossorigin="anonymous"
+            />
+        </noscript>
 
         <!-- Custom styles -->
         <link rel="stylesheet" href="/assets/css/style.css" />
 
-        <!-- Prism for code highlighting -->
+        <!-- Prism CSS (preload) -->
         <link
-            rel="stylesheet"
+            rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+            as="style"
+            onload="this.rel='stylesheet'"
             integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A"
             crossorigin="anonymous"
         />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+                integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A"
+                crossorigin="anonymous"
+            />
+        </noscript>
     </head>
     <body>
         <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -165,6 +205,7 @@ const currentPath = Astro.url.pathname;
                             <a
                                 class={`nav-link ${currentPath.startsWith("/projects") ? "active" : ""}`}
                                 href="/projects"
+
                                 ><i class="fa-solid fa-flask me-2"
                                 ></i>projects</a
                             >
@@ -173,6 +214,7 @@ const currentPath = Astro.url.pathname;
                             <a
                                 class={`nav-link ${currentPath.startsWith("/cv") ? "active" : ""}`}
                                 href="/cv"
+
                                 ><i class="fa-solid fa-id-badge me-2"></i>cv</a
                             >
                         </li>
@@ -180,6 +222,7 @@ const currentPath = Astro.url.pathname;
                             <a
                                 class={`nav-link ${currentPath.startsWith("/tags") ? "active" : ""}`}
                                 href="/tags"
+
                                 ><i class="fa-solid fa-tags me-2"></i>tags</a
                             >
                         </li>
@@ -187,6 +230,7 @@ const currentPath = Astro.url.pathname;
                             <a
                                 class={`nav-link ${currentPath.startsWith("/archive") ? "active" : ""}`}
                                 href="/archive"
+
                                 ><i class="fa-regular fa-calendar me-2"
                                 ></i>archive</a
                             >
@@ -195,6 +239,7 @@ const currentPath = Astro.url.pathname;
                             <a
                                 class={`nav-link ${currentPath.startsWith("/about") ? "active" : ""}`}
                                 href="/about"
+
                                 ><i class="fa-regular fa-id-card me-2"
                                 ></i>about</a
                             >
@@ -328,28 +373,32 @@ const currentPath = Astro.url.pathname;
             </footer>
         </div>
 
-        <!-- Bootstrap JS -->
-        <script is:inline
+        <!-- Bootstrap JS (deferred) -->
+        <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"
+            defer
         ></script>
 
-        <!-- Prism for code highlighting -->
+        <!-- Prism for code highlighting (deferred) -->
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
             integrity="sha384-06z5D//U/xpvxZHuUz92xBvq3DqBBFi7Up53HRrbV7Jlv7Yvh/MZ7oenfUe9iCEt"
             crossorigin="anonymous"
+            defer
         ></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"
             integrity="sha384-9WmlN8ABpoFSSHvBGGjhvB3E/D8UkNB9HpLJjBQFC2VSQsM1odiQDv4NbEo+7l15"
             crossorigin="anonymous"
+            defer
         ></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
             integrity="sha384-WJdEkJKrbsqw0evQ4GB6mlsKe5cGTxBOw4KAEIa52ZLB7DDpliGkwdme/HMa5n1m"
             crossorigin="anonymous"
+            defer
         ></script>
 
         <!-- Theme toggle script -->
