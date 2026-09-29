@@ -24,6 +24,23 @@ id = "check-merge-conflict"
 id = "mixed-line-ending"
 
 [[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "eslint"
+name = "eslint"
+entry = "npm run lint:eslint"
+language = "system"
+types = ["typescript", "javascript", "astro"]
+
+[[repos.hooks]]
+id = "astro-check"
+name = "astro-check"
+entry = "npm run check"
+language = "system"
+types = ["typescript", "javascript", "astro"]
+
+[[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
 rev = "v0.22.1"
 
