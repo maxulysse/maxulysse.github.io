@@ -1,4 +1,5 @@
 import { getAllPosts } from "./posts";
+import { formatDateIso } from "./date";
 import { projects } from "../data/projects";
 
 export type TagItem =
@@ -68,12 +69,10 @@ export function itemsOfKind<K extends TagItem["kind"]>(
     );
 }
 
-export function formatDate(date: Date): string {
-    return date.toISOString().split("T")[0];
-}
+export { formatDateIso as formatDate };
 
 export function itemDate(item: TagItem): string {
-    return item.kind === "project" ? item.years : formatDate(item.date);
+    return item.kind === "project" ? item.years : formatDateIso(item.date);
 }
 
 export function itemIcon(item: TagItem): string {
