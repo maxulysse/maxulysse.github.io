@@ -1,13 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import MetaFooter from "./MetaFooter.astro";
+import { formatDateIso } from "../lib/date";
 
 interface Props {
     post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
-const date = post.data.date.toISOString().split("T")[0];
+const date = formatDateIso(post.data.date);
 ---
 
 <div class="col-md-4 mb-3">

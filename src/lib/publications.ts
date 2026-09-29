@@ -138,63 +138,32 @@ function toDoiUrl(doi: string): string {
 }
 
 function buildLinks(tags: NormalizedTags): PublicationLink[] {
+    const specs: Array<{
+        key: string;
+        href: (value: string) => string;
+        iconClass: string;
+        label: string;
+    }> = [
+        { key: "pubmed", href: toPubMedUrl, iconClass: "ai ai-pubmed", label: "PubMed" },
+        { key: "doi", href: toDoiUrl, iconClass: "ai ai-doi", label: "DOI" },
+        { key: "url", href: (v) => v, iconClass: "fa-solid fa-earth-europe", label: "Link" },
+        { key: "pdf", href: (v) => v, iconClass: "fa-solid fa-file-pdf", label: "PDF" },
+        { key: "github", href: (v) => v, iconClass: "fab fa-github", label: "GitHub" },
+        { key: "slides", href: (v) => v, iconClass: "fa-solid fa-chalkboard-user", label: "Slides" },
+        { key: "video", href: (v) => v, iconClass: "fab fa-youtube", label: "Video" },
+    ];
+
     const links: PublicationLink[] = [];
 
-    if (tags.pubmed) {
-        links.push({
-            href: toPubMedUrl(tags.pubmed),
-            iconClass: "ai ai-pubmed",
-            label: "PubMed",
-        });
+    for (const spec of specs) {
+        const value = tags[spec.key];
+        if (value) {
+            links.push({ href: spec.href(value), iconClass: spec.iconClass, label: spec.label });
+        }
     }
-    if (tags.doi) {
-        links.push({
-            href: toDoiUrl(tags.doi),
-            iconClass: "ai ai-doi",
-            label: "DOI",
-        });
-    }
-    if (tags.url) {
-        links.push({
-            href: tags.url,
-            iconClass: "fa-solid fa-earth-europe",
-            label: "Link",
-        });
-    }
-    if (tags.pdf) {
-        links.push({
-            href: tags.pdf,
-            iconClass: "fa-solid fa-file-pdf",
-            label: "PDF",
-        });
-    }
-    if (tags.github) {
-        links.push({
-            href: tags.github,
-            iconClass: "fab fa-github",
-            label: "GitHub",
-        });
-    }
-    if (tags.slides) {
-        links.push({
-            href: tags.slides,
-            iconClass: "fa-solid fa-chalkboard-user",
-            label: "Slides",
-        });
-    }
-    if (tags.video) {
-        links.push({
-            href: tags.video,
-            iconClass: "fab fa-youtube",
-            label: "Video",
-        });
-    }
+
     if (tags.event_url && tags.event) {
-        links.push({
-            href: tags.event_url,
-            text: tags.event,
-            label: tags.event,
-        });
+        links.push({ href: tags.event_url, text: tags.event, label: tags.event });
     }
 
     return links;
