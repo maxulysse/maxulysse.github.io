@@ -29,16 +29,16 @@ repo = "local"
 [[repos.hooks]]
 id = "eslint"
 name = "eslint"
-entry = "npm run lint:eslint"
+entry = "npx eslint --quiet src --ext .ts"
 language = "system"
-types = ["typescript", "javascript", "astro"]
+pass_filenames = false
 
 [[repos.hooks]]
 id = "astro-check"
 name = "astro-check"
 entry = "npm run check"
 language = "system"
-types = ["typescript", "javascript", "astro"]
+pass_filenames = false
 
 [[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
