@@ -1,7 +1,7 @@
 # [maxulysse.github.io](https://maxulysse.github.io)
 
 [![License](https://img.shields.io/github/license/maxulysse/maxulysse.github.io.svg)](https://github.com/maxulysse/maxulysse.github.io/blob/main/LICENSE)
-[![CI](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/ci.yml)
+[![prek](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/prek.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/prek.yml)
 [![build-cv](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/build-cv.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/build-cv.yml)
 [![Deploy to GitHub Pages](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/maxulysse/maxulysse.github.io/actions/workflows/deploy.yml)
 
@@ -64,7 +64,35 @@ src/content/      Blog posts and presentations
 src/pages/        Astro routes
 src/layouts/      Shared layouts
 src/data/         Site data (authors, social links)
+src/components/   Reusable Astro components
+src/lib/          Utilities (posts, pagination, tags, date, publications)
 ```
+
+## Adding Content
+
+### Blog Post
+
+1. Create a Markdown file in `src/content/blog/YYYY/YYYY-MM-DD-slug.md`
+2. Add required frontmatter:
+
+   ```yaml
+   ---
+   title: "Post Title"
+   date: 2024-01-01
+   ---
+   ```
+
+3. Optional frontmatter: `description`, `tags`, `author`, `image`
+
+### Project
+
+1. Add entry to `src/data/projects.ts`
+2. Include: `id`, `name`, `description`, `url`, `github`, `years`, `role`, `tags`
+
+### Presentation
+
+1. Create a Markdown file in `src/content/presentations/YYYY-MM-DD-title/index.md`
+2. Add frontmatter with `title`, `date`, and optional `redirects` for slide URLs
 
 ## Deployment
 
