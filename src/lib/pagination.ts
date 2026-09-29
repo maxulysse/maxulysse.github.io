@@ -10,8 +10,3 @@ export async function getPaginatedPosts(page: number) {
     const posts = allPosts.slice(start, start + POSTS_PER_PAGE);
     return { posts, currentPage, totalPages };
 }
-
-export async function getTotalPages() {
-    const allPosts = await getAllPosts();
-    return Math.ceil(allPosts.length / POSTS_PER_PAGE);
-}

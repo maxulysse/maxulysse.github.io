@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import { Authors } from "../data/authors";
+import { getAuthor } from "../data/authors";
 
 interface Props {
     title: string;
@@ -30,7 +30,7 @@ const content = await Astro.slots.render("default");
 const words = content.split(/\s+/).length;
 const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
-const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
+const authorInfo = getAuthor(author);
 const modifiedDate = lastModified || date;
 
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";

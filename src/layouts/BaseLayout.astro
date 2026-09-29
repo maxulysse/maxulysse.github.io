@@ -8,7 +8,7 @@ interface Props {
 }
 
 import socialMedia from "../data/socialMedia.js";
-import { Authors } from "../data/authors";
+import { getAuthor } from "../data/authors";
 
 const {
     lang = "en",
@@ -21,7 +21,7 @@ const {
 const siteTitle = "maxulysse.github.io";
 const url = "https://maxulysse.github.io";
 
-const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
+const authorInfo = getAuthor(author);
 
 const DEFAULT_OG_IMAGE = "/assets/img/avatar/owl.svg";
 
@@ -321,21 +321,15 @@ const currentPath = Astro.url.pathname;
                                 }
                                 aria-label={item.name}
                             >
-                                {item.icon_svg && (
+                                {item.icon.type === "svg" ? (
                                     <img
                                         class="footericon-img"
-                                        src={item.icon_svg}
+                                        src={item.icon.src}
                                         alt={item.name}
                                     />
-                                )}
-                                {!item.icon_svg && item.font_awesome && (
+                                ) : (
                                     <i
-                                        class={`fab footericon ${item.font_awesome} fa-2x`}
-                                    />
-                                )}
-                                {!item.icon_svg && item.academicons && (
-                                    <i
-                                        class={`ai footericon ${item.academicons} ai-2x`}
+                                        class={`${item.icon.library} footericon ${item.icon.name} fa-2x`}
                                     />
                                 )}
                             </a>

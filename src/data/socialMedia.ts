@@ -1,91 +1,93 @@
+type SocialIcon =
+    | { type: "svg"; src: string }
+    | { type: "font"; library: "fab" | "ai"; name: string };
+
 interface SocialMediaItem {
     name: string;
     url: string;
-    font_awesome?: string;
-    academicons?: string;
-    icon_svg?: string;
+    icon: SocialIcon;
 }
 
 const socialMedia: SocialMediaItem[] = [
   {
     name: "GitHub",
     url: "https://github.com/maxulysse/",
-    font_awesome: "fa-github",
+    icon: { type: "font", library: "fab", name: "fa-github" },
   },
   {
     name: "Bluesky",
     url: "https://bsky.app/profile/maxulysse.github.io",
-    font_awesome: "fa-bluesky",
+    icon: { type: "font", library: "fab", name: "fa-bluesky" },
   },
   {
     name: "Mastodon",
     url: "https://scholar.social/@gau",
-    font_awesome: "fa-mastodon",
+    icon: { type: "font", library: "fab", name: "fa-mastodon" },
   },
   {
     name: "X (Twitter)",
     url: "https://x.com/gau/",
-    font_awesome: "fa-x-twitter",
+    icon: { type: "font", library: "fab", name: "fa-x-twitter" },
   },
   {
     name: "ORCID",
     url: "https://orcid.org/0000-0003-2827-9261",
-    academicons: "ai-orcid",
+    icon: { type: "font", library: "ai", name: "ai-orcid" },
   },
   {
     name: "HAL",
     url: "https://cv.hal.science/maxime-garcia",
-    academicons: "ai-hal",
+    icon: { type: "font", library: "ai", name: "ai-hal" },
   },
   {
     name: "Google Scholar",
     url: "https://scholar.google.fr/citations?user=bzhsE6oAAAAJ",
-    academicons: "ai-google-scholar",
+    icon: { type: "font", library: "ai", name: "ai-google-scholar" },
   },
   {
     name: "YouTube",
     url: "https://www.youtube.com/c/maximegarcia",
-    font_awesome: "fa-youtube",
+    icon: { type: "font", library: "fab", name: "fa-youtube" },
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/maxugarcia/",
-    font_awesome: "fa-linkedin-in",
+    icon: { type: "font", library: "fab", name: "fa-linkedin-in" },
   },
   {
     name: "Keybase",
     url: "https://keybase.io/maxulysse",
-    font_awesome: "fa-keybase",
+    icon: { type: "font", library: "fab", name: "fa-keybase" },
   },
   {
     name: "BioStars",
     url: "https://www.biostars.org/u/31759/",
-    icon_svg: "/assets/img/icons/biostars.svg"
+    icon: { type: "svg", src: "/assets/img/icons/biostars.svg" },
   },
   {
     name: "Seqera",
     url: "https://community.seqera.io/u/maxulysse/",
-    icon_svg: "/assets/img/icons/seqera.svg",
+    icon: { type: "svg", src: "/assets/img/icons/seqera.svg" },
   },
   {
     name: "Stack Exchange",
     url: "https://stackexchange.com/users/2204471/maxulysse/",
-    font_awesome: "fa-stack-overflow",
+    icon: { type: "font", library: "fab", name: "fa-stack-overflow" },
   },
   {
     name: "ResearchGate",
     url: "https://www.researchgate.net/profile/Maxime_Garcia",
-    font_awesome: "fa-researchgate",
+    icon: { type: "font", library: "fab", name: "fa-researchgate" },
   },
   {
     name: "reddit",
     url: "https://www.reddit.com/user/maxulysse",
-    font_awesome: "fa-reddit-alien",
+    icon: { type: "font", library: "fab", name: "fa-reddit-alien" },
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/maxulysse/",
-    font_awesome: "fa-instagram",
+    icon: { type: "font", library: "fab", name: "fa-instagram" },
   },
 ];
 

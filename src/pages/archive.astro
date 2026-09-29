@@ -2,6 +2,7 @@
 import { type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllPosts } from "../lib/posts";
+import { formatDateIso } from "../lib/date";
 
 const sortedPosts = await getAllPosts();
 
@@ -59,11 +60,7 @@ const years = Object.keys(postsByYear).sort(
                                                 class="fa-regular fa-calendar me-1"
                                                 aria-hidden="true"
                                             />
-                                            {
-                                                post.data.date
-                                                    .toISOString()
-                                                    .split("T")[0]
-                                            }
+                                            {formatDateIso(post.data.date)}
                                         </small>
                                         <a href={`/blog/${post.id}/`}>
                                             {post.data.title}

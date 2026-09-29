@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { formatDateIso } from "./date";
 
 type BlogEntry = CollectionEntry<"blog">;
 
@@ -20,11 +21,8 @@ export async function getAllPosts(): Promise<BlogEntry[]> {
 }
 
 function normalizeDate(value: unknown): string {
-    if (!value) return "";
-    if (value instanceof Date) {
-        return value.toISOString().split("T")[0];
-    }
-    const match = value.toString().match(/\d{4}-\d{2}-\d{2}/);
+    if (value instanceof Date) return formatDateIso(value);
+    const match = value?.toString().match(/\d{4}-\d{2}-\d{2}/);
     return match ? match[0] : "";
 }
 
