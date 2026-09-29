@@ -63,6 +63,10 @@ const currentPath = Astro.url.pathname;
         <meta property="og:type" content={title ? "article" : "website"} />
 
         <meta name="theme-color" content="#f8f9fa" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; connect-src 'self'; frame-src 'none'; object-src 'none'"
+        />
         <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
         <!-- Favicon -->
@@ -128,7 +132,9 @@ const currentPath = Astro.url.pathname;
             (function () {
                 var saved = localStorage.getItem("theme");
                 var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                var theme = saved === "dark" || (!saved && prefersDark) ? "dark" : "light";
+                var theme = saved === "dark" || saved === "light" || saved === "auto"
+                    ? saved
+                    : prefersDark ? "dark" : "light";
                 document.documentElement.setAttribute("data-bs-theme", theme);
             })();
         </script>
