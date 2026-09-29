@@ -15,7 +15,7 @@ const { date, tags } = Astro.props;
             <span class="text-muted me-2">
                 <i class="fa-solid fa-tags" aria-hidden="true" />
             </span>
-            {tags.map((tag: string, index: number) => (
+            {tags.map((tag, index) => (
                 <>
                     <a
                         href={`/tags/${tag.toLowerCase()}/`}
