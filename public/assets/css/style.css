@@ -591,6 +591,50 @@ a:hover {
   color: var(--text-inverse);
 }
 
+/* Bootstrap utility classes set hardcoded light colors that don't
+   respond to data-bs-theme. Override them explicitly for dark mode. */
+[data-bs-theme="dark"] .navbar.bg-light {
+  background-color: var(--surface-raised) !important;
+}
+
+[data-bs-theme="dark"] .card.bg-light,
+[data-bs-theme="dark"] .card.bg-light .card-text,
+[data-bs-theme="dark"] .card.bg-light .card-text.text-muted,
+[data-bs-theme="dark"] .card.bg-light h6,
+[data-bs-theme="dark"] .card.bg-light a,
+[data-bs-theme="dark"] .card.bg-light a:hover {
+  background-color: var(--surface-header) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-bs-theme="dark"] .card.bg-light a {
+  color: var(--accent-link) !important;
+}
+
+[data-bs-theme="dark"] .card.bg-light a:hover {
+  color: var(--accent-link-hover) !important;
+}
+
+[data-bs-theme="dark"] .alert {
+  background-color: var(--surface-header) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-bs-theme="dark"] .alert-primary {
+  background-color: #2c3e50 !important;
+  border-color: #34495e !important;
+}
+
+[data-bs-theme="dark"] .alert a {
+  color: var(--accent-link) !important;
+}
+
+[data-bs-theme="dark"] .badge.text-bg-light {
+  background-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
 [data-bs-theme="dark"] code {
   background-color: var(--surface-sunken);
   color: var(--text-primary);
