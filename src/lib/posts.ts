@@ -6,8 +6,8 @@ type BlogEntry = CollectionEntry<"blog">;
 let cachedPosts: BlogEntry[] | null = null;
 
 /**
- * Every blog post, newest first. The returned array is a copy, so callers are
- * free to filter or sort it without affecting anyone else.
+ * Every blog post, newest first. Returns a shallow copy so callers can
+ * filter or sort freely without mutating the shared cache.
  */
 export async function getAllPosts(): Promise<BlogEntry[]> {
     if (!cachedPosts) {
