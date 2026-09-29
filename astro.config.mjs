@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+// Matches blog post URLs that include a date prefix (e.g. /2021-06-08-post-slug/).
+// These are generated from src/content/blog/YYYY/YYYY-MM-DD-title.md files.
+const hasDatePrefix = /\/\d{4}-\d{2}-\d{2}-/;
+
 export default defineConfig({
   site: 'https://maxulysse.github.io',
   output: 'static',
@@ -15,7 +19,7 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/slides/') &&
         !page.includes('/publications') &&
-        !/\/\d{4}-\d{2}-\d{2}-/.test(page),
+        !hasDatePrefix.test(page),
     }),
   ],
 });
