@@ -18,7 +18,8 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !page.includes('/slides/') &&
-        !page.includes('/publications') &&
+        !page.startsWith('/publications') &&
+        !page.startsWith('/tags/') &&
         !hasDatePrefix.test(page),
     }),
   ],
