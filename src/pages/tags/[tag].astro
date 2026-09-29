@@ -1,5 +1,5 @@
 ---
-import { getTagIndex, itemsOfKind, type TagEntry } from "../../lib/tags";
+import { getTagIndex, itemsOfKind, formatDate, type TagEntry } from "../../lib/tags";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const tags = await getTagIndex();
@@ -52,11 +52,7 @@ const projects = itemsOfKind(entry, "project");
                             <li class="post-item">
                                 <a href={post.href}>{post.label}</a>
                                 <small class="text-muted">
-                                    {post.date.toLocaleDateString("en-US", {
-                                        year: "numeric",
-                                        month: "short",
-                                        day: "numeric",
-                                    })}
+                                    {formatDate(post.date)}
                                 </small>
                             </li>
                         ))}

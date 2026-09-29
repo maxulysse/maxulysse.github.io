@@ -67,3 +67,17 @@ export function itemsOfKind<K extends TagItem["kind"]>(
         (item): item is Extract<TagItem, { kind: K }> => item.kind === kind,
     );
 }
+
+export function formatDate(date: Date): string {
+    return date.toISOString().split("T")[0];
+}
+
+export function itemDate(item: TagItem): string {
+    return item.kind === "project" ? item.years : formatDate(item.date);
+}
+
+export function itemIcon(item: TagItem): string {
+    return item.kind === "project"
+        ? "fa-solid fa-diagram-project"
+        : "fa-regular fa-calendar";
+}
