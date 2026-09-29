@@ -10,8 +10,6 @@
     "check": "astro check",
     "lint": "npm run lint:eslint && npm run check",
     "lint:eslint": "eslint src --ext .ts,.astro",
-    "format": "prettier --write \"src/**/*.{ts,astro}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,astro}\"",
     "prek": "prek run"
   },
   "dependencies": {
@@ -22,14 +20,10 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
-    "@eslint/eslintrc": "^3.3.7",
     "@typescript-eslint/eslint-plugin": "^8.71.0",
     "@typescript-eslint/parser": "^8.71.0",
     "eslint": "^10.11.0",
-    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.7.0",
-    "eslint-plugin-prettier": "^5.5.6",
-    "prettier": "^3.9.9",
     "typescript": "^6.0.3"
   },
   "overrides": {
