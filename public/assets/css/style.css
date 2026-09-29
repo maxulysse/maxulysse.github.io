@@ -597,6 +597,10 @@ a:hover {
   background-color: var(--surface-raised) !important;
 }
 
+[data-bs-theme="dark"] .navbar-nav .nav-link.active {
+  color: var(--text-inverse) !important;
+}
+
 [data-bs-theme="dark"] .card.bg-light,
 [data-bs-theme="dark"] .card.bg-light .card-text,
 [data-bs-theme="dark"] .card.bg-light .card-text.text-muted,
