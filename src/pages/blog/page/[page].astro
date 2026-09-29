@@ -1,39 +1,29 @@
 ---
-import { getAllPosts } from "../../../lib/posts";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PostCard from "../../../components/PostCard.astro";
 import Pagination from "../../../components/Pagination.astro";
+import { getPaginatedPosts, getTotalPages } from "../../../lib/pagination";
 
-const sortedPosts = await getAllPosts();
+const page = parseInt((Astro.params.page as string) || "1");
 
-const postsPerPage = 6;
-const currentPage = parseInt((Astro.params.page as string) || "1");
-const startIndex = (currentPage - 1) * postsPerPage;
-const endIndex = startIndex + postsPerPage;
-const paginatedPosts = sortedPosts.slice(startIndex, endIndex);
-const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+if (page === 1) {
+    return Astro.redirect("/");
+}
+
+const { posts, currentPage, totalPages } = await getPaginatedPosts(page);
 
 export async function getStaticPaths() {
-    const sortedPosts = await getAllPosts();
-
-    const postsPerPage = 6;
-    const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
-
+    const totalPages = await getTotalPages();
     return Array.from({ length: totalPages }, (_, i) => ({
         params: { page: String(i + 1) },
     }));
-}
-
-// Redirect page 1 to home
-if (currentPage === 1) {
-    return Astro.redirect("/");
 }
 ---
 
 <BaseLayout title={`Blog - Page ${currentPage}`} description="Blog posts">
     <div class="post-grid">
-        {paginatedPosts.map((post) => <PostCard post={post} />)}
+        {posts.map((post) => <PostCard post={post} />)}
     </div>
 
-    <Pagination currentPage={currentPage} totalPages={totalPages} />
+    <Pagination {currentPage} {totalPages} />
 </BaseLayout>

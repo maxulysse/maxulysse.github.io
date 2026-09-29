@@ -2,19 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import Pagination from "../components/Pagination.astro";
-import { getAllPosts } from "../lib/posts";
+import { getPaginatedPosts } from "../lib/pagination";
 
-const sortedPosts = await getAllPosts();
-
-const postsPerPage = 6;
-const paginatedPosts = sortedPosts.slice(0, postsPerPage);
-const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+const { posts, totalPages } = await getPaginatedPosts(1);
 ---
 
 <BaseLayout>
     <div class="post-grid">
-        {paginatedPosts.map((post) => <PostCard post={post} />)}
+        {posts.map((post) => <PostCard post={post} />)}
     </div>
 
-    <Pagination currentPage={1} totalPages={totalPages} />
+    <Pagination currentPage={1} {totalPages} />
 </BaseLayout>
