@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run ESLint
+        run: npm run lint:eslint
+
+      - name: Run Prettier check
+        run: npm run format:check
+
       - name: Run Astro type check
         run: npm run check
 
