@@ -25,9 +25,10 @@ const {
 } = Astro.props as Props;
 
 // Calculate read time
+const WORDS_PER_MINUTE = 160;
 const content = await Astro.slots.render("default");
 const words = content.split(/\s+/).length;
-const readTime = Math.ceil(words / 160); // 160 words per minute
+const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
 const authorInfo = Authors[author as keyof typeof Authors] || Authors.maxulysse;
 const modifiedDate = lastModified || date;
@@ -98,7 +99,7 @@ const editUrl = entryId
                         <div class="tags mt-3">
                             {tags.map((tag) => (
                                 <a
-                                    href={`/tags/${tag.toLowerCase()}/`}
+                                    href={`/tags#${tag.toLowerCase()}`}
                                     class="badge text-bg-primary"
                                 >
                                     {tag}

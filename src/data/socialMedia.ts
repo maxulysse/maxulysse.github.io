@@ -1,4 +1,12 @@
-const socialMedia = [
+interface SocialMediaItem {
+    name: string;
+    url: string;
+    font_awesome?: string;
+    academicons?: string;
+    icon_svg?: string;
+}
+
+const socialMedia: SocialMediaItem[] = [
   {
     name: "GitHub",
     url: "https://github.com/maxulysse/",

@@ -18,7 +18,7 @@ const { date, tags } = Astro.props;
             {tags.map((tag, index) => (
                 <>
                     <a
-                        href={`/tags/${tag.toLowerCase()}/`}
+                        href={`/tags#${tag.toLowerCase()}`}
                         class="tag-badge"
                     >
                         {tag}
