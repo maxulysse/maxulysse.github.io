@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "lint": "npm run check",
+    "lint": "npm run lint:eslint && npm run check",
+    "lint:eslint": "eslint src --ext .ts,.astro",
     "prek": "prek run"
   },
   "dependencies": {
@@ -19,6 +20,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
     "typescript": "^6.0.3"
   },
   "overrides": {

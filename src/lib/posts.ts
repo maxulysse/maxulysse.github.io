@@ -3,8 +3,6 @@ import type { CollectionEntry } from "astro:content";
 
 type BlogEntry = CollectionEntry<"blog">;
 
-type PresentationEntry = CollectionEntry<"presentations">;
-
 let cachedPosts: BlogEntry[] | null = null;
 let cachedPresentationRedirects: Map<string, string> | null = null;
 
