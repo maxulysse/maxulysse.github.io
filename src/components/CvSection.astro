@@ -1,0 +1,18 @@
+---
+import SectionCard from "./SectionCard.astro";
+
+interface Props {
+    id: string;
+    icon: string;
+    title: string;
+}
+
+const { id, icon, title } = Astro.props;
+---
+
+<div class="card">
+    <SectionCard {id} {icon} {title} />
+    <div class="card-body">
+        <slot />
+    </div>
+</div>

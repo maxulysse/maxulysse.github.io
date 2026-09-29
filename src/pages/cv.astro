@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionCard from "../components/SectionCard.astro";
+import CvSection from "../components/CvSection.astro";
+import { cvSections } from "../data/cv";
 import {
     publicationSections,
     publicationsBySection,
@@ -36,636 +37,121 @@ import {
             </h6>
         </div>
 
-        <div class="card">
-            <SectionCard
-                id="experience"
-                icon="fa-solid fa-building"
-                title="Experience"
-            />
-            <div class="card-body">
-                <table class="cv-table">
-                    <tbody>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> From 2025
-                            </td>
-                            <td>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        Bioinformatician and System developer in <a
-                                            href="https://ngisweden.scilifelab.se/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >NGI</a
-                                        > at <a
-                                            href="https://www.scilifelab.se/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >SciLifeLab</a
-                                        >
-                                    </li>
-                                    <li class="list-group-item">
-                                        • Pipeline development within <i
-                                            class="fab fa-github"></i>
-                                        <a href="https://github.com/nf-core"
-                                            >nf-core</a
-                                        >, a community effort to collect a
-                                        curated set of analysis pipelines built
-                                        using Nextflow.
-                                    </li>
-                                    <li class="list-group-item">
-                                        • In the core team that administers the <i
-                                            class="fa-solid fa-earth-europe"
-                                        ></i>
-                                        <a href="https://nf-co.re/">nf-core</a> project
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2022-2025
-                            </td>
-                            <td>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        Bioinformatician in Scientific
-                                        Development at <a
-                                            href="https://seqera.io"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >Seqera Labs</a
-                                        >
-                                    </li>
-                                    <li class="list-group-item">
-                                        • Pipeline development within <i
-                                            class="fab fa-github"></i>
-                                        <a href="https://github.com/nf-core"
-                                            >nf-core</a
-                                        >, a community effort to collect a
-                                        curated set of analysis pipelines built
-                                        using Nextflow.
-                                    </li>
-                                    <li class="list-group-item">
-                                        • In the core team that administers the <i
-                                            class="fa-solid fa-earth-europe"
-                                        ></i>
-                                        <a href="https://nf-co.re/">nf-core</a> project
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2016-2022
-                            </td>
-                            <td>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        Bioinformatician for <a
-                                            href="https://ki.se/forskning/barntumorbanken"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >The Swedish Childhood Tumor Biobank
-                                            (Barntumörbanken)</a
-                                        >
-                                    </li>
-                                    <li class="list-group-item">
-                                        • Development of <i
-                                            class="fab fa-github"></i>
-                                        <a
-                                            href="https://github.com/nf-core/sarek"
-                                            >Sarek</a
-                                        >, a Whole Genome/Targeted Sequencing
-                                        Germline/Somatic analysis workflow in
-                                        collaboration between two <a
-                                            href="https://www.scilifelab.se/"
-                                            >SciLifeLab</a
-                                        > infrastructures: <a
-                                            href="https://ngisweden.scilifelab.se/"
-                                            target="_blank"
-                                            rel="noopener noreferrer">NGI</a
-                                        > and <a
-                                            href="https://www.nbis.se/"
-                                            target="_blank"
-                                            rel="noopener noreferrer">NBIS</a
-                                        >
-                                    </li>
-                                    <li class="list-group-item">
-                                        • Development of a <i
-                                            class="fab fa-github"></i>
-                                        <a
-                                            href="https://github.com/nf-core/rnafusion"
-                                            >rnafusion</a
-                                        > analysis workflow in collaboration with
-                                        <a href="https://www.scilifelab.se/"
-                                            >SciLifeLab</a
-                                        > infrastructure <a
-                                            href="https://ngisweden.scilifelab.se/"
-                                            target="_blank"
-                                            rel="noopener noreferrer">NGI</a
-                                        >
-                                    </li>
-                                    <li class="list-group-item">
-                                        • In the core team that administers the <i
-                                            class="fa-solid fa-earth-europe"
-                                        ></i>
-                                        <a href="https://nf-co.re/">nf-core</a> project
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2013-2014
-                            </td>
-                            <td>
-                                Research Associate at <a
-                                    href="https://www.nus.edu.sg/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >National University of Singapore</a
-                                >, <a
-                                    href="https://www.csi.nus.edu.sg/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Cancer Science Institute of Singapore</a
-                                >
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2009-2013
-                            </td>
-                            <td>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        PhD Candidate at <a
-                                            href="https://crcm-marseille.fr/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >Cancer Research Center of Marseille</a
-                                        >
-                                    </li>
-                                    <li class="list-group-item">
-                                        • Development of <i
-                                            class="fa-solid fa-earth-europe"
-                                        ></i>
-                                        <a
-                                            href="https://sourceforge.net/projects/iti/"
-                                            >ITI</a
-                                        >, a method to analyze gene expression
-                                        data by superimposition of a large scale
-                                        protein-protein interaction data (human
-                                        interactome) over several gene
-                                        expression datasets
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        {cvSections.map((section) => (
+            <CvSection id={section.id} icon={section.icon} title={section.title}>
+                {section.kind === "table" && (
+                    <table class="cv-table">
+                        <tbody>
+                            {section.items.map((item) => (
+                                <tr>
+                                    <td class="cv-date">
+                                        <i class="fa-solid fa-calendar"></i> {item.date}
+                                    </td>
+                                    <td set:html={item.content} />
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
 
-        <div class="card">
-            <SectionCard
-                id="education"
-                icon="fa-solid fa-university"
-                title="Education"
-            />
-            <div class="card-body">
-                <table class="cv-table">
-                    <tbody>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2009
-                            </td>
-                            <td>
-                                PhD in Bioinformatics and Genomics at <a
-                                    href="https://www.univ-amu.fr/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Aix-Marseille Université</a
-                                >
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2007-2009
-                            </td>
-                            <td>
-                                Master's Degree in Bioinformatics and Genomics
-                                (former master BBSG), <a
-                                    href="https://bio-sciences.univ-amu.fr/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Faculté des Sciences de Luminy</a
-                                >, Marseille
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2007
-                            </td>
-                            <td>
-                                Erasmus Semester in <a
-                                    href="https://www.uea.ac.uk/biological-sciences"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >School of Biological Sciences</a
-                                >, <a
-                                    href="https://www.uea.ac.uk/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >University of East Anglia</a
-                                >, Norwich
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2003-2007
-                            </td>
-                            <td>
-                                Bachelor's Degree in Biology and Biochemistry, <a
-                                    href="https://sciences.univ-amu.fr/fr/departements/biologie"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Faculté des Sciences de Luminy</a
-                                >, Marseille
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="skills"
-                icon="fa-solid fa-laptop"
-                title="Computer Skills"
-            />
-            <div class="card-body">
-                <div class="row cv-skills">
-                    <div class="cv-item">
-                        <span class="cv-item-label">Scripting</span>
-                        <span class="cv-item-value">Groovy, Bash, Perl</span>
-                    </div>
-                    <div class="cv-item">
-                        <span class="cv-item-label">Pipeline</span>
-                        <span class="cv-item-value">Nextflow, Make</span>
-                    </div>
-                </div>
-                <hr />
-                <div class="row cv-skills">
-                    <div class="cv-item">
-                        <span class="cv-item-label">Web</span>
-                        <span class="cv-item-value"
-                            >Astro, Jekyll, Wordpress</span
+                {section.kind === "grid" && section.items.map((row, rowIndex) => (
+                    <>
+                        {rowIndex > 0 && <hr />}
+                        <div
+                            class="row cv-skills"
+                            style={section.columns ? `grid-template-columns: repeat(${section.columns}, 1fr)` : undefined}
                         >
-                    </div>
-                    <div class="cv-item">
-                        <span class="cv-item-label">Communication</span>
-                        <span class="cv-item-value"
-                            >Slack, LaTeX, Beamer, Inkscape</span
-                        >
-                    </div>
-                </div>
-                <hr />
-                <div class="row cv-skills">
-                    <div class="cv-item">
-                        <span class="cv-item-label">Project Management</span>
-                        <span class="cv-item-value">Github, Trello</span>
-                    </div>
-                    <div class="cv-item">
-                        <span class="cv-item-label">Containers</span>
-                        <span class="cv-item-value">Docker, Singularity</span>
-                    </div>
-                </div>
-                <hr />
-                <div class="row cv-skills">
-                    <div class="cv-item">
-                        <span class="cv-item-label">Web languages</span>
-                        <span class="cv-item-value">HTML5, CSS3, SASS, JS</span>
-                    </div>
-                    <div class="cv-item">
-                        <span class="cv-item-label">Other</span>
-                        <span class="cv-item-value"
-                            >Linux, clusters, Git, R</span
-                        >
-                    </div>
+                            {row.map((item) => (
+                                <div class="cv-item">
+                                    <span class="cv-item-label">{item.label}</span>
+                                    <span class="cv-item-value">{item.value}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                ))}
+
+                {section.kind === "list" && section.items.map((item, index) => (
+                    <>
+                        <div class="cv-full-item" set:html={item.content} />
+                        {index < section.items.length - 1 && <hr class="cv-divider" />}
+                    </>
+                ))}
+            </CvSection>
+        ))}
+
+        <CvSection id="publications" icon="fa-solid fa-book" title="Publications">
+            {
+                publicationSections.map((section) => {
+                    const sectionPublications =
+                        publicationsBySection[section.id] ?? [];
+                    if (sectionPublications.length === 0) return null;
+
+                    return (
+                        <div class="publication-section">
+                            <h5 class="publication-section-title">
+                                <i class={section.icon} /> {section.label}
+                            </h5>
+                            <ul class="publications-list mb-0">
+                                {sectionPublications.map((publication) => (
+                                    <li id={publication.id}>
+                                        {publication.authors && (
+                                            <>{publication.authors}, </>
+                                        )}
+                                        <em>{publication.title}</em>
+                                        {(publication.venue ||
+                                            publication.date) &&
+                                            ", "}
+                                        {publication.venue}
+                                        {publication.venue &&
+                                            publication.date &&
+                                            ", "}
+                                        {publication.date}.
+                                        {publication.links.length > 0 && (
+                                            <span class="publication-links">
+                                                {publication.links.map(
+                                                    (link) => (
+                                                        <a
+                                                            href={link.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            aria-label={
+                                                                link.label
+                                                            }
+                                                            title={
+                                                                link.label
+                                                            }
+                                                        >
+                                                            {link.text ? (
+                                                                link.text
+                                                            ) : (
+                                                                <i
+                                                                    class={
+                                                                        link.iconClass
+                                                                    }
+                                                                />
+                                                            )}
+                                                        </a>
+                                                    ),
+                                                )}
+                                            </span>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    );
+                })
+            }
+        </CvSection>
+
+        <CvSection id="interests" icon="fa-solid fa-info-circle" title="Interests">
+            <div class="row">
+                <div class="col">
+                    • Yoga, Cinema, Poker, Gardening, Ice-Skating
                 </div>
             </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="publications"
-                icon="fa-solid fa-book"
-                title="Publications"
-            />
-            <div class="card-body">
-                {
-                    publicationSections.map((section) => {
-                        const sectionPublications =
-                            publicationsBySection[section.id] ?? [];
-                        if (sectionPublications.length === 0) return null;
-
-                        return (
-                            <div class="publication-section">
-                                <h5 class="publication-section-title">
-                                    <i class={section.icon} /> {section.label}
-                                </h5>
-                                <ul class="publications-list mb-0">
-                                    {sectionPublications.map((publication) => (
-                                        <li id={publication.id}>
-                                            {publication.authors && (
-                                                <>{publication.authors}, </>
-                                            )}
-                                            <em>{publication.title}</em>
-                                            {(publication.venue ||
-                                                publication.date) &&
-                                                ", "}
-                                            {publication.venue}
-                                            {publication.venue &&
-                                                publication.date &&
-                                                ", "}
-                                            {publication.date}.
-                                            {publication.links.length > 0 && (
-                                                <span class="publication-links">
-                                                    {publication.links.map(
-                                                        (link) => (
-                                                            <a
-                                                                href={link.href}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                aria-label={
-                                                                    link.label
-                                                                }
-                                                                title={
-                                                                    link.label
-                                                                }
-                                                            >
-                                                                {link.text ? (
-                                                                    link.text
-                                                                ) : (
-                                                                    <i
-                                                                        class={
-                                                                            link.iconClass
-                                                                        }
-                                                                    />
-                                                                )}
-                                                            </a>
-                                                        ),
-                                                    )}
-                                                </span>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        );
-                    })
-                }
-            </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="languages"
-                icon="fa-solid fa-comment"
-                title="Languages"
-            />
-            <div class="card-body">
-                <div class="row cv-languages">
-                    <div class="cv-item">
-                        <span class="cv-item-label">French</span>
-                        <span class="cv-item-value">Mother tongue</span>
-                    </div>
-                    <div class="cv-item">
-                        <span class="cv-item-label">English</span>
-                        <span class="cv-item-value">Fluent</span>
-                    </div>
-                    <div class="cv-item">
-                        <span class="cv-item-label">Swedish</span>
-                        <span class="cv-item-value">Basic</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="societies"
-                icon="fa-solid fa-flask"
-                title="Scientific Societies"
-            />
-            <div class="card-body">
-                <div class="cv-full-item">
-                    • Member of the International Society of Computational
-                    Biology (<a
-                        href="https://www.iscb.org/"
-                        target="_blank"
-                        rel="noopener noreferrer">ISCB</a
-                    >)
-                </div>
-                <hr class="cv-divider" />
-                <div class="cv-full-item">
-                    • Member of the French Society of Bioinformatics (Société
-                    Française de BioInformatique: <a
-                        href="https://www.sfbi.fr/"
-                        target="_blank"
-                        rel="noopener noreferrer">SFBI</a
-                    >)
-                </div>
-                <hr class="cv-divider" />
-                <div class="cv-full-item">
-                    • Member of BioInfoDiag (Le Réseau Français de
-                    Bioinformatique pour le Diagnostic: <a
-                        href="https://bioinfo-diag.fr/"
-                        target="_blank"
-                        rel="noopener noreferrer">BioInfoDiag</a
-                    >)
-                </div>
-                <hr class="cv-divider" />
-                <div class="cv-full-item">
-                    • Member of the French Community of PhDs (La Communauté
-                    Française des Docteurs: <a
-                        href="https://andes.asso.fr/communaute-francaise-des-docteurs/"
-                        target="_blank"
-                        rel="noopener noreferrer">CFD</a
-                    >)
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="associations"
-                icon="fa-solid fa-users"
-                title="Associations"
-            />
-            <div class="card-body">
-                <table class="cv-table">
-                    <tbody>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> From 2012
-                            </td>
-                            <td>
-                                Contributor to <a
-                                    href="https://bioinfo-fr.net/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Bioinfo-fr.net</a
-                                > (French-speaking blog on Bioinformatics)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2012-2014
-                            </td>
-                            <td>
-                                Vice-president of <a
-                                    href="https://jebif.fr/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">JeBiF</a
-                                > - <a href="https://iscbsc.org/rsgs/"
-                                    >RSG-France</a
-                                > (Association of French Young Bioinformaticians)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2010-2011
-                            </td>
-                            <td>
-                                President of <a
-                                    href="https://www.hippothese.asso.fr/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Hippo'Thèse</a
-                                > (Association of young researchers in Biology at
-                                Aix-Marseille University)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2010-2011
-                            </td>
-                            <td>
-                                Vice-president and webmaster of <a
-                                    href="https://www.reseau-biotechno.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >BIOTechno Network</a
-                                > (French Network of Associations organizing forums
-                                about careers in Biotechnology)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2009-2010
-                            </td>
-                            <td>
-                                Webmaster of <a
-                                    href="http://www.hippothese.asso.fr/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Hippo'Thèse</a
-                                > (Association of young researchers in Biology at
-                                Aix-Marseille University)
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="events"
-                icon="fa-solid fa-list"
-                title="Organization and Events"
-            />
-            <div class="card-body">
-                <table class="cv-table">
-                    <tbody>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2015
-                            </td>
-                            <td>
-                                Journées nationales de la Communauté Française
-                                des Docteurs (Webmaster, member of the
-                                organizing committee, and logistical support)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2012
-                            </td>
-                            <td>
-                                Doctoriales en Provence (Member of the
-                                organizing committee and logistical support)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2011
-                            </td>
-                            <td>
-                                Marché de la Chimie @ Fête de la Science
-                                (Conception and animation of a stand for
-                                Cancéropôle-PACA)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2011
-                            </td>
-                            <td>
-                                7th BIOTechno forum in Marseille (Head of the
-                                organizing committee)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2009-2012
-                            </td>
-                            <td>
-                                Annual meeting of doctoral school in Biology and
-                                Health Sciences from Aix-Marseille University
-                                (Member of the organizing committee, abstract
-                                selection, jury member, and logistical support)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cv-date">
-                                <i class="fa-solid fa-calendar"></i> 2007-2011
-                            </td>
-                            <td>
-                                Logistical support in organizing the Plan de
-                                Cuques French Comics Festival
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="card">
-            <SectionCard
-                id="interests"
-                icon="fa-solid fa-info-circle"
-                title="Interests"
-            />
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        • Yoga, Cinema, Poker, Gardening, Ice-Skating
-                    </div>
-                </div>
-            </div>
-        </div>
+        </CvSection>
     </div>
 </BaseLayout>
 
