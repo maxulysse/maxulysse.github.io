@@ -39,6 +39,21 @@ export default [
         },
     },
     {
-        ignores: ["dist", ".astro", "node_modules", "public"],
+        files: ["public/js/**/*.js"],
+        languageOptions: {
+            parserOptions: {
+                ecmaVersion: "latest",
+                sourceType: "script",
+            },
+            globals: {
+                ...globals.browser,
+            },
+        },
+        rules: {
+            "prefer-const": "error",
+        },
+    },
+    {
+        ignores: ["dist", ".astro", "node_modules", "public/assets"],
     },
 ];
