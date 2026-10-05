@@ -10,7 +10,8 @@
     "check": "astro check",
     "lint": "npm run lint:eslint && npm run check",
     "lint:eslint": "eslint src public/js",
-    "prek": "prek run"
+    "prek": "prek run",
+    "smoke": "bash scripts/smoke.sh"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

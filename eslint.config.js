@@ -43,7 +43,7 @@ export default [
         languageOptions: {
             parserOptions: {
                 ecmaVersion: "latest",
-                sourceType: "module",
+                sourceType: "script",
             },
             globals: {
                 ...globals.browser,
