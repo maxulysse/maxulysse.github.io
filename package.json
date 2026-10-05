@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "lint": "npm run lint:eslint && npm run check",
-    "lint:eslint": "eslint src",
+    "lint:eslint": "eslint src public/js",
     "prek": "prek run"
   },
   "dependencies": {
