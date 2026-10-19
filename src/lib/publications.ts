@@ -87,7 +87,7 @@ const monthOrder: Record<string, number> = {
     dec: 12,
 };
 
-let entries: BibEntry[] = [];
+let entries: BibEntry[];
 try {
     entries = bibtexParse.toJSON(bibContent) as BibEntry[];
 } catch {
