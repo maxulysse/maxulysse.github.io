@@ -27,7 +27,7 @@
     "@astrojs/check": "^0.9.10",
     "@eslint/js": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^8.70.1",
-    "@typescript-eslint/parser": "^8.70.1",
+    "@typescript-eslint/parser": "^8.71.2",
     "astro-eslint-parser": "^3.2.0",
     "eslint": "^9.0.0",
     "globals": "^17.13.0",
