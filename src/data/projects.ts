@@ -11,6 +11,17 @@ export type Project = {
 
 const declaredProjects: Project[] = [
     {
+        id: "nf-arts",
+        name: "nf-arts",
+        description:
+            "A Nextflow plugin that turns each run into generative art, drawing its tasks as an SVG or PNG from their timing, memory and status only.",
+        url: "https://maxulysse.github.io/nf-arts/",
+        github: "https://github.com/maxulysse/nf-arts",
+        years: "2026–present",
+        role: "Developer and maintainer",
+        tags: ["plugin", "nextflow"],
+    },
+    {
         id: "nf-core-utils",
         name: "nf-core-utils",
         description:
