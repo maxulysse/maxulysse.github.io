@@ -10,7 +10,7 @@ interface Props {
     image?: { path: string };
     tags?: string[];
     lastModified?: Date;
-    entryId?: string;
+    filePath?: string;
 }
 
 const {
@@ -21,7 +21,7 @@ const {
     image,
     tags = [],
     lastModified,
-    entryId,
+    filePath,
 } = Astro.props as Props;
 
 // Calculate read time
@@ -34,10 +34,8 @@ const authorInfo = getAuthor(author);
 const modifiedDate = lastModified || date;
 
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
-// Use entryId (e.g. "2020/2020-07-01-jobim.md") when available — it includes
-// the correct file extension, so .mdx files are handled correctly too.
-const editUrl = entryId
-    ? `${githubBaseUrl}/edit/main/src/content/blog/${entryId}`
+const editUrl = filePath
+    ? `${githubBaseUrl}/edit/main/${filePath}`
     : githubBaseUrl;
 ---
 
@@ -46,6 +44,7 @@ const editUrl = entryId
     description={description}
     author={author}
     image={image}
+    type="article"
 >
     <div class="card-columns only-one-column">
         <div class="card rounded">

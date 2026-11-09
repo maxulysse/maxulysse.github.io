@@ -5,6 +5,7 @@ interface Props {
     description?: string;
     author?: string;
     image?: { path: string };
+    type?: "website" | "article";
 }
 
 import socialMedia from "../data/socialMedia.js";
@@ -16,6 +17,7 @@ const {
     description = "Interested in Bioinformatics, Reproducible Research, Automation, Data Integration and Visualization...",
     author = "maxulysse",
     image,
+    type = "website",
 } = Astro.props as Props;
 
 const siteTitle = "maxulysse.github.io";
@@ -52,15 +54,15 @@ const currentPath = Astro.url.pathname;
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
 
-        {imageUrl && <meta property="og:image" content={imageUrl} />}
-        {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+        <meta property="og:image" content={imageUrl} />
+        <meta name="twitter:image" content={imageUrl} />
 
         <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
         <meta property="og:locale" content="en_US" />
         <meta name="author" content={authorInfo.name} />
         <meta name="twitter:site" content={`@${authorInfo.twitter}`} />
         <meta name="twitter:creator" content={`@${authorInfo.twitter}`} />
-        <meta property="og:type" content={title ? "article" : "website"} />
+        <meta property="og:type" content={type} />
 
         <meta name="theme-color" content="#f8f9fa" />
         <meta

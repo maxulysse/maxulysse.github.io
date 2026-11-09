@@ -163,11 +163,6 @@ import {
         gap: 0.5rem;
     }
 
-    .list-group-item {
-        border: none;
-        padding: 0.5rem 0;
-    }
-
     .cv-table {
         width: 100%;
         border-collapse: collapse;
@@ -202,7 +197,7 @@ import {
         }
     }
 
-    body[data-theme="dark"] .cv-table tr + tr td {
+    :global([data-bs-theme="dark"]) .cv-table tr + tr td {
         border-top-color: #444;
     }
 
@@ -292,7 +287,7 @@ import {
         border-top: 1px solid #e5e5e5;
     }
 
-    body[data-theme="dark"] .publications-list li + li {
+    :global([data-bs-theme="dark"]) .publications-list li + li {
         border-top-color: #444;
     }
 

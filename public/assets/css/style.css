@@ -60,7 +60,7 @@ body {
   transform: translateY(0);
 }
 
-body[data-theme="dark"] .skip-link {
+[data-bs-theme="dark"] .skip-link {
   background-color: #e0e0e0;
   color: #1a1a1a;
 }
