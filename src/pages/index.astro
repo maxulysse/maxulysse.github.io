@@ -8,6 +8,7 @@ const { posts, totalPages } = await getPaginatedPosts(1);
 ---
 
 <BaseLayout>
+    <h1 class="visually-hidden">maxulysse.github.io</h1>
     <div class="post-grid">
         {posts.map((post) => <PostCard post={post} />)}
     </div>

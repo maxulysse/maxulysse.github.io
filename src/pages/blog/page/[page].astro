@@ -21,6 +21,7 @@ export async function getStaticPaths() {
 ---
 
 <BaseLayout title={`Blog - Page ${currentPage}`} description="Blog posts">
+    <h1 class="visually-hidden">Blog - Page {currentPage}</h1>
     <div class="post-grid">
         {posts.map((post) => <PostCard post={post} />)}
     </div>
