@@ -14,7 +14,7 @@ Personal website built with [Astro](https://astro.build).
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [@orcid/bibtex-parse-js](https://github.com/ORCID/bibtexParseJs)
-- [Prism](https://prismjs.com/)
+- [starlight-codeblocks](https://ewels.github.io/starlight-codeblocks/) (on [Expressive Code](https://expressive-code.com/))
 - [Reveal.js](https://revealjs.com/)
 - [academicons](https://jpswalsh.github.io/academicons/)
 

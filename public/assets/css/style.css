@@ -246,31 +246,12 @@ body[data-theme="dark"] .skip-link {
   color: #ffffff;
 }
 
-/* Code highlighting */
-pre {
-  background-color: var(--surface-sunken);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 12px;
-  overflow-x: auto;
-}
-
-pre code {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.9rem;
-}
-
+/* Inline code */
 code {
   background-color: var(--surface-sunken);
   padding: 2px 4px;
   border-radius: 3px;
   font-family: 'Courier New', Courier, monospace;
-}
-
-pre code {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
 }
 
 /* Footer */
@@ -600,10 +581,4 @@ a:hover {
 [data-bs-theme="dark"] code {
   background-color: var(--surface-sunken);
   color: var(--text-primary);
-}
-
-[data-bs-theme="dark"] pre {
-  background-color: var(--surface-sunken);
-  color: var(--text-primary);
-  border: 1px solid var(--border);
 }
