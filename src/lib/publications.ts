@@ -87,13 +87,7 @@ const monthOrder: Record<string, number> = {
     dec: 12,
 };
 
-let entries: BibEntry[];
-try {
-    entries = bibtexParse.toJSON(bibContent) as BibEntry[];
-} catch {
-    console.error("Failed to parse bibtex content");
-    entries = [];
-}
+const entries = bibtexParse.toJSON(bibContent) as BibEntry[];
 
 function normalizeTags(entry: BibEntry): NormalizedTags {
     const tags = entry.entryTags ?? {};

@@ -69,8 +69,6 @@ export function itemsOfKind<K extends TagItem["kind"]>(
     );
 }
 
-export { formatDateIso as formatDate };
-
 export function itemDate(item: TagItem): string {
     return item.kind === "project" ? item.years : formatDateIso(item.date);
 }
