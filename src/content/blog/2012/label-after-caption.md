@@ -12,7 +12,7 @@ image:
 Very important not to mess things up, when you’re describing your figures in LaTex.
 If you wrote:
 
-```LaTeX
+```latex
 \begin{figure}
 \caption{Figure}
 \label{fig:figure1}
@@ -23,7 +23,7 @@ No problem, it’s working well, and linked well also.
 
 But if you wrote:
 
-```LaTeX
+```latex
 \begin{figure}
 \label{fig:figure1}
 \caption{Figure}

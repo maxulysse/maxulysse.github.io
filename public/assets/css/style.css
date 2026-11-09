@@ -246,8 +246,8 @@ body[data-theme="dark"] .skip-link {
   color: #ffffff;
 }
 
-/* Code highlighting */
-pre {
+/* Code blocks not rendered by Expressive Code (it styles its own). */
+pre:not(.expressive-code pre) {
   background-color: var(--surface-sunken);
   border: 1px solid var(--border);
   border-radius: 4px;
@@ -255,7 +255,7 @@ pre {
   overflow-x: auto;
 }
 
-pre code {
+pre:not(.expressive-code pre) code {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9rem;
 }
@@ -267,7 +267,7 @@ code {
   font-family: 'Courier New', Courier, monospace;
 }
 
-pre code {
+pre:not(.expressive-code pre) code {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
@@ -602,7 +602,7 @@ a:hover {
   color: var(--text-primary);
 }
 
-[data-bs-theme="dark"] pre {
+[data-bs-theme="dark"] pre:not(.expressive-code pre) {
   background-color: var(--surface-sunken);
   color: var(--text-primary);
   border: 1px solid var(--border);

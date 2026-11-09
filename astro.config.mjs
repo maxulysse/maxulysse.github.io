@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import codeblocks from 'starlight-codeblocks/astro';
 
 // Matches blog post URLs that include a date prefix (e.g. /2021-06-08-post-slug/).
 // These are generated from src/content/blog/YYYY/YYYY-MM-DD-title.md files.
@@ -15,6 +16,14 @@ export default defineConfig({
     '/publications': '/cv#publications',
   },
   integrations: [
+    codeblocks({
+      expressiveCode: {
+        themes: ['github-light', 'github-dark'],
+        // Follow the site's own light/dark switch (Bootstrap's data-bs-theme on <html>).
+        // In "auto" mode, prefers-color-scheme picks the theme until theme.js resolves it.
+        themeCssSelector: (theme) => `[data-bs-theme='${theme.type}']`,
+      },
+    }),
     sitemap({
       filter: (page) =>
         !page.includes('/slides/') &&

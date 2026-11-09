@@ -15,7 +15,7 @@ Here, all begun with a problem with the `TOC` (Table of Contents).
 
 Some items in the `TOC` where associated with the wrong page numbers after compiling the tex file, so I used the `tocbibind` package who handles it fine, and finally I can stop fighting with:
 
-```LaTeX
+```latex
 \phantomsection
 \addcontentsline{toc}{chapter}{}
 ```
@@ -24,7 +24,7 @@ But, by adding a TOT (Table of Tables) and a TOF (Table of Figures), the intern 
 
 To prevent this, you should add `\mtcaddchapter` after declaring each TOC, TOT and TOF:
 
-```LaTeX
+```latex
 % TOC
 \tableofcontents
 \mtcaddchapter
