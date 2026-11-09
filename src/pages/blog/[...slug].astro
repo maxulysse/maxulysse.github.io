@@ -17,11 +17,6 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { slug } = Astro.params;
-
-if (!entry || entry.id !== slug) {
-    return Astro.redirect("/404");
-}
 
 const slideRedirect = await findSlideRedirect(entry);
 if (slideRedirect) {

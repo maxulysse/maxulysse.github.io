@@ -25,11 +25,15 @@ export default defineConfig({
       },
     }),
     sitemap({
-      filter: (page) =>
-        !page.includes('/slides/') &&
-        !page.startsWith('/publications') &&
-        !page.startsWith('/tags/') &&
-        !hasDatePrefix.test(page),
+      // Keep noindex pages out: slide decks, their aliases and redirect stubs.
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return (
+          /^\/((about|archive|blog|cv|projects|search|tags)\/.*)?$/.test(pathname) &&
+          !hasDatePrefix.test(pathname) &&
+          pathname !== '/blog/page/1/'
+        );
+      },
     }),
   ],
 });

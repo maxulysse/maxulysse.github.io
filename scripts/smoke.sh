@@ -12,3 +12,4 @@ find dist/blog -type f -name index.html | grep -q .
 test -s dist/rss.xml
 test -s dist/sitemap-index.xml
 grep -q '<channel>' dist/rss.xml
+grep -q 'pubmed.ncbi.nlm.nih.gov' dist/cv/index.html
