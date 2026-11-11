@@ -182,6 +182,29 @@ body {
   content: "\e9d4";
 }
 
+/* Archive and tags grid */
+.archive-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.archive-grid > div {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .archive-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .archive-grid {
+    column-count: 1;
+  }
+}
+
 /* List separators (archive/tags) */
 .archive-grid .card-body ul li {
   margin: 0;
