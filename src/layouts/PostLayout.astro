@@ -17,9 +17,7 @@ const words = (entry.body ?? "").split(/\s+/).filter(Boolean).length;
 const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
-const editUrl = entry.filePath
-    ? `${githubBaseUrl}/edit/main/${entry.filePath}`
-    : githubBaseUrl;
+const editUrl = `${githubBaseUrl}/edit/main/${entry.filePath}`;
 ---
 
 <BaseLayout
@@ -56,7 +54,7 @@ const editUrl = entry.filePath
                         <div class="tags mt-3">
                             {tags.map((tag) => (
                                 <a
-                                    href={`/tags#${tag.toLowerCase()}`}
+                                    href={`/tags#${tag}`}
                                     class="badge text-bg-primary"
                                 >
                                     {tag}

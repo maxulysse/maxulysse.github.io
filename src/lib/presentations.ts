@@ -26,9 +26,7 @@ let cachedDeckUrls: Map<string, string> | null = null;
 export async function findSlideRedirect(
     post: CollectionEntry<"blog">,
 ): Promise<string | null> {
-    if (!post.data.tags.some((tag) => tag.toLowerCase() === "presentation")) {
-        return null;
-    }
+    if (!post.data.tags.includes("presentation")) return null;
     cachedDeckUrls ??= new Map(
         (await getCollection("presentations")).map((presentation) => [
             postKey(presentation.data),

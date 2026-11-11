@@ -23,12 +23,11 @@ export async function getTagIndex(): Promise<TagEntry[]> {
     const itemsByTag = new Map<string, TagItem[]>();
 
     function add(tag: string, item: TagItem) {
-        const key = tag.toLowerCase();
-        const items = itemsByTag.get(key);
+        const items = itemsByTag.get(tag);
         if (items) {
             items.push(item);
         } else {
-            itemsByTag.set(key, [item]);
+            itemsByTag.set(tag, [item]);
         }
     }
 

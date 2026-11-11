@@ -17,12 +17,11 @@ const {
 } = Astro.props as Props;
 
 const siteTitle = "maxulysse.github.io";
-const url = "https://maxulysse.github.io";
-
 const DEFAULT_OG_IMAGE = "/assets/img/favicons/android-chrome-512x512.png";
 
 const pageTitle = title || siteTitle;
-const imageUrl = image?.path ? `${url}${image.path}` : `${url}${DEFAULT_OG_IMAGE}`;
+const imageUrl = new URL(image?.path ?? DEFAULT_OG_IMAGE, Astro.site).href;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 
 // Get current path for active nav highlighting
 const currentPath = Astro.url.pathname;
@@ -50,7 +49,7 @@ const currentPath = Astro.url.pathname;
         <meta property="og:image" content={imageUrl} />
         <meta name="twitter:image" content={imageUrl} />
 
-        <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta name="author" content={author.name} />
         <meta name="twitter:site" content={`@${author.twitter}`} />
@@ -62,7 +61,7 @@ const currentPath = Astro.url.pathname;
             http-equiv="Content-Security-Policy"
             content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; connect-src 'self'; frame-src 'none'; object-src 'none'"
         />
-        <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+        <link rel="canonical" href={canonicalUrl} />
 
         <!-- Favicon -->
         <link

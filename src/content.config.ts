@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
   schema: z.object({
     ...commonFields,
     description: z.string(),
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
     image: z
       .object({
         path: z.string(),
