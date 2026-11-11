@@ -12,8 +12,7 @@ const blogCollection = defineCollection({
   schema: z.object({
     ...commonFields,
     description: z.string(),
-    author: z.string().optional().default("maxulysse"),
-    tags: z.array(z.string()).optional(),
+    tags: z.array(z.string()).default([]),
     image: z
       .object({
         path: z.string(),
@@ -30,7 +29,7 @@ const presentationsCollection = defineCollection({
   schema: z.object({
     ...commonFields,
     description: z.string().optional(),
-    redirects: z.array(z.string()).optional(),
+    redirects: z.array(z.string()).default([]),
   }),
 });
 

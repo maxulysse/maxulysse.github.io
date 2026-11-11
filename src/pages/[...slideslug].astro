@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { deckPaths } from "../lib/presentations";
 import "reveal.js/dist/reset.css";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/simple.css";
@@ -8,39 +9,12 @@ import "../styles/slides.css";
 
 export async function getStaticPaths() {
     const presentations = await getCollection("presentations");
-
-    const normalizePath = (value: string) =>
-        value.trim().replace(/^\/+/, "").replace(/\/+$/, "");
-
-    const paths = [];
-
-    for (const presentation of presentations) {
-        const slug = normalizePath(presentation.id);
-        const redirects = presentation.data.redirects || [];
-
-        // Main path: /folder-name/
-        if (slug) {
-            paths.push({
-                params: { slideslug: slug },
-                props: { presentation },
-            });
-            // Also: /slides/folder-name/
-            paths.push({
-                params: { slideslug: `slides/${slug}` },
-                props: { presentation },
-            });
-        }
-
-        // Redirect paths from frontmatter
-        for (const redirect of redirects) {
-            paths.push({
-                params: { slideslug: normalizePath(redirect) },
-                props: { presentation },
-            });
-        }
-    }
-
-    return paths;
+    return presentations.flatMap((presentation) =>
+        deckPaths(presentation).map((slideslug) => ({
+            params: { slideslug },
+            props: { presentation },
+        })),
+    );
 }
 
 const { presentation } = Astro.props;

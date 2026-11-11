@@ -33,7 +33,7 @@ export async function getTagIndex(): Promise<TagEntry[]> {
     }
 
     for (const post of await getAllPosts()) {
-        for (const tag of post.data.tags ?? []) {
+        for (const tag of post.data.tags) {
             add(tag, {
                 kind: "post",
                 label: post.data.title,

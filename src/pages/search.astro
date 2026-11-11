@@ -8,7 +8,7 @@ const searchItems = (await getAllPosts()).map((post) => ({
     title: post.data.title,
     description: post.data.description ?? "",
     date: formatDateIso(post.data.date),
-    tags: post.data.tags ?? [],
+    tags: post.data.tags,
 }));
 ---
 

@@ -1,6 +1,7 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
-import { getAllPosts, findSlideRedirect } from "../../lib/posts";
+import { getAllPosts } from "../../lib/posts";
+import { findSlideRedirect } from "../../lib/presentations";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {

@@ -1,7 +1,7 @@
 ---
 import { render, type CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
-import { getAuthor } from "../data/authors";
+import { author } from "../data/authors";
 import { formatDateIso } from "../lib/date";
 
 interface Props {
@@ -9,14 +9,12 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, description, date, author, image, tags = [] } = entry.data;
+const { title, description, date, image, tags } = entry.data;
 const { Content } = await render(entry);
 
 const WORDS_PER_MINUTE = 160;
 const words = (entry.body ?? "").split(/\s+/).filter(Boolean).length;
 const readTime = Math.ceil(words / WORDS_PER_MINUTE);
-
-const authorInfo = getAuthor(author);
 
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
 const editUrl = entry.filePath
@@ -27,7 +25,6 @@ const editUrl = entry.filePath
 <BaseLayout
     title={title}
     description={description}
-    author={author}
     image={image}
     type="article"
 >
@@ -40,7 +37,7 @@ const editUrl = entry.filePath
                         ><i class="fa-solid fa-user" aria-hidden="true"
                         ></i></span
                     >
-                    <em>{authorInfo.name}</em>
+                    <em>{author.name}</em>
                     <span
                         ><i class="fa-solid fa-calendar" aria-hidden="true"
                         ></i></span
