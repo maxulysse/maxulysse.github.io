@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllPosts } from "../lib/posts";
+import { formatDateIso } from "../lib/date";
 
 const searchItems = (await getAllPosts()).map((post) => ({
     id: post.id,
     title: post.data.title,
     description: post.data.description ?? "",
-    date: post.data.date.toISOString().split("T")[0],
+    date: formatDateIso(post.data.date),
     tags: post.data.tags ?? [],
 }));
 ---
