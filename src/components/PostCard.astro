@@ -28,9 +28,7 @@ const date = formatDateIso(post.data.date);
                 <a href={`/blog/${post.id}/`}>{post.data.title}</a>
             </h5>
             <p class="card-text">
-                {post.data.description ||
-                    post.body?.substring(0, 150) ||
-                    ""}
+                {post.data.description}
             </p>
         </div>
         <MetaFooter date={date} tags={post.data.tags} />

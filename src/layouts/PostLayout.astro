@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { getAuthor } from "../data/authors";
+import { formatDateIso } from "../lib/date";
 
 interface Props {
     title: string;
@@ -10,6 +11,7 @@ interface Props {
     image?: { path: string };
     tags?: string[];
     filePath?: string;
+    readTime: number;
 }
 
 const {
@@ -20,13 +22,8 @@ const {
     image,
     tags = [],
     filePath,
+    readTime,
 } = Astro.props as Props;
-
-// Calculate read time
-const WORDS_PER_MINUTE = 160;
-const content = await Astro.slots.render("default");
-const words = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
-const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
 const authorInfo = getAuthor(author);
 
@@ -57,13 +54,7 @@ const editUrl = filePath
                         ><i class="fa-solid fa-calendar" aria-hidden="true"
                         ></i></span
                     >
-                    {
-                        date.toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "2-digit",
-                            day: "2-digit",
-                        })
-                    }
+                    {formatDateIso(date)}
                     <br />
                     <i class="fa-solid fa-clock" aria-hidden="true"></i>
                     {readTime} min read

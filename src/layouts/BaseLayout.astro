@@ -1,6 +1,5 @@
 ---
 interface Props {
-    lang?: string;
     title?: string;
     description?: string;
     author?: string;
@@ -12,7 +11,6 @@ import socialMedia from "../data/socialMedia.js";
 import { getAuthor } from "../data/authors";
 
 const {
-    lang = "en",
     title,
     description = "Interested in Bioinformatics, Reproducible Research, Automation, Data Integration and Visualization...",
     author = "maxulysse",
@@ -25,7 +23,7 @@ const url = "https://maxulysse.github.io";
 
 const authorInfo = getAuthor(author);
 
-const DEFAULT_OG_IMAGE = "/assets/img/avatar/owl.svg";
+const DEFAULT_OG_IMAGE = "/assets/img/favicons/android-chrome-512x512.png";
 
 const pageTitle = title || siteTitle;
 const pageDescription = description || siteTitle;
@@ -36,7 +34,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />

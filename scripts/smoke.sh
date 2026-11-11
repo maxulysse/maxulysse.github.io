@@ -15,3 +15,5 @@ grep -q '<channel>' dist/rss.xml
 grep -q 'pubmed.ncbi.nlm.nih.gov' dist/cv/index.html
 grep -qE 'id="garcia2013thesis"[^>]*>.{0,300}, 2013-12-20\.' dist/cv/index.html
 grep -qE 'id="garcia2022cbionet"[^>]*>.{0,300}, 2022-04\.' dist/cv/index.html
+grep -q 'url=/jobim2020/' dist/blog/2020/2020-07-01-jobim/index.html
+test -f dist/jobim2020/index.html
