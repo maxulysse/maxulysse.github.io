@@ -11,6 +11,17 @@ export type Project = {
 
 const declaredProjects: Project[] = [
     {
+        id: "vcf-parity",
+        name: "vcf-parity",
+        description:
+            "A command-line tool that compares two VCF files record by record and field by field, with numeric tolerances and ignorable fields, to check that two runs of a caller give the same calls.",
+        url: "https://crates.io/crates/vcf-parity",
+        github: "https://github.com/maxulysse/vcf-parity",
+        years: "2026–present",
+        role: "Developer and maintainer",
+        tags: ["tool", "variant-calling", "testing"],
+    },
+    {
         id: "nf-arts",
         name: "nf-arts",
         description:
