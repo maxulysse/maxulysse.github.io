@@ -13,3 +13,5 @@ test -s dist/rss.xml
 test -s dist/sitemap-index.xml
 grep -q '<channel>' dist/rss.xml
 grep -q 'pubmed.ncbi.nlm.nih.gov' dist/cv/index.html
+grep -qE 'id="garcia2013thesis"[^>]*>.{0,300}, 2013-12-20\.' dist/cv/index.html
+grep -qE 'id="garcia2022cbionet"[^>]*>.{0,300}, 2022-04\.' dist/cv/index.html
