@@ -68,9 +68,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout -B cv
           git add -f CV-MGarcia-latest.pdf
-          if git diff --staged --quiet; then
-            echo "No CV changes to commit"
-            exit 0
-          fi
           git commit -m "Update CV - $(date +%Y-%m-%d)"
           git push -f origin cv

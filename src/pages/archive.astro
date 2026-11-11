@@ -9,7 +9,7 @@ const sortedPosts = await getAllPosts();
 // Group posts by year
 const postsByYear: { [key: string]: CollectionEntry<"blog">[] } = {};
 for (const post of sortedPosts) {
-    const year = post.data.date.getFullYear().toString();
+    const year = post.data.date.getUTCFullYear().toString();
     if (!postsByYear[year]) {
         postsByYear[year] = [];
     }

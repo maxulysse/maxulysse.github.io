@@ -1,41 +1,20 @@
 ---
 import { getCollection } from "astro:content";
+import { deckPaths } from "../lib/presentations";
+import "reveal.js/dist/reset.css";
+import "reveal.js/dist/reveal.css";
+import "reveal.js/dist/theme/simple.css";
+import "reveal.js/plugin/highlight/monokai.css";
+import "../styles/slides.css";
 
 export async function getStaticPaths() {
     const presentations = await getCollection("presentations");
-
-    const normalizePath = (value: string) =>
-        value.trim().replace(/^\/+/, "").replace(/\/+$/, "");
-
-    const paths = [];
-
-    for (const presentation of presentations) {
-        const slug = normalizePath(presentation.id);
-        const redirects = presentation.data.redirects || [];
-
-        // Main path: /folder-name/
-        if (slug) {
-            paths.push({
-                params: { slideslug: slug },
-                props: { presentation },
-            });
-            // Also: /slides/folder-name/
-            paths.push({
-                params: { slideslug: `slides/${slug}` },
-                props: { presentation },
-            });
-        }
-
-        // Redirect paths from frontmatter
-        for (const redirect of redirects) {
-            paths.push({
-                params: { slideslug: normalizePath(redirect) },
-                props: { presentation },
-            });
-        }
-    }
-
-    return paths;
+    return presentations.flatMap((presentation) =>
+        deckPaths(presentation).map((slideslug) => ({
+            params: { slideslug },
+            props: { presentation },
+        })),
+    );
 }
 
 const { presentation } = Astro.props;
@@ -67,21 +46,16 @@ const pageTitle = presentation.data.title;
         <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reset.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI"
+            crossorigin="anonymous"
         />
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css"
+            integrity="sha384-IAnhEDrYZnLsYcVzowpizdxXTHFovW5/CkZObGfY2QuaCKaQpvLCjj45LGb4Q/yE"
+            crossorigin="anonymous"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/simple.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css"
-        />
-        <link rel="stylesheet" href="/assets/css/slides.css" />
     </head>
     <body>
         <div class="reveal">
@@ -96,23 +70,12 @@ const pageTitle = presentation.data.title;
                 </section>
             </div>
         </div>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"
-        ></script>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"
-        ></script>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"
-        ></script>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"
-        ></script>
-        <script is:inline>
+        <script>
+            import Reveal from "reveal.js";
+            import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm.js";
+            import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
+            import RevealNotes from "reveal.js/plugin/notes/notes.esm.js";
+
             Reveal.initialize({
                 hash: true,
                 plugins: [RevealMarkdown, RevealHighlight, RevealNotes],

@@ -1,15 +1,18 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
-import { z } from "zod";
+import { z } from "astro/zod";
+
+const commonFields = {
+  title: z.string(),
+  date: z.coerce.date(),
+};
 
 const blogCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    date: z.coerce.date(),
-    author: z.string().optional().default("maxulysse"),
-    tags: z.array(z.string()).optional(),
+    ...commonFields,
+    description: z.string(),
+    tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
     image: z
       .object({
         path: z.string(),
@@ -24,24 +27,9 @@ const presentationsCollection = defineCollection({
     base: "./src/content/presentations",
   }),
   schema: z.object({
-    title: z.string(),
+    ...commonFields,
     description: z.string().optional(),
-    date: z.coerce.date(),
-    author: z.string().optional().default("maxulysse"),
-    tags: z.array(z.string()).optional(),
-    image: z
-      .object({
-        path: z.string(),
-      })
-      .optional(),
-    duration: z.string().optional(),
-    location: z
-      .object({
-        city: z.string().optional(),
-        country: z.string().optional(),
-      })
-      .optional(),
-    redirects: z.array(z.string()).optional(),
+    redirects: z.array(z.string()).default([]),
   }),
 });
 

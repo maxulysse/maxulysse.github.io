@@ -1,9 +1,10 @@
-function resolveTheme(saved) {
-    if (saved === "dark") return "dark";
-    if (saved === "light") return "light";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+/* global readTheme, resolveTheme */
+function writeTheme(theme) {
+    try {
+        localStorage.setItem("theme", theme);
+    } catch {
+        // Storage blocked: the choice lasts until the page reloads.
+    }
 }
 
 function applyTheme(theme) {
@@ -32,7 +33,7 @@ function switchTheme(e) {
     const opt = e.currentTarget;
     if (!opt || !opt.dataset || !opt.dataset.theme) return;
     const saved = opt.dataset.theme;
-    localStorage.setItem("theme", saved);
+    writeTheme(saved);
     setTheme(saved);
     closeDropdown();
 }
@@ -46,8 +47,7 @@ function closeDropdown() {
     document.querySelector(".theme-dropdown").classList.remove("open");
 }
 
-const saved = localStorage.getItem("theme");
-if (!saved) localStorage.setItem("theme", "auto");
+const saved = readTheme();
 applyTheme(resolveTheme(saved));
 setActiveOption(saved || "auto");
 
@@ -60,6 +60,6 @@ document.addEventListener("click", (e) => {
     if (target && !target.closest(".theme-dropdown")) closeDropdown();
 });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    const current = localStorage.getItem("theme");
+    const current = readTheme();
     if (!current || current === "auto") setTheme("auto");
 });

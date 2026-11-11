@@ -1,8 +1,18 @@
-(function () {
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const theme = saved === "dark" || saved === "light"
-        ? saved
-        : prefersDark ? "dark" : "light";
-    document.documentElement.setAttribute("data-bs-theme", theme);
-})();
+// Shared with theme.js: classic scripts share the global scope.
+function readTheme() {
+    try {
+        return localStorage.getItem("theme");
+    } catch {
+        return null;
+    }
+}
+
+function resolveTheme(saved) {
+    if (saved === "dark") return "dark";
+    if (saved === "light") return "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+}
+
+document.documentElement.setAttribute("data-bs-theme", resolveTheme(readTheme()));

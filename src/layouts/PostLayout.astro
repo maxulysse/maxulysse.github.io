@@ -1,45 +1,28 @@
 ---
+import { render, type CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
-import { getAuthor } from "../data/authors";
+import { author } from "../data/authors";
+import { formatDateIso } from "../lib/date";
 
 interface Props {
-    title: string;
-    description: string;
-    date: Date;
-    author?: string;
-    image?: { path: string };
-    tags?: string[];
-    filePath?: string;
+    entry: CollectionEntry<"blog">;
 }
 
-const {
-    title,
-    description,
-    date,
-    author = "maxulysse",
-    image,
-    tags = [],
-    filePath,
-} = Astro.props as Props;
+const { entry } = Astro.props;
+const { title, description, date, image, tags } = entry.data;
+const { Content } = await render(entry);
 
-// Calculate read time
 const WORDS_PER_MINUTE = 160;
-const content = await Astro.slots.render("default");
-const words = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+const words = (entry.body ?? "").split(/\s+/).filter(Boolean).length;
 const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
-const authorInfo = getAuthor(author);
-
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
-const editUrl = filePath
-    ? `${githubBaseUrl}/edit/main/${filePath}`
-    : githubBaseUrl;
+const editUrl = `${githubBaseUrl}/edit/main/${entry.filePath}`;
 ---
 
 <BaseLayout
     title={title}
     description={description}
-    author={author}
     image={image}
     type="article"
 >
@@ -52,32 +35,26 @@ const editUrl = filePath
                         ><i class="fa-solid fa-user" aria-hidden="true"
                         ></i></span
                     >
-                    <em>{authorInfo.name}</em>
+                    <em>{author.name}</em>
                     <span
                         ><i class="fa-solid fa-calendar" aria-hidden="true"
                         ></i></span
                     >
-                    {
-                        date.toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "2-digit",
-                            day: "2-digit",
-                        })
-                    }
+                    {formatDateIso(date)}
                     <br />
                     <i class="fa-solid fa-clock" aria-hidden="true"></i>
                     {readTime} min read
                 </h6>
             </div>
             <div class="card-body">
-                <slot />
+                <Content />
 
                 {
-                    tags && tags.length > 0 && (
+                    tags.length > 0 && (
                         <div class="tags mt-3">
                             {tags.map((tag) => (
                                 <a
-                                    href={`/tags#${tag.toLowerCase()}`}
+                                    href={`/tags#${tag}`}
                                     class="badge text-bg-primary"
                                 >
                                     {tag}

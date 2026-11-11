@@ -1,7 +1,7 @@
 ---
 interface Props {
     date: string;
-    tags?: string[];
+    tags: string[];
 }
 const { date, tags } = Astro.props;
 ---
@@ -10,7 +10,7 @@ const { date, tags } = Astro.props;
         <i class="fa-regular fa-calendar me-1" aria-hidden="true" />
         {date}
     </small>
-    {tags && tags.length > 0 && (
+    {tags.length > 0 && (
         <div class="tags-container">
             <span class="text-muted me-2">
                 <i class="fa-solid fa-tags" aria-hidden="true" />
@@ -18,7 +18,7 @@ const { date, tags } = Astro.props;
             {tags.map((tag, index) => (
                 <>
                     <a
-                        href={`/tags#${tag.toLowerCase()}`}
+                        href={`/tags#${tag}`}
                         class="tag-badge"
                     >
                         {tag}
