@@ -9,7 +9,6 @@ interface Props {
     author?: string;
     image?: { path: string };
     tags?: string[];
-    lastModified?: Date;
     filePath?: string;
 }
 
@@ -20,7 +19,6 @@ const {
     author = "maxulysse",
     image,
     tags = [],
-    lastModified,
     filePath,
 } = Astro.props as Props;
 
@@ -31,7 +29,6 @@ const words = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).leng
 const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
 const authorInfo = getAuthor(author);
-const modifiedDate = lastModified || date;
 
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
 const editUrl = filePath
@@ -66,24 +63,6 @@ const editUrl = filePath
                             month: "2-digit",
                             day: "2-digit",
                         })
-                    }
-                    {
-                        lastModified && (
-                            <div class="float-end">
-                                <span>
-                                    Last modified{" "}
-                                    <i
-                                        class="fa-solid fa-calendar"
-                                        aria-hidden="true"
-                                    />
-                                </span>
-                                {modifiedDate.toLocaleDateString("en-US", {
-                                    year: "numeric",
-                                    month: "2-digit",
-                                    day: "2-digit",
-                                })}
-                            </div>
-                        )
                     }
                     <br />
                     <i class="fa-solid fa-clock" aria-hidden="true"></i>
