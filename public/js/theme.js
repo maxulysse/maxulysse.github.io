@@ -1,17 +1,10 @@
-function readTheme() {
+/* global readTheme, resolveTheme */
+function writeTheme(theme) {
     try {
-        return localStorage.getItem("theme");
+        localStorage.setItem("theme", theme);
     } catch {
-        return null;
+        // Storage blocked: the choice lasts until the page reloads.
     }
-}
-
-function resolveTheme(saved) {
-    if (saved === "dark") return "dark";
-    if (saved === "light") return "light";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
 }
 
 function applyTheme(theme) {
@@ -40,11 +33,7 @@ function switchTheme(e) {
     const opt = e.currentTarget;
     if (!opt || !opt.dataset || !opt.dataset.theme) return;
     const saved = opt.dataset.theme;
-    try {
-        localStorage.setItem("theme", saved);
-    } catch {
-        // Storage blocked: the choice lasts until the page reloads.
-    }
+    writeTheme(saved);
     setTheme(saved);
     closeDropdown();
 }

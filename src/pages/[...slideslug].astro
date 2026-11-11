@@ -1,5 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import "reveal.js/dist/reset.css";
+import "reveal.js/dist/reveal.css";
+import "reveal.js/dist/theme/simple.css";
+import "reveal.js/plugin/highlight/monokai.css";
+import "../styles/slides.css";
 
 export async function getStaticPaths() {
     const presentations = await getCollection("presentations");
@@ -67,29 +72,16 @@ const pageTitle = presentation.data.title;
         <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reset.css"
-            integrity="sha384-AJKv9Ui5SfA0VsFksFI9GuA1ztX9Ca3CLP6HGfX4YY/tYSVodC+PUszaQZFIlkuy"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI"
             crossorigin="anonymous"
         />
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"
-            integrity="sha384-tK61vs+AeByBmiQ/i6CLgp/PbaaoB/k7M4J5mlX70GVtBPGUk5avjbXhSwhsf3fS"
+            href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css"
+            integrity="sha384-IAnhEDrYZnLsYcVzowpizdxXTHFovW5/CkZObGfY2QuaCKaQpvLCjj45LGb4Q/yE"
             crossorigin="anonymous"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/simple.css"
-            integrity="sha384-ehqmozZTBdv1kA7Yt6spb58A7CjWyVBkGSylak98DAT911TnSeJFdGLTPHsHatzi"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css"
-            integrity="sha384-0rrWATPYzlkqxkUhsXu1QkrO6K3rq4d6FqJQhcCJ7jQcZhb6plkpODMjpoiAYidE"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="/assets/css/slides.css" />
     </head>
     <body>
         <div class="reveal">
@@ -104,31 +96,12 @@ const pageTitle = presentation.data.title;
                 </section>
             </div>
         </div>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"
-            integrity="sha384-rZIIVPQD/+U9IL3I62KrBHuVtPgYv+xdXvER5RBiVQRszJEJfLKRrcrZwI7fhcHT"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"
-            integrity="sha384-zaxVZlTGBPySa6IWC61g+1BgKaWp4jQ7Qcm/TrxRPMAziaAmE0ZbNGwRAGI2vmkk"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"
-            integrity="sha384-ee/QmFMUwC+YUuswSDzliKj27Anp3rSblE1ujBcPKyrzwG15Daa1GL6JcNbPg/oG"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            is:inline
-            src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"
-            integrity="sha384-RStjjmink02UsZt/lqz6BNqXt/+nevOv97+PJ6CB6e7Sn5mzmf+qPdFtF59M9d4V"
-            crossorigin="anonymous"
-        ></script>
-        <script is:inline>
+        <script>
+            import Reveal from "reveal.js";
+            import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm.js";
+            import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
+            import RevealNotes from "reveal.js/plugin/notes/notes.esm.js";
+
             Reveal.initialize({
                 hash: true,
                 plugins: [RevealMarkdown, RevealHighlight, RevealNotes],

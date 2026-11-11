@@ -1,35 +1,26 @@
 ---
+import { render, type CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import { getAuthor } from "../data/authors";
 import { formatDateIso } from "../lib/date";
 
 interface Props {
-    title: string;
-    description: string;
-    date: Date;
-    author?: string;
-    image?: { path: string };
-    tags?: string[];
-    filePath?: string;
-    readTime: number;
+    entry: CollectionEntry<"blog">;
 }
 
-const {
-    title,
-    description,
-    date,
-    author = "maxulysse",
-    image,
-    tags = [],
-    filePath,
-    readTime,
-} = Astro.props as Props;
+const { entry } = Astro.props;
+const { title, description, date, author, image, tags = [] } = entry.data;
+const { Content } = await render(entry);
+
+const WORDS_PER_MINUTE = 160;
+const words = (entry.body ?? "").split(/\s+/).filter(Boolean).length;
+const readTime = Math.ceil(words / WORDS_PER_MINUTE);
 
 const authorInfo = getAuthor(author);
 
 const githubBaseUrl = "https://github.com/maxulysse/maxulysse.github.io";
-const editUrl = filePath
-    ? `${githubBaseUrl}/edit/main/${filePath}`
+const editUrl = entry.filePath
+    ? `${githubBaseUrl}/edit/main/${entry.filePath}`
     : githubBaseUrl;
 ---
 
@@ -61,10 +52,10 @@ const editUrl = filePath
                 </h6>
             </div>
             <div class="card-body">
-                <slot />
+                <Content />
 
                 {
-                    tags && tags.length > 0 && (
+                    tags.length > 0 && (
                         <div class="tags mt-3">
                             {tags.map((tag) => (
                                 <a
