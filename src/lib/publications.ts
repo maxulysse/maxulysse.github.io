@@ -58,20 +58,7 @@ const sectionDefs = [
     },
 ] satisfies { id: string; label: string; icon: string; sourceSections: string[] }[];
 
-const monthOrder: Record<string, number> = {
-    jan: 1,
-    feb: 2,
-    mar: 3,
-    apr: 4,
-    may: 5,
-    jun: 6,
-    jul: 7,
-    aug: 8,
-    sep: 9,
-    oct: 10,
-    nov: 11,
-    dec: 12,
-};
+const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
 
 const entries = bibtexParse.toJSON(bibContent);
 
@@ -83,23 +70,6 @@ function normalizeTags(entry: BibtexEntry): NormalizedTags {
             String(value ?? "").trim(),
         ]),
     ) as NormalizedTags;
-}
-
-function parseMonth(month?: string): number {
-    if (!month) return 0;
-
-    const numeric = Number.parseInt(month, 10);
-    if (!Number.isNaN(numeric) && numeric >= 1 && numeric <= 12) {
-        return numeric;
-    }
-
-    const normalized = month.toLowerCase().slice(0, 3);
-    return monthOrder[normalized] ?? 0;
-}
-
-function parseYear(year?: string): number {
-    const parsed = Number.parseInt(year ?? "", 10);
-    return Number.isNaN(parsed) ? 0 : parsed;
 }
 
 function formatAuthors(author?: string): string {
@@ -162,36 +132,10 @@ function buildVenue(tags: NormalizedTags): string {
     return venueParts.join(", ");
 }
 
-function toIsoDateString(value?: string): string {
-    if (!value) return "";
-
-    const normalized = value.trim().replace(/\//g, "-");
-    const match = normalized.match(/^(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?$/);
-    if (!match) return value;
-
-    const [, year, month, day] = match;
-    if (!month) return year;
-
-    const monthInt = Number.parseInt(month, 10);
-    if (Number.isNaN(monthInt) || monthInt < 1 || monthInt > 12) return value;
-    const monthPadded = String(monthInt).padStart(2, "0");
-
-    if (!day) return `${year}-${monthPadded}`;
-
-    const dayInt = Number.parseInt(day, 10);
-    if (Number.isNaN(dayInt) || dayInt < 1 || dayInt > 31) return value;
-    return `${year}-${monthPadded}-${String(dayInt).padStart(2, "0")}`;
-}
-
 function buildDate(tags: NormalizedTags): string {
-    if (tags.date) return toIsoDateString(tags.date);
-
-    const year = parseYear(tags.year);
-    const month = parseMonth(tags.month);
-
-    if (year && month) return `${year}-${String(month).padStart(2, "0")}`;
-    if (year) return String(year);
-    return "";
+    if (tags.date) return tags.date;
+    const month = months.indexOf(tags.month?.slice(0, 3).toLowerCase() ?? "") + 1;
+    return month ? `${tags.year}-${String(month).padStart(2, "0")}` : (tags.year ?? "");
 }
 
 const publications: Publication[] = entries
