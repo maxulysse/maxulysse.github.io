@@ -28,9 +28,9 @@ function getTagVisual(entry: (typeof tags)[number]) {
     const w = getTagWeight(entry.items.length);
     const h = hashTag(entry.tag);
     return {
-        size: (0.8 + w * 2).toFixed(2),
+        size: Math.round((0.8 + w * 2) * 100) / 100,
         weight: Math.round(3 + w * 4) * 100,
-        opacity: (0.65 + w * 0.35).toFixed(2),
+        opacity: Math.round((0.65 + w * 0.35) * 100) / 100,
         rotate: h % 4 === 0 ? -90 : (h % 13) - 6,
     };
 }
@@ -185,7 +185,7 @@ const cloudTags = [...tags]
     // Only the latest layout may render: a resize stops the one still running.
     let current: ReturnType<typeof cloud<TagWord>> | undefined;
 
-    // Grow the canvas until every tag fits; keep the plain list if it never does.
+    // Grow the canvas until every tag fits; keep what is shown if it never does.
     function layout(width: number, height: number, scale: number, tries = 0) {
         current?.stop();
         current = cloud<TagWord>()
