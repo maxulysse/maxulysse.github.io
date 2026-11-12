@@ -264,12 +264,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.tag-cloud .badge {
-  background-color: #8a9199;
-  border: none;
-  color: #ffffff;
-}
-
 /* Inline code */
 code {
   background-color: var(--surface-sunken);
@@ -547,12 +541,6 @@ a:hover {
 
 [data-bs-theme="dark"] .theme-option:hover {
   background: var(--surface-header);
-}
-
-[data-bs-theme="dark"] .tag-cloud .badge {
-  background-color: #6c757d !important;
-  border: none;
-  color: var(--text-inverse);
 }
 
 /* Bootstrap utility classes set hardcoded light colors that don't
