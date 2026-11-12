@@ -367,7 +367,7 @@ footer a:hover {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .card-deck {
     flex-direction: column;
   }
@@ -397,27 +397,19 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Custom utility classes */
-.only-one-column {
-  column-count: 1;
-}
-
+/* Card grids */
 .card-columns {
-  display: contents;
+  display: grid;
+  gap: 1.5rem;
 }
 
-@supports (display: grid) {
-  /* Modern browser support for better card layouts */
-  .card-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
+.card-columns.two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-  .card-columns.only-one-column {
-    display: grid;
+@media (max-width: 767px) {
+  .card-columns.two-columns {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 }
 

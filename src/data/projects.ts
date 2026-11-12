@@ -4,6 +4,9 @@ export type Project = {
     description: string;
     url: string;
     github?: string;
+    logo?: string;
+    /** Only for logos whose dark-theme version is a different file. */
+    logoDark?: string;
     years: string;
     role: string;
     tags: string[];
@@ -17,6 +20,8 @@ const declaredProjects: Project[] = [
             "A command-line tool that compares two VCF files record by record and field by field, with numeric tolerances and ignorable fields, to check that two runs of a caller give the same calls.",
         url: "https://crates.io/crates/vcf-parity",
         github: "https://github.com/maxulysse/vcf-parity",
+        logo: "/assets/img/projects/vcf-parity-light.svg",
+        logoDark: "/assets/img/projects/vcf-parity-dark.svg",
         years: "2026–present",
         role: "Developer and maintainer",
         tags: ["tool", "variant-calling", "testing"],
@@ -28,6 +33,7 @@ const declaredProjects: Project[] = [
             "A Nextflow plugin that turns each run into generative art, drawing its tasks as an SVG or PNG from their timing, memory and status only.",
         url: "https://maxulysse.github.io/nf-arts/",
         github: "https://github.com/maxulysse/nf-arts",
+        logo: "/assets/img/projects/nf-arts.svg",
         years: "2026–present",
         role: "Developer and maintainer",
         tags: ["plugin", "nextflow"],
@@ -39,6 +45,7 @@ const declaredProjects: Project[] = [
             "A Nextflow plugin providing utility functions used by nf-core pipelines, including genome attribute resolution, reference file management, and pipeline initialization.",
         url: "https://registry.nextflow.io/plugins/nf-core-utils",
         github: "https://github.com/nf-core/nf-core-utils",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2025–present",
         role: "Contributor",
         tags: ["plugin", "nf-core"],
@@ -50,6 +57,8 @@ const declaredProjects: Project[] = [
             "A dedicated QC-only pipeline for sequencing data, performing subsampling, quality assessment, duplication analysis, and contamination detection with flexible MultiQC reporting.",
         url: "https://nf-co.re/seqinspector",
         github: "https://github.com/nf-core/seqinspector",
+        logo: "/assets/img/projects/seqinspector-light.png",
+        logoDark: "/assets/img/projects/seqinspector-dark.png",
         years: "2024–present",
         role: "Developer and maintainer",
         tags: ["pipeline", "nextflow", "quality-control", "nf-core"],
@@ -61,6 +70,7 @@ const declaredProjects: Project[] = [
             "An nf-test plugin providing additional functions and assertions for snapshot testing, including Nextflow version removal, YAML filtering, and channel utilities.",
         url: "https://nf-co.re/nft-utils",
         github: "https://github.com/nf-core/nft-utils",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2024–present",
         role: "Maintainer",
         tags: ["plugin", "nf-test", "testing", "nf-core"],
@@ -72,6 +82,7 @@ const declaredProjects: Project[] = [
             "A helper pipeline to create panel of normals and other models for tools like Mutect2, GENS, CNVKit, and GATK's germlinecnvcaller.",
         url: "https://nf-co.re/createpanelrefs",
         github: "https://github.com/nf-core/createpanelrefs",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2023–present",
         role: "Developer and maintainer",
         tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
@@ -83,6 +94,8 @@ const declaredProjects: Project[] = [
             "A pipeline to build reference files for common organisms, including indices for BWA, STAR, HISAT2, Salmon, and more, with cloud storage similar to AWS iGenomes.",
         url: "https://nf-co.re/references",
         github: "https://github.com/nf-core/references",
+        logo: "/assets/img/projects/references-light.png",
+        logoDark: "/assets/img/projects/references-dark.png",
         years: "2023–present",
         role: "Developer and maintainer",
         tags: ["pipeline", "nextflow", "resource", "nf-core"],
@@ -94,6 +107,7 @@ const declaredProjects: Project[] = [
             "A resource providing pre-built SnpEff and VEP annotation caches on S3, with pipelines to download and manage caches for the nf-core community.",
         url: "https://annotation-cache.github.io/",
         github: "https://github.com/annotation-cache",
+        logo: "/assets/img/projects/annotation-cache.svg",
         years: "2023–present",
         role: "Developer and maintainer",
         tags: ["resource"],
@@ -105,6 +119,7 @@ const declaredProjects: Project[] = [
             "A bioinformatics pipeline to fetch metadata and raw FastQ files from public sequencing databases, supporting SRA, ENA, DDBJ, and GEO identifiers.",
         url: "https://nf-co.re/fetchngs",
         github: "https://github.com/nf-core/fetchngs",
+        logo: "/assets/img/projects/fetchngs.png",
         years: "2023–present",
         role: "Maintainer",
         tags: ["pipeline", "nextflow", "data-retrieval", "nf-core"],
@@ -116,6 +131,7 @@ const declaredProjects: Project[] = [
             "A pipeline to demultiplex the raw data produced by next generation sequencing machines, supporting Illumina, Element Biosciences, Singular Genomics, and 10x Genomics platforms, as well as FASTQ files with user supplied read structures.",
         url: "https://nf-co.re/demultiplex",
         github: "https://github.com/nf-core/demultiplex",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2023–present",
         role: "Maintainer",
         tags: ["pipeline", "nextflow", "preprocessing", "nf-core"],
@@ -127,6 +143,7 @@ const declaredProjects: Project[] = [
             "A bioinformatics pipeline for RNA variant calling analysis following GATK4 best practices, including alignment, duplicate marking, BQSR, variant calling, filtering, and annotation.",
         url: "https://nf-co.re/rnavar",
         github: "https://github.com/nf-core/rnavar",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2021–present",
         role: "Developer and maintainer",
         tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
@@ -138,6 +155,7 @@ const declaredProjects: Project[] = [
             "A community effort to collect a curated set of analysis pipelines built using Nextflow. Provides standards, templates, tools, and CI testing for bioinformatics pipelines.",
         url: "https://nf-co.re/",
         github: "https://github.com/nf-core",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2017–present",
         role: "Core team member",
         tags: ["community", "nf-core"],
@@ -149,6 +167,7 @@ const declaredProjects: Project[] = [
             "An open-source Nextflow pipeline for detecting fusion genes from RNA-seq data. Runs multiple fusion detection tools and generates a consolidated final report.",
         url: "https://nf-co.re/rnafusion",
         github: "https://github.com/nf-core/rnafusion",
+        logo: "/assets/img/projects/nf-core.svg",
         years: "2017–present",
         role: "Contributor",
         tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
@@ -160,6 +179,7 @@ const declaredProjects: Project[] = [
             "A portable workflow for whole-genome sequencing analysis of germline and somatic variants. Supports SNVs, indels, structural variants, CNVs, microsatellite instability, and annotation.",
         url: "https://nf-co.re/sarek",
         github: "https://github.com/nf-core/sarek",
+        logo: "/assets/img/projects/sarek.svg",
         years: "2016–present",
         role: "Developer and maintainer",
         tags: ["pipeline", "nextflow", "variant-calling", "nf-core"],
@@ -170,6 +190,7 @@ const declaredProjects: Project[] = [
         description:
             "A method to analyze gene expression data by superimposition of large-scale protein-protein interaction data over gene expression datasets for biomarker discovery in breast cancer.",
         url: "https://sourceforge.net/projects/iti/",
+        logo: "/assets/img/projects/iti.png",
         years: "2009–2013",
         role: "Developer",
         tags: ["method"],
