@@ -25,6 +25,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Keep the layout from shifting between short and long pages */
+  scrollbar-gutter: stable;
 }
 
 body {
