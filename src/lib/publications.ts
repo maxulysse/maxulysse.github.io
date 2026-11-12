@@ -151,8 +151,7 @@ const publications: Publication[] = entries
             links: buildLinks(tags),
         };
     })
-    .filter((publication) => publication.section)
-    // ISO dates sort as text; a bare year sorts after its months, like month 0 did.
+    // ISO dates sort as text; a bare year sorts after its own months.
     .sort((a, b) => b.date.localeCompare(a.date));
 
 /** The CV sections that have publications, each with its publications, newest first. */

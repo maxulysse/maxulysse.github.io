@@ -2,7 +2,8 @@
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import PostList from "../../../components/PostList.astro";
+import PostCard from "../../../components/PostCard.astro";
+import Pagination from "../../../components/Pagination.astro";
 import { getAllPosts, POSTS_PER_PAGE } from "../../../lib/posts";
 
 export const getStaticPaths = (async ({ paginate }) =>
@@ -21,5 +22,9 @@ if (page.currentPage === 1) {
 
 <BaseLayout title={`Blog - Page ${page.currentPage}`} description="Blog posts">
     <h1 class="visually-hidden">Blog - Page {page.currentPage}</h1>
-    <PostList posts={page.data} currentPage={page.currentPage} totalPages={page.lastPage} />
+    <div class="post-grid">
+        {page.data.map((post) => <PostCard post={post} />)}
+    </div>
+
+    <Pagination currentPage={page.currentPage} totalPages={page.lastPage} />
 </BaseLayout>

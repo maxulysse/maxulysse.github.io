@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PostList from "../components/PostList.astro";
+import PostCard from "../components/PostCard.astro";
+import Pagination from "../components/Pagination.astro";
 import { getAllPosts, POSTS_PER_PAGE } from "../lib/posts";
 
 const allPosts = await getAllPosts();
@@ -10,5 +11,9 @@ const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 
 <BaseLayout>
     <h1 class="visually-hidden">maxulysse.github.io</h1>
-    <PostList {posts} currentPage={1} {totalPages} />
+    <div class="post-grid">
+        {posts.map((post) => <PostCard post={post} />)}
+    </div>
+
+    <Pagination currentPage={1} {totalPages} />
 </BaseLayout>
