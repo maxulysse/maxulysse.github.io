@@ -1,13 +1,6 @@
 import bibtexParse, { type BibtexEntry } from "@orcid/bibtex-parse-js";
 import bibContent from "../data/publications.bib?raw";
 
-export type PublicationSection = {
-    id: string;
-    label: string;
-    icon: string;
-    sourceSections: string[];
-};
-
 type PublicationLink = {
     href: string;
     label: string;
@@ -18,8 +11,6 @@ type PublicationLink = {
 export type Publication = {
     id: string;
     section: string;
-    year: number;
-    month: number;
     authors: string;
     title: string;
     venue: string;
@@ -29,7 +20,7 @@ export type Publication = {
 
 type NormalizedTags = Record<string, string | undefined>;
 
-export const publicationSections: PublicationSection[] = [
+const sectionDefs = [
     {
         id: "thesis",
         label: "Thesis",
@@ -65,7 +56,7 @@ export const publicationSections: PublicationSection[] = [
         icon: "fa-solid fa-users",
         sourceSections: ["scientific-animation-workshop"],
     },
-];
+] satisfies { id: string; label: string; icon: string; sourceSections: string[] }[];
 
 const monthOrder: Record<string, number> = {
     jan: 1,
@@ -118,36 +109,28 @@ function formatAuthors(author?: string): string {
     return authors.length > 1 ? `${first} et al.` : first;
 }
 
-function toPubMedUrl(pubmed: string): string {
-    return `https://pubmed.ncbi.nlm.nih.gov/${pubmed}/`;
-}
-
-function toDoiUrl(doi: string): string {
-    return `https://doi.org/${doi}`;
-}
+const linkSpecs: {
+    key: string;
+    href?: (value: string) => string;
+    iconClass: string;
+    label: string;
+}[] = [
+    { key: "pubmed", href: (v) => `https://pubmed.ncbi.nlm.nih.gov/${v}/`, iconClass: "ai ai-pubmed", label: "PubMed" },
+    { key: "doi", href: (v) => `https://doi.org/${v}`, iconClass: "ai ai-doi", label: "DOI" },
+    { key: "url", iconClass: "fa-solid fa-earth-europe", label: "Link" },
+    { key: "pdf", iconClass: "fa-solid fa-file-pdf", label: "PDF" },
+    { key: "github", iconClass: "fab fa-github", label: "GitHub" },
+    { key: "slides", iconClass: "fa-solid fa-chalkboard-user", label: "Slides" },
+    { key: "video", iconClass: "fab fa-youtube", label: "Video" },
+];
 
 function buildLinks(tags: NormalizedTags): PublicationLink[] {
-    const specs: Array<{
-        key: string;
-        href: (value: string) => string;
-        iconClass: string;
-        label: string;
-    }> = [
-        { key: "pubmed", href: toPubMedUrl, iconClass: "ai ai-pubmed", label: "PubMed" },
-        { key: "doi", href: toDoiUrl, iconClass: "ai ai-doi", label: "DOI" },
-        { key: "url", href: (v) => v, iconClass: "fa-solid fa-earth-europe", label: "Link" },
-        { key: "pdf", href: (v) => v, iconClass: "fa-solid fa-file-pdf", label: "PDF" },
-        { key: "github", href: (v) => v, iconClass: "fab fa-github", label: "GitHub" },
-        { key: "slides", href: (v) => v, iconClass: "fa-solid fa-chalkboard-user", label: "Slides" },
-        { key: "video", href: (v) => v, iconClass: "fab fa-youtube", label: "Video" },
-    ];
-
     const links: PublicationLink[] = [];
 
-    for (const spec of specs) {
-        const value = tags[spec.key];
+    for (const { key, href, iconClass, label } of linkSpecs) {
+        const value = tags[key];
         if (value) {
-            links.push({ href: spec.href(value), iconClass: spec.iconClass, label: spec.label });
+            links.push({ href: href ? href(value) : value, iconClass, label });
         }
     }
 
@@ -217,8 +200,6 @@ const publications: Publication[] = entries
         return {
             id: entry.citationKey,
             section: tags.section ?? "",
-            year: parseYear(tags.year),
-            month: parseMonth(tags.month),
             authors: formatAuthors(tags.author),
             title: tags.title ?? "",
             venue: buildVenue(tags),
@@ -227,17 +208,15 @@ const publications: Publication[] = entries
         };
     })
     .filter((publication) => publication.section)
-    .sort((a, b) => {
-        if (a.year !== b.year) return b.year - a.year;
-        return b.month - a.month;
-    });
+    // ISO dates sort as text; a bare year sorts after its months, like month 0 did.
+    .sort((a, b) => b.date.localeCompare(a.date));
 
-export const publicationsBySection: Record<string, Publication[]> =
-    Object.fromEntries(
-        publicationSections.map((section) => [
-            section.id,
-            publications.filter((publication) =>
-                section.sourceSections.includes(publication.section),
-            ),
-        ]),
-    );
+/** The CV sections that have publications, each with its publications, newest first. */
+export const publicationSections = sectionDefs
+    .map((section) => ({
+        ...section,
+        publications: publications.filter((publication) =>
+            section.sourceSections.includes(publication.section),
+        ),
+    }))
+    .filter((section) => section.publications.length > 0);

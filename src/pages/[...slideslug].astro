@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import HeadAssets from "../components/HeadAssets.astro";
 import { deckPaths } from "../lib/presentations";
 import "reveal.js/dist/reset.css";
 import "reveal.js/dist/reveal.css";
@@ -41,21 +42,7 @@ const pageTitle = presentation.data.title;
                 />
             )
         }
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
-        <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha384-rWj9FmWWt3OMqd9vBkWRhFavvVUYalYqGPoMdL1brs/qvvqz88gvLShYa4hKNyqb"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css"
-            integrity="sha384-IAnhEDrYZnLsYcVzowpizdxXTHFovW5/CkZObGfY2QuaCKaQpvLCjj45LGb4Q/yE"
-            crossorigin="anonymous"
-        />
+        <HeadAssets />
     </head>
     <body>
         <div class="reveal">

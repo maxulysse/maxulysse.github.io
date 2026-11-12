@@ -45,35 +45,18 @@ function createResultNode(item) {
 }
 
 function renderResults(rawQuery) {
-    const query = normalize(rawQuery || "");
-    searchResults.innerHTML = "";
-
-    if (!query) {
-        searchSummary.textContent = `Showing ${searchItems.length} posts. Enter a search term to filter.`;
-        searchEmpty.classList.add("d-none");
-        searchItems.slice(0, 12).forEach((item) => {
-            searchResults.appendChild(createResultNode(item));
-        });
-        return;
-    }
-
+    const query = normalize(rawQuery);
     const terms = query.split(/\s+/).filter(Boolean);
     const results = searchItems.filter((item) => {
         const haystack = buildHaystack(item);
         return terms.every((term) => haystack.includes(term));
     });
 
-    searchSummary.textContent = `${results.length} result${results.length === 1 ? "" : "s"} for "${rawQuery}".`;
-
-    if (!results.length) {
-        searchEmpty.classList.remove("d-none");
-        return;
-    }
-
-    searchEmpty.classList.add("d-none");
-    results.slice(0, 50).forEach((item) => {
-        searchResults.appendChild(createResultNode(item));
-    });
+    searchSummary.textContent = query
+        ? `${results.length} result${results.length === 1 ? "" : "s"} for "${rawQuery}".`
+        : `Showing ${searchItems.length} posts. Enter a search term to filter.`;
+    searchEmpty.classList.toggle("d-none", !query || results.length > 0);
+    searchResults.replaceChildren(...results.slice(0, query ? 50 : 12).map(createResultNode));
 }
 
 const params = new URLSearchParams(window.location.search);

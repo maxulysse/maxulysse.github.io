@@ -1,30 +1,30 @@
 ---
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PostCard from "../../../components/PostCard.astro";
 import Pagination from "../../../components/Pagination.astro";
-import { getPaginatedPosts } from "../../../lib/pagination";
+import { getAllPosts, POSTS_PER_PAGE } from "../../../lib/posts";
 
-const page = parseInt(Astro.params.page as string);
+export const getStaticPaths = (async ({ paginate }) =>
+    paginate(await getAllPosts(), { pageSize: POSTS_PER_PAGE })) satisfies GetStaticPaths;
 
-if (page === 1) {
-    return Astro.redirect("/");
+interface Props {
+    page: Page<CollectionEntry<"blog">>;
 }
 
-const { posts, currentPage, totalPages } = await getPaginatedPosts(page);
+const { page } = Astro.props;
 
-export async function getStaticPaths() {
-    const { totalPages } = await getPaginatedPosts(1);
-    return Array.from({ length: totalPages }, (_, i) => ({
-        params: { page: String(i + 1) },
-    }));
+if (page.currentPage === 1) {
+    return Astro.redirect("/");
 }
 ---
 
-<BaseLayout title={`Blog - Page ${currentPage}`} description="Blog posts">
-    <h1 class="visually-hidden">Blog - Page {currentPage}</h1>
+<BaseLayout title={`Blog - Page ${page.currentPage}`} description="Blog posts">
+    <h1 class="visually-hidden">Blog - Page {page.currentPage}</h1>
     <div class="post-grid">
-        {posts.map((post) => <PostCard post={post} />)}
+        {page.data.map((post) => <PostCard post={post} />)}
     </div>
 
-    <Pagination {currentPage} {totalPages} />
+    <Pagination currentPage={page.currentPage} totalPages={page.lastPage} />
 </BaseLayout>

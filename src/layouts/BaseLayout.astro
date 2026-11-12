@@ -6,6 +6,7 @@ interface Props {
     type?: "website" | "article";
 }
 
+import HeadAssets from "../components/HeadAssets.astro";
 import socialMedia from "../data/socialMedia.js";
 import { author } from "../data/authors";
 
@@ -63,26 +64,10 @@ const currentPath = Astro.url.pathname;
         />
         <link rel="canonical" href={canonicalUrl} />
 
-        <!-- Favicon -->
+        <!-- Web app manifest -->
         <link
             rel="manifest"
             href="/assets/img/favicons/site.webmanifest"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/assets/img/favicons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/assets/img/favicons/favicon-16x16.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            href="/assets/img/favicons/apple-touch-icon.png"
         />
 
         <!-- Preconnect to CDN origins -->
@@ -96,20 +81,9 @@ const currentPath = Astro.url.pathname;
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
-        <!-- Font Awesome CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha384-rWj9FmWWt3OMqd9vBkWRhFavvVUYalYqGPoMdL1brs/qvvqz88gvLShYa4hKNyqb"
-            crossorigin="anonymous"
-        />
-        <!-- Academicons CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.6/css/academicons.min.css"
-            integrity="sha384-IAnhEDrYZnLsYcVzowpizdxXTHFovW5/CkZObGfY2QuaCKaQpvLCjj45LGb4Q/yE"
-            crossorigin="anonymous"
-        />
+
+        <!-- Favicons, Font Awesome and Academicons, shared with the slide decks -->
+        <HeadAssets />
 
         <!-- Custom styles -->
         <link rel="stylesheet" href="/assets/css/style.css" />
