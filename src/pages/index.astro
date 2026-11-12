@@ -2,9 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import Pagination from "../components/Pagination.astro";
-import { getPaginatedPosts } from "../lib/pagination";
+import { getAllPosts, POSTS_PER_PAGE } from "../lib/posts";
 
-const { posts, totalPages } = await getPaginatedPosts(1);
+const allPosts = await getAllPosts();
+const posts = allPosts.slice(0, POSTS_PER_PAGE);
+const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 ---
 
 <BaseLayout>

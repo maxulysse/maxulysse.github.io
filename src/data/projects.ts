@@ -176,11 +176,7 @@ const declaredProjects: Project[] = [
     },
 ];
 
-/**
- * Every project, with its tags sorted alphabetically. The raw array keeps the
- * declared order (id, name, relevance) so callers can match on it; for display
- * the tags should always come out sorted.
- */
+/** Every project, with its tags sorted for display. */
 export const projects: Project[] = declaredProjects.map((project) => ({
     ...project,
     tags: [...project.tags].sort(),

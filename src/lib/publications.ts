@@ -1,17 +1,5 @@
-import bibtexParse from "@orcid/bibtex-parse-js";
+import bibtexParse, { type BibtexEntry } from "@orcid/bibtex-parse-js";
 import bibContent from "../data/publications.bib?raw";
-
-type BibEntry = {
-    citationKey: string;
-    entryTags?: Record<string, unknown>;
-};
-
-export type PublicationSection = {
-    id: string;
-    label: string;
-    icon: string;
-    sourceSections: string[];
-};
 
 type PublicationLink = {
     href: string;
@@ -23,8 +11,6 @@ type PublicationLink = {
 export type Publication = {
     id: string;
     section: string;
-    year: number;
-    month: number;
     authors: string;
     title: string;
     venue: string;
@@ -34,7 +20,7 @@ export type Publication = {
 
 type NormalizedTags = Record<string, string | undefined>;
 
-export const publicationSections: PublicationSection[] = [
+const sectionDefs = [
     {
         id: "thesis",
         label: "Thesis",
@@ -70,26 +56,13 @@ export const publicationSections: PublicationSection[] = [
         icon: "fa-solid fa-users",
         sourceSections: ["scientific-animation-workshop"],
     },
-];
+] satisfies { id: string; label: string; icon: string; sourceSections: string[] }[];
 
-const monthOrder: Record<string, number> = {
-    jan: 1,
-    feb: 2,
-    mar: 3,
-    apr: 4,
-    may: 5,
-    jun: 6,
-    jul: 7,
-    aug: 8,
-    sep: 9,
-    oct: 10,
-    nov: 11,
-    dec: 12,
-};
+const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
 
-const entries = bibtexParse.toJSON(bibContent) as BibEntry[];
+const entries = bibtexParse.toJSON(bibContent);
 
-function normalizeTags(entry: BibEntry): NormalizedTags {
+function normalizeTags(entry: BibtexEntry): NormalizedTags {
     const tags = entry.entryTags ?? {};
     return Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
@@ -99,23 +72,6 @@ function normalizeTags(entry: BibEntry): NormalizedTags {
     ) as NormalizedTags;
 }
 
-function parseMonth(month?: string): number {
-    if (!month) return 0;
-
-    const numeric = Number.parseInt(month, 10);
-    if (!Number.isNaN(numeric) && numeric >= 1 && numeric <= 12) {
-        return numeric;
-    }
-
-    const normalized = month.toLowerCase().slice(0, 3);
-    return monthOrder[normalized] ?? 0;
-}
-
-function parseYear(year?: string): number {
-    const parsed = Number.parseInt(year ?? "", 10);
-    return Number.isNaN(parsed) ? 0 : parsed;
-}
-
 function formatAuthors(author?: string): string {
     if (!author) return "";
     const authors = author.split(/\s+and\s+/i).map((a) => a.trim());
@@ -123,36 +79,28 @@ function formatAuthors(author?: string): string {
     return authors.length > 1 ? `${first} et al.` : first;
 }
 
-function toPubMedUrl(pubmed: string): string {
-    return `https://pubmed.ncbi.nlm.nih.gov/${pubmed}/`;
-}
-
-function toDoiUrl(doi: string): string {
-    return `https://doi.org/${doi}`;
-}
+const linkSpecs: {
+    key: string;
+    href?: (value: string) => string;
+    iconClass: string;
+    label: string;
+}[] = [
+    { key: "pubmed", href: (v) => `https://pubmed.ncbi.nlm.nih.gov/${v}/`, iconClass: "ai ai-pubmed", label: "PubMed" },
+    { key: "doi", href: (v) => `https://doi.org/${v}`, iconClass: "ai ai-doi", label: "DOI" },
+    { key: "url", iconClass: "fa-solid fa-earth-europe", label: "Link" },
+    { key: "pdf", iconClass: "fa-solid fa-file-pdf", label: "PDF" },
+    { key: "github", iconClass: "fab fa-github", label: "GitHub" },
+    { key: "slides", iconClass: "fa-solid fa-chalkboard-user", label: "Slides" },
+    { key: "video", iconClass: "fab fa-youtube", label: "Video" },
+];
 
 function buildLinks(tags: NormalizedTags): PublicationLink[] {
-    const specs: Array<{
-        key: string;
-        href: (value: string) => string;
-        iconClass: string;
-        label: string;
-    }> = [
-        { key: "pubmed", href: toPubMedUrl, iconClass: "ai ai-pubmed", label: "PubMed" },
-        { key: "doi", href: toDoiUrl, iconClass: "ai ai-doi", label: "DOI" },
-        { key: "url", href: (v) => v, iconClass: "fa-solid fa-earth-europe", label: "Link" },
-        { key: "pdf", href: (v) => v, iconClass: "fa-solid fa-file-pdf", label: "PDF" },
-        { key: "github", href: (v) => v, iconClass: "fab fa-github", label: "GitHub" },
-        { key: "slides", href: (v) => v, iconClass: "fa-solid fa-chalkboard-user", label: "Slides" },
-        { key: "video", href: (v) => v, iconClass: "fab fa-youtube", label: "Video" },
-    ];
-
     const links: PublicationLink[] = [];
 
-    for (const spec of specs) {
-        const value = tags[spec.key];
+    for (const { key, href, iconClass, label } of linkSpecs) {
+        const value = tags[key];
         if (value) {
-            links.push({ href: spec.href(value), iconClass: spec.iconClass, label: spec.label });
+            links.push({ href: href ? href(value) : value, iconClass, label });
         }
     }
 
@@ -184,46 +132,18 @@ function buildVenue(tags: NormalizedTags): string {
     return venueParts.join(", ");
 }
 
-function toIsoDateString(value?: string): string {
-    if (!value) return "";
-
-    const normalized = value.trim().replace(/\//g, "-");
-    const match = normalized.match(/^(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?$/);
-    if (!match) return value;
-
-    const [, year, month, day] = match;
-    if (!month) return year;
-
-    const monthInt = Number.parseInt(month, 10);
-    if (Number.isNaN(monthInt) || monthInt < 1 || monthInt > 12) return value;
-    const monthPadded = String(monthInt).padStart(2, "0");
-
-    if (!day) return `${year}-${monthPadded}`;
-
-    const dayInt = Number.parseInt(day, 10);
-    if (Number.isNaN(dayInt) || dayInt < 1 || dayInt > 31) return value;
-    return `${year}-${monthPadded}-${String(dayInt).padStart(2, "0")}`;
-}
-
 function buildDate(tags: NormalizedTags): string {
-    if (tags.date) return toIsoDateString(tags.date);
-
-    const year = parseYear(tags.year);
-    const month = parseMonth(tags.month);
-
-    if (year && month) return `${year}-${String(month).padStart(2, "0")}`;
-    if (year) return String(year);
-    return "";
+    if (tags.date) return tags.date;
+    const month = months.indexOf(tags.month?.slice(0, 3).toLowerCase() ?? "") + 1;
+    return month ? `${tags.year}-${String(month).padStart(2, "0")}` : (tags.year ?? "");
 }
 
 const publications: Publication[] = entries
-    .map((entry: BibEntry) => {
+    .map((entry) => {
         const tags = normalizeTags(entry);
         return {
             id: entry.citationKey,
             section: tags.section ?? "",
-            year: parseYear(tags.year),
-            month: parseMonth(tags.month),
             authors: formatAuthors(tags.author),
             title: tags.title ?? "",
             venue: buildVenue(tags),
@@ -231,18 +151,15 @@ const publications: Publication[] = entries
             links: buildLinks(tags),
         };
     })
-    .filter((publication: Publication) => publication.section)
-    .sort((a: Publication, b: Publication) => {
-        if (a.year !== b.year) return b.year - a.year;
-        return b.month - a.month;
-    });
+    // ISO dates sort as text; a bare year sorts after its own months.
+    .sort((a, b) => b.date.localeCompare(a.date));
 
-export const publicationsBySection: Record<string, Publication[]> =
-    Object.fromEntries(
-        publicationSections.map((section) => [
-            section.id,
-            publications.filter((publication: Publication) =>
-                section.sourceSections.includes(publication.section),
-            ),
-        ]),
-    );
+/** The CV sections that have publications, each with its publications, newest first. */
+export const publicationSections = sectionDefs
+    .map((section) => ({
+        ...section,
+        publications: publications.filter((publication) =>
+            section.sourceSections.includes(publication.section),
+        ),
+    }))
+    .filter((section) => section.publications.length > 0);

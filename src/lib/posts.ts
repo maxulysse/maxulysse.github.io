@@ -3,6 +3,8 @@ import type { CollectionEntry } from "astro:content";
 
 type BlogEntry = CollectionEntry<"blog">;
 
+export const POSTS_PER_PAGE = 6;
+
 let cachedPosts: BlogEntry[] | null = null;
 
 /** Every blog post, newest first. Shared cache, so read-only. */

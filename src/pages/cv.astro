@@ -2,10 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CvSection from "../components/CvSection.astro";
 import { cvSections } from "../data/cv";
-import {
-    publicationSections,
-    publicationsBySection,
-} from "../lib/publications";
+import { publicationSections } from "../lib/publications";
 ---
 
 <BaseLayout title="CV" description="Maxime Garcia, PhD in Bioinformatics">
@@ -83,66 +80,60 @@ import {
 
         <CvSection id="publications" icon="fa-solid fa-book" title="Publications">
             {
-                publicationSections.map((section) => {
-                    const sectionPublications =
-                        publicationsBySection[section.id] ?? [];
-                    if (sectionPublications.length === 0) return null;
-
-                    return (
-                        <div class="publication-section">
-                            <h5 class="publication-section-title">
-                                <i class={section.icon} /> {section.label}
-                            </h5>
-                            <ul class="publications-list mb-0">
-                                {sectionPublications.map((publication) => (
-                                    <li id={publication.id}>
-                                        {publication.authors && (
-                                            <>{publication.authors}, </>
-                                        )}
-                                        <em>{publication.title}</em>
-                                        {(publication.venue ||
-                                            publication.date) &&
-                                            ", "}
-                                        {publication.venue}
-                                        {publication.venue &&
-                                            publication.date &&
-                                            ", "}
-                                        {publication.date}.
-                                        {publication.links.length > 0 && (
-                                            <span class="publication-links">
-                                                {publication.links.map(
-                                                    (link) => (
-                                                        <a
-                                                            href={link.href}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            aria-label={
-                                                                link.label
-                                                            }
-                                                            title={
-                                                                link.label
-                                                            }
-                                                        >
-                                                            {link.text ? (
-                                                                link.text
-                                                            ) : (
-                                                                <i
-                                                                    class={
-                                                                        link.iconClass
-                                                                    }
-                                                                />
-                                                            )}
-                                                        </a>
-                                                    ),
-                                                )}
-                                            </span>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    );
-                })
+                publicationSections.map((section) => (
+                    <div class="publication-section">
+                        <h5 class="publication-section-title">
+                            <i class={section.icon} /> {section.label}
+                        </h5>
+                        <ul class="publications-list mb-0">
+                            {section.publications.map((publication) => (
+                                <li id={publication.id}>
+                                    {publication.authors && (
+                                        <>{publication.authors}, </>
+                                    )}
+                                    <em>{publication.title}</em>
+                                    {(publication.venue ||
+                                        publication.date) &&
+                                        ", "}
+                                    {publication.venue}
+                                    {publication.venue &&
+                                        publication.date &&
+                                        ", "}
+                                    {publication.date}.
+                                    {publication.links.length > 0 && (
+                                        <span class="publication-links">
+                                            {publication.links.map(
+                                                (link) => (
+                                                    <a
+                                                        href={link.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        aria-label={
+                                                            link.label
+                                                        }
+                                                        title={
+                                                            link.label
+                                                        }
+                                                    >
+                                                        {link.text ? (
+                                                            link.text
+                                                        ) : (
+                                                            <i
+                                                                class={
+                                                                    link.iconClass
+                                                                }
+                                                            />
+                                                        )}
+                                                    </a>
+                                                ),
+                                            )}
+                                        </span>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
             }
         </CvSection>
 
