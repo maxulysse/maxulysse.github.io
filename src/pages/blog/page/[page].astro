@@ -4,7 +4,7 @@ import PostCard from "../../../components/PostCard.astro";
 import Pagination from "../../../components/Pagination.astro";
 import { getPaginatedPosts } from "../../../lib/pagination";
 
-const page = parseInt((Astro.params.page as string) || "1");
+const page = parseInt(Astro.params.page as string);
 
 if (page === 1) {
     return Astro.redirect("/");

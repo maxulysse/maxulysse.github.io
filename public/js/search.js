@@ -38,16 +38,13 @@ function createResultNode(item) {
 
     const description = document.createElement("p");
     description.className = "mb-0 text-muted";
-    description.textContent = item.description || "Open post";
+    description.textContent = item.description;
 
     anchor.append(title, meta, description);
     return anchor;
 }
 
 function renderResults(rawQuery) {
-    if (!searchSummary || !searchResults || !searchEmpty) {
-        return;
-    }
     const query = normalize(rawQuery || "");
     searchResults.innerHTML = "";
 
@@ -81,7 +78,5 @@ function renderResults(rawQuery) {
 
 const params = new URLSearchParams(window.location.search);
 const initialQuery = params.get("q") || "";
-if (searchInput instanceof HTMLInputElement) {
-    searchInput.value = initialQuery;
-}
+searchInput.value = initialQuery;
 renderResults(initialQuery);

@@ -1,10 +1,5 @@
-import bibtexParse from "@orcid/bibtex-parse-js";
+import bibtexParse, { type BibtexEntry } from "@orcid/bibtex-parse-js";
 import bibContent from "../data/publications.bib?raw";
-
-type BibEntry = {
-    citationKey: string;
-    entryTags?: Record<string, unknown>;
-};
 
 export type PublicationSection = {
     id: string;
@@ -87,9 +82,9 @@ const monthOrder: Record<string, number> = {
     dec: 12,
 };
 
-const entries = bibtexParse.toJSON(bibContent) as BibEntry[];
+const entries = bibtexParse.toJSON(bibContent);
 
-function normalizeTags(entry: BibEntry): NormalizedTags {
+function normalizeTags(entry: BibtexEntry): NormalizedTags {
     const tags = entry.entryTags ?? {};
     return Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
@@ -217,7 +212,7 @@ function buildDate(tags: NormalizedTags): string {
 }
 
 const publications: Publication[] = entries
-    .map((entry: BibEntry) => {
+    .map((entry) => {
         const tags = normalizeTags(entry);
         return {
             id: entry.citationKey,
@@ -231,8 +226,8 @@ const publications: Publication[] = entries
             links: buildLinks(tags),
         };
     })
-    .filter((publication: Publication) => publication.section)
-    .sort((a: Publication, b: Publication) => {
+    .filter((publication) => publication.section)
+    .sort((a, b) => {
         if (a.year !== b.year) return b.year - a.year;
         return b.month - a.month;
     });
@@ -241,7 +236,7 @@ export const publicationsBySection: Record<string, Publication[]> =
     Object.fromEntries(
         publicationSections.map((section) => [
             section.id,
-            publications.filter((publication: Publication) =>
+            publications.filter((publication) =>
                 section.sourceSections.includes(publication.section),
             ),
         ]),

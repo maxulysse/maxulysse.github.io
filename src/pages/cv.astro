@@ -84,8 +84,7 @@ import {
         <CvSection id="publications" icon="fa-solid fa-book" title="Publications">
             {
                 publicationSections.map((section) => {
-                    const sectionPublications =
-                        publicationsBySection[section.id] ?? [];
+                    const sectionPublications = publicationsBySection[section.id];
                     if (sectionPublications.length === 0) return null;
 
                     return (
