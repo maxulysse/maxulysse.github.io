@@ -9,10 +9,29 @@ import { projects } from "../data/projects";
     description="Maxime Garcia, PhD in Bioinformatics"
 >
     <h1 class="visually-hidden">Projects</h1>
-    <div class="card-columns only-one-column">
+    <div class="card-columns two-columns">
         {projects.map((project) => (
             <div class="card" id={project.id}>
                 <div class="card-body">
+                    {project.logo && (
+                        <img
+                            class:list={[
+                                "project-logo",
+                                project.logoDark && "logo-light",
+                            ]}
+                            src={project.logo}
+                            alt=""
+                            loading="lazy"
+                        />
+                    )}
+                    {project.logoDark && (
+                        <img
+                            class="project-logo logo-dark"
+                            src={project.logoDark}
+                            alt=""
+                            loading="lazy"
+                        />
+                    )}
                     <h5 class="card-title">
                         <a
                             href={project.url}
@@ -43,3 +62,24 @@ import { projects } from "../data/projects";
         ))}
     </div>
 </BaseLayout>
+
+<style>
+    .card-body {
+        display: flow-root;
+    }
+
+    .project-logo {
+        float: right;
+        height: 3rem;
+        margin-left: 0.75rem;
+    }
+
+    .logo-dark,
+    :global([data-bs-theme="dark"]) .logo-light {
+        display: none;
+    }
+
+    :global([data-bs-theme="dark"]) .logo-dark {
+        display: block;
+    }
+</style>

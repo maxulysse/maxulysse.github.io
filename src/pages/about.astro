@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="About" description="About me">
     <h1 class="visually-hidden">About</h1>
-    <div class="card-columns about-grid">
+    <div class="card-columns two-columns about-grid">
         <div class="card-deck">
             <div class="card">
                 <div class="card-header">
@@ -76,12 +76,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style is:global>
-    .about-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.5rem;
-    }
-
     .about-grid .card-deck {
         display: contents;
     }
@@ -98,10 +92,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     @media (max-width: 767px) {
-        .about-grid {
-            grid-template-columns: 1fr;
-        }
-
         .about-grid .card {
             min-width: 0;
         }
