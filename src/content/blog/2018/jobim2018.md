@@ -9,6 +9,6 @@ image:
 ---
 
 
-[<img src="/assets/img/posts/2018/JOBIM2018.png" title="JOBIM2018" alt="JOBIM presentation" width="600">](https://raw.githubusercontent.com/maxulysse/Presentations/main/2018/2018-07-04-MGarcia-JOBIM.pdf)
+[<img src="/assets/img/posts/2018/JOBIM2018.png" title="JOBIM2018" alt="JOBIM presentation">](https://raw.githubusercontent.com/maxulysse/Presentations/main/2018/2018-07-04-MGarcia-JOBIM.pdf)
 
 Download the slides from my [presentation <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>](https://raw.githubusercontent.com/maxulysse/Presentations/main/2018/2018-07-04-MGarcia-JOBIM.pdf) at [JOBIM 2018 <i class="fa-solid fa-globe" aria-hidden="true"></i>](https://jobim2018.sciencesconf.org/).
