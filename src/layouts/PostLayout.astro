@@ -70,7 +70,7 @@ const editUrl = `${githubBaseUrl}/edit/main/${entry.filePath}`;
                         href="https://github.com/maxulysse/maxulysse.github.io"
                         target="_blank"
                         rel="noopener"><i class="fab fa-github"></i> GitHub</a
-                    > for versioning. You can fix this page by suggesting changes
+                    > for versioning. You can fix this page by suggesting changes{" "}
                     <a href={editUrl} target="_blank" rel="noopener">here.</a
                     ></small
                 >
@@ -80,6 +80,11 @@ const editUrl = `${githubBaseUrl}/edit/main/${entry.filePath}`;
 </BaseLayout>
 
 <style is:global>
+    .card-body img {
+        max-width: 100%;
+        height: auto;
+    }
+
     .tags a {
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;

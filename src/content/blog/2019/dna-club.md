@@ -9,6 +9,6 @@ image:
 ---
 
 
-[<img class="img-post" src="/assets/img/posts/2019/DNACLUB2019.png" title="DNA club" alt="DNA Club presentation" width="600">](https://raw.githubusercontent.com/maxulysse/Presentations/main/2019/2019-01-30-MGarcia-DNA-club.pdf)
+[<img src="/assets/img/posts/2019/DNACLUB2019.png" title="DNA club" alt="DNA Club presentation" width="600">](https://raw.githubusercontent.com/maxulysse/Presentations/main/2019/2019-01-30-MGarcia-DNA-club.pdf)
 
 Download the slides from my [presentation <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>](https://raw.githubusercontent.com/maxulysse/Presentations/main/2019/2019-01-30-MGarcia-DNA-club.pdf) at the DNA club.
