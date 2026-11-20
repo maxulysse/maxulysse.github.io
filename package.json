@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/sitemap": "^3.7.5",
     "@orcid/bibtex-parse-js": "^0.0.25",
-    "astro": "^7.4.7",
+    "astro": "^7.4.12",
     "astro-expressive-code": "^0.44.2",
     "d3-cloud": "^1.2.9",
     "reveal.js": "^6.0.2",
@@ -33,7 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^8.73.0",
     "@typescript-eslint/parser": "^8.72.1",
     "astro-eslint-parser": "^3.2.0",
-    "eslint": "^10.14.0",
+    "eslint": "^10.15.0",
     "globals": "^17.14.0",
     "typescript": "^6.0.3"
   },
