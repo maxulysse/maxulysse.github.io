@@ -111,7 +111,7 @@ nextflow run nf-core/eager -r 2.3.1 -c my_computer.config /
 >
 > `nf-core/eager/nextflow.config`
 >
-> ```grooyv
+> ```groovy
 > process.container = 'nfcore/eager:2.3.1'
 > ```
 
