@@ -20,7 +20,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.5",
     "@orcid/bibtex-parse-js": "^0.0.25",
-    "astro": "^7.4.7",
+    "astro": "^7.4.12",
     "astro-expressive-code": "^0.44.2",
     "d3-cloud": "^1.2.9",
     "reveal.js": "^5.2.1",
