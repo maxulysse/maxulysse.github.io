@@ -107,7 +107,7 @@ const cloudTags = [...tags]
 </BaseLayout>
 
 <script>
-    import cloud from "d3-cloud";
+    import CloudLayout, { type Bounds, type PlacedSprite } from "d3-cloud";
 
     const SVG_NS = "http://www.w3.org/2000/svg";
     const SEED = 42;
@@ -121,7 +121,7 @@ const cloudTags = [...tags]
     const GROWTH = 1.25;
     const MAX_TRIES = 5;
 
-    type TagWord = cloud.Word & {
+    type TagWord = {
         text: string;
         size: number;
         rotate: number;
@@ -156,25 +156,24 @@ const cloudTags = [...tags]
         };
     }
 
-    // Crop the SVG to the placed words, offset by d3-cloud's centred origin.
-    function render(width: number, height: number, placed: TagWord[], bounds: { x: number; y: number }[]) {
-        const [min, max] = bounds;
+    // Crop the SVG to the placed words; words and bounds share d3-cloud's centred origin.
+    function render(placed: PlacedSprite<TagWord>[], [min, max]: Bounds) {
         const w = max.x - min.x;
         const h = max.y - min.y;
         const svg = document.createElementNS(SVG_NS, "svg");
-        svg.setAttribute("viewBox", `${min.x - width / 2} ${min.y - height / 2} ${w} ${h}`);
+        svg.setAttribute("viewBox", `${min.x} ${min.y} ${w} ${h}`);
         svg.setAttribute("width", String(w));
         svg.setAttribute("height", String(h));
         svg.classList.add("tag-cloud-svg");
         for (const word of placed) {
             const a = document.createElementNS(SVG_NS, "a");
-            a.setAttribute("href", word.href);
+            a.setAttribute("href", word.datum.href);
             const title = document.createElementNS(SVG_NS, "title");
-            title.textContent = word.title;
+            title.textContent = word.datum.title;
             const text = document.createElementNS(SVG_NS, "text");
             text.setAttribute("text-anchor", "middle");
             text.setAttribute("transform", `translate(${word.x},${word.y}) rotate(${word.rotate})`);
-            text.setAttribute("style", `font: ${word.weight} ${word.size}px ${font}; opacity: ${word.opacity}`);
+            text.setAttribute("style", `font: ${word.weight} ${word.size}px ${font}; opacity: ${word.datum.opacity}`);
             text.textContent = word.text;
             a.append(title, text);
             svg.append(a);
@@ -182,26 +181,32 @@ const cloudTags = [...tags]
         container.replaceChildren(svg);
     }
 
-    // Only the latest layout may render: a resize stops the one still running.
-    let current: ReturnType<typeof cloud<TagWord>> | undefined;
-
     // Grow the canvas until every tag fits; keep what is shown if it never does.
-    function layout(width: number, height: number, scale: number, tries = 0) {
-        current?.stop();
-        current = cloud<TagWord>()
-            .size([width, height])
-            .words(words.map((w) => ({ ...w, size: w.size * scale })))
-            .padding(PADDING)
-            .rotate((w) => w.rotate)
-            .font(font)
-            .fontWeight((w) => w.weight)
-            .fontSize((w) => w.size)
-            .random(seeded(SEED))
-            .on("end", (placed, bounds) => {
-                if (placed.length === words.length) render(width, height, placed, bounds);
-                else if (tries < MAX_TRIES) layout(width, Math.round(height * GROWTH), scale, tries + 1);
-            })
-            .start();
+    function layout(width: number, height: number, scale: number) {
+        const cloud = new CloudLayout().overflow(false);
+        const sprites = [...words]
+            .sort((a, b) => b.size - a.size)
+            .map((w) =>
+                cloud.getSprite(w.text, {
+                    datum: w,
+                    font,
+                    weight: w.weight,
+                    size: w.size * scale,
+                    rotate: w.rotate,
+                    padding: PADDING,
+                }),
+            );
+        for (let tries = 0; tries <= MAX_TRIES; tries++) {
+            cloud.clear().size([width, height]).random(seeded(SEED));
+            const placed: PlacedSprite<TagWord>[] = [];
+            for (const sprite of sprites) {
+                const word = sprite && cloud.place(sprite);
+                if (!word) break;
+                placed.push(word);
+            }
+            if (placed.length === sprites.length) return render(placed, cloud.bounds()!);
+            height = Math.round(height * GROWTH);
+        }
     }
 
     let laidOutWidth = 0;
