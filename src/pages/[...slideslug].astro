@@ -2,9 +2,9 @@
 import { getCollection } from "astro:content";
 import HeadAssets from "../components/HeadAssets.astro";
 import { deckPaths } from "../lib/presentations";
-import "reveal.js/dist/reset.css";
-import "reveal.js/dist/reveal.css";
-import "reveal.js/dist/theme/simple.css";
+import "reveal.js/reset.css";
+import "reveal.js/reveal.css";
+import "reveal.js/theme/simple.css";
 import "reveal.js/plugin/highlight/monokai.css";
 import "../styles/slides.css";
 
@@ -59,9 +59,9 @@ const pageTitle = presentation.data.title;
         </div>
         <script>
             import Reveal from "reveal.js";
-            import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm.js";
-            import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
-            import RevealNotes from "reveal.js/plugin/notes/notes.esm.js";
+            import RevealHighlight from "reveal.js/plugin/highlight";
+            import RevealMarkdown from "reveal.js/plugin/markdown";
+            import RevealNotes from "reveal.js/plugin/notes";
 
             Reveal.initialize({
                 hash: true,
